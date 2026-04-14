@@ -8,6 +8,36 @@ const POLL_INTERVAL_MINUTES = 1; // Check every 60 seconds
 const REPLIED_KEY = "repliedMessageIds";
 const CONFIG_KEY = "config";
 
+// ─── Phone Number Guardrail ─────────────────────────────────────────────────
+// ONLY these numbers are allowed in outbound messages. Any other phone number
+// found in a reply will be stripped and replaced with the primary number.
+const APPROVED_PHONES = [
+  "6157564629",   // USA Fleet Sales — calls only
+];
+
+/**
+ * Scans text for phone numbers. If ANY phone number is found that isn't on
+ * the approved list, it gets replaced with the primary approved number.
+ * Returns the sanitized text.
+ */
+function enforceApprovedPhones(text) {
+  // Match common US phone patterns: (XXX) XXX-XXXX, XXX-XXX-XXXX, XXX.XXX.XXXX,
+  // XXXXXXXXXX, +1XXXXXXXXXX, 1-XXX-XXX-XXXX, etc.
+  const phoneRegex = /(?:\+?1[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}/g;
+  const primaryFormatted = "615-756-4629";
+
+  return text.replace(phoneRegex, (match) => {
+    const digits = match.replace(/\D/g, "");
+    // Strip leading 1 for comparison
+    const normalized = digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
+    if (APPROVED_PHONES.includes(normalized)) {
+      return match; // Approved — keep as-is
+    }
+    log(`BLOCKED unapproved phone number: "${match}" → replaced with ${primaryFormatted}`);
+    return primaryFormatted;
+  });
+}
+
 // ─── Startup ─────────────────────────────────────────────────────────────────
 
 chrome.runtime.onInstalled.addListener(() => {
@@ -127,6 +157,9 @@ async function handleNewMessage(data) {
     // Use fallback reply so conversation isn't dropped
     reply = config.fallbackReply || CORRECT_FALLBACK;
   }
+
+  // ── Phone number guardrail: block ALL unapproved numbers before sending ──
+  reply = enforceApprovedPhones(reply);
 
   // Tell content script to send the reply
   const tabs = await chrome.tabs.query({ url: "https://www.facebook.com/messages/*" });
