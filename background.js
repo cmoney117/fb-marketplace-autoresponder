@@ -112,18 +112,20 @@ async function handleNewMessage(data) {
     });
 
     if (!res.ok) {
-      throw new Error(`CRM API returned ${res.status}`);
+      const errBody = await res.text().catch(() => "");
+      throw new Error(`CRM API returned ${res.status}: ${errBody.slice(0, 200)}`);
     }
 
     const json = await res.json();
     reply = json.reply;
 
-    if (!reply) throw new Error("Empty reply from CRM API");
+    if (!reply) throw new Error("Empty reply from CRM API. Response: " + JSON.stringify(json).slice(0, 200));
     log("AI reply generated:", reply.slice(0, 100));
   } catch (err) {
     log("CRM API error:", err?.message);
+    log("Config check — agentSecret present:", !!config.agentSecret, "length:", config.agentSecret?.length);
     // Use fallback reply so conversation isn't dropped
-    reply = config.fallbackReply || "Thanks for reaching out! We'll get back to you shortly.";
+    reply = config.fallbackReply || CORRECT_FALLBACK;
   }
 
   // Tell content script to send the reply
@@ -242,13 +244,24 @@ async function markReplied(messageId) {
   await chrome.storage.local.set({ [REPLIED_KEY]: arr });
 }
 
+const CORRECT_FALLBACK = "Thanks for your interest! We have work trucks and vans available. Check our inventory at usafleetsales.com or call us at 615-756-4629.";
+
 async function getConfig() {
   const data = await chrome.storage.local.get(CONFIG_KEY);
-  return data[CONFIG_KEY] || {
+  const config = data[CONFIG_KEY] || {
     enabled: true,
     agentSecret: "",
-    fallbackReply: "Thanks for your interest! We have work trucks and vans available. Check our inventory at usafleetsales.com or call us at 615-756-4629.",
+    fallbackReply: CORRECT_FALLBACK,
   };
+
+  // Migration: replace any stored fallback that has the old wrong phone numbers
+  if (config.fallbackReply && (/629.?206.?7938|931.?572.?7466/.test(config.fallbackReply))) {
+    config.fallbackReply = CORRECT_FALLBACK;
+    await chrome.storage.local.set({ [CONFIG_KEY]: config });
+    log("Migrated fallback reply to correct phone number.");
+  }
+
+  return config;
 }
 
 async function getStatus() {
