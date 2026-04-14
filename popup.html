@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>USA Fleet Sales — Marketplace Auto-Reply</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      width: 320px;
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 16px;
+    }
+    h1 { font-size: 14px; font-weight: 700; color: #38bdf8; margin-bottom: 4px; }
+    .subtitle { font-size: 11px; color: #64748b; margin-bottom: 16px; }
+    .status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1e293b;
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+    }
+    .status-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      margin-right: 8px; flex-shrink: 0;
+    }
+    .status-dot.on { background: #22c55e; box-shadow: 0 0 6px #22c55e; }
+    .status-dot.off { background: #ef4444; }
+    .status-dot.warn { background: #f59e0b; }
+    .status-label { font-size: 12px; font-weight: 600; flex: 1; }
+    .toggle {
+      position: relative; width: 40px; height: 22px;
+      cursor: pointer;
+    }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; inset: 0;
+      background: #334155; border-radius: 22px;
+      transition: .2s;
+    }
+    .slider:before {
+      content: ""; position: absolute;
+      height: 16px; width: 16px;
+      left: 3px; bottom: 3px;
+      background: white; border-radius: 50%;
+      transition: .2s;
+    }
+    input:checked + .slider { background: #38bdf8; }
+    input:checked + .slider:before { transform: translateX(18px); }
+
+    label { font-size: 11px; color: #94a3b8; display: block; margin-bottom: 4px; margin-top: 10px; }
+    input[type="text"], input[type="password"] {
+      width: 100%; padding: 8px 10px;
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 6px; color: #e2e8f0;
+      font-size: 12px; font-family: monospace;
+    }
+    input[type="text"]:focus, input[type="password"]:focus {
+      outline: none; border-color: #38bdf8;
+    }
+    textarea {
+      width: 100%; padding: 8px 10px;
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 6px; color: #e2e8f0;
+      font-size: 12px; resize: vertical; min-height: 60px;
+    }
+    textarea:focus { outline: none; border-color: #38bdf8; }
+    .btn {
+      width: 100%; padding: 9px;
+      background: #38bdf8; color: #0f172a;
+      border: none; border-radius: 6px;
+      font-size: 13px; font-weight: 700;
+      cursor: pointer; margin-top: 12px;
+    }
+    .btn:hover { background: #7dd3fc; }
+    .stats {
+      display: flex; gap: 8px; margin-top: 12px;
+    }
+    .stat-box {
+      flex: 1; background: #1e293b;
+      border-radius: 8px; padding: 8px;
+      text-align: center;
+    }
+    .stat-num { font-size: 20px; font-weight: 700; color: #38bdf8; }
+    .stat-label { font-size: 10px; color: #64748b; margin-top: 2px; }
+    .saved-msg { font-size: 11px; color: #22c55e; text-align: center; margin-top: 8px; display: none; }
+    .warn-msg { font-size: 11px; color: #f59e0b; margin-top: 8px; display: none; }
+  </style>
+</head>
+<body>
+  <h1>USA Fleet Sales Auto-Reply</h1>
+  <p class="subtitle">Monitors Facebook Marketplace messages &amp; replies with AI</p>
+
+  <div class="status-row">
+    <div class="status-dot" id="statusDot"></div>
+    <span class="status-label" id="statusLabel">Loading...</span>
+    <label class="toggle">
+      <input type="checkbox" id="enabledToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div id="warnNotConfigured" class="warn-msg">
+    ⚠ Enter your CRM Secret below and click Save to activate.
+  </div>
+
+  <label>CRM Agent Secret</label>
+  <input type="password" id="agentSecret" placeholder="Paste your MARKETPLACE_AGENT_SECRET here" />
+
+  <label>Fallback Reply (used if AI fails)</label>
+  <textarea id="fallbackReply"></textarea>
+
+  <button class="btn" id="saveBtn">Save Settings</button>
+  <div class="saved-msg" id="savedMsg">✓ Saved!</div>
+
+  <div class="stats">
+    <div class="stat-box">
+      <div class="stat-num" id="statSent">—</div>
+      <div class="stat-label">Replies Sent</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" id="statFailed">—</div>
+      <div class="stat-label">Failed</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" id="statTotal">—</div>
+      <div class="stat-label">Logged</div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
