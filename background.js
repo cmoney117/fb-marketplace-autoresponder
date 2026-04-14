@@ -287,11 +287,11 @@ async function getConfig() {
     fallbackReply: CORRECT_FALLBACK,
   };
 
-  // Migration: replace any stored fallback that has the old wrong phone numbers
-  if (config.fallbackReply && (/629.?206.?7938|931.?572.?7466/.test(config.fallbackReply))) {
+  // Force correct fallback — overwrite any old stored value
+  if (config.fallbackReply !== CORRECT_FALLBACK) {
     config.fallbackReply = CORRECT_FALLBACK;
     await chrome.storage.local.set({ [CONFIG_KEY]: config });
-    log("Migrated fallback reply to correct phone number.");
+    log("Forced fallback reply to correct value.");
   }
 
   return config;

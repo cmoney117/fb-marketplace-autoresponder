@@ -33,15 +33,15 @@ async function load() {
   document.getElementById("statFailed").textContent = status.stats?.failed ?? 0;
   document.getElementById("statTotal").textContent = status.repliedCount ?? 0;
 
-  // Config fields — migrate old phone numbers on load
+  // Config fields — force correct fallback (nuke any old stored value)
   const data = await chrome.storage.local.get(CONFIG_KEY);
   const config = data[CONFIG_KEY] || {};
-  if (config.fallbackReply && /629.?206.?7938|931.?572.?7466/.test(config.fallbackReply)) {
+  if (!config.fallbackReply || config.fallbackReply !== CORRECT_FALLBACK) {
     config.fallbackReply = CORRECT_FALLBACK;
     await chrome.storage.local.set({ [CONFIG_KEY]: config });
   }
   document.getElementById("agentSecret").value = config.agentSecret || "";
-  document.getElementById("fallbackReply").value = config.fallbackReply || CORRECT_FALLBACK;
+  document.getElementById("fallbackReply").value = config.fallbackReply;
 }
 
 document.getElementById("saveBtn").addEventListener("click", async () => {
