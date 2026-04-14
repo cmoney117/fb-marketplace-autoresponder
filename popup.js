@@ -3,6 +3,7 @@
  */
 
 const CONFIG_KEY = "config";
+const CORRECT_FALLBACK = "Thanks for your interest! We have work trucks and vans available. Check our inventory at usafleetsales.com or call us at 615-756-4629.";
 
 async function load() {
   const status = await chrome.runtime.sendMessage({ type: "GET_STATUS" });
@@ -32,13 +33,15 @@ async function load() {
   document.getElementById("statFailed").textContent = status.stats?.failed ?? 0;
   document.getElementById("statTotal").textContent = status.repliedCount ?? 0;
 
-  // Config fields
+  // Config fields — migrate old phone numbers on load
   const data = await chrome.storage.local.get(CONFIG_KEY);
   const config = data[CONFIG_KEY] || {};
+  if (config.fallbackReply && /629.?206.?7938|931.?572.?7466/.test(config.fallbackReply)) {
+    config.fallbackReply = CORRECT_FALLBACK;
+    await chrome.storage.local.set({ [CONFIG_KEY]: config });
+  }
   document.getElementById("agentSecret").value = config.agentSecret || "";
-  document.getElementById("fallbackReply").value =
-    config.fallbackReply ||
-    "Thanks for your interest! We'll be with you shortly. Call us at (629) 206-7938 for immediate assistance.";
+  document.getElementById("fallbackReply").value = config.fallbackReply || CORRECT_FALLBACK;
 }
 
 document.getElementById("saveBtn").addEventListener("click", async () => {
