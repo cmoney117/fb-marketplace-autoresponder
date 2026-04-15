@@ -10,11 +10,14 @@
 
 const SCAN_INTERVAL_MS = 60000; // Scan every 60 seconds
 const SEEN_KEY = "__ufs_seen_messages__";
-const REPLIED_KEY = "__ufs_replied_threads__"; // Persists across sessions via sessionStorage
 
 let seenMessages = new Set(JSON.parse(sessionStorage.getItem(SEEN_KEY) || "[]"));
-let repliedThreads = new Set(JSON.parse(sessionStorage.getItem(REPLIED_KEY) || "[]"));
 let scanning = false;
+
+// Thread IDs to NEVER auto-reply to (FB system bots)
+const IGNORED_THREAD_IDS = [
+  "389917088531093", // Facebook Marketplace Assistant
+];
 
 // Senders we must NEVER auto-reply to
 const IGNORED_SENDERS = [
@@ -173,9 +176,9 @@ function isCurrentConversationMarketplace() {
 async function processConversation(conv) {
   const { threadId, element } = conv;
 
-  // RULE: Never reply to same thread twice
-  if (repliedThreads.has(threadId)) {
-    log(`Thread ${threadId}: Already replied — skipping.`);
+  // RULE: Never reply to FB system bots
+  if (IGNORED_THREAD_IDS.includes(threadId)) {
+    log(`Thread ${threadId}: Ignored system thread — skipping.`);
     return;
   }
 
@@ -249,12 +252,10 @@ async function processConversation(conv) {
   });
 
   if (response?.ok) {
+    // Track this specific message as seen — prevents double-replying to the same message.
+    // We do NOT block the entire thread so conversations can continue naturally.
     seenMessages.add(messageId);
     sessionStorage.setItem(SEEN_KEY, JSON.stringify([...seenMessages].slice(-500)));
-
-    // Mark this thread as replied — never reply again
-    repliedThreads.add(threadId);
-    sessionStorage.setItem(REPLIED_KEY, JSON.stringify([...repliedThreads].slice(-1000)));
 
     log(`Thread ${threadId}: Replied. sent=${response.result?.sent}`);
   } else {
