@@ -4,7 +4,9 @@
  */
 
 const CRM_URL = "https://usa-fleet-sales-crm.vercel.app/api/fb/generate-reply";
+const FOLLOW_UPS_URL = "https://usa-fleet-sales-crm.vercel.app/api/fb/marketplace-follow-ups";
 const POLL_INTERVAL_MINUTES = 1; // Check every 60 seconds
+const FOLLOW_UP_CHECK_INTERVAL = 15; // Check for follow-ups every 15 minutes
 const REPLIED_KEY = "repliedMessageIds";
 const CONFIG_KEY = "config";
 
@@ -44,18 +46,28 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.alarms.create("pollMarketplace", {
     periodInMinutes: POLL_INTERVAL_MINUTES,
   });
-  log("Extension installed. Polling every", POLL_INTERVAL_MINUTES, "minute(s).");
+  chrome.alarms.create("checkFollowUps", {
+    periodInMinutes: FOLLOW_UP_CHECK_INTERVAL,
+  });
+  log("Extension installed. Polling every", POLL_INTERVAL_MINUTES, "min, follow-ups every", FOLLOW_UP_CHECK_INTERVAL, "min.");
 });
 
 chrome.runtime.onStartup.addListener(() => {
   chrome.alarms.create("pollMarketplace", {
     periodInMinutes: POLL_INTERVAL_MINUTES,
   });
+  chrome.alarms.create("checkFollowUps", {
+    periodInMinutes: FOLLOW_UP_CHECK_INTERVAL,
+  });
 });
 
 // ─── Main Poll Loop ───────────────────────────────────────────────────────────
 
 chrome.alarms.onAlarm.addListener(async (alarm) => {
+  if (alarm.name === "checkFollowUps") {
+    await handleFollowUps();
+    return;
+  }
   if (alarm.name !== "pollMarketplace") return;
 
   const config = await getConfig();
@@ -192,6 +204,124 @@ async function handleNewMessage(data) {
   }
 
   return { sent, reply };
+}
+
+// ─── Follow-Up Engine ───────────────────────────────────────────────────────
+
+async function handleFollowUps() {
+  const config = await getConfig();
+  if (!config.agentSecret || !config.enabled) return;
+
+  log("[FollowUp] Checking CRM for threads needing follow-up...");
+
+  let threads;
+  try {
+    const res = await fetch(FOLLOW_UPS_URL, {
+      headers: { "x-agent-secret": config.agentSecret },
+    });
+    if (!res.ok) {
+      log("[FollowUp] API returned", res.status);
+      return;
+    }
+    const json = await res.json();
+    threads = json.threads || [];
+  } catch (err) {
+    log("[FollowUp] API error:", err?.message);
+    return;
+  }
+
+  if (threads.length === 0) {
+    log("[FollowUp] No threads need follow-up.");
+    return;
+  }
+
+  log(`[FollowUp] ${threads.length} thread(s) need follow-up.`);
+
+  const tabs = await chrome.tabs.query({ url: "https://www.facebook.com/messages/*" });
+  if (tabs.length === 0) {
+    log("[FollowUp] No Messenger tab open — skipping this cycle.");
+    return;
+  }
+
+  for (const thread of threads) {
+    // Generate a contextual follow-up via the AI
+    let reply;
+    try {
+      const res = await fetch(CRM_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-agent-secret": config.agentSecret,
+        },
+        body: JSON.stringify({
+          senderId: thread.messengerThreadId,
+          senderName: thread.contactName,
+          messageText: `[FOLLOW-UP] Customer has not responded. This is follow-up ${thread.followUpCount + 1} of 3.`,
+          listingTitle: null,
+          threadId: thread.messengerThreadId,
+          conversationHistory: thread.conversationHistory,
+        }),
+      });
+
+      if (!res.ok) throw new Error(`API returned ${res.status}`);
+      const json = await res.json();
+      reply = json.reply;
+      if (!reply) throw new Error("Empty follow-up reply");
+    } catch (err) {
+      log(`[FollowUp] Failed to generate for ${thread.contactName}:`, err?.message);
+      continue;
+    }
+
+    // Phone number guardrail
+    reply = enforceApprovedPhones(reply);
+
+    // Send via browser
+    let sent = false;
+    for (const tab of tabs) {
+      try {
+        const results = await chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          func: sendReplyInBrowser,
+          args: [thread.messengerThreadId, reply],
+        });
+        if (results?.[0]?.result?.sent) {
+          sent = true;
+          break;
+        }
+      } catch (err) {
+        log("[FollowUp] Send error:", err?.message);
+      }
+    }
+
+    if (sent) {
+      log(`[FollowUp] Sent follow-up to ${thread.contactName} (attempt ${thread.followUpCount + 1})`);
+      await updateStats({ sent: 1 });
+
+      // Tell CRM the follow-up was sent so it updates the count
+      try {
+        await fetch(CRM_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-agent-secret": config.agentSecret,
+          },
+          body: JSON.stringify({
+            senderId: thread.messengerThreadId,
+            senderName: thread.contactName,
+            messageText: reply,
+            threadId: thread.messengerThreadId,
+            isFollowUp: true,
+            followUpCount: thread.followUpCount + 1,
+          }),
+        });
+      } catch { /* fire and forget */ }
+    } else {
+      log(`[FollowUp] Could not send to ${thread.contactName} — tab not on right conversation.`);
+    }
+
+    // Pause between sends
+    await new Promise((r) => setTimeout(r, 2000));
+  }
 }
 
 // ─── Functions injected into page (must be self-contained) ───────────────────
