@@ -7,6 +7,7 @@ const CRM_URL = "https://usa-fleet-sales-crm.vercel.app/api/fb/generate-reply";
 const FOLLOW_UPS_URL = "https://usa-fleet-sales-crm.vercel.app/api/fb/marketplace-follow-ups";
 const POLL_INTERVAL_MINUTES = 1; // Check every 60 seconds
 const FOLLOW_UP_CHECK_INTERVAL = 15; // Check for follow-ups every 15 minutes
+const REENGAGEMENT_CHECK_INTERVAL = 360; // Check for dormant leads every 6 hours
 const REPLIED_KEY = "repliedMessageIds";
 const CONFIG_KEY = "config";
 
@@ -43,22 +44,16 @@ function enforceApprovedPhones(text) {
 // ─── Startup ─────────────────────────────────────────────────────────────────
 
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.alarms.create("pollMarketplace", {
-    periodInMinutes: POLL_INTERVAL_MINUTES,
-  });
-  chrome.alarms.create("checkFollowUps", {
-    periodInMinutes: FOLLOW_UP_CHECK_INTERVAL,
-  });
-  log("Extension installed. Polling every", POLL_INTERVAL_MINUTES, "min, follow-ups every", FOLLOW_UP_CHECK_INTERVAL, "min.");
+  chrome.alarms.create("pollMarketplace", { periodInMinutes: POLL_INTERVAL_MINUTES });
+  chrome.alarms.create("checkFollowUps", { periodInMinutes: FOLLOW_UP_CHECK_INTERVAL });
+  chrome.alarms.create("checkReengagement", { periodInMinutes: REENGAGEMENT_CHECK_INTERVAL });
+  log("Extension installed. Polling every", POLL_INTERVAL_MINUTES, "min, follow-ups every", FOLLOW_UP_CHECK_INTERVAL, "min, reengagement every", REENGAGEMENT_CHECK_INTERVAL, "min.");
 });
 
 chrome.runtime.onStartup.addListener(() => {
-  chrome.alarms.create("pollMarketplace", {
-    periodInMinutes: POLL_INTERVAL_MINUTES,
-  });
-  chrome.alarms.create("checkFollowUps", {
-    periodInMinutes: FOLLOW_UP_CHECK_INTERVAL,
-  });
+  chrome.alarms.create("pollMarketplace", { periodInMinutes: POLL_INTERVAL_MINUTES });
+  chrome.alarms.create("checkFollowUps", { periodInMinutes: FOLLOW_UP_CHECK_INTERVAL });
+  chrome.alarms.create("checkReengagement", { periodInMinutes: REENGAGEMENT_CHECK_INTERVAL });
 });
 
 // ─── Main Poll Loop ───────────────────────────────────────────────────────────
@@ -66,6 +61,10 @@ chrome.runtime.onStartup.addListener(() => {
 chrome.alarms.onAlarm.addListener(async (alarm) => {
   if (alarm.name === "checkFollowUps") {
     await handleFollowUps();
+    return;
+  }
+  if (alarm.name === "checkReengagement") {
+    await handleFollowUps({ reengagement: true });
     return;
   }
   if (alarm.name !== "pollMarketplace") return;
@@ -208,15 +207,17 @@ async function handleNewMessage(data) {
 
 // ─── Follow-Up Engine ───────────────────────────────────────────────────────
 
-async function handleFollowUps() {
+async function handleFollowUps({ reengagement = false } = {}) {
   const config = await getConfig();
   if (!config.agentSecret || !config.enabled) return;
 
-  log("[FollowUp] Checking CRM for threads needing follow-up...");
+  const label = reengagement ? "[Reengagement]" : "[FollowUp]";
+  log(label, reengagement ? "Checking CRM for dormant leads to re-engage..." : "Checking CRM for threads needing follow-up...");
 
   let threads;
   try {
-    const res = await fetch(FOLLOW_UPS_URL, {
+    const url = reengagement ? `${FOLLOW_UPS_URL}?mode=reengagement` : FOLLOW_UPS_URL;
+    const res = await fetch(url, {
       headers: { "x-agent-secret": config.agentSecret },
     });
     if (!res.ok) {
@@ -226,16 +227,16 @@ async function handleFollowUps() {
     const json = await res.json();
     threads = json.threads || [];
   } catch (err) {
-    log("[FollowUp] API error:", err?.message);
+    log(label, "API error:", err?.message);
     return;
   }
 
   if (threads.length === 0) {
-    log("[FollowUp] No threads need follow-up.");
+    log(label, reengagement ? "No dormant leads to re-engage." : "No threads need follow-up.");
     return;
   }
 
-  log(`[FollowUp] ${threads.length} thread(s) need follow-up.`);
+  log(label, `${threads.length} thread(s) queued.`);
 
   const tabs = await chrome.tabs.query({ url: "https://www.facebook.com/messages/*" });
   if (tabs.length === 0) {
