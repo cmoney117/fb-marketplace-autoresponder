@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>24/7 Emergency Plumber Nashville TN | Burst Pipe & Leak Repair | Hive Home Services</title>
+  <meta name="description" content="24/7 emergency plumber in Nashville, TN. Burst pipes, active leaks, sewer backups, no water — licensed plumber dispatched immediately. Fixed price, no hidden fees." />
+  <meta name="keywords" content="emergency plumber Nashville TN, 24/7 plumber Nashville, burst pipe Nashville, plumber near me Nashville, emergency plumbing Middle Tennessee" />
+  <link rel="canonical" href="https://hivehomeservicestn.com/nashville-emergency-plumber" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="24/7 Emergency Plumber Nashville TN | Hive Home Services" />
+  <meta property="og:description" content="Burst pipe or active leak? We dispatch a licensed plumber 24/7 across Nashville and Middle Tennessee. Fixed price before any work starts." />
+  <meta property="og:url" content="https://hivehomeservicestn.com/nashville-emergency-plumber" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/design-tokens.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Emergency page overrides */
+    .emergency-hero {
+      background: var(--color-dark);
+      padding: clamp(3rem, 8vw, 6rem) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .emergency-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 60% at 30% 50%, rgba(220,38,38,.18) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 80% 30%, rgba(220,38,38,.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .emergency-hero__inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: var(--space-16);
+      align-items: center;
+    }
+    .emergency-hero__title {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      color: #fff;
+      margin-bottom: var(--space-4);
+      line-height: 1.15;
+    }
+    .emergency-hero__title em {
+      font-style: normal;
+      color: var(--color-emergency);
+    }
+    .emergency-hero__subtitle {
+      font-size: var(--font-size-lg);
+      color: #A8A29E;
+      line-height: var(--line-height-relaxed);
+      margin-bottom: var(--space-8);
+      max-width: 50ch;
+    }
+    .emergency-hero__phone {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: var(--font-weight-black);
+      color: #fff;
+      display: inline-block;
+      margin-bottom: var(--space-4);
+      line-height: 1;
+    }
+    .emergency-hero__phone a { color: #fff; }
+    .emergency-hero__note {
+      font-size: var(--font-size-sm);
+      color: #78716C;
+      margin-bottom: var(--space-8);
+    }
+    .emergency-card {
+      background: #1A0808;
+      border: 1px solid rgba(220,38,38,.4);
+      border-radius: var(--radius-2xl);
+      padding: var(--space-8);
+    }
+    .emergency-card__badge {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-6);
+    }
+    .emergency-card__badge span {
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-emergency);
+    }
+    .emergency-card__title {
+      font-size: var(--font-size-xl);
+      color: #fff;
+      margin-bottom: var(--space-6);
+    }
+    .emergency-card__form { display: flex; flex-direction: column; gap: var(--space-4); }
+    .emergency-card__form label {
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      color: #A8A29E;
+      display: block;
+      margin-bottom: var(--space-1);
+    }
+    .emergency-card__form input,
+    .emergency-card__form select,
+    .emergency-card__form textarea {
+      width: 100%;
+      padding: var(--space-3) var(--space-4);
+      background: #0C0302;
+      border: 1px solid rgba(220,38,38,.3);
+      border-radius: var(--radius-md);
+      color: #fff;
+      font-family: inherit;
+      font-size: var(--font-size-base);
+      transition: border-color var(--transition-fast);
+    }
+    .emergency-card__form input:focus,
+    .emergency-card__form select:focus,
+    .emergency-card__form textarea:focus {
+      outline: none;
+      border-color: var(--color-emergency);
+    }
+    .emergency-card__form select option { background: #1A0808; }
+    .emergency-card__form textarea { min-height: 80px; resize: vertical; }
+    @media (max-width: 1024px) {
+      .emergency-hero__inner { grid-template-columns: 1fr; }
+      .emergency-card { max-width: 540px; }
+    }
+
+    .issues-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: var(--space-4);
+    }
+    .issue-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-5);
+      background: var(--color-light);
+      border: 1px solid var(--color-light-3);
+      border-radius: var(--radius-xl);
+    }
+    .issue-item__icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .issue-item__title {
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-1);
+    }
+    .issue-item__desc {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      line-height: var(--line-height-relaxed);
+    }
+
+    .response-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-6);
+      text-align: center;
+    }
+    .timeline-step {
+      position: relative;
+    }
+    .timeline-step__time {
+      font-size: var(--font-size-3xl);
+      font-weight: var(--font-weight-black);
+      color: var(--color-emergency);
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+    .timeline-step__label {
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-1);
+    }
+    .timeline-step__desc {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-muted);
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      max-width: 760px;
+      margin-inline: auto;
+    }
+    .faq-item {
+      border: 1px solid var(--color-light-3);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .faq-item__question {
+      width: 100%;
+      text-align: left;
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-bold);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-4);
+      background: var(--color-light);
+      transition: background var(--transition-fast);
+    }
+    .faq-item__question:hover { background: var(--color-light-2); }
+    .faq-item__question[aria-expanded="true"] { background: var(--color-light-2); }
+    .faq-item__chevron { font-size: 18px; flex-shrink: 0; transition: transform var(--transition-fast); }
+    .faq-item__question[aria-expanded="true"] .faq-item__chevron { transform: rotate(180deg); }
+    .faq-item__answer {
+      padding: 0 var(--space-6) var(--space-5);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      line-height: var(--line-height-relaxed);
+      display: none;
+      background: var(--color-light-2);
+    }
+    .faq-item__answer.open { display: block; }
+
+    /* Sticky phone bar on mobile */
+    .sticky-phone {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: var(--z-sticky);
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-emergency);
+      text-align: center;
+    }
+    .sticky-phone a {
+      color: #fff;
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-black);
+    }
+    @media (max-width: 768px) { .sticky-phone { display: block; } }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "Hive Home Services — Emergency Plumbing",
+    "url": "https://hivehomeservicestn.com/nashville-emergency-plumber",
+    "telephone": "(615) 000-0000",
+    "openingHours": "Mo-Su 00:00-24:00",
+    "description": "24/7 emergency plumber serving Nashville and Middle Tennessee. Burst pipes, leaks, sewer backups. Licensed, insured, fixed price.",
+    "areaServed": [
+      "Nashville, TN","Brentwood, TN","Franklin, TN","Mt. Juliet, TN",
+      "Hendersonville, TN","Murfreesboro, TN","Clarksville, TN","Gallatin, TN","Goodlettsville, TN"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Emergency Bar -->
+  <div class="emergency-bar" role="banner">
+    🚨 Active leak or burst pipe? Call now — we dispatch immediately:
+    <a href="tel:6150000000">(615) 000-0000</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="Hive Home Services home">
+          <div class="nav__logo-icon" aria-hidden="true">🐝</div>
+          Hive Home Services
+        </a>
+        <div class="nav__links" role="list">
+          <a href="index.html#services" role="listitem">All Services</a>
+          <a href="index.html#pricing" role="listitem">Pricing</a>
+          <a href="index.html#reviews" role="listitem">Reviews</a>
+          <a href="index.html#areas" role="listitem">Service Areas</a>
+        </div>
+        <div class="nav__cta">
+          <a href="tel:6150000000" class="nav__phone" aria-label="Emergency phone">(615) 000-0000</a>
+          <a href="tel:6150000000" class="btn btn--emergency hide-mobile">🚨 Call Now — 24/7</a>
+          <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Emergency Hero -->
+  <section class="emergency-hero" aria-labelledby="page-title">
+    <div class="container">
+      <div class="emergency-hero__inner">
+
+        <!-- Left: Copy -->
+        <div>
+          <div style="margin-bottom:var(--space-4);">
+            <span class="badge badge--red">24/7 Emergency Response</span>
+          </div>
+          <h1 class="emergency-hero__title" id="page-title">
+            Nashville's <em>24/7</em><br />Emergency Plumber
+          </h1>
+          <p class="emergency-hero__subtitle">
+            Burst pipe, active leak, no water, sewer backup — a licensed, insured Tennessee plumber is dispatched the moment you call. Fixed price before any work begins.
+          </p>
+
+          <div class="emergency-hero__phone">
+            <a href="tel:6150000000">(615) 000-0000</a>
+          </div>
+          <p class="emergency-hero__note">Answered live 24 hours a day · Plumber dispatched immediately · Fixed price guaranteed</p>
+
+          <div class="hero__trust">
+            <span class="hero__trust-item">
+              <span class="hero__trust-icon" aria-hidden="true">✓</span> Licensed &amp; Insured
+            </span>
+            <span class="hero__trust-item">
+              <span class="hero__trust-icon" aria-hidden="true">✓</span> Fixed Price
+            </span>
+            <span class="hero__trust-item">
+              <span class="hero__trust-icon" aria-hidden="true">✓</span> Dispatched Immediately
+            </span>
+            <span class="hero__trust-item">
+              <span class="hero__trust-icon" aria-hidden="true">✓</span> Satisfaction Guaranteed
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: Callback Form -->
+        <div class="emergency-card" role="complementary" aria-label="Emergency callback form">
+          <div class="emergency-card__badge">
+            <span>🚨</span>
+            <span>Emergency Dispatch — Available Now</span>
+          </div>
+          <h2 class="emergency-card__title">Request Immediate Dispatch</h2>
+          <form class="emergency-card__form" action="/book" method="GET" aria-label="Emergency dispatch form">
+            <input type="hidden" name="service" value="emergency-plumbing" />
+            <div>
+              <label for="e-name">Your Name</label>
+              <input type="text" id="e-name" name="name" placeholder="Jane Smith" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="e-phone">Phone Number <span style="color:var(--color-emergency);">*</span></label>
+              <input type="tel" id="e-phone" name="phone" placeholder="(615) 000-0000" autocomplete="tel" required />
+            </div>
+            <div>
+              <label for="e-address">Address</label>
+              <input type="text" id="e-address" name="address" placeholder="123 Main St, Nashville, TN" autocomplete="street-address" />
+            </div>
+            <div>
+              <label for="e-issue">Emergency Type</label>
+              <select id="e-issue" name="issue" required>
+                <option value="" disabled selected>Select your emergency…</option>
+                <option value="burst-pipe">Burst / broken pipe</option>
+                <option value="active-leak">Active water leak</option>
+                <option value="no-water">No water / water shut off</option>
+                <option value="sewer-backup">Sewer / drain backup</option>
+                <option value="water-heater">Water heater failure</option>
+                <option value="flooding">Flooding / water damage</option>
+                <option value="other">Other emergency</option>
+              </select>
+            </div>
+            <div>
+              <label for="e-desc">Describe the situation</label>
+              <textarea id="e-desc" name="description" placeholder="Briefly describe what's happening so we can send the right equipment…"></textarea>
+            </div>
+            <button type="submit" class="btn btn--emergency btn--lg" style="justify-content:center;width:100%;">
+              🚨 Request Emergency Dispatch
+            </button>
+            <p style="font-size:var(--font-size-xs);color:#78716C;text-align:center;">
+              Or call directly: <a href="tel:6150000000" style="color:var(--color-emergency);font-weight:700;">(615) 000-0000</a>
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar" role="complementary">
+    <div class="container">
+      <div class="trust-bar__inner">
+        <div class="trust-bar__item">
+          <span class="trust-bar__icon" aria-hidden="true">📞</span> Answered Live 24/7
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__icon" aria-hidden="true">⚡</span> Immediate Dispatch
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__icon" aria-hidden="true">🔒</span> Licensed &amp; Insured
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__icon" aria-hidden="true">💰</span> Fixed Price — No Surprises
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__icon" aria-hidden="true">✅</span> Satisfaction Guaranteed
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Emergency Issues We Handle -->
+  <section class="section section--light" aria-labelledby="issues-title">
+    <div class="container">
+      <header class="section__header section__header--center">
+        <span class="section-label">We Handle It All</span>
+        <h2 class="section-title" id="issues-title">Every Plumbing Emergency, 24/7</h2>
+        <p class="section-subtitle">
+          No matter what's happening, call us. We dispatch a licensed Tennessee plumber immediately — day or night.
+        </p>
+      </header>
+
+      <div class="issues-grid" role="list">
+        <div class="issue-item" role="listitem">
+          <span class="issue-item__icon" aria-hidden="true">💥</span>
+          <div>
+            <h3 class="issue-item__title">Burst or Broken Pipe</h3>
+            <p class="issue-item__desc">Pipe burst from freezing, age, or damage — we stop the water and make the repair fast.</p>
+          </div>
+        </div>
+        <div class="issue-item" role="listitem">
+          <span class="issue-item__icon" aria-hidden="true">💧</span>
+          <div>
+            <h3 class="issue-item__title">Active Water Leak</h3>
+            <p class="issue-item__desc">Leak under the sink, behind a wall, or under the slab — we locate and fix it immediately.</p>
+          </div>
+        </div>
+        <div class="issue-item" role="listitem">
+          <span class="issue-item__icon" aria-hidden="true">🚫</span>
+          <div>
+            <h3 class="issue-item__title">No Water / Shut-Off</h3>
+            <p class="issue-item__desc">Suddenly no water pressure or flow? We diagnose and restore service the same visit.</p>
+          </div>
+        </div>
+        <div class="issue-item" role="listitem">
+          <span class="issue-item__icon" aria-hidden="true">🪠</span>
+          <div>
+            <h3 class="issue-item__title">Sewer or Drain Backup</h3>
+            <p class="issue-item__desc">Sewage backing up into the house is a health hazard — we respond immediately and clear it.</p>
+          </div>
+        </div>
+        <div class="issue-item" role="listitem">
+          <span class="issue-item__icon" aria-hidden="true">🔥</span>
+          <div>
+            <h3 class="issue-item__title">Water Heater Failure</h3>
+            <p class="issue-item__desc">No hot water, leaking tank, or unusual noises — we repair or replace on the spot.</p>
+          </div>
+        </div>
+        <div class="issue-item" role="listitem">
+          <span class="issue-item__icon" aria-hidden="true">🌊</span>
+          <div>
+            <h3 class="issue-item__title">Flooding / Water Damage</h3>
+            <p class="issue-item__desc">We stop the source and help you begin mitigation to prevent further structural damage.</p>
+          </div>
+        </div>
+        <div class="issue-item" role="listitem">
+          <span class="issue-item__icon" aria-hidden="true">❄️</span>
+          <div>
+            <h3 class="issue-item__title">Frozen Pipes</h3>
+            <p class="issue-item__desc">Especially dangerous in winter — we thaw safely and repair before they burst further.</p>
+          </div>
+        </div>
+        <div class="issue-item" role="listitem">
+          <span class="issue-item__icon" aria-hidden="true">🚿</span>
+          <div>
+            <h3 class="issue-item__title">Overflowing Toilet</h3>
+            <p class="issue-item__desc">Blocked or overflowing toilet causing flooding — we unblock and sanitize immediately.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Response Timeline -->
+  <section class="section section--alt" aria-labelledby="timeline-title">
+    <div class="container">
+      <header class="section__header section__header--center">
+        <span class="section-label">How Fast We Move</span>
+        <h2 class="section-title" id="timeline-title">From Your Call to Problem Solved</h2>
+      </header>
+
+      <div class="response-timeline" role="list">
+        <div class="timeline-step" role="listitem">
+          <div class="timeline-step__time">&lt; 1 min</div>
+          <div class="timeline-step__label">Live Answer</div>
+          <div class="timeline-step__desc">Real person picks up immediately — no voicemail, no hold music.</div>
+        </div>
+        <div class="timeline-step" role="listitem">
+          <div class="timeline-step__time">&lt; 5 min</div>
+          <div class="timeline-step__label">Fixed Price Quoted</div>
+          <div class="timeline-step__desc">We give you your exact price over the phone before dispatching.</div>
+        </div>
+        <div class="timeline-step" role="listitem">
+          <div class="timeline-step__time">Immediate</div>
+          <div class="timeline-step__label">Plumber Dispatched</div>
+          <div class="timeline-step__desc">Nearest licensed plumber is sent to your address right away.</div>
+        </div>
+        <div class="timeline-step" role="listitem">
+          <div class="timeline-step__time">Same Visit</div>
+          <div class="timeline-step__label">Problem Fixed</div>
+          <div class="timeline-step__desc">We come equipped to handle most emergencies in a single visit.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="section section--light" aria-labelledby="areas-title">
+    <div class="container">
+      <header class="section__header section__header--center">
+        <span class="section-label">Where We Respond</span>
+        <h2 class="section-title" id="areas-title">Emergency Plumbing Across Middle Tennessee</h2>
+        <p class="section-subtitle">
+          We have plumbers positioned across the greater Nashville area so we can reach you fast — wherever you are.
+        </p>
+      </header>
+
+      <div class="areas-grid" role="list" style="justify-content:center;">
+        <a href="/areas/nashville" class="area-chip" role="listitem">Nashville</a>
+        <a href="/areas/brentwood" class="area-chip" role="listitem">Brentwood</a>
+        <a href="/areas/franklin" class="area-chip" role="listitem">Franklin</a>
+        <a href="/areas/mt-juliet" class="area-chip" role="listitem">Mt. Juliet</a>
+        <a href="/areas/hendersonville" class="area-chip" role="listitem">Hendersonville</a>
+        <a href="/areas/murfreesboro" class="area-chip" role="listitem">Murfreesboro</a>
+        <a href="/clarksville-plumbing" class="area-chip" role="listitem">Clarksville</a>
+        <a href="/areas/gallatin" class="area-chip" role="listitem">Gallatin</a>
+        <a href="/areas/goodlettsville" class="area-chip" role="listitem">Goodlettsville</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section section--alt" aria-labelledby="reviews-title">
+    <div class="container">
+      <header class="section__header section__header--center">
+        <span class="section-label">What Customers Say</span>
+        <h2 class="section-title" id="reviews-title">Real Emergency Stories</h2>
+      </header>
+
+      <div class="reviews-grid" role="list">
+        <article class="review-card" role="listitem">
+          <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-card__text">
+            "Pipe burst in my kitchen at 2 AM on a Tuesday. Called Hive, they answered immediately, gave me a fixed price right on the phone, and had a plumber at my door in under an hour. Absolute lifesavers."
+          </p>
+          <div class="review-card__author">Michael T.</div>
+          <div class="review-card__location">Nashville, TN</div>
+        </article>
+        <article class="review-card" role="listitem">
+          <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-card__text">
+            "Sewer backup on a Sunday afternoon — not something you want to deal with. Hive picked up right away, quoted me a fixed price, and sent someone out within the hour. Problem solved, price matched exactly."
+          </p>
+          <div class="review-card__author">Christine B.</div>
+          <div class="review-card__location">Brentwood, TN</div>
+        </article>
+        <article class="review-card" role="listitem">
+          <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-card__text">
+            "Water heater gave out on a Friday night. I was dreading the weekend price-gouging. Hive quoted me the same fixed price as if it were a Tuesday morning. Replaced it that same night. Unreal service."
+          </p>
+          <div class="review-card__author">Derek W.</div>
+          <div class="review-card__location">Franklin, TN</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--light" aria-labelledby="faq-title">
+    <div class="container">
+      <header class="section__header section__header--center">
+        <span class="section-label">Common Questions</span>
+        <h2 class="section-title" id="faq-title">Emergency Plumbing FAQ</h2>
+      </header>
+
+      <div class="faq-list" role="list">
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-1">
+            Do you really answer calls at 2 AM?
+            <span class="faq-item__chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-item__answer" id="faq-1" role="region">
+            Yes — always. A real person answers every call 24 hours a day, 7 days a week, 365 days a year. No voicemail, no answering service. When you call during an emergency, you get a human immediately.
+          </div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-2">
+            Do you charge extra for night or weekend calls?
+            <span class="faq-item__chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-item__answer" id="faq-2" role="region">
+            No. Our fixed pricing doesn't change based on the time of day or day of the week. The price you're quoted at 2 AM Saturday is the same as a Tuesday at 10 AM. No emergency surcharges, no weekend fees.
+          </div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-3">
+            How quickly can you get to me?
+            <span class="faq-item__chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-item__answer" id="faq-3" role="region">
+            We have plumbers positioned across the Nashville metro. Response times vary by location but we typically arrive within 45–90 minutes. We'll give you an estimated arrival when you call.
+          </div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-4">
+            What's the first thing I should do with a burst pipe?
+            <span class="faq-item__chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-item__answer" id="faq-4" role="region">
+            Immediately shut off the main water supply to your home — usually at the main shutoff valve near where the water line enters your house. Then call us. Don't wait for the flooding to get worse. We'll walk you through anything over the phone while we dispatch.
+          </div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-5">
+            Are your plumbers actually licensed in Tennessee?
+            <span class="faq-item__chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-item__answer" id="faq-5" role="region">
+            Yes. Every plumber we dispatch holds a valid Tennessee plumbing license and carries full liability insurance. We verify credentials before any pro joins our network. You can ask for their license number on arrival.
+          </div>
+        </div>
+        <div class="faq-item" role="listitem">
+          <button class="faq-item__question" aria-expanded="false" aria-controls="faq-6">
+            What if the final cost is more than the quote?
+            <span class="faq-item__chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-item__answer" id="faq-6" role="region">
+            It won't be. Fixed price means fixed price. If the scope of work changes significantly after the plumber arrives (e.g., hidden damage discovered), we'll tell you before touching anything new and get your approval. The original quoted work never goes over.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Emergency CTA -->
+  <section class="cta-section" aria-labelledby="final-cta-title">
+    <div class="container">
+      <h2 class="cta-section__title" id="final-cta-title">🚨 Don't Wait — Every Minute Costs More</h2>
+      <p class="cta-section__subtitle">
+        Water damage compounds fast. A licensed plumber dispatched now can save thousands in future repairs.
+      </p>
+      <div class="cta-section__actions">
+        <a href="tel:6150000000" class="btn btn--emergency btn--lg">📞 Call (615) 000-0000 Now</a>
+        <a href="index.html" class="btn btn--ghost btn--lg">View All Services</a>
+      </div>
+      <p style="color:#64748B;font-size:var(--font-size-sm);margin-top:var(--space-6);">
+        Answered live 24/7 · Fixed price before work starts · Licensed Tennessee plumbers
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-logo">
+            <span aria-hidden="true">🐝</span> Hive Home Services
+          </div>
+          <p class="footer__tagline">
+            Fixed-price home services across Nashville and Middle Tennessee.
+            Licensed, insured, and satisfaction guaranteed on every job.
+          </p>
+          <a href="tel:6150000000" class="btn btn--emergency" style="display:inline-flex;">(615) 000-0000</a>
+        </div>
+        <div>
+          <p class="footer__heading">Emergency Services</p>
+          <nav class="footer__links" aria-label="Emergency service links">
+            <a href="emergency-plumber.html" style="color:var(--color-emergency);">Emergency Plumbing 24/7</a>
+            <a href="/plumbing">Plumbing Repair</a>
+            <a href="/clarksville-plumbing">Clarksville Plumbing</a>
+          </nav>
+          <p class="footer__heading" style="margin-top:var(--space-6);">All Services</p>
+          <nav class="footer__links" aria-label="All service links">
+            <a href="/painting">Painting</a>
+            <a href="/pressure-washing">Pressure Washing</a>
+            <a href="/lawn-mowing">Lawn Mowing</a>
+            <a href="/gutter-cleaning">Gutter Cleaning</a>
+            <a href="/house-cleaning">House Cleaning</a>
+            <a href="/junk-removal">Junk Removal</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__heading">Service Areas</p>
+          <nav class="footer__links" aria-label="Area links">
+            <a href="/areas/nashville">Nashville</a>
+            <a href="/areas/brentwood">Brentwood</a>
+            <a href="/areas/franklin">Franklin</a>
+            <a href="/areas/mt-juliet">Mt. Juliet</a>
+            <a href="/areas/hendersonville">Hendersonville</a>
+            <a href="/areas/murfreesboro">Murfreesboro</a>
+            <a href="/clarksville-plumbing">Clarksville</a>
+            <a href="/areas/gallatin">Gallatin</a>
+            <a href="/areas/goodlettsville">Goodlettsville</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__heading">Hours</p>
+          <div class="footer__links" style="color:#A8A29E;font-size:var(--font-size-sm);">
+            <span>Mon–Fri: 7am – 8pm</span>
+            <span>Sat–Sun: 8am – 6pm</span>
+            <span style="color:var(--color-emergency);font-weight:700;">Emergency Plumbing: 24/7</span>
+          </div>
+          <p class="footer__heading" style="margin-top:var(--space-6);">Company</p>
+          <nav class="footer__links" aria-label="Company links">
+            <a href="index.html">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/book">Get a Quote</a>
+            <a href="/contact">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> Hive Home Services. All rights reserved. Nashville, TN</span>
+        <div class="footer__legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile phone bar -->
+  <div class="sticky-phone" role="complementary" aria-label="Emergency call button">
+    <a href="tel:6150000000">🚨 Emergency? Tap to Call (615) 000-0000</a>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.querySelector('.nav__links');
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        const open = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!open));
+        if (!open) {
+          Object.assign(navLinks.style, {
+            display:'flex', flexDirection:'column', position:'absolute',
+            top:'64px', left:'0', right:'0', background:'#1C1917',
+            padding:'16px 24px', gap:'16px', borderBottom:'1px solid #44403C'
+          });
+        } else {
+          navLinks.removeAttribute('style');
+        }
+      });
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item__question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        const answer = document.getElementById(btn.getAttribute('aria-controls'));
+        btn.setAttribute('aria-expanded', String(!expanded));
+        answer.classList.toggle('open', !expanded);
+      });
+    });
+
+    // Phone format
+    const phoneInput = document.getElementById('e-phone');
+    if (phoneInput) {
+      phoneInput.addEventListener('input', e => {
+        let v = e.target.value.replace(/\D/g, '').slice(0, 10);
+        if (v.length >= 6) v = `(${v.slice(0,3)}) ${v.slice(3,6)}-${v.slice(6)}`;
+        else if (v.length >= 3) v = `(${v.slice(0,3)}) ${v.slice(3)}`;
+        e.target.value = v;
+      });
+    }
+  </script>
+</body>
+</html>

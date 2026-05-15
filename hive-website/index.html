@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hive Home Services | Nashville Home Services | Fixed Prices, Licensed Pros</title>
+  <meta name="description" content="Hive Home Services offers fixed-price plumbing, painting, pressure washing, lawn care, and more across Nashville and Middle Tennessee. Licensed, insured, and 5-minute response." />
+  <meta name="keywords" content="Nashville home services, plumber Nashville TN, painting Nashville, pressure washing Nashville, home repair Nashville, fixed price home services" />
+  <link rel="canonical" href="https://hivehomeservicestn.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hive Home Services | Nashville Home Services | Fixed Prices" />
+  <meta property="og:description" content="Fixed-price home services across Nashville and Middle Tennessee. Plumbing, painting, pressure washing & more. Licensed, insured, satisfaction guaranteed." />
+  <meta property="og:url" content="https://hivehomeservicestn.com/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/design-tokens.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Page-specific overrides */
+    .hero__form textarea { min-height: 80px; resize: vertical; }
+    .guarantee-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-8);
+    }
+    .guarantee-item {
+      text-align: center;
+      padding: var(--space-6);
+      background: var(--color-light-2);
+      border-radius: var(--radius-xl);
+    }
+    .guarantee-item__icon { font-size: 2rem; margin-bottom: var(--space-3); }
+    .guarantee-item__title {
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-2);
+    }
+    .guarantee-item__desc {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      line-height: var(--line-height-relaxed);
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Hive Home Services",
+    "url": "https://hivehomeservicestn.com",
+    "telephone": "(615) 000-0000",
+    "description": "Fixed-price home services across Nashville and Middle Tennessee. Plumbing, painting, pressure washing, lawn care and more.",
+    "areaServed": [
+      "Nashville, TN", "Brentwood, TN", "Franklin, TN", "Mt. Juliet, TN",
+      "Hendersonville, TN", "Murfreesboro, TN", "Clarksville, TN",
+      "Gallatin, TN", "Goodlettsville, TN"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Home Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plumbing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Plumbing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Painting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pressure Washing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lawn Mowing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gutter Cleaning" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "House Cleaning" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Junk Removal" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Masonry" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Window Tinting" } }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Emergency Bar -->
+  <div class="emergency-bar" role="banner">
+    🚨 Burst pipe or active leak? We respond 24/7 —
+    <a href="tel:6150000000">Call now: (615) 000-0000</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo" aria-label="Hive Home Services home">
+          <div class="nav__logo-icon" aria-hidden="true">🐝</div>
+          Hive Home Services
+        </a>
+
+        <div class="nav__links" role="list">
+          <a href="#services" role="listitem">Services</a>
+          <a href="#how-it-works" role="listitem">How It Works</a>
+          <a href="#pricing" role="listitem">Pricing</a>
+          <a href="#reviews" role="listitem">Reviews</a>
+          <a href="#areas" role="listitem">Service Areas</a>
+        </div>
+
+        <div class="nav__cta">
+          <a href="tel:6150000000" class="nav__phone" aria-label="Call us">(615) 000-0000</a>
+          <a href="/book" class="btn btn--primary hide-mobile">Get a Free Quote</a>
+          <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero__inner">
+
+        <!-- Left: Copy -->
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <span class="badge badge--amber">Nashville's #1 Home Services</span>
+          </div>
+          <h1 class="hero__title" id="hero-title">
+            Fixed Prices.<br />
+            <em>Licensed Pros.</em><br />
+            No Surprises.
+          </h1>
+          <p class="hero__subtitle">
+            Plumbing, painting, pressure washing &amp; more — all with upfront fixed pricing.
+            We quote before we start, and the price never changes.
+          </p>
+          <div class="hero__actions">
+            <a href="/book" class="btn btn--primary btn--lg">Get a Free Quote →</a>
+            <a href="emergency-plumber.html" class="btn btn--emergency btn--lg">🚨 24/7 Emergency</a>
+          </div>
+          <div class="hero__trust">
+            <span class="hero__trust-item">
+              <span class="hero__trust-icon" aria-hidden="true">✓</span> Licensed &amp; Insured
+            </span>
+            <span class="hero__trust-item">
+              <span class="hero__trust-icon" aria-hidden="true">✓</span> 5-Min Response
+            </span>
+            <span class="hero__trust-item">
+              <span class="hero__trust-icon" aria-hidden="true">✓</span> Satisfaction Guaranteed
+            </span>
+            <span class="hero__trust-item">
+              <span class="hero__trust-icon" aria-hidden="true">✓</span> No Hourly Rates
+            </span>
+          </div>
+        </div>
+
+        <!-- Right: Quick Quote Form -->
+        <div class="hero__card" role="complementary" aria-label="Quick quote form">
+          <h2 class="hero__card-title">Get Your Free Fixed-Price Quote</h2>
+          <form class="hero__form" action="/book" method="GET" aria-label="Quote request form">
+            <div>
+              <label for="hero-name">Your Name</label>
+              <input type="text" id="hero-name" name="name" placeholder="Jane Smith" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="hero-phone">Phone Number</label>
+              <input type="tel" id="hero-phone" name="phone" placeholder="(615) 000-0000" autocomplete="tel" required />
+            </div>
+            <div>
+              <label for="hero-service">Service Needed</label>
+              <select id="hero-service" name="service" required>
+                <option value="" disabled selected>Select a service…</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="emergency-plumbing">Emergency Plumbing (24/7)</option>
+                <option value="painting">Painting</option>
+                <option value="pressure-washing">Pressure Washing</option>
+                <option value="lawn-mowing">Lawn Mowing</option>
+                <option value="gutter-cleaning">Gutter Cleaning</option>
+                <option value="house-cleaning">House Cleaning</option>
+                <option value="junk-removal">Junk Removal</option>
+                <option value="masonry">Masonry</option>
+                <option value="window-tinting">Window Tinting</option>
+              </select>
+            </div>
+            <div>
+              <label for="hero-message">Brief Description</label>
+              <textarea id="hero-message" name="message" placeholder="Tell us what you need…"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg" style="justify-content:center;">
+              Get My Free Quote →
+            </button>
+            <p style="font-size:var(--font-size-xs);color:#A8A29E;text-align:center;margin-top:var(--space-2);">
+              We respond within 5 minutes during business hours. No obligation.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar" role="complementary" aria-label="Trust indicators">
+    <div class="container">
+      <div class="trust-bar__inner">
+        <div class="trust-bar__item">
+          <span class="trust-bar__icon" aria-hidden="true">🔒</span>
+          Licensed &amp; Insured
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__icon" aria-hidden="true">💰</span>
+          Fixed Upfront Pricing
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__icon" aria-hidden="true">⚡</span>
+          5-Minute Response
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__icon" aria-hidden="true">⭐</span>
+          5-Star Rated
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__icon" aria-hidden="true">✅</span>
+          Satisfaction Guaranteed
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__icon" aria-hidden="true">🚨</span>
+          24/7 Emergency
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="section section--light" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <header class="section__header section__header--center">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title" id="services-title">Every Service. One Fixed Price.</h2>
+        <p class="section-subtitle">
+          No hourly rates, no hidden fees. We quote every job upfront — the price you see is the price you pay.
+        </p>
+      </header>
+
+      <div class="services-grid">
+
+        <div class="service-card service-card--emergency">
+          <div class="service-card__icon service-card__icon--red" aria-hidden="true">🚨</div>
+          <h3 class="service-card__name">Emergency Plumbing</h3>
+          <p class="service-card__desc">
+            Burst pipes, active leaks, no water, sewer backups — we dispatch a licensed plumber 24 hours a day, 7 days a week.
+          </p>
+          <a href="emergency-plumber.html" class="service-card__link" style="color:var(--color-emergency);">
+            Learn more →
+          </a>
+        </div>
+
+        <div class="service-card service-card--featured">
+          <div class="service-card__icon service-card__icon--amber" aria-hidden="true">🔧</div>
+          <h3 class="service-card__name">Plumbing</h3>
+          <p class="service-card__desc">
+            Leaky faucets, water heaters, drain clogs, fixture installations, and full re-pipes. Licensed Tennessee plumbers.
+          </p>
+          <a href="/plumbing" class="service-card__link">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon service-card__icon--blue" aria-hidden="true">🖌️</div>
+          <h3 class="service-card__name">Painting</h3>
+          <p class="service-card__desc">
+            Interior &amp; exterior painting, deck and fence staining. Fixed price per room or per project — no hourly.
+          </p>
+          <a href="/painting" class="service-card__link">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon service-card__icon--blue" aria-hidden="true">💦</div>
+          <h3 class="service-card__name">Pressure Washing</h3>
+          <p class="service-card__desc">
+            Driveways, patios, siding, decks, and fences blasted clean. Same-day availability, fixed price by surface.
+          </p>
+          <a href="/pressure-washing" class="service-card__link">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon service-card__icon--green" aria-hidden="true">🌿</div>
+          <h3 class="service-card__name">Lawn Mowing</h3>
+          <p class="service-card__desc">
+            Weekly and bi-weekly mowing plans with edging and cleanup included. Fixed price by lot size.
+          </p>
+          <a href="/lawn-mowing" class="service-card__link">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon service-card__icon--amber" aria-hidden="true">🍂</div>
+          <h3 class="service-card__name">Gutter Cleaning</h3>
+          <p class="service-card__desc">
+            Full gutter flush and downspout clear-out. Prevent water damage before the next storm. Fixed price by linear foot.
+          </p>
+          <a href="/gutter-cleaning" class="service-card__link">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon service-card__icon--green" aria-hidden="true">🏠</div>
+          <h3 class="service-card__name">House Cleaning</h3>
+          <p class="service-card__desc">
+            Standard, deep clean, and move-in/move-out packages. Trusted, background-checked cleaners. Fixed price by bedroom.
+          </p>
+          <a href="/house-cleaning" class="service-card__link">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon service-card__icon--purple" aria-hidden="true">🗑️</div>
+          <h3 class="service-card__name">Junk Removal</h3>
+          <p class="service-card__desc">
+            Furniture, appliances, yard waste, renovation debris — we haul it all. Same-day pickup available. Fixed price by load.
+          </p>
+          <a href="/junk-removal" class="service-card__link">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon service-card__icon--amber" aria-hidden="true">🧱</div>
+          <h3 class="service-card__name">Masonry</h3>
+          <p class="service-card__desc">
+            Brick repair, retaining walls, pavers, patios, and tuck pointing. Quality stonework with fixed project pricing.
+          </p>
+          <a href="/masonry" class="service-card__link">Learn more →</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon service-card__icon--blue" aria-hidden="true">🪟</div>
+          <h3 class="service-card__name">Window Tinting</h3>
+          <p class="service-card__desc">
+            Residential window film for UV protection, heat reduction, and privacy. Fixed price per pane or whole-home packages.
+          </p>
+          <a href="/window-tinting" class="service-card__link">Learn more →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section section--alt" id="how-it-works" aria-labelledby="how-title">
+    <div class="container">
+      <header class="section__header section__header--center">
+        <span class="section-label">Simple Process</span>
+        <h2 class="section-title" id="how-title">Booked in Minutes, Fixed Price Guaranteed</h2>
+        <p class="section-subtitle">No back-and-forth. No waiting on estimates. Your price is locked in before we show up.</p>
+      </header>
+
+      <div class="steps" role="list">
+        <div class="step" role="listitem">
+          <h3 class="step__title">Request a Quote</h3>
+          <p class="step__desc">Call, text, or fill out the form. Tell us what you need — we respond in under 5 minutes during business hours.</p>
+        </div>
+        <div class="step" role="listitem">
+          <h3 class="step__title">Get Your Fixed Price</h3>
+          <p class="step__desc">We give you a single upfront price — no hourly rates, no hidden fees. The quote you get is the final number.</p>
+        </div>
+        <div class="step" role="listitem">
+          <h3 class="step__title">We Show Up &amp; Get It Done</h3>
+          <p class="step__desc">Your licensed, insured pro arrives on time and completes the job to our satisfaction guarantee.</p>
+        </div>
+        <div class="step" role="listitem">
+          <h3 class="step__title">Pay Only What Was Quoted</h3>
+          <p class="step__desc">You pay the price agreed on upfront — nothing more. If you're not satisfied, we make it right.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Snapshot -->
+  <section class="section section--light" id="pricing" aria-labelledby="pricing-title">
+    <div class="container">
+      <header class="section__header section__header--center">
+        <span class="section-label">Transparent Pricing</span>
+        <h2 class="section-title" id="pricing-title">Sample Fixed Prices</h2>
+        <p class="section-subtitle">
+          These are real starting prices — no hidden fees, no hourly rates.
+          Your exact quote depends on scope; call or fill out the form to lock yours in.
+        </p>
+      </header>
+
+      <div class="pricing-grid" role="list">
+        <div class="price-item" role="listitem">
+          <span class="price-item__name">Leaky Faucet Repair</span>
+          <span class="price-item__price">from $89</span>
+        </div>
+        <div class="price-item" role="listitem">
+          <span class="price-item__name">Water Heater Replacement</span>
+          <span class="price-item__price">from $649</span>
+        </div>
+        <div class="price-item" role="listitem">
+          <span class="price-item__name">Interior Room Paint (avg. room)</span>
+          <span class="price-item__price">from $249</span>
+        </div>
+        <div class="price-item" role="listitem">
+          <span class="price-item__name">Driveway Pressure Wash</span>
+          <span class="price-item__price">from $99</span>
+        </div>
+        <div class="price-item" role="listitem">
+          <span class="price-item__name">Lawn Mow + Edge (avg. lot)</span>
+          <span class="price-item__price">from $45</span>
+        </div>
+        <div class="price-item" role="listitem">
+          <span class="price-item__name">Gutter Clean (single story)</span>
+          <span class="price-item__price">from $129</span>
+        </div>
+        <div class="price-item" role="listitem">
+          <span class="price-item__name">Standard House Clean (3bd)</span>
+          <span class="price-item__price">from $149</span>
+        </div>
+        <div class="price-item" role="listitem">
+          <span class="price-item__name">Junk Removal (1/4 truck)</span>
+          <span class="price-item__price">from $99</span>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:var(--space-10);">
+        <a href="/book" class="btn btn--primary btn--lg">Get My Exact Fixed Price →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantees -->
+  <section class="section section--alt" aria-labelledby="guarantee-title">
+    <div class="container">
+      <header class="section__header section__header--center">
+        <span class="section-label">Our Promise</span>
+        <h2 class="section-title" id="guarantee-title">4 Guarantees on Every Job</h2>
+      </header>
+
+      <div class="guarantee-grid" role="list">
+        <div class="guarantee-item" role="listitem">
+          <div class="guarantee-item__icon" aria-hidden="true">💰</div>
+          <h3 class="guarantee-item__title">Fixed-Price Guarantee</h3>
+          <p class="guarantee-item__desc">The price we quote is the price you pay. No hourly creep, no surprise add-ons.</p>
+        </div>
+        <div class="guarantee-item" role="listitem">
+          <div class="guarantee-item__icon" aria-hidden="true">🔒</div>
+          <h3 class="guarantee-item__title">Licensed &amp; Insured</h3>
+          <p class="guarantee-item__desc">Every trade pro holds a valid Tennessee license and carries full liability insurance.</p>
+        </div>
+        <div class="guarantee-item" role="listitem">
+          <div class="guarantee-item__icon" aria-hidden="true">⭐</div>
+          <h3 class="guarantee-item__title">Satisfaction Guaranteed</h3>
+          <p class="guarantee-item__desc">Not happy with the result? We come back and make it right — at no extra charge.</p>
+        </div>
+        <div class="guarantee-item" role="listitem">
+          <div class="guarantee-item__icon" aria-hidden="true">⚡</div>
+          <h3 class="guarantee-item__title">5-Minute Response</h3>
+          <p class="guarantee-item__desc">We respond to all inquiries within 5 minutes during business hours. Emergencies 24/7.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section section--dark" aria-label="Company stats">
+    <div class="container">
+      <div class="stats-row" role="list">
+        <div class="stat" role="listitem">
+          <div class="stat__number">500+</div>
+          <div class="stat__label">Jobs Completed</div>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="stat__number">9</div>
+          <div class="stat__label">Service Areas</div>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="stat__number">5★</div>
+          <div class="stat__label">Average Rating</div>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="stat__number">24/7</div>
+          <div class="stat__label">Emergency Response</div>
+        </div>
+        <div class="stat" role="listitem">
+          <div class="stat__number">&lt;5 min</div>
+          <div class="stat__label">Quote Response Time</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section section--light" id="reviews" aria-labelledby="reviews-title">
+    <div class="container">
+      <header class="section__header section__header--center">
+        <span class="section-label">Real Reviews</span>
+        <h2 class="section-title" id="reviews-title">Nashville Homeowners Love Us</h2>
+        <p class="section-subtitle">Don't take our word for it — here's what your neighbors are saying.</p>
+      </header>
+
+      <div class="reviews-grid" role="list">
+        <article class="review-card" role="listitem">
+          <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-card__text">
+            "Had a burst pipe at 2 AM and Hive picked up on the first ring. A plumber was at my door in 45 minutes. Fixed price — exactly what they quoted, not a penny more. I can't recommend them enough."
+          </p>
+          <div class="review-card__author">Michael T.</div>
+          <div class="review-card__location">Nashville, TN</div>
+        </article>
+
+        <article class="review-card" role="listitem">
+          <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-card__text">
+            "Had three rooms painted and the deck stained — both came in exactly at the quote. The crew was professional, cleaned up after themselves, and the quality is outstanding. Fixed pricing is a game changer."
+          </p>
+          <div class="review-card__author">Sarah K.</div>
+          <div class="review-card__location">Brentwood, TN</div>
+        </article>
+
+        <article class="review-card" role="listitem">
+          <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-card__text">
+            "Finally found a lawn service that shows up consistently and charges a fair fixed price. No more surprise bills. They edge perfectly and leave the yard spotless every time."
+          </p>
+          <div class="review-card__author">James R.</div>
+          <div class="review-card__location">Franklin, TN</div>
+        </article>
+
+        <article class="review-card" role="listitem">
+          <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-card__text">
+            "Used Hive for a pressure wash on the driveway and back patio. Response was under 5 minutes, they came out next day, and the result was incredible. Upfront price was very reasonable."
+          </p>
+          <div class="review-card__author">Amanda L.</div>
+          <div class="review-card__location">Hendersonville, TN</div>
+        </article>
+
+        <article class="review-card" role="listitem">
+          <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-card__text">
+            "Hive cleaned my gutters before the big storm and I'm so glad they did. Quick, professional, and no mess left behind. They quoted me exactly what I paid. Will use again every season."
+          </p>
+          <div class="review-card__author">Robert P.</div>
+          <div class="review-card__location">Murfreesboro, TN</div>
+        </article>
+
+        <article class="review-card" role="listitem">
+          <div class="review-card__stars" aria-label="5 stars">★★★★★</div>
+          <p class="review-card__text">
+            "Moving out of my rental and needed a deep clean on short notice. They booked me for the next morning, fixed price by bedroom, and the apartment was spotless. Got my full deposit back."
+          </p>
+          <div class="review-card__author">Tiffany M.</div>
+          <div class="review-card__location">Mt. Juliet, TN</div>
+        </article>
+      </div>
+
+      <div style="text-align:center;margin-top:var(--space-10);">
+        <a href="https://g.page/r/" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
+          View All Reviews on Google →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency CTA -->
+  <section class="section section--alt" aria-labelledby="emergency-title">
+    <div class="container container--narrow">
+      <div class="emergency-block" role="complementary">
+        <h2 class="emergency-block__title" id="emergency-title">🚨 Plumbing Emergency?</h2>
+        <p class="emergency-block__subtitle">
+          Burst pipe, active leak, no water, sewer backup — we dispatch a licensed plumber 24 hours a day, 7 days a week across all of Middle Tennessee.
+        </p>
+        <div class="emergency-block__phone">
+          <a href="tel:6150000000" style="color:#fff;">(615) 000-0000</a>
+        </div>
+        <p class="emergency-block__note">Licensed plumber dispatched immediately. Fixed price before any work starts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="section section--light" id="areas" aria-labelledby="areas-title">
+    <div class="container">
+      <header class="section__header section__header--center">
+        <span class="section-label">Where We Work</span>
+        <h2 class="section-title" id="areas-title">Serving Nashville &amp; Middle Tennessee</h2>
+        <p class="section-subtitle">
+          We cover the entire greater Nashville metro. Not sure if we reach you? Give us a call — we'll let you know immediately.
+        </p>
+      </header>
+
+      <div class="areas-grid" role="list" style="justify-content:center;">
+        <a href="/areas/nashville" class="area-chip" role="listitem">Nashville</a>
+        <a href="/areas/brentwood" class="area-chip" role="listitem">Brentwood</a>
+        <a href="/areas/franklin" class="area-chip" role="listitem">Franklin</a>
+        <a href="/areas/mt-juliet" class="area-chip" role="listitem">Mt. Juliet</a>
+        <a href="/areas/hendersonville" class="area-chip" role="listitem">Hendersonville</a>
+        <a href="/areas/murfreesboro" class="area-chip" role="listitem">Murfreesboro</a>
+        <a href="/areas/clarksville" class="area-chip" role="listitem">Clarksville</a>
+        <a href="/areas/gallatin" class="area-chip" role="listitem">Gallatin</a>
+        <a href="/areas/goodlettsville" class="area-chip" role="listitem">Goodlettsville</a>
+        <a href="/areas/spring-hill" class="area-chip" role="listitem">Spring Hill</a>
+        <a href="/areas/smyrna" class="area-chip" role="listitem">Smyrna</a>
+        <a href="/areas/nolensville" class="area-chip" role="listitem">Nolensville</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta-section" aria-labelledby="cta-title">
+    <div class="container">
+      <h2 class="cta-section__title" id="cta-title">Ready to Get Started?</h2>
+      <p class="cta-section__subtitle">
+        Get a fixed-price quote in minutes. No sales pitch, no hourly guessing — just a real price for a real job.
+      </p>
+      <div class="cta-section__actions">
+        <a href="/book" class="btn btn--primary btn--lg">Get My Free Quote →</a>
+        <a href="tel:6150000000" class="btn btn--ghost btn--lg">📞 Call (615) 000-0000</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-logo">
+            <span aria-hidden="true">🐝</span> Hive Home Services
+          </div>
+          <p class="footer__tagline">
+            Fixed-price home services across Nashville and Middle Tennessee.
+            Licensed, insured, and satisfaction guaranteed on every job.
+          </p>
+          <a href="tel:6150000000" class="btn btn--primary" style="display:inline-flex;">(615) 000-0000</a>
+        </div>
+
+        <div>
+          <p class="footer__heading">Services</p>
+          <nav class="footer__links" aria-label="Services links">
+            <a href="/plumbing">Plumbing</a>
+            <a href="emergency-plumber.html">Emergency Plumbing</a>
+            <a href="/painting">Painting</a>
+            <a href="/pressure-washing">Pressure Washing</a>
+            <a href="/lawn-mowing">Lawn Mowing</a>
+            <a href="/gutter-cleaning">Gutter Cleaning</a>
+            <a href="/house-cleaning">House Cleaning</a>
+            <a href="/junk-removal">Junk Removal</a>
+            <a href="/masonry">Masonry</a>
+            <a href="/window-tinting">Window Tinting</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer__heading">Service Areas</p>
+          <nav class="footer__links" aria-label="Service area links">
+            <a href="/areas/nashville">Nashville</a>
+            <a href="/areas/brentwood">Brentwood</a>
+            <a href="/areas/franklin">Franklin</a>
+            <a href="/areas/mt-juliet">Mt. Juliet</a>
+            <a href="/areas/hendersonville">Hendersonville</a>
+            <a href="/areas/murfreesboro">Murfreesboro</a>
+            <a href="/areas/clarksville">Clarksville</a>
+            <a href="/areas/gallatin">Gallatin</a>
+            <a href="/areas/goodlettsville">Goodlettsville</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer__heading">Company</p>
+          <nav class="footer__links" aria-label="Company links">
+            <a href="/about">About Us</a>
+            <a href="/reviews">Reviews</a>
+            <a href="/book">Get a Quote</a>
+            <a href="/contact">Contact</a>
+            <a href="/careers">Careers</a>
+          </nav>
+
+          <p class="footer__heading" style="margin-top:var(--space-6);">Hours</p>
+          <div class="footer__links" style="color:#A8A29E;font-size:var(--font-size-sm);">
+            <span>Mon–Fri: 7am – 8pm</span>
+            <span>Sat–Sun: 8am – 6pm</span>
+            <span style="color:var(--color-emergency);font-weight:700;">Emergency: 24/7</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> Hive Home Services. All rights reserved. Nashville, TN</span>
+        <div class="footer__legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.querySelector('.nav__links');
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        const open = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!open));
+        navLinks.style.display = open ? '' : 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '64px';
+        navLinks.style.left = '0';
+        navLinks.style.right = '0';
+        navLinks.style.background = '#1C1917';
+        navLinks.style.padding = '16px 24px';
+        navLinks.style.gap = '16px';
+        navLinks.style.borderBottom = '1px solid #44403C';
+        if (open) navLinks.removeAttribute('style');
+      });
+    }
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Form — basic phone formatting
+    const phoneInput = document.getElementById('hero-phone');
+    if (phoneInput) {
+      phoneInput.addEventListener('input', e => {
+        let v = e.target.value.replace(/\D/g, '').slice(0, 10);
+        if (v.length >= 6) v = `(${v.slice(0,3)}) ${v.slice(3,6)}-${v.slice(6)}`;
+        else if (v.length >= 3) v = `(${v.slice(0,3)}) ${v.slice(3)}`;
+        e.target.value = v;
+      });
+    }
+  </script>
+</body>
+</html>

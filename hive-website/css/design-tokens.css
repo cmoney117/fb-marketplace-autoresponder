@@ -1,0 +1,126 @@
+/**
+ * Hive Home Services TN — Design Token System
+ * Brand: hivehomeservicestn.com | Nashville, TN
+ *
+ * Paste this file's content into Claude Design as your brand context.
+ * Claude Design will use these tokens automatically on all generated assets.
+ */
+
+:root {
+  /* ── Brand Colors ────────────────────────────────────── */
+  --color-primary:        #F59E0B;   /* Amber — Hive/honey, main CTA */
+  --color-primary-light:  #FCD34D;   /* Amber 300 — hover states */
+  --color-primary-dark:   #D97706;   /* Amber 600 — pressed states */
+
+  --color-emergency:      #DC2626;   /* Red — 24/7 emergency, urgent CTAs */
+  --color-emergency-dark: #B91C1C;   /* Red 700 — emergency hover */
+
+  --color-success:        #16A34A;   /* Green — confirmation, trust badges */
+  --color-warning:        #F59E0B;   /* Amber — same as primary */
+
+  /* ── Neutrals ────────────────────────────────────────── */
+  --color-dark:           #1C1917;   /* Warm black — dark sections */
+  --color-dark-2:         #292524;   /* Warm dark — card backgrounds */
+  --color-dark-3:         #44403C;   /* Warm dark — borders on dark bg */
+
+  --color-light:          #FAFAF9;   /* Warm white — page background */
+  --color-light-2:        #F5F5F4;   /* Stone 100 — section backgrounds */
+  --color-light-3:        #E7E5E4;   /* Stone 200 — dividers */
+
+  --color-text:           #1C1917;   /* Primary text */
+  --color-text-muted:     #78716C;   /* Secondary / supporting text */
+  --color-text-light:     #FAFAF9;   /* Text on dark backgrounds */
+  --color-text-on-amber:  #1C1917;   /* Text on amber/primary bg */
+
+  /* ── Typography ──────────────────────────────────────── */
+  --font-family:          'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-mono:     'JetBrains Mono', 'Fira Code', monospace;
+
+  --font-size-xs:         0.75rem;   /*  12px */
+  --font-size-sm:         0.875rem;  /*  14px */
+  --font-size-base:       1rem;      /*  16px */
+  --font-size-lg:         1.125rem;  /*  18px */
+  --font-size-xl:         1.25rem;   /*  20px */
+  --font-size-2xl:        1.5rem;    /*  24px */
+  --font-size-3xl:        1.875rem;  /*  30px */
+  --font-size-4xl:        2.25rem;   /*  36px */
+  --font-size-5xl:        3rem;      /*  48px */
+
+  --font-weight-normal:   400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+  --font-weight-black:    900;
+
+  --line-height-tight:    1.2;
+  --line-height-snug:     1.35;
+  --line-height-normal:   1.5;
+  --line-height-relaxed:  1.65;
+
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide:  0.05em;
+  --letter-spacing-wider: 0.1em;
+
+  /* ── Spacing ─────────────────────────────────────────── */
+  --space-1:   0.25rem;   /*  4px */
+  --space-2:   0.5rem;    /*  8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-20:  5rem;      /* 80px */
+  --space-24:  6rem;      /* 96px */
+
+  /* ── Layout ──────────────────────────────────────────── */
+  --container-max:   1200px;
+  --container-wide:  1400px;
+  --container-narrow: 720px;
+  --container-pad:   clamp(1rem, 5vw, 2rem);
+
+  /* ── Border Radius ───────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ─────────────────────────────────────────── */
+  --shadow-sm:  0 1px 2px rgba(0,0,0,.06);
+  --shadow-md:  0 4px 12px rgba(0,0,0,.08);
+  --shadow-lg:  0 8px 24px rgba(0,0,0,.12);
+  --shadow-xl:  0 16px 48px rgba(0,0,0,.16);
+
+  /* ── Transitions ─────────────────────────────────────── */
+  --transition-fast:   150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* ── Z-index ─────────────────────────────────────────── */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 100;
+  --z-sticky:  200;
+  --z-modal:   300;
+  --z-toast:   400;
+}
+
+/* ── Dark section overrides ──────────────────────────────── */
+.bg-dark {
+  --color-text:       var(--color-text-light);
+  --color-text-muted: #A8A29E;
+  background-color: var(--color-dark);
+}
+
+/* ── Responsive breakpoints (reference — use in media queries) ──
+   sm:  640px
+   md:  768px
+   lg:  1024px
+   xl:  1280px
+   2xl: 1536px
+──────────────────────────────────────────────────────────────── */
