@@ -28,34 +28,39 @@ Tone: Direct, trustworthy, anti-hourly-billing
 
 Export from Claude Design → "Code" → copy HTML/CSS → adapt to use design-tokens.css variables.
 
-## Hive Website Structure
+## Hive Website Structure (28 pages — all live on branch)
 ```
 hive-website/
-  index.html                  Homepage
-  emergency-plumber.html      24/7 emergency plumbing page
-  plumbing.html               Plumbing service page
-  clarksville-plumbing.html   Clarksville location page
-  painting.html               (TODO)
-  pressure-washing.html       (TODO)
-  lawn-mowing.html            (TODO)
-  gutter-cleaning.html        (TODO)
-  house-cleaning.html         (TODO)
-  junk-removal.html           (TODO)
-  handyman.html               (TODO)
-  exterior-painting.html      (TODO)
+  index.html                  Homepage ✅
+  book.html                   Booking / quote form (all forms POST here) ✅
+  emergency-plumber.html      24/7 emergency plumbing page ✅
+  plumbing.html               Plumbing service page ✅
+  clarksville-plumbing.html   Clarksville location page ✅
+  painting.html               Interior painting ✅
+  exterior-painting.html      Exterior painting ✅
+  pressure-washing.html       Pressure washing ✅
+  lawn-mowing.html            Lawn mowing & maintenance ✅
+  gutter-cleaning.html        Gutter cleaning ✅
+  house-cleaning.html         House cleaning ✅
+  junk-removal.html           Junk removal ✅
+  handyman.html               Handyman ✅
+  landscaping.html            Landscaping & mulching ✅
   css/
     design-tokens.css         CSS custom property brand system
     style.css                 Full component library
   areas/
-    gallatin.html             ✅
-    goodlettsville.html       ✅
-    nashville.html            (TODO)
-    brentwood.html            (TODO)
-    franklin.html             (TODO)
-    mt-juliet.html            (TODO)
-    hendersonville.html       (TODO)
-    murfreesboro.html         (TODO)
+    gallatin.html             ✅   goodlettsville.html   ✅
+    nashville.html            ✅   brentwood.html        ✅
+    franklin.html             ✅   mt-juliet.html        ✅
+    hendersonville.html       ✅   murfreesboro.html     ✅
+    antioch.html              ✅   madison.html          ✅
+    smyrna.html               ✅   portland.html         ✅
+    white-house.html          ✅   westmoreland.html     ✅
 ```
+
+Verification: 28 pages, zero broken internal links, correct relative CSS
+paths on every page, JSON-LD schema on every page. All quote forms link
+to /book (clean-URL convention — same as canonical /plumbing → plumbing.html).
 
 ## Deploy Steps
 1. Replace all `(615) 000-0000` and `tel:6150000000` with real phone number
