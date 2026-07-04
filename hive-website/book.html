@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Service | Get Your Fixed Price | Hive Home Services Nashville TN</title>
+  <meta name="description" content="Book any Hive home service in Nashville and Middle Tennessee. Tell us what you need and get a fixed upfront price in under 5 minutes. Licensed, insured, no obligation." />
+  <meta name="keywords" content="book home service Nashville, get a quote Hive Home Services, schedule plumber Nashville, home services booking Middle Tennessee" />
+  <link rel="canonical" href="https://hivehomeservicestn.com/book" />
+  <meta name="robots" content="noindex, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Book a Service | Get Your Fixed Price | Hive Home Services" />
+  <meta property="og:description" content="Tell us what you need and get a fixed upfront price in under 5 minutes. Licensed, insured, no obligation." />
+  <meta property="og:url" content="https://hivehomeservicestn.com/book" />
+  <meta property="og:site_name" content="Hive Home Services" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/design-tokens.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .book-hero { background: var(--color-dark); padding: clamp(2.5rem,6vw,4rem) 0 clamp(4rem,8vw,6rem); position: relative; overflow: hidden; }
+    .book-hero::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(245,158,11,.1) 0%, transparent 70%); pointer-events:none; }
+    .book-hero__inner { position:relative; max-width: 720px; margin: 0 auto; text-align: center; }
+    .book-hero__title { font-size:clamp(2rem,5vw,3rem); color:#fff; margin-bottom:var(--space-4); }
+    .book-hero__title em { font-style:normal; color:var(--color-primary); }
+    .book-hero__subtitle { font-size:var(--font-size-lg); color:#A8A29E; line-height:var(--line-height-relaxed); margin-bottom:var(--space-6); }
+    .book-hero__trust { display:flex; flex-wrap:wrap; justify-content:center; gap:var(--space-4); }
+    .book-hero__trust-item { display:flex; align-items:center; gap:var(--space-2); font-size:var(--font-size-sm); color:#A8A29E; }
+    .book-hero__trust-icon { color:var(--color-primary); font-weight:var(--font-weight-bold); }
+
+    .book-wrap { max-width: 720px; margin: -3rem auto 0; position: relative; z-index: 2; padding: 0 var(--space-4) var(--space-16); }
+    .book-card { background:#fff; border:1px solid var(--color-light-3); border-radius:var(--radius-2xl); padding:clamp(1.5rem,4vw,2.5rem); box-shadow: var(--shadow-xl); }
+    .book-card__step { font-size:var(--font-size-sm); font-weight:var(--font-weight-semibold); color:var(--color-primary-dark); text-transform:uppercase; letter-spacing:.05em; margin-bottom:var(--space-2); }
+    .book-card__heading { font-size:var(--font-size-2xl); margin-bottom:var(--space-2); }
+    .book-card__sub { font-size:var(--font-size-base); color:var(--color-text-muted); margin-bottom:var(--space-6); }
+
+    .book-form { display:flex; flex-direction:column; gap:var(--space-5); }
+    .book-form__row { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-4); }
+    @media(max-width:560px){ .book-form__row { grid-template-columns:1fr; } }
+    .book-form label { display:block; font-size:var(--font-size-sm); font-weight:var(--font-weight-semibold); margin-bottom:var(--space-2); }
+    .book-form label .req { color:var(--color-emergency); }
+    .book-form input, .book-form select, .book-form textarea {
+      width:100%; padding:var(--space-3) var(--space-4); background:var(--color-light);
+      border:1px solid var(--color-light-4); border-radius:var(--radius-md); color:var(--color-text);
+      font-family:inherit; font-size:var(--font-size-base); transition:border-color var(--transition-fast);
+    }
+    .book-form input:focus, .book-form select:focus, .book-form textarea:focus { outline:none; border-color:var(--color-primary); box-shadow:0 0 0 3px rgba(245,158,11,.15); }
+    .book-form textarea { min-height:110px; resize:vertical; }
+    .book-form__urgency { display:flex; flex-wrap:wrap; gap:var(--space-3); }
+    .book-form__urgency label {
+      flex:1; min-width:140px; margin:0; display:flex; align-items:center; gap:var(--space-2);
+      padding:var(--space-3) var(--space-4); border:1px solid var(--color-light-4); border-radius:var(--radius-md);
+      cursor:pointer; font-weight:var(--font-weight-medium); transition:all var(--transition-fast);
+    }
+    .book-form__urgency label:hover { border-color:var(--color-primary); }
+    .book-form__urgency input { width:auto; }
+    .book-form__submit { margin-top:var(--space-2); }
+    .book-card__note { font-size:var(--font-size-xs); color:var(--color-text-muted); text-align:center; margin-top:var(--space-4); line-height:var(--line-height-relaxed); }
+    .book-card__phone { text-align:center; margin-top:var(--space-6); padding-top:var(--space-6); border-top:1px solid var(--color-light-3); }
+    .book-card__phone span { display:block; font-size:var(--font-size-sm); color:var(--color-text-muted); margin-bottom:var(--space-2); }
+    .book-card__phone a { font-size:var(--font-size-xl); font-weight:var(--font-weight-bold); color:var(--color-primary-dark); text-decoration:none; }
+
+    /* Success state */
+    .book-success { display:none; text-align:center; padding:var(--space-8) 0; }
+    .book-success.is-visible { display:block; }
+    .book-success__icon { font-size:3.5rem; margin-bottom:var(--space-4); }
+    .book-success__title { font-size:var(--font-size-2xl); margin-bottom:var(--space-3); }
+    .book-success__text { font-size:var(--font-size-base); color:var(--color-text-muted); line-height:var(--line-height-relaxed); margin-bottom:var(--space-6); max-width:440px; margin-left:auto; margin-right:auto; }
+    .book-form.is-hidden { display:none; }
+
+    .trust-strip { display:flex; flex-wrap:wrap; justify-content:center; gap:var(--space-6); margin-top:var(--space-10); }
+    .trust-strip__item { display:flex; align-items:center; gap:var(--space-2); font-size:var(--font-size-sm); color:var(--color-text-muted); }
+    .trust-strip__icon { font-size:1.1rem; }
+  </style>
+  <script type="application/ld+json">
+  { "@context":"https://schema.org", "@type":"HomeAndConstructionBusiness", "name":"Hive Home Services", "url":"https://hivehomeservicestn.com", "telephone":"(615) 000-0000", "description":"Fixed-price home services across Nashville and Middle Tennessee. Book any service and get a fixed upfront price in under 5 minutes.", "areaServed":["Nashville, TN","Brentwood, TN","Franklin, TN","Mt. Juliet, TN","Hendersonville, TN","Murfreesboro, TN","Clarksville, TN","Gallatin, TN","Goodlettsville, TN"], "priceRange":"$$" }
+  </script>
+</head>
+<body>
+
+  <div class="emergency-bar" role="banner">🚨 Active emergency? Skip the form — <a href="tel:6150000000">Call now: (615) 000-0000</a></div>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo"><div class="nav__logo-icon" aria-hidden="true">🐝</div> Hive Home Services</a>
+        <div class="nav__links">
+          <a href="index.html#services">All Services</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#reviews">Reviews</a>
+          <a href="index.html#areas">Service Areas</a>
+        </div>
+        <div class="nav__cta">
+          <a href="tel:6150000000" class="nav__phone">(615) 000-0000</a>
+          <a href="emergency-plumber.html" class="btn btn--emergency hide-mobile">🚨 24/7 Emergency</a>
+          <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" id="menuBtn"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="book-hero" aria-labelledby="page-title">
+    <div class="container">
+      <div class="book-hero__inner">
+        <div style="margin-bottom:var(--space-4);"><span class="badge badge--amber">Free Quote · No Obligation</span></div>
+        <h1 class="book-hero__title" id="page-title">Get Your <em>Fixed Price</em></h1>
+        <p class="book-hero__subtitle">Tell us what you need. We'll call you back in under 5 minutes with a real, fixed price — not an hourly estimate. Licensed and insured Tennessee pros.</p>
+        <div class="book-hero__trust">
+          <span class="book-hero__trust-item"><span class="book-hero__trust-icon">✓</span> 5-Minute Response</span>
+          <span class="book-hero__trust-item"><span class="book-hero__trust-icon">✓</span> Fixed Upfront Price</span>
+          <span class="book-hero__trust-item"><span class="book-hero__trust-icon">✓</span> Licensed &amp; Insured</span>
+          <span class="book-hero__trust-item"><span class="book-hero__trust-icon">✓</span> No Obligation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking card -->
+  <div class="book-wrap">
+    <div class="book-card">
+      <!-- Form -->
+      <form class="book-form" id="bookForm" action="#" method="POST" novalidate>
+        <div>
+          <p class="book-card__step">Request a Quote</p>
+          <h2 class="book-card__heading">Book Your Service</h2>
+          <p class="book-card__sub">Fill this out and we'll text or call you right back with your fixed price.</p>
+        </div>
+
+        <div>
+          <label for="b-service">What service do you need? <span class="req">*</span></label>
+          <select id="b-service" name="service" required>
+            <option value="" disabled selected>Select a service…</option>
+            <option value="Plumbing">Plumbing</option>
+            <option value="Emergency Plumbing">Emergency Plumbing (24/7)</option>
+            <option value="Interior Painting">Interior Painting</option>
+            <option value="Exterior Painting">Exterior Painting</option>
+            <option value="Pressure Washing">Pressure Washing</option>
+            <option value="Lawn Mowing">Lawn Mowing &amp; Maintenance</option>
+            <option value="Gutter Cleaning">Gutter Cleaning</option>
+            <option value="House Cleaning">House Cleaning</option>
+            <option value="Junk Removal">Junk Removal</option>
+            <option value="Handyman">Handyman</option>
+            <option value="Other">Other / Not Sure</option>
+          </select>
+        </div>
+
+        <div class="book-form__row">
+          <div>
+            <label for="b-name">Your name <span class="req">*</span></label>
+            <input type="text" id="b-name" name="name" placeholder="Jane Smith" required />
+          </div>
+          <div>
+            <label for="b-phone">Phone number <span class="req">*</span></label>
+            <input type="tel" id="b-phone" name="phone" placeholder="(615) 000-0000" required />
+          </div>
+        </div>
+
+        <div class="book-form__row">
+          <div>
+            <label for="b-email">Email (optional)</label>
+            <input type="email" id="b-email" name="email" placeholder="jane@email.com" />
+          </div>
+          <div>
+            <label for="b-city">Your city <span class="req">*</span></label>
+            <input type="text" id="b-city" name="city" placeholder="Nashville, TN" required />
+          </div>
+        </div>
+
+        <div>
+          <label>How soon do you need it?</label>
+          <div class="book-form__urgency">
+            <label><input type="radio" name="urgency" value="Emergency" /> 🚨 Emergency</label>
+            <label><input type="radio" name="urgency" value="This week" checked /> 📅 This week</label>
+            <label><input type="radio" name="urgency" value="Flexible" /> 🗓️ Flexible</label>
+          </div>
+        </div>
+
+        <div>
+          <label for="b-desc">Describe the job (optional)</label>
+          <textarea id="b-desc" name="description" placeholder="e.g. Leaky faucet under the kitchen sink, been dripping for a week…"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--lg book-form__submit" style="width:100%;justify-content:center;">Get My Fixed Price →</button>
+        <p class="book-card__note">By submitting, you agree to be contacted about your request. We never share your info. No spam, no obligation.</p>
+
+        <div class="book-card__phone">
+          <span>Prefer to talk to a person right now?</span>
+          <a href="tel:6150000000">📞 (615) 000-0000</a>
+        </div>
+      </form>
+
+      <!-- Success -->
+      <div class="book-success" id="bookSuccess" role="status" aria-live="polite">
+        <div class="book-success__icon">✅</div>
+        <h2 class="book-success__title">Request Received!</h2>
+        <p class="book-success__text">Thanks, <span id="successName">there</span>! We've got your request for <strong id="successService">your service</strong>. A Hive team member will call or text you at the number you provided in under 5 minutes with your fixed price.</p>
+        <p class="book-success__text" style="font-weight:var(--font-weight-semibold);color:var(--color-text);">Need it sooner? Call us directly:</p>
+        <a href="tel:6150000000" class="btn btn--primary btn--lg">📞 (615) 000-0000</a>
+        <div style="margin-top:var(--space-6);">
+          <a href="index.html" class="btn btn--outline" style="border-color:var(--color-primary);color:var(--color-primary-dark);">← Back to Home</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="trust-strip">
+      <span class="trust-strip__item"><span class="trust-strip__icon">🏆</span> 500+ Jobs Completed</span>
+      <span class="trust-strip__item"><span class="trust-strip__icon">⭐</span> 4.9 Average Rating</span>
+      <span class="trust-strip__item"><span class="trust-strip__icon">🔒</span> Licensed &amp; Insured</span>
+      <span class="trust-strip__item"><span class="trust-strip__icon">💰</span> Fixed Price Guarantee</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-logo"><span>🐝</span> Hive Home Services</div>
+          <p class="footer__tagline">Fixed-price home services across Nashville and Middle Tennessee. Licensed, insured, satisfaction guaranteed.</p>
+          <a href="tel:6150000000" class="btn btn--primary" style="display:inline-flex;">(615) 000-0000</a>
+        </div>
+        <div>
+          <p class="footer__heading">Services</p>
+          <nav class="footer__links" aria-label="Services footer navigation">
+            <a href="plumbing.html">Plumbing</a>
+            <a href="emergency-plumber.html" style="color:var(--color-emergency);">Emergency Plumbing 24/7</a>
+            <a href="painting.html">Painting</a>
+            <a href="pressure-washing.html">Pressure Washing</a>
+            <a href="lawn-mowing.html">Lawn Mowing</a>
+            <a href="handyman.html">Handyman</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__heading">Service Areas</p>
+          <nav class="footer__links" aria-label="Service areas footer navigation">
+            <a href="areas/nashville.html">Nashville</a>
+            <a href="areas/brentwood.html">Brentwood</a>
+            <a href="areas/franklin.html">Franklin</a>
+            <a href="areas/gallatin.html">Gallatin</a>
+            <a href="areas/goodlettsville.html">Goodlettsville</a>
+            <a href="clarksville-plumbing.html">Clarksville</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__heading">Hours</p>
+          <div class="footer__links" style="color:#A8A29E;font-size:var(--font-size-sm);">
+            <span>Mon–Fri: 7am – 8pm</span>
+            <span>Sat–Sun: 8am – 6pm</span>
+            <span style="color:var(--color-emergency);font-weight:700;">Emergency: 24/7</span>
+          </div>
+          <p class="footer__heading" style="margin-top:var(--space-6);">Company</p>
+          <nav class="footer__links" aria-label="Company footer navigation">
+            <a href="index.html">Home</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="book.html">Get a Quote</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> Hive Home Services. All rights reserved. Nashville, TN &amp; Middle Tennessee</span>
+        <div class="footer__legal">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.querySelector('.nav__links');
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        const open = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', String(!open));
+        if (!open) {
+          Object.assign(navLinks.style, {
+            display:'flex', flexDirection:'column', position:'absolute', top:'64px',
+            left:'0', right:'0', background:'#1C1917', padding:'16px 24px', gap:'16px',
+            borderBottom:'1px solid #44403C', zIndex:'99'
+          });
+        } else { navLinks.removeAttribute('style'); }
+      });
+    }
+
+    // Phone number formatter
+    document.querySelectorAll('input[type="tel"]').forEach(p => {
+      p.addEventListener('input', e => {
+        let v = e.target.value.replace(/\D/g, '').slice(0, 10);
+        if (v.length >= 6) v = `(${v.slice(0,3)}) ${v.slice(3,6)}-${v.slice(6)}`;
+        else if (v.length >= 3) v = `(${v.slice(0,3)}) ${v.slice(3)}`;
+        e.target.value = v;
+      });
+    });
+
+    // Prefill service + urgency from query string (forms across the site link here with ?service=…&type=emergency)
+    (function prefill() {
+      const params = new URLSearchParams(window.location.search);
+      const svc = params.get('service');
+      const type = params.get('type');
+      const issue = params.get('issue');
+      const city = params.get('city') || params.get('address');
+      const name = params.get('name');
+      const phone = params.get('phone');
+      const select = document.getElementById('b-service');
+
+      if (svc) {
+        // Match against option values case-insensitively, else fall back to Other
+        const match = Array.from(select.options).find(o => o.value.toLowerCase() === svc.toLowerCase()
+          || o.textContent.trim().toLowerCase().includes(svc.toLowerCase()));
+        if (match) select.value = match.value;
+      }
+      if (type === 'emergency' || (svc && svc.toLowerCase().includes('emergency'))) {
+        select.value = 'Emergency Plumbing';
+        const em = document.querySelector('input[name="urgency"][value="Emergency"]');
+        if (em) em.checked = true;
+      }
+      if (city) document.getElementById('b-city').value = city;
+      if (name) document.getElementById('b-name').value = name;
+      if (phone) document.getElementById('b-phone').value = phone;
+      if (issue) document.getElementById('b-desc').value = issue;
+    })();
+
+    // Handle submit — show success state (wire to real backend/booking provider on deploy)
+    const form = document.getElementById('bookForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      // Native validation
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      const name = (document.getElementById('b-name').value || '').trim();
+      const service = document.getElementById('b-service').value || 'your service';
+      document.getElementById('successName').textContent = name ? name.split(' ')[0] : 'there';
+      document.getElementById('successService').textContent = service;
+      form.classList.add('is-hidden');
+      document.getElementById('bookSuccess').classList.add('is-visible');
+      window.scrollTo({ top: form.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
