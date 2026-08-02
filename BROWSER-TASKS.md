@@ -9,3 +9,24 @@ In the logged-in Vercel account: Add New → Project → import GitHub repo `cmo
 
 ## TASK-002 — Create 5 Stripe Payment Links (creates checkout pages; spends nothing)
 In the logged-in Stripe dashboard (live mode): Product catalog → Add product, then "Create payment link" for each: ① "The Paycheck Budget" $14.99 · ② "Debt Payoff Planner" $14.99 · ③ "Savings Goal Tracker" $12.99 · ④ "Money Reset Bundle" $29.99 · ⑤ "Savings Challenge Printable Pack" $9.99. On links ①–④: "Add another product" → attach ⑤ as an OPTIONAL add-on. After-payment: redirect to `https://PLACEHOLDER.vercel.app/success.html` (exact placeholder; cloud Claude updates it after TASK-001). Statement descriptor: set to WILLOWPINE ONLY if it would not change the descriptor the existing business uses — otherwise skip and note under BLOCKED. Paste all 5 payment-link URLs under DONE.
+
+## TASK-003 — Pinterest business account + Buffer
+Create a Pinterest BUSINESS account at https://business.pinterest.com using the Google sign-in with the twopillarsmarketingteam@gmail.com account (or the shop Gmail if one exists by now). Profile name "Willow & Pine Studio". Create 3 boards: "Budget Templates & Money Tips", "Debt Payoff Motivation", "Savings Challenges". Then at https://buffer.com sign up free (same Google login) and connect the Pinterest account. Record the Pinterest profile URL + confirmation Buffer is connected under DONE.
+
+## TASK-004 — Fiverr seller account + 3 gigs
+At https://fiverr.com sign up with the Google account, become a seller. Fill the seller profile honestly: display name "Willow & Pine Studio", description "AI-assisted studio with human review — spreadsheets, Etsy SEO, and research done fast", skills matching the gigs. Then create 3 gigs EXACTLY from the copy in this file (titles, tiers, prices, descriptions, requirements, FAQs): https://github.com/cmoney117/fb-marketplace-autoresponder/blob/claude/dropshipping-passive-income-q9a65v/venture/03-business-plans/fiverr-gig-pack.md — gig images are in the repo at venture/05-marketing/creatives/fiverr/ (download from the GitHub page and upload). If Fiverr demands phone/ID verification mid-flow, complete what you can and park the verification step under BLOCKED. Record gig URLs under DONE.
+
+## TASK-005 — Meta Business portfolio + ad account + pixel (no spending)
+At https://business.facebook.com with the logged-in Facebook account: create a Business portfolio "Willow & Pine Studio", then an ad account (USD, no campaigns, DO NOT add budget or launch anything), then Data Sources → create a Pixel named "store-pixel". Record the Business ID, ad account ID, and Pixel ID under DONE. Do not create or publish any ads.
+
+## TASK-006 — Etsy shop (go as far as legally possible, then park)
+At https://www.etsy.com/sell start shop creation with the shop Gmail: language English, country US, currency USD, shop name "WillowAndPineStudio" (if taken, append "Co"). For the required first listing, use the listing copy + images from https://github.com/cmoney117/fb-marketplace-autoresponder/blob/claude/dropshipping-passive-income-q9a65v/venture/07-automation/tracker/publish-queue/paycheck-budget-v1/listing.md (digital download, $14.99, quantity 999 — download the xlsx + 3 PNGs from that repo folder and upload). STOP at any page asking for bank account, SSN/taxpayer info, or ID — park exactly which fields are needed under BLOCKED. Record progress under DONE.
+
+## TASK-007 — Printify account + Etsy connect + API token
+At https://printify.com/app/register sign up (shop Gmail), Free plan. If the Etsy shop from TASK-006 is open: Manage stores → Add store → Etsy → authorize. My profile → API tokens → generate a token — do NOT paste the token into the results doc; instead save it to a local file on the desktop named venture-secrets.txt and write only "token saved locally" under DONE. Park the wallet/billing-card step under BLOCKED (card entry is human-only).
+
+## TASK-008 — Gumroad account
+At https://gumroad.com/signup sign up (shop Gmail), username "willowpinestudio". Skip/park bank payout details (BLOCKED). Create the first product "The Paycheck Budget" $12.99 using the same files/copy as TASK-006's listing. Record the product URL under DONE.
+
+## TASK-009 — MailerLite free account
+At https://www.mailerlite.com sign up free (shop Gmail), company "Willow & Pine Studio". Just create the account and confirm the email; flows come later. Record login-works confirmation under DONE.
