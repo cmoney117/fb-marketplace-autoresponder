@@ -80,6 +80,26 @@ PRODUCTS = [
         ],
     },
     {
+        "slug": "savings-challenge-pack",
+        "name": "Savings Challenge Printable Pack",
+        "price": "$9.99",
+        "payment_link": "#",
+        "headline": "Four challenges that make saving weirdly fun.",
+        "sub": "52-Week Challenge ($1,378), Biweekly Challenge ($2,106), $1,000 Emergency Fund chart, and a No-Spend Month tracker. Print at home, check the boxes, watch it stack.",
+        "bullets": [
+            "4 print-ready PDFs (US Letter, A4-friendly)",
+            "52-Week Challenge — $1,378 by week 52",
+            "Biweekly version for people paid every two weeks",
+            "$1,000 Emergency Fund chart (25 × $40)",
+            "Print as many times as you like, forever",
+        ],
+        "img": "img/challenge-pack.svg",
+        "faq": [
+            ("Do I need a special printer?", "Any home printer — black and white looks great too."),
+            ("How do I get it?", "Instant download after checkout, plus email delivery."),
+        ],
+    },
+    {
         "slug": "money-reset-bundle",
         "name": "Money Reset Bundle",
         "price": "$29.99",
