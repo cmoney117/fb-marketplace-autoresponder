@@ -29,4 +29,6 @@ Append-only. Every consequential decision gets a row. Newest last.
 | 20 | 2026-08-02 | Fiverr productized-gig lane (Lane C) adopted as zero-risk certain-revenue floor: Etsy SEO, spreadsheet builds, research reports | Highest-certainty first-dollar play in scan; platform supplies trust | AI |
 | 21 | 2026-08-02 | Blockers logged: GitHub write 403 (7 commits local-only) and Vercel project-create 403 — both need one-time owner permission grants; deliverables mirrored via zip + Drive meanwhile | Session constraints | AI |
 
-*(Rows 22+ appended as launch proceeds.)*
+| 22 | 2026-08-02 | **Autonomous-revenue requirement adopted:** every revenue job mapped to a non-owner actor (`03-business-plans/autonomous-revenue-engine.md`); owner's ongoing role reduced to read-only Sunday email + bills + rare tripwires with safe defaults; B2B lanes redesigned ownerless (self-demoing AI receptionist + compliant low-volume B2B email); one-time KYC/banking signups remain owner-only — a legal boundary, not a design choice | Owner directive: "generate revenue WITHOUT me — I cannot be involved" | Owner (directive), AI (design) |
+
+*(Rows 23+ appended as launch proceeds.)*

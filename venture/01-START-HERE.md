@@ -2,6 +2,8 @@
 
 *Built 2026-08-02. Everything below is done and waiting. Your part is ~75 minutes, once.*
 
+> **AUTONOMY GUARANTEE:** every job that produces a sale is assigned to an AI run, an API, a marketplace, or an AI-managed VA — never to you. The proof map is `03-business-plans/autonomous-revenue-engine.md`. Your ongoing role: a read-only Sunday email, paying bills, and rare tripwire questions that default safely if you ignore them. The only non-delegable step is the one-time account/identity setup below — a legal (KYC) boundary no legitimate setup can remove.
+
 > **ROUND-2 UPDATE (same day):** Ads unlocked + Stripe accepted + "no wasted money" directive → a fast lane now exists alongside everything below. New: own web store built (`store/`) with 3 finished products + the $29.99 Money Reset Bundle, a $50/day ad runbook with a hard ~$810 max-at-risk cap (`05-marketing/ad-launch-runbook.md`), a zero-cost Fiverr income lane, and two staged B2B plays awaiting your go (`03-business-plans/wave-1b-fast-lane.md`). Your round-2 checklist: `06-account-setup/round-2-additions.md` — including two 5-minute permission fixes (GitHub write, Vercel deploy) that unblock me completely. Also: research verdict says the FB autoresponder must NOT be sold as-is (Meta ToS + Meta's new free native auto-replies) — the honest pivot is staged in the same doc.
 
 ## The plan in five sentences
