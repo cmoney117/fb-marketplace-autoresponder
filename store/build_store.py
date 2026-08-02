@@ -2,7 +2,7 @@
 """Static storefront generator. Edit PRODUCTS/CONFIG, run, deploy the store/site/ folder.
 Payment links: set per-product 'payment_link' to the real Stripe Payment Link URL when keys exist.
 """
-import os, shutil, html
+import os, html
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(ROOT, "site")
@@ -10,7 +10,7 @@ SITE = os.path.join(ROOT, "site")
 CONFIG = {
     "brand": "The Paycheck Budget",
     "tagline": "Simple money tools that fit real life — built, tested, and guaranteed by a small US studio.",
-    "support_email": "SUPPORT_EMAIL_PLACEHOLDER",  # set at launch
+    "support_email": "",  # set at launch; while empty, pages degrade gracefully (no placeholder text is ever shown to customers)
     "ga4_id": "",  # e.g. G-XXXXXXX — injected when set
     "meta_pixel_id": "",  # numeric Meta Pixel ID — injected when set (required before ads per campaign-build-sheets.md)
     "base_url": "",  # e.g. https://thepaycheckbudget.com — enables og:url/og:image when set
@@ -48,10 +48,10 @@ PRODUCTS = [
         "price": "$14.99",
         "payment_link": "#",
         "headline": "Snowball or Avalanche — see your debt-free date either way.",
-        "sub": "List your debts once. Get both strategies ranked with payoff months per debt, pick the one you'll stick to, and log every win.",
+        "sub": "Enter your debts and your extra payment, see the payoff months under each strategy, pick the plan you'll stick to, and log every win.",
         "bullets": [
-            "Up to 10 debts, ranked automatically both ways",
-            "Months-to-payoff on every debt, with your extra payment applied",
+            "Room for 10 debts, with a pre-ranked worked example",
+            "Months-to-payoff calculated for you, extra payment included",
             "Snowball vs Avalanche side-by-side — pick with eyes open",
             "Progress tab that makes paying debt weirdly satisfying",
             "Works in Google Sheets (free) and Excel",
@@ -80,7 +80,7 @@ PRODUCTS = [
         "img": "img/savings-tracker.png",
         "in_bundle": True,
         "faq": [
-            ("Can I change the goals?", "All of them — names, targets, dates. The math follows."),
+            ("Can I change the goals?", "All of them — names, targets, timelines. The math follows."),
             ("How do I get it?", "Instant download after checkout, plus email delivery."),
         ],
     },
@@ -180,7 +180,8 @@ body{font-family:Georgia,'Times New Roman',serif;color:var(--dark);background:va
 header{background:var(--navy);color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
 header a{color:#fff;text-decoration:none}
 header .brand{font-size:1.25rem;font-weight:bold}
-nav a{margin-left:18px;font-family:Helvetica,Arial,sans-serif;font-size:.95rem}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+nav a{font-family:Helvetica,Arial,sans-serif;font-size:.95rem}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 .hero{padding:64px 0 40px;text-align:center}
 .hero h1{font-size:2.4rem;color:var(--navy);margin-bottom:14px}
@@ -195,6 +196,8 @@ nav a{margin-left:18px;font-family:Helvetica,Arial,sans-serif;font-size:.95rem}
 .btn{display:inline-block;background:var(--teal);color:#fff!important;padding:14px 28px;border-radius:10px;font-family:Helvetica,Arial,sans-serif;font-weight:bold;text-decoration:none;text-align:center;font-size:1.05rem}
 .btn.gold{background:var(--gold);color:var(--dark)!important}
 .btn:hover{opacity:.92}
+.btn.soon{background:#e7e3d8;color:var(--gray)!important;cursor:default}
+.btn.soon:hover{opacity:1}
 .badge{display:inline-block;background:var(--gold);color:var(--dark);font-family:Helvetica,Arial,sans-serif;font-size:.78rem;font-weight:bold;padding:4px 10px;border-radius:20px}
 .pd{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:48px 0;align-items:start}
 .pd img{width:100%;border-radius:14px;border:1px solid #e2ddd2}
@@ -220,6 +223,22 @@ footer a{color:#fff}
 GA4 = '<script async src="https://www.googletagmanager.com/gtag/js?id={gid}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag("js",new Date());gtag("config","{gid}");</script>'
 PIXEL = "<script>!function(f,b,e,v,n,t,s){{if(f.fbq)return;n=f.fbq=function(){{n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)}};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','{pid}');fbq('track','PageView');{extra}</script>"
 UTM_JS = "<script>try{const p=new URLSearchParams(location.search);if(p.get('utm_source')){localStorage.setItem('utm',JSON.stringify(Object.fromEntries(p)))}}catch(e){}</script>"
+FAVICON = '<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%231f3a5f%22/%3E%3Ctext x=%2232%22 y=%2246%22 font-size=%2238%22 text-anchor=%22middle%22 fill=%22%23f2c14e%22 font-family=%22Georgia,serif%22 font-weight=%22bold%22%3E%24%3C/text%3E%3C/svg%3E">'
+
+def support_contact_html():
+    """Support email once set; graceful, honest fallback while it isn't."""
+    email = CONFIG["support_email"]
+    if email and "PLACEHOLDER" not in email:
+        return f'Questions? {email}'
+    return 'Questions? See the <a href="policies.html#contact">contact page</a>.'
+
+def contact_section_html():
+    email = CONFIG["support_email"]
+    if email and "PLACEHOLDER" not in email:
+        return f"Email: {email} — a real human answers, usually within a few hours."
+    return ("Our support inbox opens together with checkout (any day now) and will be posted right here. "
+            "Until checkout is live nothing can be ordered on this site, so no customer is ever waiting on an answer. "
+            "Bought one of our tools on Etsy or Gumroad? Message us there — same humans, fast replies.")
 
 def page(title, body, desc="", path="", img="", purchase=False):
     ga = GA4.format(gid=CONFIG["ga4_id"]) if CONFIG["ga4_id"] else ""
@@ -233,12 +252,12 @@ def page(title, body, desc="", path="", img="", purchase=False):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">{og}
-<link rel="stylesheet" href="style.css">{ga}{px}{UTM_JS}</head><body>
+<link rel="stylesheet" href="style.css">{FAVICON}{ga}{px}{UTM_JS}</head><body>
 <header><a class="brand" href="index.html">{CONFIG['brand']}</a>
 <nav><a href="index.html">Shop</a><a href="money-reset-bundle.html">Bundle</a><a href="policies.html">Policies</a><a href="policies.html#contact">Contact</a></nav></header>
 {body}
 <footer>© 2026 {CONFIG['brand']} · <a href="policies.html">Refunds & Policies</a> · <a href="policies.html#privacy">Privacy</a> · <a href="policies.html#terms">Terms</a><br>
-Digital products deliver instantly. Questions? {CONFIG['support_email']}</footer>
+Digital products deliver instantly. {support_contact_html()}</footer>
 </body></html>"""
 
 def product_card(p):
@@ -248,6 +267,22 @@ def product_card(p):
 <div class="body">{badge}<h3>{html.escape(p['name'])}</h3><p class="sans" style="color:var(--gray);font-size:.95rem">{html.escape(p['headline'])}</p>
 <div class="price">{p['price']}{compare}</div>
 <a class="btn" href="{p['slug']}.html">See inside →</a></div></div>"""
+
+def checkout_live(p):
+    link = p.get("payment_link") or ""
+    return bool(link) and link != "#" and "PLACEHOLDER" not in link
+
+def buy_button(p, label):
+    """Real buy link when the Stripe Payment Link is wired; honest 'coming' state until then
+    (never a dead '#' link that silently jumps to the top of the page)."""
+    if checkout_live(p):
+        return f'<a class="btn gold" href="{p["payment_link"]}" data-slug="{p["slug"]}">{label}</a>'
+    return f'<span class="btn soon" data-slug="{p["slug"]}" aria-disabled="true" title="Checkout is being wired up — nothing is charged today">Checkout opens this week</span>'
+
+def buy_trust(p):
+    if checkout_live(p):
+        return '<p class="trust">Secure checkout by Stripe · Instant delivery · No subscription · No account needed</p>'
+    return '<p class="trust">Payments are being switched on — no orders are taken until checkout is live. Check back shortly.</p>'
 
 def product_page(p):
     compare = f"<span class='compare'>{p['compare_at']}</span>" if p.get("compare_at") else ""
@@ -262,12 +297,12 @@ def product_page(p):
 <p class="sub">{html.escape(p['headline'])} {html.escape(p['sub'])}</p>
 <div class="price" style="font-size:1.5rem">{p['price']}{compare}</div>
 <ul>{bullets}</ul>
-<a class="btn gold" href="{p['payment_link']}" data-slug="{p['slug']}">Buy now — instant download</a>
-<p class="trust">Secure checkout by Stripe · Instant delivery · No subscription · No account needed</p>
+{buy_button(p, "Buy now — instant download")}
+{buy_trust(p)}
 <div class="guarantee"><b>Our guarantee:</b> {html.escape(GUARANTEE)}</div>{upsell}
 </div></div>
 <div class="faq wrap"><h2>Questions, answered</h2>{faqs}</div>
-<div class="wrap cta2"><a class="btn gold" href="{p['payment_link']}" data-slug="{p['slug']}">Buy now — instant download · {p['price']}</a>
+<div class="wrap cta2">{buy_button(p, f"Buy now — instant download · {p['price']}")}
 <p class="trust">Covered by the no-questions guarantee above.</p></div>"""
     desc = f"{p['headline']} {p['sub']}"
     desc = desc if len(desc) <= 158 else desc[:155].rsplit(" ", 1)[0] + "…"
@@ -297,13 +332,13 @@ def build():
 <h2 id="privacy">Privacy</h2>
 <p>We collect only what checkout requires (handled by Stripe) and your email for delivery. No data sales, no spam — you'll only hear from us about your order unless you opt in to more.</p>
 <h2 id="contact">Contact</h2>
-<p>Email: {CONFIG['support_email']} — a real human answers, usually within a few hours.</p>
+<p>{contact_section_html()}</p>
 </div>"""
     with open(os.path.join(SITE, "policies.html"), "w") as f:
         f.write(page(f"Policies — {CONFIG['brand']}", policies, "Refunds, delivery, terms and privacy for our digital products.", path="policies.html"))
     success = f"""<div class="wrap policy"><h1>Thank you! 🎉</h1>
 <p>Your order is confirmed. Your download link is on its way to your inbox right now (check spam/promotions the first time).</p>
-<p>If it isn't there within 10 minutes, email {CONFIG['support_email']} and a human will send it personally.</p>
+<p>If it isn't there within 10 minutes, {"email " + CONFIG["support_email"] if CONFIG["support_email"] and "PLACEHOLDER" not in CONFIG["support_email"] else "reply to your order receipt email"} and a human will send it personally.</p>
 <p><a class="btn" href="index.html">Back to the shop</a></p></div>"""
     with open(os.path.join(SITE, "success.html"), "w") as f:
         f.write(page(f"Order confirmed — {CONFIG['brand']}", success, "Your order is confirmed — download link on the way.", path="success.html", purchase=True))

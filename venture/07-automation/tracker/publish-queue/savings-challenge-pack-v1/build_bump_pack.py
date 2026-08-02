@@ -40,7 +40,7 @@ grid_boxes(d, M, 460, 4, 13, (W-2*M)//4 + 10, 200, labels, F(FB,44), subs)
 d.text((M, 3130), "Flip it: start at week 52 ($52) while motivation is highest.", font=F(FR,40), fill=GRAY)
 img52 = img
 
-# --- 2. Biweekly Challenge (26 deposits, $2,106 total: $3,$9,... arithmetic) ---
+# --- 2. Biweekly Challenge (26 deposits, $2,106 total: $6,$12,...,$156 arithmetic) ---
 img, d = page("BIWEEKLY SAVINGS CHALLENGE", "Paid every two weeks? 26 deposits, $6 more each time. Total: $2,106.", TEAL)
 amts = [6*(i+1) for i in range(26)]
 labels = [f"#{i+1}" for i in range(26)]

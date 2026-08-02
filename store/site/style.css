@@ -6,7 +6,8 @@ body{font-family:Georgia,'Times New Roman',serif;color:var(--dark);background:va
 header{background:var(--navy);color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
 header a{color:#fff;text-decoration:none}
 header .brand{font-size:1.25rem;font-weight:bold}
-nav a{margin-left:18px;font-family:Helvetica,Arial,sans-serif;font-size:.95rem}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+nav a{font-family:Helvetica,Arial,sans-serif;font-size:.95rem}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 .hero{padding:64px 0 40px;text-align:center}
 .hero h1{font-size:2.4rem;color:var(--navy);margin-bottom:14px}
@@ -21,6 +22,8 @@ nav a{margin-left:18px;font-family:Helvetica,Arial,sans-serif;font-size:.95rem}
 .btn{display:inline-block;background:var(--teal);color:#fff!important;padding:14px 28px;border-radius:10px;font-family:Helvetica,Arial,sans-serif;font-weight:bold;text-decoration:none;text-align:center;font-size:1.05rem}
 .btn.gold{background:var(--gold);color:var(--dark)!important}
 .btn:hover{opacity:.92}
+.btn.soon{background:#e7e3d8;color:var(--gray)!important;cursor:default}
+.btn.soon:hover{opacity:1}
 .badge{display:inline-block;background:var(--gold);color:var(--dark);font-family:Helvetica,Arial,sans-serif;font-size:.78rem;font-weight:bold;padding:4px 10px;border-radius:20px}
 .pd{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:48px 0;align-items:start}
 .pd img{width:100%;border-radius:14px;border:1px solid #e2ddd2}

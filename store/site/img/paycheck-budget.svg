@@ -8,7 +8,7 @@
 <rect x="100" y="132" width="290" height="30" fill="#1f3a5f" rx="8"/>
 <rect x="100" y="152" width="290" height="12" fill="#1f3a5f"/>
 <text x="115" y="152" font-size="13" font-weight="bold" fill="#ffffff">PAYCHECK BUDGET</text>
-<text x="120" y="208" font-size="13" fill="#282c34">Rent / mortgage</text><text x="360" y="208" font-size="13" font-weight="bold" fill="#1f3a5f">$950</text><text x="120" y="232" font-size="13" fill="#282c34">Groceries</text><text x="360" y="232" font-size="13" font-weight="bold" fill="#1f3a5f">$268</text><text x="120" y="256" font-size="13" fill="#282c34">Emergency fund</text><text x="360" y="256" font-size="13" font-weight="bold" fill="#1f3a5f">$100</text><text x="120" y="280" font-size="13" fill="#282c34">LEFT TO ASSIGN</text><text x="360" y="280" font-size="13" font-weight="bold" fill="#1f3a5f">$0</text>
+<text x="120" y="208" font-size="13" fill="#282c34">Rent / mortgage</text><text x="378" text-anchor="end" y="208" font-size="13" font-weight="bold" fill="#1f3a5f">$950</text><text x="120" y="232" font-size="13" fill="#282c34">Groceries</text><text x="378" text-anchor="end" y="232" font-size="13" font-weight="bold" fill="#1f3a5f">$268</text><text x="120" y="256" font-size="13" fill="#282c34">Emergency fund</text><text x="378" text-anchor="end" y="256" font-size="13" font-weight="bold" fill="#1f3a5f">$100</text><text x="120" y="280" font-size="13" fill="#282c34">LEFT TO ASSIGN</text><text x="378" text-anchor="end" y="280" font-size="13" font-weight="bold" fill="#1f3a5f">$0</text>
 <rect y="305" width="460" height="40" fill="#f2c14e"/>
 <text x="230" y="330" text-anchor="middle" font-size="13" font-weight="bold" fill="#282c34">Google Sheets + Excel  •  Instant Download</text>
 </svg>

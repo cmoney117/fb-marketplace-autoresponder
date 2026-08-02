@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Build the Budget-by-Paycheck spreadsheet product (starter digital listing)."""
+"""Build The Paycheck Budget spreadsheet product (starter digital listing).
+NOTE: never use the phrase "Budget by Paycheck" anywhere — registered brand of The Budget Mom, LLC (see listing.md IP screen)."""
 import os
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
