@@ -1,0 +1,41 @@
+
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1f3a5f;--teal:#2e7d6b;--gold:#f2c14e;--cream:#f8f6f0;--dark:#282c34;--gray:#5a5f69}
+body{font-family:Georgia,'Times New Roman',serif;color:var(--dark);background:var(--cream);line-height:1.6}
+.sans{font-family:Helvetica,Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+header a{color:#fff;text-decoration:none}
+header .brand{font-size:1.25rem;font-weight:bold}
+nav a{margin-left:18px;font-family:Helvetica,Arial,sans-serif;font-size:.95rem}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.hero{padding:64px 0 40px;text-align:center}
+.hero h1{font-size:2.4rem;color:var(--navy);margin-bottom:14px}
+.hero p{font-size:1.15rem;color:var(--gray);max-width:640px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;padding:40px 0}
+.card{background:#fff;border:1px solid #e2ddd2;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:auto;display:block;background:#eee}
+.card .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{color:var(--navy)}
+.price{font-family:Helvetica,Arial,sans-serif;font-weight:bold;font-size:1.15rem}
+.compare{color:var(--gray);text-decoration:line-through;font-weight:normal;font-size:.95rem;margin-left:8px}
+.btn{display:inline-block;background:var(--teal);color:#fff!important;padding:14px 28px;border-radius:10px;font-family:Helvetica,Arial,sans-serif;font-weight:bold;text-decoration:none;text-align:center;font-size:1.05rem}
+.btn.gold{background:var(--gold);color:var(--dark)!important}
+.btn:hover{opacity:.92}
+.badge{display:inline-block;background:var(--gold);color:var(--dark);font-family:Helvetica,Arial,sans-serif;font-size:.78rem;font-weight:bold;padding:4px 10px;border-radius:20px}
+.pd{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:48px 0;align-items:start}
+.pd img{width:100%;border-radius:14px;border:1px solid #e2ddd2}
+.pd h1{color:var(--navy);font-size:2rem;margin-bottom:10px}
+.pd .sub{color:var(--gray);font-size:1.08rem;margin-bottom:18px}
+.pd ul{margin:18px 0 24px 20px}
+.pd li{margin-bottom:8px}
+.guarantee{background:#fff;border-left:5px solid var(--gold);padding:14px 18px;border-radius:8px;font-size:.98rem;margin:22px 0}
+.trust{font-family:Helvetica,Arial,sans-serif;font-size:.85rem;color:var(--gray);margin-top:10px}
+.faq{padding:20px 0 60px}
+.faq h2{color:var(--navy);margin-bottom:16px}
+.faq details{background:#fff;border:1px solid #e2ddd2;border-radius:10px;padding:14px 18px;margin-bottom:10px}
+.faq summary{font-weight:bold;cursor:pointer}
+footer{background:var(--navy);color:#cfd8e3;padding:28px 24px;font-family:Helvetica,Arial,sans-serif;font-size:.85rem;text-align:center}
+footer a{color:#fff}
+.policy{padding:48px 0;max-width:760px}
+.policy h1,.policy h2{color:var(--navy);margin:22px 0 10px}
+@media(max-width:760px){.pd{grid-template-columns:1fr}.hero h1{font-size:1.8rem}}
