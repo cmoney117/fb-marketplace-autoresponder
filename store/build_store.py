@@ -8,8 +8,8 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(ROOT, "site")
 
 CONFIG = {
-    "brand": "Willow & Pine Studio",
-    "tagline": "Practical money tools + personalized keepsakes, made by a small US shop.",
+    "brand": "The Paycheck Budget",
+    "tagline": "Simple money tools that fit real life — built, tested, and guaranteed by a small US studio.",
     "support_email": "SUPPORT_EMAIL_PLACEHOLDER",  # set at launch
     "ga4_id": "",  # e.g. G-XXXXXXX — injected when set
 }

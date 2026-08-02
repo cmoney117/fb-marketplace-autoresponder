@@ -31,3 +31,12 @@ Also: append a row per check to `tracker/verification-log.csv` (date, artifact, 
 - The auditor never "fixes silently": discrepancies get fixed where possible AND reported (trust requires seeing the catch).
 - A check that can't run (URL unknown yet, account not created) is reported as N/A, never as passed.
 - If the auditor itself fails to run, the owner notices by the missing nightly message — that's by design; absence of the audit IS the alert.
+
+## Telegram channel (owner directive 2026-08-02)
+When `venture/07-automation/telegram.conf` exists (TG_BOT_TOKEN + TG_CHAT_ID), every nightly audit line is ALSO sent via `scripts/notify_telegram.sh` — same message, same always-on rule. Verified-done milestones (store live, first sale, gig published) go to Telegram the moment they're externally verified, not when claimed.
+
+## Weekly two-lens deep audit (owner directive 2026-08-02 — permanent standard)
+Every Sunday the audit runs two extra passes over EVERYTHING built or changed that week:
+1. **World-class operator lens:** pricing/offer congruence, page conversion practices (headline-promise match, guarantee placement, proof density, friction count to checkout), copy quality, funnel math still valid vs tracker data.
+2. **Adversarial customer lens:** click every link and button as a skeptical stranger on a phone — dead buttons, placeholder text visible anywhere, broken images, confusing steps, files that don't open, prices that don't match between page/checkout/receipt. Every finding gets fixed or ticketed with an owner-visible line; "it's minor" is not a dismissal.
+Findings + fixes land in `tracker/verification-log.csv` and the Sunday report.
