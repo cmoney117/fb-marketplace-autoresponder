@@ -4,8 +4,14 @@
 ## TASK-000 — Make the results doc readable by cloud Claude
 Open the results doc link above → Share → General access → "Anyone with the link" → Viewer → Done. (This lets the cloud agent read your results; it can already read nothing else of the Drive.) Write "TASK-000 done" under DONE.
 
-## TASK-001 — Finish Vercel project setup (store deploy)
+## ✅ TASK-001 — Finish Vercel project setup (store deploy) — VERIFIED DONE 2026-08-02 (cloud-verified: project fb-marketplace-autoresponder, production branch correct, deployment READY; worker forgot to log it — see TASK-000B/001C)
 In the logged-in Vercel account: Add New → Project → import GitHub repo `cmoney117/fb-marketplace-autoresponder`. Configure screen: Framework Preset = "Other"; Root Directory → Edit → `store/site`; leave Build/Output empty; Deploy. A failed/empty first deploy is EXPECTED. Then: project Settings → Git → Production Branch → change `master` to `claude/dropshipping-passive-income-q9a65v` → Save. Record the project name + its .vercel.app URL under DONE.
+
+## TASK-000B — Clean up the results doc (2 min)
+Open the results Google Doc and DELETE its entire "PENDING" section (the stale TASK-001/TASK-002 copies) and change the first protocol line to: "Tasks live ONLY in the GitHub BROWSER-TASKS.md file; this doc is for RESULTS (DONE/BLOCKED) only." Reminder: log EVERY completed task here — TASK-001 was completed but never logged, which cost hours. Write "TASK-000B done" under DONE.
+
+## TASK-001C — Make the store publicly reachable (2 clicks)
+In Vercel: project fb-marketplace-autoresponder → Settings → Deployment Protection → set Vercel Authentication to "Only Preview Deployments" (or Disabled). Then open https://fb-marketplace-autoresponder.vercel.app in an incognito window and confirm the store loads without login. Record confirmation under DONE.
 
 ## TASK-001B — Buy the store domain (SPEND APPROVED: $15 max — owner authorized 2026-08-02)
 In the logged-in Vercel account: go to https://vercel.com/domains/search?q=thepaycheckbudget.com and purchase thepaycheckbudget.com (~$11.25/yr) using the SAVED payment method and saved/auto-filled contact details — do NOT type card numbers; if the flow demands manual card entry, stop and record BLOCKED. Turn auto-renew ON. If a WHOIS contact form appears pre-filled, accept it; if it's empty and requires manual personal data entry, record BLOCKED. After purchase, if the project from TASK-001 exists: project Settings → Domains → add thepaycheckbudget.com. Record confirmation + domain status under DONE.

@@ -13,7 +13,7 @@ CONFIG = {
     "support_email": "",  # set at launch; while empty, pages degrade gracefully (no placeholder text is ever shown to customers)
     "ga4_id": "",  # e.g. G-XXXXXXX — injected when set
     "meta_pixel_id": "",  # numeric Meta Pixel ID — injected when set (required before ads per campaign-build-sheets.md)
-    "base_url": "",  # e.g. https://thepaycheckbudget.com — enables og:url/og:image when set
+    "base_url": "https://fb-marketplace-autoresponder.vercel.app",  # e.g. https://thepaycheckbudget.com — enables og:url/og:image when set
     "statement_descriptor": "PAYCHECKBUDGET",  # must match the Stripe statement descriptor exactly (BROWSER-TASKS TASK-002)
 }
 
