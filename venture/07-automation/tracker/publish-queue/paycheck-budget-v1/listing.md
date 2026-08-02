@@ -10,11 +10,11 @@
 
 **Type:** Digital download · **Category:** accept Etsy's suggestion for "budget spreadsheet" · **Price:** $14.99 · **Quantity:** 999
 
-**Title:**
-Paycheck Budget Spreadsheet, Zero Based Budget Template Google Sheets Excel, Biweekly Budget Planner, Debt Snowball Tracker, Digital Download
+**Title (131 chars — Etsy max 140):**
+Paycheck Budget Spreadsheet, Zero Based Budget Template, Google Sheets Excel Budget Planner, Biweekly Budget, Debt Snowball Tracker
 
-**Tags (13):**
-`paycheck budget` · `budget spreadsheet` · `zero based budget` · `google sheets budget` · `budget template excel` · `debt snowball tracker` · `biweekly budget` · `budget planner digital` · `finance spreadsheet` · `money tracker` · `debt payoff tracker` · `savings tracker` · `weekly budget planner`
+**Tags (13, all ≤20 chars — Etsy cap):**
+`paycheck budget` · `budget spreadsheet` · `zero based budget` · `google sheets budget` · `excel budget` · `debt snowball` · `biweekly budget` · `budget planner` · `finance spreadsheet` · `money tracker` · `debt payoff tracker` · `savings tracker` · `weekly budget`
 
 **Description:**
 Finally — a budget that works the way you actually get paid.

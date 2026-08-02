@@ -13,14 +13,14 @@
 **Backend changes (CRM):** multi-tenant (dealer_id on every table), per-dealer approved-facts config (inventory source, phone, hours), Stripe subscription billing, follow-up sequence engine re-pointed from Messenger to SMS/email, simple dashboard (leads, response times, appointments set).
 
 ## Pricing & packaging
-$149/mo founding (first 10 rooftops, lifetime) → $199/mo list. 14-day free trial, no card for trial. Setup = 20-min form (mirror the EverAnswer Jotform pattern).
+$149/mo founding (first 10 rooftops, lifetime) → $199/mo list. 14-day free trial, no card for trial. Setup = 20-min form (mirror the AnswerPine Jotform pattern).
 
 ## Sales page copy (headline block)
 > **Your Marketplace leads die in 20 minutes. Answer in 20 seconds — without risking your account.**
 > Meta bans dealers for auto-responders (30-day bans, ID-verified accounts, denied appeals). We don't auto-send — and that's the point. Lead Rescue drafts the perfect reply the second a buyer messages; your salesperson clicks send. The moment they share a number, our automated SMS follow-up takes over — off Facebook, where automation is legal. Built by the team running it live at a Tennessee fleet dealer.
 
 ## GTM (owner-light)
-DealerRefresh forum presence (genuine participation, human-written), 2 independent-dealer FB groups (human/VA only), CAN-SPAM email sequence (same rules as EverAnswer kit) to independent used-car dealers, existing dealer as the case study (with their OK). Cross-sell: every dealer "no" gets the EverAnswer receptionist pitch (Numa proved dealers buy AI phone coverage).
+DealerRefresh forum presence (genuine participation, human-written), 2 independent-dealer FB groups (human/VA only), CAN-SPAM email sequence (same rules as AnswerPine kit) to independent used-car dealers, existing dealer as the case study (with their OK). Cross-sell: every dealer "no" gets the AnswerPine receptionist pitch (Numa proved dealers buy AI phone coverage).
 
 ## Activation checklist
 1. Owner: attach `usa-fleet-sales-crm` repo to a session (or approve greenfield rebuild). 2. Owner: OK to reference USA Fleet Sales results as the case study. 3. Build sprint. 4. Trial with the existing dealer as tenant #1. Nothing here blocks the other lanes; this runs whenever wanted.

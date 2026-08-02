@@ -14,6 +14,7 @@ CONFIG = {
     "ga4_id": "",  # e.g. G-XXXXXXX — injected when set
     "meta_pixel_id": "",  # numeric Meta Pixel ID — injected when set (required before ads per campaign-build-sheets.md)
     "base_url": "",  # e.g. https://thepaycheckbudget.com — enables og:url/og:image when set
+    "statement_descriptor": "PAYCHECKBUDGET",  # must match the Stripe statement descriptor exactly (BROWSER-TASKS TASK-002)
 }
 
 GUARANTEE = "If the file doesn't work, doesn't match the description, or you bought a duplicate — full refund, no questions. Message us any time; a real human answers fast."
@@ -328,7 +329,7 @@ def build():
 <h2 id="delivery">Delivery</h2>
 <p>Digital products deliver instantly: a download link appears on the confirmation page and is emailed to you right after checkout. Lost the link? Email us any time — forever.</p>
 <h2 id="terms">Terms</h2>
-<p>Products are for personal use (or single-business use for business templates). Please don't resell or redistribute the files. Calculators and planners are organizational tools, not financial advice. Charges appear as {CONFIG['brand'].upper()} on your statement.</p>
+<p>Products are for personal use (or single-business use for business templates). Please don't resell or redistribute the files. Calculators and planners are organizational tools, not financial advice. Charges appear as {CONFIG['statement_descriptor']} on your statement.</p>
 <h2 id="privacy">Privacy</h2>
 <p>We collect only what checkout requires (handled by Stripe) and your email for delivery. No data sales, no spam — you'll only hear from us about your order unless you opt in to more.</p>
 <h2 id="contact">Contact</h2>

@@ -13,7 +13,7 @@ Create 5 products at dashboard.stripe.com → Product catalog → Add product; f
 | Savings Goal Tracker | $12.99 | same |
 | Money Reset Bundle | $29.99 | same |
 | (Bump) Printable Savings Challenge Pack | $9.99 | added as an OPTIONAL item on the four links above ("Add another product" → mark optional) |
-Also: Settings → Public details → statement descriptor = `WILLOWPINE` (or your chosen brand). Paste the 4 payment-link URLs to me (they're public URLs, safe to share in chat) and I wire them into the store + set up delivery emails.
+Also: Settings → Public details → statement descriptor = `PAYCHECKBUDGET` (matches the store brand — buyers must see the same name on the ad, the store, and the bank statement) — ONLY if that doesn't disturb the descriptor your existing business uses. Paste the 4 payment-link URLs to me (they're public URLs, safe to share in chat) and I wire them into the store + set up delivery emails.
 
 ## C. Ad accounts (~25 min — no spend happens at signup)
 1. **Pinterest business** account (Wave-1 pack Step 6 — same account) → Ads → set up billing. Do NOT launch anything; I prepare campaigns, you approve the $50/day start.
