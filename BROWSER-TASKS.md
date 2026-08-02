@@ -1,0 +1,11 @@
+# BROWSER TASKS — for desktop Claude (Cowork)
+**Protocol:** Do the OLDEST unfinished task below, in the logged-in browser. Write your result (URLs, IDs, confirmations, or the exact error/blocker) into the results Google Doc: https://docs.google.com/document/d/1v6rkBlZ7tv9a0mHNdcjJI1fp5uXgeZB55T7bktZlk4U/edit — under DONE (or BLOCKED if a human is needed). One task per run. NEVER type passwords, 2FA codes, or card numbers — leave those moments under BLOCKED. Never spend money unless the task contains "SPEND APPROVED: $X". Page doesn't match the description → BLOCKED, don't improvise. Cloud Claude marks tasks ✅ here after processing results — treat unmarked = unfinished.
+
+## TASK-000 — Make the results doc readable by cloud Claude
+Open the results doc link above → Share → General access → "Anyone with the link" → Viewer → Done. (This lets the cloud agent read your results; it can already read nothing else of the Drive.) Write "TASK-000 done" under DONE.
+
+## TASK-001 — Finish Vercel project setup (store deploy)
+In the logged-in Vercel account: Add New → Project → import GitHub repo `cmoney117/fb-marketplace-autoresponder`. Configure screen: Framework Preset = "Other"; Root Directory → Edit → `store/site`; leave Build/Output empty; Deploy. A failed/empty first deploy is EXPECTED. Then: project Settings → Git → Production Branch → change `master` to `claude/dropshipping-passive-income-q9a65v` → Save. Record the project name + its .vercel.app URL under DONE.
+
+## TASK-002 — Create 5 Stripe Payment Links (creates checkout pages; spends nothing)
+In the logged-in Stripe dashboard (live mode): Product catalog → Add product, then "Create payment link" for each: ① "The Paycheck Budget" $14.99 · ② "Debt Payoff Planner" $14.99 · ③ "Savings Goal Tracker" $12.99 · ④ "Money Reset Bundle" $29.99 · ⑤ "Savings Challenge Printable Pack" $9.99. On links ①–④: "Add another product" → attach ⑤ as an OPTIONAL add-on. After-payment: redirect to `https://PLACEHOLDER.vercel.app/success.html` (exact placeholder; cloud Claude updates it after TASK-001). Statement descriptor: set to WILLOWPINE ONLY if it would not change the descriptor the existing business uses — otherwise skip and note under BLOCKED. Paste all 5 payment-link URLs under DONE.
