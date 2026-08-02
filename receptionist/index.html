@@ -22,6 +22,9 @@ header{background:var(--navy);color:#fff;padding:16px 24px;font-weight:bold;font
 .price .big{font-size:3rem;font-weight:bold}
 .price .sub{color:#cfd8e3}
 .founding{background:var(--gold);color:var(--dark);display:inline-block;padding:6px 14px;border-radius:20px;font-weight:bold;margin-top:12px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;padding:8px 0 28px;counter-reset:step}
+.steps div{background:#fff;border:1px solid #e2ddd2;border-radius:12px;padding:18px}
+.steps b{color:var(--navy);display:block;margin-bottom:6px}
 .faq{padding:10px 0 50px}
 .faq details{background:#fff;border:1px solid #e2ddd2;border-radius:10px;padding:14px 18px;margin-bottom:10px}
 .faq summary{font-weight:bold;cursor:pointer}
@@ -34,9 +37,11 @@ footer{background:var(--navy);color:#cfd8e3;padding:24px;text-align:center;font-
 <div class="hero">
 <h1>Every missed call is a job your competitor got.</h1>
 <p>EverAnswer picks up 24/7 — nights, weekends, while you're under a sink. It triages emergencies, books the appointment into your schedule rules, and texts you what happened. Set up in days, not months.</p>
+<a class="btn gold" href="#demo">Hear it answer a call right now</a>
+<a class="btn" href="#pricing">See pricing</a>
 </div>
 
-<div class="demo">
+<div class="demo" id="demo">
 <h2>Don't take our word for it — call our fake company.</h2>
 <p style="color:var(--gray);margin-bottom:14px">This is our actual product answering for "Summit Home Services," a demo business. Try to stump it: book a job, invent an emergency, ask prices.</p>
 <elevenlabs-convai agent-id="agent_5001kz0fckd3ep5scqkwfhhgvj73"></elevenlabs-convai>
@@ -50,15 +55,22 @@ footer{background:var(--navy);color:#cfd8e3;padding:24px;text-align:center;font-
 <div class="card"><h3>Books real appointments</h3><p>Collects name, number, address, and the problem; offers your actual windows; confirms it back; texts/emails you the summary in seconds.</p></div>
 </div>
 
-<div class="price">
+<h2 style="color:var(--navy);margin:10px 0 14px">How it works</h2>
+<div class="steps">
+<div><b>1. Fill the 10-minute form</b>Your services, prices, hours, service area, and the rules for what it may and may not promise.</div>
+<div><b>2. Hear it answer as YOUR business</b>We build your agent and send you a private test number within 2–3 business days. Call it. Try to stump it.</div>
+<div><b>3. Go live when you're happy</b>Forward missed or after-hours calls to it (any carrier supports this) — or make it your main line.</div>
+</div>
+
+<div class="price" id="pricing">
 <div>Simple pricing</div>
 <div class="big">$249<span style="font-size:1.2rem">/mo</span></div>
 <div class="sub">+ $199 one-time setup · no contract · cancel anytime · unlimited calls within fair use</div>
 <div class="founding">Founding rate: first 5 businesses lock in $149/mo for life</div>
 <div style="margin-top:22px">
 <a class="btn gold" href="https://form.jotform.com/262131333242039">Start setup — 10-minute form</a>
-<a class="btn" href="STRIPE_PAYMENT_LINK_PLACEHOLDER">Subscribe</a>
 </div>
+<div class="sub" style="margin-top:10px;font-size:.9rem">The form costs nothing and books nothing — you'll hear your own test number answer before you decide.</div>
 </div>
 
 <div class="faq">
@@ -68,6 +80,7 @@ footer{background:var(--navy);color:#cfd8e3;padding:24px;text-align:center;font-
 <details><summary>What can't it do?</summary><p>It won't quote exact prices it hasn't been given, won't promise arrival times you didn't authorize, and hands anything weird to a human callback. You define the guardrails in onboarding.</p></details>
 <details><summary>Recording &amp; compliance?</summary><p>Calls are transcribed for your records; we configure state-appropriate recording disclosures, and texting runs on a registered business line (10DLC) — the legal way.</p></details>
 <details><summary>How fast is setup?</summary><p>Fill the form today; you get a private test number within 2–3 business days; go live whenever you're happy with how it answers.</p></details>
+<details><summary>How is this different from an answering service?</summary><p>A traditional service puts callers in a queue for a stranger with a script. EverAnswer answers on the first ring at 3am, knows your services and prices because you configured them, books the job, and texts you the summary — flat monthly rate, no per-minute meter. And anything it can't handle becomes an immediate message to you, not a lost call.</p></details>
 </div>
 </div>
 
