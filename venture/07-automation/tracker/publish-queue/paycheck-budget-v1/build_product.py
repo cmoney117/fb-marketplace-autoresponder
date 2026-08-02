@@ -5,7 +5,7 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
-OUT = "/home/user/fb-marketplace-autoresponder/venture/07-automation/tracker/publish-queue/budget-by-paycheck-v1"
+OUT = "/home/user/fb-marketplace-autoresponder/venture/07-automation/tracker/publish-queue/paycheck-budget-v1"
 os.makedirs(OUT, exist_ok=True)
 
 NAVY = "1F3A5F"; TEAL = "2E7D6B"; GOLD = "F2C14E"; LIGHT = "F4F6F8"; YELLOW = "FFF2CC"
@@ -30,7 +30,7 @@ ws = wb.active; ws.title = "START HERE"
 ws.sheet_view.showGridLines = False
 ws.column_dimensions["A"].width = 3
 for c, w in zip("BCDE", (34, 30, 30, 30)): ws.column_dimensions[c].width = w
-ws.merge_cells("B2:E2"); ws["B2"] = "BUDGET BY PAYCHECK — Complete System"
+ws.merge_cells("B2:E2"); ws["B2"] = "THE PAYCHECK BUDGET — Complete System"
 ws["B2"].font = Font(name="Arial", size=20, bold=True, color="FFFFFF")
 ws["B2"].fill = HEAD_FILL; ws["B2"].alignment = Alignment(horizontal="center", vertical="center")
 ws.row_dimensions[2].height = 34
@@ -202,6 +202,6 @@ ws.cell(row=tr, column=6).number_format = PCT
 for col in range(2, 7): ws.cell(row=tr, column=col).fill = ALT_FILL; ws.cell(row=tr, column=col).border = BORDER
 ws.cell(row=tr + 2, column=2, value="August row is a worked example — clear it and enter your own months.").font = SMALL
 
-path = os.path.join(OUT, "Budget-by-Paycheck.xlsx")
+path = os.path.join(OUT, "Paycheck-Budget-System.xlsx")
 wb.save(path)
 print("saved", path)

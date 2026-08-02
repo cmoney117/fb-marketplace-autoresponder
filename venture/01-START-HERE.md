@@ -13,7 +13,8 @@ Deep research across four business models (full docs + sources in `02-research/`
 - ✅ Full operations manual: customer-service SOP + templates, refund/shipping policies, compliance guardrails, VA hiring guide (`04-operations/`)
 - ✅ Marketing system: organic playbook, paid-ads framework with kill/scale rules, tracking conventions (`05-marketing/`)
 - ✅ The automation engine: architecture, five pipeline specs, daily + weekly scheduled-agent prompts, business tracker (`07-automation/`)
-- ✅ **Your first sellable product, finished:** "Budget by Paycheck" spreadsheet system (formulas built and verified) + 3 listing images + ready-to-paste listing copy (`07-automation/tracker/publish-queue/budget-by-paycheck-v1/`)
+- ✅ **Your first sellable product, finished:** "The Paycheck Budget" spreadsheet system (formulas built and verified) + 3 listing images + ready-to-paste listing copy (`07-automation/tracker/publish-queue/paycheck-budget-v1/`)
+- ✅ Brand-authority filter applied to every product pick (owner directive): we only sell things a zero-review shop can convert — trust from the product/marketplace/method, never from seller credibility we don't have (`02-research/05-brand-authority-filter.md`)
 - ✅ AI-handoff folder so any future session resumes from zero (`99-ai-handoff/`)
 
 ## Your ~75 minutes (the only part that requires a human)

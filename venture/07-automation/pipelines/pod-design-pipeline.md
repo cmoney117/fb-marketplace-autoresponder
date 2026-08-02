@@ -7,7 +7,7 @@ Run by the daily ops agent. Input: a niche from the active-niche list (weekly re
 1. **Concept batch.** Generate {5} design concepts for the niche. Prompt frame:
    > You are designing print-on-demand {product type} for the "{niche}" audience. Study what this audience finds funny/meaningful: {niche notes from research}. Produce 5 distinct concepts. For each: the exact text/visual idea, the emotional hook (pride/humor/identity/gift-occasion), who buys it and for whom, and why it isn't generic. Avoid: any brand names, trademarked phrases, celebrity references, song lyrics, or existing designs.
 
-2. **IP screen (mandatory, blocking).** For every phrase: search USPTO trademark database (tmsearch.uspto.gov) for live marks in relevant classes (25 apparel, 21 drinkware, 16 paper); common-sense check against brands/teams/characters/lyrics. Log each check in the design log (`concept, screened_date, result`). Any hit or doubt → discard concept. **No screen log = no listing.**
+2. **IP screen (mandatory, blocking).** For every phrase: search USPTO trademark database (tmsearch.uspto.gov) for live marks in relevant classes (25 apparel, 21 drinkware, 16 paper); common-sense check against brands/teams/characters/lyrics — **including influencer method names and creator brands** (first live catch: "Budget by Paycheck" = The Budget Mom's registered brand). Log each check in the design log (`concept, screened_date, result`). Any hit or doubt → discard concept. **No screen log = no listing.**
 
 3. **Design generation.** Text-forward designs (typography does most POD selling): generate as high-res transparent PNG (4500×5400 for apparel) — AI image tools or programmatic SVG→PNG for pure-type designs. One design → light/dark variants.
 

@@ -19,4 +19,7 @@ Append-only. Every consequential decision gets a row. Newest last.
 | 12 | 2026-08-02 | Own store (Wave 3) on **Cloudflare Pages free tier**, not Vercel Hobby | Vercel Hobby ToS prohibits commercial use; Cloudflare free tier permits it | AI (research) |
 | 13 | 2026-08-02 | First product built pre-signup: Budget-by-Paycheck xlsx (formulas verified programmatically; LibreOffice recalc unavailable in build env — owner does 2-min visual check on first Sheets open) | Etsy signup requires one listing; makes the owner's 75-min setup fully paste-ready | AI |
 
-*(Rows 14+ appended as launch proceeds.)*
+| 14 | 2026-08-02 | **Brand-authority filter adopted as a blocking gate** in both product pipelines; Notion templates + AI prompt packs demoted out of launch waves; $49.99 price ceiling until 25+ reviews; finance/health/legal sold as tools only, never advice | Owner directive: only pursue products sellable without brand authority we don't have ("Dave Ramsey could sell a million budgeting calculators — we can't") | Owner (directive), AI (implementation) |
+| 15 | 2026-08-02 | Starter product renamed "Budget by Paycheck" → **"The Paycheck Budget"** (`paycheck-budget-v1/`); files, images, and listing copy rebuilt; the phrase banned from all future titles/tags/copy | IP screen (prompted by the authority review) found "Budget by Paycheck®" is The Budget Mom, LLC's registered method brand (THE BUDGET MOM: USPTO reg. 6012668, spreadsheets/workbooks in financial planning) | AI |
+
+*(Rows 16+ appended as launch proceeds.)*

@@ -6,6 +6,8 @@ Run by the daily/weekly ops agent. Digital products are the highest-margin, lowe
 
 1. **Pick from the validated candidate list** (`02-research/02-products-and-niches.md` + tracker signal). One product per run, done well, beats five templates nobody needs.
 
+1b. **Brand-authority gate (blocking)** per `02-research/05-brand-authority-filter.md`: would a stranger buy this from a 0-review shop based on the preview alone? If the sale depends on the *seller's* credibility (advice products, prompt packs, audience-driven templates), reposition as a tool implementing a generic named method — or kill. Price ceiling $49.99 until the shop has 25+ reviews. Never use influencer/company method brands (Budget Mom, Ramsey/EveryDollar, etc.) in names, tags, or copy.
+
 2. **Build with AI, to a spec.** Write a 10-line product spec first (audience, job-to-be-done, pages/tabs/features, format(s), what makes it better than the free alternative). Then produce:
    - Spreadsheets (budget planners, trackers): build the actual .xlsx with working formulas, instructions tab, both US-letter/A4 where relevant.
    - Printables (planners, wall art, checklists): print-ready PDF (300dpi, bleed where needed) + letter/A4.

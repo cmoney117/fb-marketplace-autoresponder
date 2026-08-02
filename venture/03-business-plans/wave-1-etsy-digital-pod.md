@@ -24,13 +24,15 @@
 **Launch products (from research ranks 3, 4, 8):**
 | Product | Build effort (AI-assisted) | Price | Net/sale |
 |---|---|---|---|
-| Budget-by-paycheck Google Sheets system (+ debt payoff, ADHD-friendly variants) | 2–4 days | $12.99–19.99 | ~$11–17 (Etsy ~89%) |
+| Zero-based paycheck budget Google Sheets system (+ debt payoff, ADHD-friendly variants) — v1 BUILT: `07-automation/tracker/publish-queue/paycheck-budget-v1/` | 2–4 days | $12.99–19.99 | ~$11–17 (Etsy ~89%) |
 | Profession-specific business bundles (cleaners, pressure washers, HVAC, dog groomers: invoice + contract + intake + quote templates) | 2–3 days each | $24.99–49.99 | ~$22–44 |
 | Wedding operational suites (seating chart, day-of timeline, hashtag signs — NOT invites) | 2–3 days | $14.99–29.99 | ~$13–26 |
 
 **Bundle ladder rule:** any product with 3+ sales → build the $25 bundle → the $50 mega-bundle. Digital winners iterate at zero marginal cost.
 
 **Why these:** budget spreadsheets have a predictable January demand spike (build catalog now, catch the wave); profession bundles exploit the owner's home-services domain knowledge in verticals nobody builds for; wedding ops items have demonstrated velocity (13 sales/day on a single competing bundle listing) with less saturation than invitations.
+
+**Brand-authority check (owner directive, 2026-08-02):** every product here passes the no-name-shop test in `02-research/05-brand-authority-filter.md` — the trust comes from the product preview, the marketplace, personalization, or generic method keywords, never from seller credibility we don't have. Finance products are sold strictly as *tools* (never advice), under $50, previews showing everything. Notion templates and prompt packs were demoted out of the launch waves by this filter (audience-dependent distribution).
 
 ## Operating loop (all automated after setup — see `07-automation/`)
 - Daily run: CS inbox → order health/delay-watcher → produce & publish the day's listings (via Printify publish API + Etsy Seller App API) → pull stats → NEEDS-HUMAN only if real.
