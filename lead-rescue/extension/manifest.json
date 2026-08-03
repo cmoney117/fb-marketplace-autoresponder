@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Lead Rescue — Marketplace Reply Assistant",
+  "version": "0.1.0",
+  "description": "Drafts replies to Facebook Marketplace buyer messages — you review, copy, and send them yourself. This extension never sends a message on your behalf.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "alarms",
+    "sidePanel",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://www.facebook.com/*"
+  ],
+  "optional_host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/messages/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Open Lead Rescue panel"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  }
+}

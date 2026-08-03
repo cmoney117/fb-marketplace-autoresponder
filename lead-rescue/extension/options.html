@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Lead Rescue — Options</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+      font-size: 13px;
+    }
+    h1 { font-size: 18px; font-weight: 700; color: #38bdf8; }
+    .subtitle { font-size: 12px; color: #64748b; margin: 4px 0 20px; }
+    fieldset {
+      border: 1px solid #334155; border-radius: 10px;
+      padding: 14px 16px 16px; margin-bottom: 18px;
+    }
+    legend { font-size: 12px; font-weight: 700; color: #94a3b8; padding: 0 6px; }
+    label { font-size: 11px; color: #94a3b8; display: block; margin: 10px 0 4px; }
+    .help { font-size: 10px; color: #64748b; margin-top: 3px; line-height: 1.4; }
+    input[type="text"], input[type="password"], textarea {
+      width: 100%; padding: 8px 10px;
+      background: #1e293b; border: 1px solid #334155;
+      border-radius: 6px; color: #e2e8f0;
+      font-size: 12px; font-family: monospace;
+    }
+    textarea { resize: vertical; min-height: 64px; }
+    input:focus, textarea:focus { outline: none; border-color: #38bdf8; }
+    .builtin {
+      font-size: 10px; color: #64748b; background: #1e293b;
+      border-radius: 6px; padding: 6px 9px; margin-top: 6px;
+      font-family: monospace; line-height: 1.6;
+    }
+    .btn {
+      padding: 10px 18px;
+      background: #38bdf8; color: #0f172a;
+      border: none; border-radius: 6px;
+      font-size: 13px; font-weight: 700;
+      cursor: pointer;
+    }
+    .btn:hover { background: #7dd3fc; }
+    #savedMsg { font-size: 12px; color: #22c55e; margin-left: 10px; display: none; }
+    #permWarn { font-size: 11px; color: #fbbf24; margin-top: 10px; display: none; line-height: 1.5; }
+    .compliance {
+      border: 1px solid #14532d; background: #052e16; color: #86efac;
+      border-radius: 10px; padding: 12px 14px; font-size: 12px;
+      line-height: 1.6; margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lead Rescue — Options</h1>
+  <p class="subtitle">Marketplace Reply Assistant · drafts replies, captures leads · never sends</p>
+
+  <div class="compliance">
+    <strong>No auto-send, by design.</strong> Lead Rescue contains no code that can
+    send a Facebook message. Drafts appear in the side panel; you copy, paste into
+    Facebook's own composer, and click Send yourself. This keeps your ID-verified
+    account out of Meta's automation bans.
+  </div>
+
+  <fieldset>
+    <legend>CRM connection</legend>
+
+    <label for="apiBaseUrl">API base URL</label>
+    <input type="text" id="apiBaseUrl" placeholder="https://your-crm.example.com" />
+    <div class="help">
+      Your Lead Rescue backend. The extension calls
+      <code>POST {base}/api/fb/generate-reply</code> for drafts and
+      <code>POST {base}/api/leads</code> for lead capture. Saving asks Chrome for
+      permission to contact this host.
+    </div>
+
+    <label for="dealerApiKey">Dealer API key</label>
+    <input type="password" id="dealerApiKey" placeholder="Paste your dealer API key" />
+    <div class="help">Sent as the <code>x-agent-secret</code> header. Stored only in this browser's extension storage — never hardcoded, never shared.</div>
+
+    <label for="dealerId">Dealer ID</label>
+    <input type="text" id="dealerId" placeholder="e.g. usa-fleet-sales" />
+    <div class="help">Included as <code>dealer_id</code> on every captured lead (multi-rooftop CRMs route on this).</div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Phone-number guardrail</legend>
+
+    <label for="approvedPhones">Approved phone numbers (one per line — first is primary)</label>
+    <textarea id="approvedPhones" placeholder="615-555-0123"></textarea>
+    <div class="help">
+      Any other phone number appearing in an AI draft is replaced with your primary
+      number (or removed if this list is empty) before you ever see the draft.
+      Prevents a hallucinated number from reaching a buyer.
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Ignore-lists</legend>
+
+    <label for="ignoredSenders">Ignored sender names (one per line, matched case-insensitively)</label>
+    <textarea id="ignoredSenders" placeholder="Some Vendor Name"></textarea>
+    <div class="help">Added on top of the built-in system list, which always applies:</div>
+    <div class="builtin">facebook · facebook assistant · marketplace · meta · messenger · facebook marketplace · facebook for business</div>
+
+    <label for="ignoredThreadIds">Ignored thread IDs (one per line)</label>
+    <textarea id="ignoredThreadIds" placeholder="1234567890"></textarea>
+    <div class="help">Added on top of the built-in list (389917088531093 — Facebook Marketplace Assistant).</div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Topic gate</legend>
+
+    <label for="extraTopicKeywords">Extra topic keywords (one per line)</label>
+    <textarea id="extraTopicKeywords" placeholder="excavator&#10;skid steer"></textarea>
+    <div class="help">
+      The scanner only surfaces conversations that look like vehicle inquiries
+      (built-in keyword list: truck, van, price, finance, mileage, ...). Add your
+      own inventory terms here if you sell something the built-in list misses.
+    </div>
+  </fieldset>
+
+  <button class="btn" id="saveBtn">Save settings</button>
+  <span id="savedMsg">✓ Saved</span>
+  <div id="permWarn"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>
