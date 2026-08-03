@@ -49,7 +49,7 @@ Two more products, same pattern as 008G (download files from GitHub at .../store
 ⑨ "Meal Plan & Grocery Budget Planner" $12.99 on Gumroad (price MUST match the store) — files in `dl/43a632d11df5834d/`, cover `img/meal-grocery-planner.png` — "4-week meal grid, grocery list that totals against your budget before you shop, 3-store price book, and pantry inventory. Works in free Google Sheets and Excel."
 PUBLISH both (draft = not done), paste both public URLs under DONE.
 
-## ⚡ TASK-012 — Send the 17 AnswerPine outreach drafts (owner directed "sell in every way possible" + provided the mailing address; confirm with Cody in your chat if you need action-time approval)
+## ✅ TASK-012 — DONE 2026-08-03 19:25Z (17/17 sent, Gmail-verified; 1 bounce: Tahoma admin@tahomahc.com bad domain — suppressed; 16 delivered or pending. Follow-up touches 2-4 run per receptionist-outreach-kit.md schedule.) — Send the 17 AnswerPine outreach drafts (owner directed "sell in every way possible" + provided the mailing address; confirm with Cody in your chat if you need action-time approval)
 In Gmail (the connected account): open Drafts — there are 17 drafts with subjects starting "quick one" addressed to home-services companies. For EACH: verify it contains the Nashville mailing address (159 4th Ave N, Ste 100 #2179) and the "Reply 'no thanks'" opt-out line, then click Send. Space them out if easy (a few minutes apart is ideal; all-at-once is acceptable). Log to the results doc under DONE: "TASK-012: sent N of 17" + any that failed/bounced. NEVER send to anyone who has previously replied "no thanks" (none have yet — this is the first send). Do not edit draft contents beyond fixing an obvious typo.
 
 ## ⚡ TASK-001C — Make the store publicly reachable (2 clicks)
