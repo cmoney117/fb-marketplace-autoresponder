@@ -14,6 +14,8 @@ from datetime import date
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.formatting.rule import CellIsRule
+from openpyxl.worksheet.datavalidation import DataValidation
+from openpyxl.chart import BarChart, LineChart, Reference
 
 OUT = "/home/user/fb-marketplace-autoresponder/venture/07-automation/tracker/publish-queue/bookkeeping-tracker-v1"
 os.makedirs(OUT, exist_ok=True)
@@ -31,7 +33,8 @@ SEC_FILL = PatternFill("solid", fgColor=TEAL)
 ALT_FILL = PatternFill("solid", fgColor=LIGHT)
 thin = Side(style="thin", color="CCCCCC")
 BORDER = Border(left=thin, right=thin, top=thin, bottom=thin)
-MONEY = '$#,##0.00;($#,##0.00);"-"'
+MONEY = '$#,##0.00;($#,##0.00);"-"'   # dash for zero (table cells)
+MONEY0 = '$#,##0.00;($#,##0.00)'      # $0.00 for zero (summary/hero cells)
 PCT1 = "0.0%"
 PCT2 = "0.00%"
 DATEFMT = "yyyy-mm-dd"
@@ -152,6 +155,7 @@ rows = [
     ("Yellow cells = yours to edit. Everything else calculates automatically — please don't type over it.", ""),
     ("Green / yellow / red = fine / watch / needs attention (profit months, invoice status, overdue days).", ""),
     ("Enter dates as real dates (e.g. 1/6/2026) — statuses and monthly totals read them.", ""),
+    ("Type and Category on the Ledger are dropdowns — pick, don't type (custom categories are fine).", ""),
     ("", ""),
     ("A FEW HONEST NOTES", "SEC"),
     ("• The Quarterly Tax Estimate is a simplified ESTIMATE to help you set money aside. It is not tax,", ""),
@@ -161,7 +165,9 @@ rows = [
     ("   vehicle as expenses — it's one or the other. Ask your tax pro.", ""),
     ("", ""),
     ("GOOGLE SHEETS USERS", "SEC"),
-    ("Upload this file to Google Drive, then open it — it converts automatically and all formulas work.", ""),
+    ("Upload this file to Google Drive, then open it — it converts automatically: formulas, dropdowns, and", ""),
+    ("traffic-light colors work as-is. The P&L chart converts to a Sheets chart (colors can shift slightly;", ""),
+    ("data identical). Excel 2010+ shows everything exactly as built. No macros anywhere.", ""),
     ("", ""),
     ("Questions or a formula acting up? Message us on Etsy any time — we answer fast and we'll fix it.", ""),
 ]
@@ -181,17 +187,19 @@ ws = wb.create_sheet("Income & Expense Ledger")
 for c, w in zip("BCDEFGHIJKL", (12, 13, 22, 46, 13, 6, 2, 10, 13, 13, 13)):
     ws.column_dimensions[c].width = w
 banner(ws, 12, "INCOME & EXPENSE LEDGER")
-stats = [
+stats = [  # labels merged B:E so they can never clip; values in F ($0.00 for zero)
     ("Money in (year so far)", f'=SUMIF($C${L_FIRST}:$C${L_LAST},"Income",$F${L_FIRST}:$F${L_LAST})'),
     ("Money out (year so far)", f'=SUMIF($C${L_FIRST}:$C${L_LAST},"Expense",$F${L_FIRST}:$F${L_LAST})'),
-    ("Net profit (year so far)", "=C4-C5"),
+    ("Net profit (year so far)", "=F4-F5"),
 ]
 for i, (lab, f) in enumerate(stats):
-    ws.cell(row=4 + i, column=2, value=lab).font = BB
-    c = ws.cell(row=4 + i, column=3, value=f)
-    c.font = BB; c.fill = ALT_FILL; c.border = BORDER; c.number_format = MONEY
-ws["B8"] = ("Log one row per transaction. Type must be exactly Income or Expense — the totals count those words. "
-            "'Mo.' fills itself from the date.")
+    r = 4 + i
+    ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=5)
+    ws.cell(row=r, column=2, value=lab).font = BB
+    c = ws.cell(row=r, column=6, value=f)
+    c.font = BB; c.fill = ALT_FILL; c.border = BORDER; c.number_format = MONEY0
+ws["B8"] = ("Log one row per transaction. Type and Category are dropdowns — pick instead of typing "
+            "(custom categories are fine too). 'Mo.' fills itself from the date.")
 ws["B8"].font = SMALL
 hdrs = ["Date", "Type", "Category", "Description / client", "Amount", "Mo."]
 for i, h in enumerate(hdrs):
@@ -231,6 +239,18 @@ ws.conditional_formatting.add(f"L{M_FIRST}:L{M_LAST}", CellIsRule(operator="equa
 ws.conditional_formatting.add(f"L{M_FIRST}:L{M_LAST}", CellIsRule(operator="lessThan", formula=["0"], fill=RED_FILL, font=RED_FONT))
 ws.cell(row=L_LAST + 2, column=2, value=("The totals read rows 10–209 (200 entries). If you ever fill them all, "
                                          "insert new rows ABOVE the last one and every formula stretches automatically.")).font = SMALL
+# dropdowns: Type is strict (the totals count those exact words); Category offers
+# a Schedule-C-shaped list but accepts anything you type
+dv_type = DataValidation(type="list", formula1='"Income,Expense"', allow_blank=True,
+                         showErrorMessage=True, errorTitle="Income or Expense",
+                         error="Pick Income or Expense — every total reads these words.")
+ws.add_data_validation(dv_type); dv_type.add(f"C{L_FIRST}:C{L_LAST}")
+CATEGORIES = ("Client payment,Product sales,Other income,Supplies,Equipment,Insurance,"
+              "Advertising,Software / subscriptions,Phone,Internet,Rent,Utilities,"
+              "Contract labor,Professional services,Bank / card fees,Travel,Other expense")
+dv_cat = DataValidation(type="list", formula1=f'"{CATEGORIES}"', allow_blank=True,
+                        showErrorMessage=False)
+ws.add_data_validation(dv_cat); dv_cat.add(f"D{L_FIRST}:D{L_LAST}")
 ws.freeze_panes = "B10"
 
 # ---------- Tab 3: Invoice Tracker ----------
@@ -247,7 +267,7 @@ money_stats = [
 for i, (lab, f) in enumerate(money_stats):
     ws.cell(row=4 + i, column=2, value=lab).font = BB
     c = ws.cell(row=4 + i, column=5, value=f)
-    c.font = BB; c.fill = ALT_FILL; c.border = BORDER; c.number_format = MONEY
+    c.font = BB; c.fill = ALT_FILL; c.border = BORDER; c.number_format = MONEY0
 count_stats = [
     ("# paid", f'=COUNTIF($I${I_FIRST}:$I${I_LAST},"PAID")'),
     ("# awaiting", f'=COUNTIF($I${I_FIRST}:$I${I_LAST},"SENT")'),
@@ -307,8 +327,8 @@ def sec(ws, row, text, last_col=5):
 sec(ws, 7, "YOUR YEAR SO FAR (auto — from the other tabs)")
 LG = "'Income & Expense Ledger'"
 auto_rows = [
-    (8, "Money in (Ledger)", f"={LG}!C4", MONEY),
-    (9, "Business expenses (Ledger)", f"={LG}!C5", MONEY),
+    (8, "Money in (Ledger)", f"={LG}!F4", MONEY),
+    (9, "Business expenses (Ledger)", f"={LG}!F5", MONEY),
     (10, "Mileage deduction (Mileage Log)", "='Mileage Log'!C6", MONEY),
     (11, "Estimated profit (in − expenses − mileage)", "=C8-C9-C10", MONEY),
 ]
@@ -395,14 +415,35 @@ for col in range(2, 7):
 ws.conditional_formatting.add(f"E{D_FIRST}:E{D_YEAR}", CellIsRule(operator="greaterThan", formula=["0"], fill=GREEN_FILL, font=GREEN_FONT))
 ws.conditional_formatting.add(f"E{D_FIRST}:E{D_YEAR}", CellIsRule(operator="equal", formula=["0"], fill=YEL_FILL, font=YEL_FONT))
 ws.conditional_formatting.add(f"E{D_FIRST}:E{D_YEAR}", CellIsRule(operator="lessThan", formula=["0"], fill=RED_FILL, font=RED_FONT))
+# bottom stats: labels merged B:D so they can never clip; values in E ($0.00 for zero)
+ws.merge_cells(start_row=D_YEAR + 2, start_column=2, end_row=D_YEAR + 2, end_column=4)
 ws.cell(row=D_YEAR + 2, column=2, value="Best month (profit)").font = BB
-c = ws.cell(row=D_YEAR + 2, column=3, value=f"=MAX(E{D_FIRST}:E{D_LAST})")
-c.font = BB; c.fill = ALT_FILL; c.border = BORDER; c.number_format = MONEY
+c = ws.cell(row=D_YEAR + 2, column=5, value=f"=MAX(E{D_FIRST}:E{D_LAST})")
+c.font = BB; c.fill = ALT_FILL; c.border = BORDER; c.number_format = MONEY0
+ws.merge_cells(start_row=D_YEAR + 3, start_column=2, end_row=D_YEAR + 3, end_column=4)
 ws.cell(row=D_YEAR + 3, column=2, value="Average month (months with income)").font = BB
-c = ws.cell(row=D_YEAR + 3, column=3, value=f'=IFERROR(AVERAGEIF(C{D_FIRST}:C{D_LAST},">0",E{D_FIRST}:E{D_LAST}),0)')
-c.font = BB; c.fill = ALT_FILL; c.border = BORDER; c.number_format = MONEY
+c = ws.cell(row=D_YEAR + 3, column=5, value=f'=IFERROR(AVERAGEIF(C{D_FIRST}:C{D_LAST},">0",E{D_FIRST}:E{D_LAST}),0)')
+c.font = BB; c.fill = ALT_FILL; c.border = BORDER; c.number_format = MONEY0
 ws.cell(row=D_YEAR + 5, column=2, value=("Profit here = money in − money out from the Ledger (a cash view). The mileage "
                                          "deduction is a tax-time figure — see the Quarterly Tax Estimate tab.")).font = SMALL
+# the dashboard chart: monthly money in/out columns + profit line, one shared $ axis
+bar = BarChart(); bar.type = "col"
+bar.title = "Money in, money out, profit — by month"
+bar.add_data(Reference(ws, min_col=3, max_col=4, min_row=6, max_row=D_LAST), titles_from_data=True)
+bar.set_categories(Reference(ws, min_col=2, min_row=D_FIRST, max_row=D_LAST))
+bar.series[0].graphicalProperties.solidFill = NAVY
+bar.series[1].graphicalProperties.solidFill = GOLD
+line = LineChart()
+line.add_data(Reference(ws, min_col=5, min_row=6, max_row=D_LAST), titles_from_data=True)
+line.series[0].graphicalProperties.line.solidFill = TEAL
+line.series[0].graphicalProperties.line.width = 28000
+line.series[0].smooth = False
+line.y_axis.axId = bar.y_axis.axId  # same axis ids -> single shared $ axis
+line.x_axis.axId = bar.x_axis.axId
+bar += line
+bar.y_axis.numFmt = "$#,##0"
+bar.width = 22; bar.height = 11
+ws.add_chart(bar, "H6")
 
 # ---------- Tab 6: Mileage Log ----------
 ws = wb.create_sheet("Mileage Log")

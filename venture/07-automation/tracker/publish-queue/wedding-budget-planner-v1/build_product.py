@@ -5,13 +5,14 @@ Deterministic: xlsx + 2700x2025 cover PNG + 460x345 store SVG, then programmatic
 verification of EVERY formula in the workbook (mini evaluator, no deps beyond
 openpyxl/PIL). Exits non-zero if any formula disagrees with expected values.
 """
-import os, re, shutil
+import os, re
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.worksheet.datavalidation import DataValidation
+from openpyxl.chart import BarChart, Reference
 from PIL import Image, ImageDraw, ImageFont
 
 OUT = "/home/user/fb-marketplace-autoresponder/venture/07-automation/tracker/publish-queue/wedding-budget-planner-v1"
-STORE_IMG = "/home/user/fb-marketplace-autoresponder/store/site/img"
 os.makedirs(OUT, exist_ok=True)
 
 NAVY = "1F3A5F"; TEAL = "2E7D6B"; GOLD = "F2C14E"; LIGHT = "F4F6F8"; YELLOW = "FFF2CC"
@@ -26,7 +27,8 @@ SEC_FILL = PatternFill("solid", fgColor=TEAL)
 ALT_FILL = PatternFill("solid", fgColor=LIGHT)
 thin = Side(style="thin", color="CCCCCC")
 BORDER = Border(left=thin, right=thin, top=thin, bottom=thin)
-MONEY = '$#,##0.00;($#,##0.00);"-"'
+MONEY = '$#,##0.00;($#,##0.00);"-"'   # dash for zero (table cells)
+MONEY0 = '$#,##0.00;($#,##0.00)'      # $0.00 for zero (hero cells the copy references)
 PCT = "0%"
 
 # ------------------------------------------------------------------ source data
@@ -86,8 +88,8 @@ rows = [
     ("HOW TO USE (3 steps)", "SEC"),
     ("1. 'Wedding Budget' tab: enter your total budget in the yellow cell. The 'Typical %' column", ""),
     ("    suggests a starting split from real weddings — then plan your own numbers in the yellow cells.", ""),
-    ("2. 'Guest List' tab: add guests as you invite them. RSVPs, meal counts, headcount, and", ""),
-    ("    thank-you notes are all counted for you at the top — nothing to add up, ever.", ""),
+    ("2. 'Guest List' tab: add guests as you invite them. RSVPs and meals are dropdowns (no typos,", ""),
+    ("    no broken counts); headcount, meal totals, and thank-yous owed are counted for you at the top.", ""),
     ("3. 'Vendor Payments' tab: log every contract, deposit, and due date. The sheet shows what is", ""),
     ("    paid and exactly what is still owed, so no payment sneaks up on you.", ""),
     ("", ""),
@@ -96,7 +98,8 @@ rows = [
     ("The numbers already in the sheet are a realistic worked example. Replace them with your own.", ""),
     ("", ""),
     ("GOOGLE SHEETS USERS", "SEC"),
-    ("Upload this file to Google Drive, then open it — it converts automatically and all formulas work.", ""),
+    ("Upload this file to Google Drive, then open it — it converts automatically: formulas and dropdowns", ""),
+    ("work as-is, and the budget chart converts to a Sheets chart (colors can shift slightly; data identical).", ""),
     ("", ""),
     ("Questions or a formula acting up? Message us on Etsy any time — we answer fast and we'll fix it.", ""),
 ]
@@ -155,9 +158,23 @@ for i, (lab, formula) in enumerate([
     ("Budget remaining right now (budget − spent so far)", f"=C4-F{TOT}"),
 ]):
     rr = BL + 1 + i
+    # label merged across the section width so it can never clip; value in G,
+    # formatted so $0 really reads "$0.00" (the copy promises that moment)
+    ws.merge_cells(start_row=rr, start_column=2, end_row=rr, end_column=6)
     ws.cell(row=rr, column=2, value=lab).font = BB
-    fc = ws.cell(row=rr, column=3, value=formula); fc.font = BB; fc.number_format = MONEY; fc.border = BORDER
+    fc = ws.cell(row=rr, column=7, value=formula); fc.font = BB; fc.number_format = MONEY0; fc.border = BORDER
 ws.cell(row=BL + 3, column=2, value="Tip: keep the contingency line — the average wedding runs over in at least one category.").font = SMALL
+
+# planned-vs-actual chart, fed by the real table ranges
+chart = BarChart(); chart.type = "col"
+chart.title = "Planned vs actual, by category"
+chart.add_data(Reference(ws, min_col=5, max_col=6, min_row=7, max_row=CAT_LAST), titles_from_data=True)
+chart.set_categories(Reference(ws, min_col=2, min_row=CAT_FIRST, max_row=CAT_LAST))
+chart.series[0].graphicalProperties.solidFill = NAVY
+chart.series[1].graphicalProperties.solidFill = TEAL
+chart.y_axis.numFmt = "$#,##0"
+chart.width = 24; chart.height = 12
+ws.add_chart(chart, "I4")
 ws.freeze_panes = "A8"
 
 # ---------- Tab 3: Guest List ----------
@@ -175,15 +192,16 @@ stats = [
     ("Headcount attending", f'=SUMIF(D{G_FIRST}:D{G_LAST},"Yes",C{G_FIRST}:C{G_LAST})', "RSVP no", f'=COUNTIF(D{G_FIRST}:D{G_LAST},"No")'),
     ("Chicken meals", f'=SUMIFS(C{G_FIRST}:C{G_LAST},D{G_FIRST}:D{G_LAST},"Yes",E{G_FIRST}:E{G_LAST},"Chicken")', "Awaiting reply", f'=COUNTIF(D{G_FIRST}:D{G_LAST},"Waiting")'),
     ("Beef meals", f'=SUMIFS(C{G_FIRST}:C{G_LAST},D{G_FIRST}:D{G_LAST},"Yes",E{G_FIRST}:E{G_LAST},"Beef")', "Gifts received", f'=COUNTIF(F{G_FIRST}:F{G_LAST},"Yes")'),
-    ("Vegetarian meals", f'=SUMIFS(C{G_FIRST}:C{G_LAST},D{G_FIRST}:D{G_LAST},"Yes",E{G_FIRST}:E{G_LAST},"Vegetarian")', "Thank-yous still owed", f'=COUNTIF(F{G_FIRST}:F{G_LAST},"Yes")-COUNTIF(G{G_FIRST}:G{G_LAST},"Yes")'),
+    ("Vegetarian meals", f'=SUMIFS(C{G_FIRST}:C{G_LAST},D{G_FIRST}:D{G_LAST},"Yes",E{G_FIRST}:E{G_LAST},"Vegetarian")', "Thank-yous owed", f'=COUNTIF(F{G_FIRST}:F{G_LAST},"Yes")-COUNTIF(G{G_FIRST}:G{G_LAST},"Yes")'),
 ]
 for i, (lab1, f1, lab2, f2) in enumerate(stats):
     r = 4 + i
     ws.cell(row=r, column=2, value=lab1).font = BB
     c1 = ws.cell(row=r, column=3, value=f1); c1.font = BB; c1.fill = ALT_FILL; c1.border = BORDER
-    ws.cell(row=r, column=5, value=lab2).font = BB
+    ws.merge_cells(start_row=r, start_column=4, end_row=r, end_column=5)  # label spans D:E, never clips
+    ws.cell(row=r, column=4, value=lab2).font = BB
     c2 = ws.cell(row=r, column=6, value=f2); c2.font = BB; c2.fill = ALT_FILL; c2.border = BORDER
-ws.cell(row=10, column=2, value="Type RSVP exactly as Yes / No / Waiting and meals as Chicken / Beef / Vegetarian — the counters above match those words.").font = SMALL
+ws.cell(row=10, column=2, value="Pick RSVP and meals from the dropdowns — Yes / No / Waiting and Chicken / Beef / Vegetarian. (Other meals are allowed; the counters above track those three.)").font = SMALL
 hdrs = ["Guest / party", "# in party", "RSVP", "Meal choice", "Gift received", "Thank-you sent", "Notes"]
 for i, h in enumerate(hdrs):
     c = ws.cell(row=12, column=2 + i, value=h); c.font = BB; c.fill = ALT_FILL; c.border = BORDER
@@ -193,6 +211,19 @@ for i in range(G_FIRST, G_LAST + 1):
     for j, v in enumerate(vals):
         c = ws.cell(row=i, column=2 + j, value=v if v != "" else None)
         c.fill = INPUT_FILL; c.border = BORDER; c.font = B
+# real dropdowns (convert to Google Sheets dropdowns on import) — no more
+# "type this word exactly" silent breakage
+dv_rsvp = DataValidation(type="list", formula1='"Yes,No,Waiting"', allow_blank=True,
+                         showErrorMessage=True, errorTitle="RSVP",
+                         error="Pick Yes, No, or Waiting — the counters read these words.")
+ws.add_data_validation(dv_rsvp); dv_rsvp.add(f"D{G_FIRST}:D{G_LAST}")
+dv_meal = DataValidation(type="list", formula1='"Chicken,Beef,Vegetarian"', allow_blank=True,
+                         showErrorMessage=False)  # other meals allowed; counters track these three
+ws.add_data_validation(dv_meal); dv_meal.add(f"E{G_FIRST}:E{G_LAST}")
+dv_gyn = DataValidation(type="list", formula1='"Yes,No"', allow_blank=True,
+                        showErrorMessage=True, errorTitle="Yes or No",
+                        error="Pick Yes or No — the counters read these words.")
+ws.add_data_validation(dv_gyn); dv_gyn.add(f"F{G_FIRST}:F{G_LAST}"); dv_gyn.add(f"G{G_FIRST}:G{G_LAST}")
 ws.freeze_panes = "B13"
 
 # ---------- Tab 4: Vendor Payments ----------
@@ -236,11 +267,15 @@ for col in range(2, 11):
 PAID_R, OWE_R = VT + 2, VT + 3
 ws.cell(row=PAID_R, column=2, value="Paid so far").font = BB
 pc = ws.cell(row=PAID_R, column=4, value=f'=SUMIF(G{V_FIRST}:G{V_LAST},"Yes",E{V_FIRST}:E{V_LAST})+SUMIF(J{V_FIRST}:J{V_LAST},"Yes",H{V_FIRST}:H{V_LAST})')
-pc.font = BB; pc.number_format = MONEY; pc.border = BORDER
+pc.font = BB; pc.number_format = MONEY0; pc.border = BORDER
 ws.cell(row=OWE_R, column=2, value="Still to pay").font = BB
 oc = ws.cell(row=OWE_R, column=4, value=f"=D{VT}-D{PAID_R}")
-oc.font = BB; oc.number_format = MONEY; oc.border = BORDER
-ws.cell(row=OWE_R + 2, column=2, value="Type Yes in the Paid? columns exactly — the 'Paid so far' total counts that word.").font = SMALL
+oc.font = BB; oc.number_format = MONEY0; oc.border = BORDER
+ws.cell(row=OWE_R + 2, column=2, value="Pick Yes from the dropdown in the Paid? columns as money goes out — the 'Paid so far' total reads it.").font = SMALL
+dv_paid = DataValidation(type="list", formula1='"Yes,No"', allow_blank=True,
+                         showErrorMessage=True, errorTitle="Yes or No",
+                         error="Pick Yes or No — the payment totals read these words.")
+ws.add_data_validation(dv_paid); dv_paid.add(f"G{V_FIRST}:G{V_LAST}"); dv_paid.add(f"J{V_FIRST}:J{V_LAST}")
 ws.freeze_panes = "B7"
 
 XLSX = os.path.join(OUT, "Wedding-Budget-Guest-Tracker.xlsx")
@@ -303,8 +338,8 @@ expected[("Wedding Budget", f"D{TOT}")] = TOTAL_BUDGET  # typical $ sums back to
 expected[("Wedding Budget", f"E{TOT}")] = plan_total
 expected[("Wedding Budget", f"F{TOT}")] = act_total
 expected[("Wedding Budget", f"G{TOT}")] = round(plan_total - act_total, 2)
-expected[("Wedding Budget", f"C{BL+1}")] = TOTAL_BUDGET - plan_total  # left to plan
-expected[("Wedding Budget", f"C{BL+2}")] = round(TOTAL_BUDGET - act_total, 2)  # remaining
+expected[("Wedding Budget", f"G{BL+1}")] = TOTAL_BUDGET - plan_total  # left to plan
+expected[("Wedding Budget", f"G{BL+2}")] = round(TOTAL_BUDGET - act_total, 2)  # remaining
 
 yes = [g for g in GUESTS if g[2] == "Yes"]
 head = sum(g[1] for g in yes)
@@ -355,7 +390,39 @@ assert act_total == 22061.75 and round(TOTAL_BUDGET - act_total, 2) == 1938.25
 assert head == 16 and len(yes) == 8 and meals == {"Chicken": 9, "Beef": 4, "Vegetarian": 3}
 assert gifts == 4 and gifts - thanks == 2
 assert v_total == 17745 and v_dep == 4500 and v_bal == 13245 and v_paid == 4500
+
+# ---- structural checks: dropdowns, chart, unclipped labels, $0 formats ----
+wsb2 = wb2["Wedding Budget"]
+merges = {str(m) for m in wsb2.merged_cells.ranges}
+assert f"B{BL+1}:F{BL+1}" in merges and f"B{BL+2}:F{BL+2}" in merges, "bottom-line labels must merge B:F"
+assert wsb2[f"G{BL+1}"].number_format == MONEY0 and wsb2[f"G{BL+2}"].number_format == MONEY0, \
+    "bottom-line cells must render 0 as $0.00 (the copy promises that moment)"
+assert len(wsb2._charts) == 1, "Wedding Budget must hold the planned-vs-actual chart"
+ch = wsb2._charts[0]
+refs = [s.val.numRef.f for s in ch.series]
+assert refs == [f"'Wedding Budget'!$E${CAT_FIRST}:$E${CAT_LAST}", f"'Wedding Budget'!$F${CAT_FIRST}:$F${CAT_LAST}"], refs
+def _fill(s):
+    gp = s.graphicalProperties
+    v = gp.solidFill
+    return (v if isinstance(v, str) else (getattr(v, "srgbClr", None) or "")).upper()
+assert [_fill(s) for s in ch.series] == [NAVY, TEAL], "chart series must use navy planned / teal actual"
+
+wsg2 = wb2["Guest List"]
+gmerges = {str(m) for m in wsg2.merged_cells.ranges}
+for r in range(4, 9):
+    assert f"D{r}:E{r}" in gmerges, f"guest stat label row {r} must merge D:E (no clipping)"
+dvs = {str(dv.sqref): (dv.formula1, dv.showErrorMessage) for dv in wsg2.data_validations.dataValidation}
+assert dvs.get(f"D{G_FIRST}:D{G_LAST}") == ('"Yes,No,Waiting"', True), dvs
+assert dvs.get(f"E{G_FIRST}:E{G_LAST}") == ('"Chicken,Beef,Vegetarian"', False), dvs
+assert dvs.get(f"F{G_FIRST}:F{G_LAST} G{G_FIRST}:G{G_LAST}") == ('"Yes,No"', True), dvs
+wsv2 = wb2["Vendor Payments"]
+vdvs = {str(dv.sqref): dv.formula1 for dv in wsv2.data_validations.dataValidation}
+assert vdvs.get(f"G{V_FIRST}:G{V_LAST} J{V_FIRST}:J{V_LAST}") == '"Yes,No"', vdvs
+assert wsv2[f"D{PAID_R}"].number_format == MONEY0 and wsv2[f"D{OWE_R}"].number_format == MONEY0
+
 print(f"VERIFIED: all {checked} formulas match expected values")
+print("VERIFIED: dropdowns (RSVP/meal/yes-no/vendor-paid), planned-vs-actual chart (navy/teal), "
+      "merged bottom-line + guest-stat labels, $0.00 hero formats")
 print(f"  budget: planned ${plan_total:,} of ${TOTAL_BUDGET:,} -> left to plan $0; spent ${act_total:,.2f} -> remaining $1,938.25")
 print(f"  guests: 12 parties, 8 yes / 2 no / 2 waiting, headcount 16, meals C9/B4/V3, thank-yous owed 2")
 print(f"  vendors: contracts ${v_total:,}, deposits ${v_dep:,}, paid ${v_paid:,}, still to pay ${v_total - v_paid:,}")
@@ -411,6 +478,4 @@ SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 345" font-fami
 </svg>"""
 with open(os.path.join(OUT, "store-card.svg"), "w") as f:
     f.write(SVG)
-os.makedirs(STORE_IMG, exist_ok=True)
-shutil.copy(os.path.join(OUT, "store-card.svg"), os.path.join(STORE_IMG, "wedding-budget.svg"))
-print("saved store-card.svg (+ copied to store/site/img/wedding-budget.svg)")
+print("saved store-card.svg (store/ is owned by the storefront pipeline — no copy from here)")
