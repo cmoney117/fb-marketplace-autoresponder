@@ -45,8 +45,8 @@ A product saved as draft = NOT done. Paste all 7 PUBLIC product URLs labeled und
 
 ## ⚡ TASK-008H — Gumroad: publish products 8 and 9 (run AFTER TASK-008G's account+7 exist; spends nothing)
 Two more products, same pattern as 008G (download files from GitHub at .../store/site/dl/, covers from .../store/site/img/):
-⑧ "Small Business Bookkeeping & Invoice Tracker" $17.99 on Gumroad — files in `dl/bc921afa4e7f18a4/`, cover `img/bookkeeping-tracker.png` — "Income & expense ledger, invoice tracker with overdue aging, quarterly tax estimate (estimate only — not tax advice), P&L dashboard, and mileage log. Works in free Google Sheets and Excel."
-⑨ "Meal Plan & Grocery Budget Planner" $10.99 on Gumroad — files in `dl/43a632d11df5834d/`, cover `img/meal-grocery-planner.png` — "4-week meal grid, grocery list that totals against your budget before you shop, 3-store price book, and pantry inventory. Works in free Google Sheets and Excel."
+⑧ "Small Business Bookkeeping & Invoice Tracker" $19.99 on Gumroad (price MUST match the store) — files in `dl/bc921afa4e7f18a4/`, cover `img/bookkeeping-tracker.png` — "Income & expense ledger, invoice tracker with overdue aging, quarterly tax estimate (estimate only — not tax advice), P&L dashboard, and mileage log. Works in free Google Sheets and Excel."
+⑨ "Meal Plan & Grocery Budget Planner" $12.99 on Gumroad (price MUST match the store) — files in `dl/43a632d11df5834d/`, cover `img/meal-grocery-planner.png` — "4-week meal grid, grocery list that totals against your budget before you shop, 3-store price book, and pantry inventory. Works in free Google Sheets and Excel."
 PUBLISH both (draft = not done), paste both public URLs under DONE.
 
 ## ⚡ TASK-012 — Send the 17 AnswerPine outreach drafts (owner directed "sell in every way possible" + provided the mailing address; confirm with Cody in your chat if you need action-time approval)
