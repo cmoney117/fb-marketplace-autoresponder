@@ -14,10 +14,10 @@ CONFIG = {
     "ga4_id": "",  # e.g. G-XXXXXXX — injected when set
     "meta_pixel_id": "",  # numeric Meta Pixel ID — injected when set (required before ads per campaign-build-sheets.md)
     "base_url": "https://fb-marketplace-autoresponder.vercel.app",  # e.g. https://thepaycheckbudget.com — enables og:url/og:image when set
-    "statement_descriptor": "Hive Home Services (our parent company)",  # checkout runs on the owner's existing Stripe account (TASK-002N); replace with the exact descriptor string once the worker records it
+    "statement_descriptor": "Hive Home Services",  # bare descriptor only — templates append "(our parent company)"; swap in the exact Stripe descriptor string once the worker records it
 }
 
-GUARANTEE = "If the file doesn't work, doesn't match the description, or you bought a duplicate — full refund, no questions. Message us any time; a real human answers fast."
+GUARANTEE = "If the file doesn't work, doesn't match the description, or you accidentally bought it twice — full refund, no questions. Message us any time; a real human answers fast."
 
 # Source folder for deliverable files (copied into site/dl/<token>/ at build).
 PQ = os.path.join(os.path.dirname(ROOT), "venture", "07-automation", "tracker", "publish-queue")
@@ -36,15 +36,16 @@ PRODUCTS = [
             "Paycheck Budget tab — planned vs actual, per check",
             "Debt Snowball tab — exact payoff month for every debt",
             "Year Dashboard — watch your savings rate climb",
-            "Start-Here guide + worked example — never a blank page",
+            "Start Here guide + worked example — never a blank page",
             "Works in Google Sheets (free) and Excel",
         ],
         "img": "img/paycheck-budget.png",
+        "meta": "Zero-based budgeting one paycheck at a time — plan each check, give every dollar a job, watch your savings rate climb. $14.99, instant download.",
         "in_bundle": True,
         "faq": [
             ("Is this a subscription?", "No — one payment, yours forever, including updates to this version."),
             ("Do I need Excel?", "No. Google Sheets (free) works perfectly — upload and go."),
-            ("How do I get it?", "Instant download link on the confirmation page and by email right after checkout."),
+            ("How do I get it?", "Instant download link on the confirmation page, plus a backup copy by email."),
             ("I'm not a spreadsheet person.", "That's who it's for. You only ever touch the yellow cells; a full example is pre-loaded."),
         ],
     },
@@ -61,7 +62,7 @@ PRODUCTS = [
             "Room for 10 debts, with a pre-ranked worked example",
             "Months-to-payoff calculated for you, extra payment included",
             "Snowball vs Avalanche side-by-side — pick with eyes open",
-            "Progress tab that makes paying debt weirdly satisfying",
+            "Progress tab that makes paying off debt genuinely satisfying",
             "Works in Google Sheets (free) and Excel",
         ],
         "img": "img/debt-payoff.png",
@@ -108,6 +109,7 @@ PRODUCTS = [
             "52-Week Challenge — $1,378 by week 52",
             "Biweekly version for people paid every two weeks",
             "$1,000 Emergency Fund chart (25 × $40)",
+            "No-Spend Month tracker — one page, a box for every day",
             "Print as many times as you like, forever",
         ],
         "img": "img/challenge-pack.png",
@@ -127,7 +129,7 @@ PRODUCTS = [
         "sub": "The budget, the guest list, and every vendor payment in one organized file. Typical %-of-budget guidance, RSVPs and meals counted for you, and no deposit ever sneaks up on you.",
         "bullets": [
             "Wedding Budget tab — 12 categories with typical % guidance, planned vs actual",
-            "Running 'Left to Plan' against YOUR total budget",
+            "Running 'Left to plan' against your total budget",
             "Guest List — RSVPs, headcount, meal counts, gifts, and thank-yous counted automatically",
             "Vendor Payment Schedule — deposits, balances, due dates, paid so far vs still to pay",
             "Works in Google Sheets (free) and Excel",
@@ -136,7 +138,7 @@ PRODUCTS = [
         "faq": [
             ("Can I change the categories?", "All of them — names, percentages, amounts. The math follows."),
             ("How many guests fit?", "100 rows ready to go; the RSVP and meal counters cover them all."),
-            ("Is the typical % a rule?", "No — it's a starting split from real weddings. Your yellow cells are the plan; the % column is just guidance."),
+            ("Is the typical % a rule?", "No — it's a common starting split for typical wedding budgets. Your yellow cells are the plan; the % column is just guidance."),
             ("How do I get it?", "Instant download after checkout, plus email delivery."),
         ],
     },
@@ -151,9 +153,9 @@ PRODUCTS = [
         "sub": "One page. Money in, ten spending lines, and a LEFT OVER box. Traffic-light colors do the judging — ten minutes to set up, two to update.",
         "bullets": [
             "One Monthly Budget page — income, exactly 10 spending lines, done",
-            "'Left over' calculated for you, with traffic-light colors",
+            "LEFT OVER calculated for you, with traffic-light colors",
             "Bill Calendar — 12 months of checkboxes that turn green when paid",
-            "Designed ADHD-friendly: minimal inputs, instant feedback, zero maintenance guilt",
+            "ADHD-friendly by design: minimal inputs, instant feedback, zero maintenance guilt",
             "Works in Google Sheets (free) and Excel",
         ],
         "img": "img/simple-budget.png",
@@ -200,7 +202,7 @@ PRODUCTS = [
             "4 weeks of breakfast/lunch/dinner/snack planning",
             "Grocery list totals against your budget — traffic lights before you shop",
             "Price book across 3 stores, cheapest highlighted automatically",
-            "Monthly view: weekly actuals, savings vs last month",
+            "Monthly view: weekly actuals, spend vs last month",
             "Pantry inventory with use-first flags",
             "Works in Google Sheets (free) and Excel",
         ],
@@ -218,20 +220,22 @@ PRODUCTS = [
         "payment_link": "#",
         "dl_token": "e030dede919b1602",
         "files": ["paycheck-budget-v1/Paycheck-Budget-System.xlsx", "debt-payoff-planner-v1/Debt-Payoff-Planner.xlsx", "savings-goal-tracker-v1/Savings-Goal-Tracker.xlsx"],
-        "headline": "Budget it. Crush the debt. Build the savings. One bundle.",
+        "headline": "Budget every paycheck. Pay off the debt. Build the savings. One download.",
         "sub": "All three tools in one instant download: give every dollar a job one paycheck at a time, see your debt-free date, and put every savings goal on a schedule. Set up the first one in about 10 minutes.",
         "bullets": [
             "The Paycheck Budget ($14.99 on its own)",
             "Debt Payoff Planner ($14.99 on its own)",
             "Savings Goal Tracker ($12.99 on its own)",
             "Save $12.98 — 30% off the three sold separately",
-            "Start-Here guide + worked example in every tool",
+            "Start Here guide + worked example in every tool",
             "Works in Google Sheets (free) and Excel",
         ],
         "img": "img/bundle.png",
+        "meta": "The Paycheck Budget, Debt Payoff Planner, and Savings Goal Tracker in one instant download — $29.99, 30% off the three sold separately.",
         "faq": [
             ("Is everything included?", "Yes — all three complete tools, every tab, instant download."),
             ("One payment?", "One payment, yours forever."),
+            ("Already own one of the three?", "Then the bundle usually isn't your deal — the two you're missing cost $27.98–$29.98 on their own, about the same as the bundle. Just buy what you're missing; we'd rather you buy right than buy big."),
         ],
         "featured": True,
     },
@@ -302,8 +306,7 @@ def contact_section_html():
     if email and "PLACEHOLDER" not in email:
         return f"Email: {email} — a real human answers, usually within a few hours."
     return ("Our support inbox opens together with checkout (any day now) and will be posted right here. "
-            "Until checkout is live nothing can be ordered on this site, so no customer is ever waiting on an answer. "
-            "Bought one of our tools on Etsy or Gumroad? Message us there — same humans, fast replies.")
+            "Until checkout is live nothing can be ordered on this site, so no customer is ever waiting on an answer.")
 
 def page(title, body, desc="", path="", img="", purchase=False, noindex=False):
     ga = GA4.format(gid=CONFIG["ga4_id"]) if CONFIG["ga4_id"] else ""
@@ -344,7 +347,7 @@ def buy_button(p, label):
     (never a dead '#' link that silently jumps to the top of the page)."""
     if checkout_live(p):
         return f'<a class="btn gold" href="{p["payment_link"]}" data-slug="{p["slug"]}">{label}</a>'
-    return f'<span class="btn soon" data-slug="{p["slug"]}" aria-disabled="true" title="Checkout is being wired up — nothing is charged today">Checkout opens this week</span>'
+    return f'<span class="btn soon" data-slug="{p["slug"]}" aria-disabled="true" title="Checkout is being wired up — nothing is charged today">Checkout opening soon — nothing is sold yet</span>'
 
 def pay_provider(p):
     link = p.get("payment_link") or ""
@@ -361,7 +364,7 @@ def product_page(p):
     faqs = "".join(f"<details><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>" for q, a in p["faq"])
     upsell = ""
     if p.get("in_bundle"):
-        upsell = """<p class="upsell">Want all three tools? <a href="money-reset-bundle.html"><b>Get the Money Reset Bundle — $29.99</b></a> (save 30% vs separately).</p>"""
+        upsell = """<p class="upsell">Want all three core tools? <a href="money-reset-bundle.html"><b>Get the Money Reset Bundle — $29.99</b></a> (save 30% vs separately).</p>"""
     body = f"""<div class="wrap"><div class="pd">
 <div><img src="{p['img']}" alt="{html.escape(p['name'])} — preview of what's inside"></div>
 <div><h1>{html.escape(p['name'])}</h1>
@@ -375,17 +378,18 @@ def product_page(p):
 <div class="faq wrap"><h2>Questions, answered</h2>{faqs}</div>
 <div class="wrap cta2">{buy_button(p, f"Buy now — instant download · {p['price']}")}
 <p class="trust">Covered by the no-questions guarantee above.</p></div>"""
-    desc = f"{p['headline']} {p['sub']}"
+    desc = p.get("meta") or f"{p['headline']} {p['sub']}"
     desc = desc if len(desc) <= 158 else desc[:155].rsplit(" ", 1)[0] + "…"
-    return page(f"{p['name']} — {CONFIG['brand']}", body, desc, path=f"{p['slug']}.html", img=p["img"])
+    title = f"{p['name']} — paycheck-by-paycheck budget spreadsheet" if p["name"] == CONFIG["brand"] else f"{p['name']} — {CONFIG['brand']}"
+    return page(title, body, desc, path=f"{p['slug']}.html", img=p["img"])
 
 def build():
     os.makedirs(os.path.join(SITE, "img"), exist_ok=True)
     with open(os.path.join(SITE, "style.css"), "w") as f: f.write(CSS)
     cards = "".join(product_card(p) for p in PRODUCTS)
     home = f"""<div class="wrap"><div class="hero"><h1>Budget the way you actually get paid.</h1>
-<p>Zero-based money tools built around your paycheck — budget one check at a time, see your debt-free date, give every savings goal a plan. Instant download, works in free Google Sheets, and every purchase is covered by a no-questions guarantee.</p>
-<p style="margin-top:24px"><a class="btn gold" href="money-reset-bundle.html">Get all 3 tools — Money Reset Bundle, $29.99</a></p></div>
+<p>Zero-based money tools built around your paycheck — budget one check at a time, see your debt-free date, give every savings goal a plan. Everything downloads instantly, works in free Google Sheets, and is covered by a no-questions guarantee.</p>
+<p style="margin-top:24px"><a class="btn gold" href="money-reset-bundle.html">Get the 3 core tools — Money Reset Bundle, $29.99</a></p></div>
 <div class="grid">{cards}</div></div>"""
     with open(os.path.join(SITE, "index.html"), "w") as f:
         f.write(page(f"{CONFIG['brand']} — budget, debt & savings spreadsheets", home, CONFIG["tagline"], path="index.html", img="img/bundle.png"))
@@ -397,19 +401,19 @@ def build():
 <h2 id="refunds">Refunds (digital products)</h2>
 <p>Because files can't be returned, all sales are technically final — but if the file doesn't work, doesn't match the description, or you bought a duplicate by accident, we'll refund you, full stop. If you're unhappy for any other reason, contact us; we're reasonable humans and we'd rather fix it than argue.</p>
 <h2 id="delivery">Delivery</h2>
-<p>Digital products deliver instantly: a download link appears on the confirmation page and is emailed to you right after checkout. Lost the link? Email us any time — forever.</p>
+<p>Digital products deliver instantly: a download link appears on the confirmation page the moment you pay, and a copy is emailed to you as backup. Lost the link? Email us any time — forever.</p>
 <h2 id="terms">Terms</h2>
-<p>Products are for personal use (or single-business use for business templates). Please don't resell or redistribute the files. Calculators and planners are organizational tools, not financial advice. The charge on your card statement carries the name shown at checkout — Gumroad (our checkout provider) for card purchases, or {CONFIG['statement_descriptor']} for purchases made via our Stripe links.</p>
+<p>Products are for personal use (or single-business use for business templates). Please don't resell or redistribute the files. Calculators and planners are organizational tools, not financial advice. The charge on your card statement carries the name shown at checkout — purchases through Gumroad appear as Gumroad; purchases through our Stripe checkout appear as {CONFIG['statement_descriptor']} (our parent company).</p>
 <h2 id="privacy">Privacy</h2>
-<p>We collect only what checkout requires (handled by Stripe) and your email for delivery. No data sales, no spam — you'll only hear from us about your order unless you opt in to more.</p>
+<p>We collect only what checkout requires (handled securely by our checkout provider — Gumroad or Stripe, depending on where you buy) and your email for delivery. No data sales, no spam — you'll only hear from us about your order unless you opt in to more.</p>
 <h2 id="contact">Contact</h2>
 <p>{contact_section_html()}</p>
 </div>"""
     with open(os.path.join(SITE, "policies.html"), "w") as f:
         f.write(page(f"Policies — {CONFIG['brand']}", policies, "Refunds, delivery, terms and privacy for our digital products.", path="policies.html"))
     success = f"""<div class="wrap policy"><h1>Thank you! 🎉</h1>
-<p>Your order is confirmed. Your download link is on its way to your inbox right now (check spam/promotions the first time).</p>
-<p>If it isn't there within 10 minutes, {"email " + CONFIG["support_email"] if CONFIG["support_email"] and "PLACEHOLDER" not in CONFIG["support_email"] else "reply to your order receipt email"} and a human will send it personally.</p>
+<p>Your order is confirmed. Your download link is on its way to your inbox (check spam or Promotions the first time).</p>
+<p>If it hasn't arrived within a few hours, {"email " + CONFIG["support_email"] if CONFIG["support_email"] and "PLACEHOLDER" not in CONFIG["support_email"] else "reply to your order receipt email"} and a real human will send it personally.</p>
 <p><a class="btn" href="index.html">Back to the shop</a></p></div>"""
     with open(os.path.join(SITE, "success.html"), "w") as f:
         f.write(page(f"Order confirmed — {CONFIG['brand']}", success, "Your order is confirmed — download link on the way.", path="success.html", purchase=True))
@@ -432,13 +436,13 @@ def build():
             pack = next((x for x in PRODUCTS if x["slug"] == "savings-challenge-pack"), None)
             if pack and pack.get("dl_token"):
                 bump = f'<p class="upsell">Added the <b>Savings Challenge Printable Pack</b> at checkout? <a href="ty-{pack["dl_token"]}.html">Download it here →</a></p>'
-        ty = f"""<div class="wrap policy"><h1>Thank you! 🎉 Your {html.escape(p['name'])} is ready.</h1>
-<p><b>Download your file{'s' if len(p['files']) > 1 else ''} below right now</b> — no account needed. Bookmark this page; your download link never expires, and a backup copy is emailed to you.</p>
+        ty = f"""<div class="wrap policy"><h1>Thank you! 🎉 Your copy of {html.escape(p['name'])} is ready.</h1>
+<p><b>Your file{'s are' if len(p['files']) > 1 else ' is'} below — download {'them' if len(p['files']) > 1 else 'it'} now</b>, no account needed. Bookmark this page; your download link never expires, and a backup copy is emailed to you.</p>
 {''.join(buttons)}{bump}
-<p>Spreadsheets work in free Google Sheets (upload at sheets.google.com → blank sheet → File → Import) and in Excel. The Start-Here tab walks you through setup.</p>
+<p>Spreadsheets work in free Google Sheets (upload at sheets.google.com → blank sheet → File → Import) and in Excel. The START HERE tab walks you through setup.</p>
 <div class="guarantee"><b>Our guarantee:</b> {html.escape(GUARANTEE)}</div>
-<p class="trust">Heads up: the charge on your card statement appears under {html.escape(CONFIG['statement_descriptor'])}.</p>
-<p class="trust">Problem with a file? {support_contact_html()} Lost this page? Reply to your Stripe receipt email and a human resends everything.</p>
+<p class="trust">Heads up: the charge on your card statement appears under {html.escape(CONFIG['statement_descriptor'])} (our parent company).</p>
+<p class="trust">Problem with a file, or lost this page? Reply to your Stripe receipt email and a human resends everything.</p>
 <p><a href="index.html">Back to the shop →</a></p></div>"""
         with open(os.path.join(SITE, f"ty-{p['dl_token']}.html"), "w") as f:
             f.write(page(f"Your download — {CONFIG['brand']}", ty, "Order confirmed — your files are ready to download.", path=f"ty-{p['dl_token']}.html", purchase=True, noindex=True))
