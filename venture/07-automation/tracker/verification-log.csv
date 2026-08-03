@@ -1,1 +1,10 @@
 date,artifact,method,result,notes
+2026-08-02,store-public-url,WebFetch fb-marketplace-autoresponder.vercel.app,FAIL-403,deployment READY but Vercel protection on; TASK-001C queued
+2026-08-02,vercel-project+prod-branch,Vercel API get_project,PASS,production deployment READY on venture branch
+2026-08-02,stripe-payment-links,results doc,CLAIMED-UNVERIFIED,marked done in doc but URLs never recorded; TASK-002R queued
+2026-08-02,agent-run-commits,git log 24h,PASS,daily-ops+audits+products all committed; bridge-check no-commit consistent with zero new results
+2026-08-02,desktop-worker-heartbeat,results doc content,PASS-WITH-BUG,worker active but spun on TASK-000 due to missing checkmark in GitHub queue (cloud-side bug, fixed tonight)
+2026-08-02,jotform-form,WebFetch+curl,INCONCLUSIVE,bot-blocked 403; created successfully via API; queued for human/browser eyeball
+2026-08-02,elevenlabs-demo-agent,prior-day API create+customer-audit embed check,PASS-PRIOR,direct re-check scheduled next audit
+2026-08-02,venture-triggers,firings observed today,PASS,daily-ops 13:30Z and evening-audit 02:00Z both fired
+2026-08-02,emails-sent-vs-draft,Gmail,N/A,no sends claimed yet
