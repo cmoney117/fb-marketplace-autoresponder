@@ -5,11 +5,22 @@ ADHD-friendly sibling listing).
 Deterministic: xlsx + 2700x2025 cover PNG + 460x345 store SVG, then programmatic
 verification of EVERY formula in the workbook (mini evaluator, no deps beyond
 openpyxl/PIL). Exits non-zero if any formula disagrees with expected values.
+
+2026-08-03 P1 review fixes baked in:
+  - Bill Calendar "type an x" convention now backed by a real dropdown
+    (data validation list) on the whole paid grid — no more silent COUNTIF misses
+  - LEFT OVER hero cells render $0.00 (not the accounting dash) at exactly zero
+  - mini bar chart (Planned vs Spent per line) beside the Monthly Budget table,
+    driven by the live ranges so it updates as buyers type
+No macros — formulas + native features only (Excel 2010+ / Google Sheets).
 """
-import os, re, shutil
+import os, re, filecmp, shutil, zipfile
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.formatting.rule import CellIsRule
+from openpyxl.chart import BarChart, Reference
+from openpyxl.chart.shapes import GraphicalProperties
+from openpyxl.worksheet.datavalidation import DataValidation
 from PIL import Image, ImageDraw, ImageFont
 
 OUT = "/home/user/fb-marketplace-autoresponder/venture/07-automation/tracker/publish-queue/simple-budget-starter-v1"
@@ -30,6 +41,7 @@ ALT_FILL = PatternFill("solid", fgColor=LIGHT)
 thin = Side(style="thin", color="CCCCCC")
 BORDER = Border(left=thin, right=thin, top=thin, bottom=thin)
 MONEY = '$#,##0.00;($#,##0.00);"-"'
+MONEY0 = "$#,##0.00;($#,##0.00)"  # hero cells: 0 renders $0.00, never "-"
 # traffic-light fills (classic Excel good/neutral/bad)
 GREEN_FILL = PatternFill("solid", fgColor="C6EFCE"); GREEN_FONT = Font(name="Arial", color="006100")
 YEL_FILL = PatternFill("solid", fgColor="FFEB9C"); YEL_FONT = Font(name="Arial", color="9C6500")
@@ -85,7 +97,7 @@ rows = [
     ("1. 'Monthly Budget' tab: enter your money in, then a planned amount for each of the 10 lines.", ""),
     ("2. When you spend, update the Spent column. Colors do the judging: green = fine,", ""),
     ("    yellow = right at the line, red = over. The LEFT OVER box is the only number that matters.", ""),
-    ("3. 'Bill Calendar' tab: type an x when you pay a bill — the box turns green. That's it.", ""),
+    ("3. 'Bill Calendar' tab: pick the x from the dropdown when you pay a bill — the box turns green. That's it.", ""),
     ("", ""),
     ("COLOR LEGEND", "SEC"),
     ("Yellow cells = yours to edit.  Everything else calculates automatically — please don't type over it.", ""),
@@ -93,6 +105,7 @@ rows = [
     ("", ""),
     ("GOOGLE SHEETS USERS", "SEC"),
     ("Upload this file to Google Drive, then open it — it converts automatically, colors and all.", ""),
+    ("The dropdowns and the little Planned-vs-Spent chart convert too; chart colors may shift slightly. Numbers are identical.", ""),
     ("", ""),
     ("Questions or a formula acting up? Message us on Etsy any time — we answer fast and we'll fix it.", ""),
 ]
@@ -169,6 +182,9 @@ ws.cell(row=LO_NOW, column=2, value="Right now (in − spent)").font = BB
 nc = ws.cell(row=LO_NOW, column=3, value=f"=C{IN_TOT}-D{S_TOT}"); nc.font = BIG; nc.number_format = MONEY; nc.border = BORDER
 ws.cell(row=LO_NOW + 2, column=2, value="Green = money left. Red = you spent more than came in. No shame either way — just information.").font = SMALL
 ws.freeze_panes = "A6"
+# hero cells show $0.00 at exactly zero (never the accounting dash)
+pc.number_format = MONEY0
+nc.number_format = MONEY0
 
 # traffic-light conditional formatting
 diff_range = f"E{S_FIRST}:E{S_LAST}"
@@ -177,6 +193,23 @@ for rng in (diff_range, lo_range):
     ws.conditional_formatting.add(rng, CellIsRule(operator="greaterThan", formula=["0"], fill=GREEN_FILL, font=GREEN_FONT))
     ws.conditional_formatting.add(rng, CellIsRule(operator="equal", formula=["0"], fill=YEL_FILL, font=YEL_FONT))
     ws.conditional_formatting.add(rng, CellIsRule(operator="lessThan", formula=["0"], fill=RED_FILL, font=RED_FONT))
+
+# mini chart: Planned vs Spent per line, beside the table (updates as buyers type)
+chart = BarChart()
+chart.type = "bar"  # horizontal so the 10 line names read naturally
+chart.style = 10
+chart.title = "Planned vs Spent — your 10 lines"
+chart.add_data(Reference(ws, min_col=3, max_col=4, min_row=hdr_r, max_row=S_LAST), titles_from_data=True)
+chart.set_categories(Reference(ws, min_col=2, min_row=S_FIRST, max_row=S_LAST))
+chart.series[0].graphicalProperties = GraphicalProperties(solidFill=NAVY)  # Planned
+chart.series[1].graphicalProperties = GraphicalProperties(solidFill=GOLD)  # Spent
+chart.y_axis.numFmt = "$#,##0"
+chart.y_axis.majorGridlines = None
+chart.y_axis.scaling.min = 0  # bars grow from $0
+chart.legend.position = "b"
+chart.width = 16
+chart.height = 12
+ws.add_chart(chart, "G6")
 
 # ---------- Tab 3: Bill Calendar ----------
 ws = wb.create_sheet("Bill Calendar")
@@ -189,7 +222,7 @@ ws.merge_cells("B2:P2"); ws["B2"] = "BILL CALENDAR"
 ws["B2"].font = H1; ws["B2"].fill = HEAD_FILL
 ws["B2"].alignment = Alignment(horizontal="center", vertical="center")
 ws.row_dimensions[2].height = 30
-ws["B4"] = "Type an x when a bill is paid — the box turns green. January is a worked example; clear it and start with your month."
+ws["B4"] = "Pick the x from the dropdown when a bill is paid — the box turns green. January is a worked example; clear it and start with your month."
 ws["B4"].font = SMALL
 hdrs = ["Bill", "Due day", "Amount"] + MONTHS
 for i, h in enumerate(hdrs):
@@ -222,7 +255,24 @@ for row in (B_TOT, PAID_R):
 ws.cell(row=PAID_R + 2, column=2, value="That little green grid filling up is the whole reward system. It works.").font = SMALL
 # green when paid
 ws.conditional_formatting.add(f"E{B_FIRST}:P{B_LAST}", CellIsRule(operator="equal", formula=['"x"'], fill=GREEN_FILL, font=GREEN_FONT))
+# real dropdown on the whole paid grid — the "type an x" convention can no
+# longer silently miss the COUNTIF (review P1-3)
+dv_x = DataValidation(type="list", formula1='"x"', allow_blank=True, showDropDown=False)
+dv_x.error = "Pick x from the dropdown (or leave the box blank)."
+dv_x.errorTitle = "Paid marker"
+dv_x.prompt = "Pick x when this bill is paid."
+dv_x.promptTitle = "Paid?"
+ws.add_data_validation(dv_x)
+dv_x.add(f"E{B_FIRST}:P{B_LAST}")
 ws.freeze_panes = "E7"
+
+# print setup: landscape, fit to one page wide — Ctrl+P gives whole tabs, not confetti
+from openpyxl.worksheet.properties import PageSetupProperties
+for sheet in wb.worksheets:
+    sheet.page_setup.orientation = "landscape"
+    sheet.sheet_properties.pageSetUpPr = PageSetupProperties(fitToPage=True)
+    sheet.page_setup.fitToWidth = 1
+    sheet.page_setup.fitToHeight = 0
 
 XLSX = os.path.join(OUT, "10-Minute-Simple-Budget.xlsx")
 wb.save(XLSX)
@@ -302,6 +352,27 @@ assert bills_total == 2076.99 and jan_paid == 8
 # traffic-light sanity: example rows hit all three colors
 diffs = [round(p - s, 2) for _, p, s in SPEND]
 assert any(d > 0 for d in diffs) and any(d == 0 for d in diffs) and any(d < 0 for d in diffs)
+
+# --- P1 review fix assertions -------------------------------------------------
+# hero cells: LEFT OVER boxes must render $0.00 at zero, never the dash
+mb = wb2["Monthly Budget"]
+for co in (f"C{LO_PLAN}", f"C{LO_NOW}"):
+    assert mb[co].number_format == MONEY0, f"hero cell {co} lost the $0-format"
+# dropdown on the whole Bill Calendar paid grid
+bc = wb2["Bill Calendar"]
+dvs = bc.data_validations.dataValidation
+assert len(dvs) == 1 and dvs[0].type == "list" and dvs[0].formula1 == '"x"', "paid-grid dropdown missing"
+assert str(dvs[0].sqref) == f"E{B_FIRST}:P{B_LAST}", f"dropdown range wrong: {dvs[0].sqref}"
+# native chart present and driven by the live Monthly Budget ranges
+with zipfile.ZipFile(XLSX) as z:
+    chart_parts = [n for n in z.namelist() if n.startswith("xl/charts/chart")]
+    assert len(chart_parts) == 1, f"expected 1 chart part, found {chart_parts}"
+    chart_xml = z.read(chart_parts[0]).decode()
+assert f"'Monthly Budget'!$C${S_FIRST}:$C${S_LAST}" in chart_xml, "chart Planned series not wired to live range"
+assert f"'Monthly Budget'!$D${S_FIRST}:$D${S_LAST}" in chart_xml, "chart Spent series not wired to live range"
+assert f"'Monthly Budget'!$B${S_FIRST}:$B${S_LAST}" in chart_xml, "chart categories not wired to line names"
+assert f"'Monthly Budget'!C{hdr_r}" in chart_xml and f"'Monthly Budget'!D{hdr_r}" in chart_xml, "series titles not from header row"
+print("VERIFIED: $0-format hero cells, paid-grid dropdown, live-range chart")
 print(f"VERIFIED: all {checked} formulas match expected values")
 print(f"  money in $2,750; planned out $2,570 -> left over $180.00 planned; spent $2,466.21 -> LEFT OVER $283.79")
 print(f"  traffic lights exercised: {sum(1 for d in diffs if d > 0)} green / {sum(1 for d in diffs if d == 0)} yellow / {sum(1 for d in diffs if d < 0)} red rows")
@@ -352,12 +423,16 @@ SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 345" font-fami
 <rect x="100" y="132" width="290" height="30" fill="#1f3a5f" rx="8"/>
 <rect x="100" y="152" width="290" height="12" fill="#1f3a5f"/>
 <text x="115" y="152" font-size="13" font-weight="bold" fill="#ffffff">MONTHLY BUDGET</text>
-<text x="120" y="208" font-size="13" fill="#282c34">Money in</text><text x="360" y="208" font-size="13" font-weight="bold" fill="#1f3a5f">$2,750</text><text x="120" y="232" font-size="13" fill="#282c34">Money out (10 lines)</text><text x="360" y="232" font-size="13" font-weight="bold" fill="#1f3a5f">$2,466</text><text x="120" y="256" font-size="13" fill="#282c34">Bills paid</text><text x="360" y="256" font-size="13" font-weight="bold" fill="#1f3a5f">8 of 12</text><text x="120" y="280" font-size="13" fill="#282c34">LEFT OVER</text><text x="360" y="280" font-size="13" font-weight="bold" fill="#2e7d6b">$284</text>
+<text x="120" y="208" font-size="13" fill="#282c34">Money in</text><text x="378" text-anchor="end" y="208" font-size="13" font-weight="bold" fill="#1f3a5f">$2,750</text><text x="120" y="232" font-size="13" fill="#282c34">Money out (10 lines)</text><text x="378" text-anchor="end" y="232" font-size="13" font-weight="bold" fill="#1f3a5f">$2,466</text><text x="120" y="256" font-size="13" fill="#282c34">Bills paid</text><text x="378" text-anchor="end" y="256" font-size="13" font-weight="bold" fill="#1f3a5f">8 of 12</text><text x="120" y="280" font-size="13" fill="#282c34">LEFT OVER</text><text x="378" text-anchor="end" y="280" font-size="13" font-weight="bold" fill="#2e7d6b">$284</text>
 <rect y="305" width="460" height="40" fill="#f2c14e"/>
 <text x="230" y="330" text-anchor="middle" font-size="13" font-weight="bold" fill="#282c34">One page  •  Traffic lights  •  10 minutes flat</text>
 </svg>"""
 with open(os.path.join(OUT, "store-card.svg"), "w") as f:
     f.write(SVG)
-os.makedirs(STORE_IMG, exist_ok=True)
-shutil.copy(os.path.join(OUT, "store-card.svg"), os.path.join(STORE_IMG, "simple-budget.svg"))
-print("saved store-card.svg (+ copied to store/site/img/simple-budget.svg)")
+# store/ is rebuilt by the main session — only copy when the card actually changed
+store_card = os.path.join(STORE_IMG, "simple-budget.svg")
+if os.path.isdir(STORE_IMG) and not (os.path.exists(store_card) and filecmp.cmp(os.path.join(OUT, "store-card.svg"), store_card, shallow=False)):
+    shutil.copy(os.path.join(OUT, "store-card.svg"), store_card)
+    print("saved store-card.svg (+ copied to store/site/img/simple-budget.svg)")
+else:
+    print("saved store-card.svg (store copy already up to date — untouched)")

@@ -1,10 +1,10 @@
 # Listing Package: The Paycheck Budget v1 (STARTER LISTING — use during Etsy signup, Step 2)
 
-**Files:** `Paycheck-Budget-System.xlsx` (the product) · `01-cover.png`, `02-whats-inside.png`, `03-how-it-works.png` (upload in order) · `build_product.py` (regenerates the xlsx deterministically)
+**Files:** `Paycheck-Budget-System.xlsx` (the product) · `01-cover.png`, `02-whats-inside.png`, `03-how-it-works.png` (upload in order) · `build_product.py` (regenerates the xlsx deterministically) · `verify_product.py` (structure checks + LibreOffice formula recalc — run after any rebuild)
 
 **IP screen (2026-08-02): PASSED after correction.** Original name "Budget by Paycheck" was rejected — it is The Budget Mom, LLC's registered method brand (THE BUDGET MOM: USPTO reg. 6012668 covers spreadsheets/workbooks in financial planning; she markets the "Budget by Paycheck® Workbook" and owns budgetbypaycheck.com). Current name and copy use only generic descriptive terms ("paycheck budget", "zero-based"). Do not add the exact phrase "budget by paycheck" (or any influencer/brand name: Budget Mom, Dave Ramsey, EveryDollar, etc.) to titles, tags, or descriptions — ever.
 
-**QA status:** all formulas verified programmatically (expected: Left-to-Assign $0 on the example, payoff months 6/75/34, Aug savings rate 8.3%). Do a 2-minute visual check on first Google Sheets open — Sheets recalculates automatically.
+**QA status (2026-08-03, post P1-review fixes):** `verify_product.py` passes — every key formula recalculated with LibreOffice as ground truth (Left-to-Assign $0 on the example, payoff months 6/75/34, Aug savings rate 8.3%). P1 fixes verified in-file: bottom-line labels merged B:D so "get this to $0" never clips; hero cells render $0.00 (not "-"); START HERE + on-tab note answer the second-paycheck question (duplicate-the-tab flow for Sheets and Excel); Debt Snowball now has 10 debt rows with blank-safe formulas; Year Dashboard has a native Income-vs-Spent + savings-rate-line chart wired to the live ranges (navy/gold/teal house palette); all tabs print landscape fit-to-width. Chart converts on Google Sheets import (colors may shift slightly — noted honestly in the file's START HERE). Do a 2-minute visual check on first Google Sheets open — Sheets recalculates automatically.
 
 ## Etsy listing fields (paste as-is)
 
@@ -23,8 +23,9 @@ Most budgets fail because they're monthly, but your life runs paycheck to payche
 
 WHAT YOU GET (instant download, use forever)
 ★ Paycheck Budget — zero-based budgeting, one check at a time, with planned-vs-actual tracking
-★ Debt Snowball — see the exact payoff month for every debt, and what an extra $100/month changes
-★ Year Dashboard — 2 minutes a month, watch your savings rate climb
+★ Paid twice a month? Duplicate the tab per check — step-by-step instructions included for Google Sheets and Excel
+★ Debt Snowball — up to 10 debts, the exact payoff month for each, and what an extra $100/month changes
+★ Year Dashboard — 2 minutes a month, and the built-in chart shows income vs spending with your savings rate climbing
 ★ Start-Here guide — color-coded cells and a full worked example, so you're never staring at a blank sheet
 
 WORKS WITH

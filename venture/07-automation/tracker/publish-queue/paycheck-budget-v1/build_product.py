@@ -1,9 +1,22 @@
 #!/usr/bin/env python3
 """Build The Paycheck Budget spreadsheet product (starter digital listing).
-NOTE: never use the phrase "Budget by Paycheck" anywhere — registered brand of The Budget Mom, LLC (see listing.md IP screen)."""
+NOTE: never use the phrase "Budget by Paycheck" anywhere — registered brand of The Budget Mom, LLC (see listing.md IP screen).
+
+2026-08-03 P1 review fixes baked in:
+  - bottom-line labels merged across B:D so "get this to $0" is never clipped;
+    the values live in column E (under Difference)
+  - hero cells render $0.00 (not the accounting dash) — the promised "$0" moment
+  - START HERE answers "what about my second check?" (duplicate-the-tab flow)
+  - Debt Snowball supports 10 debts (3 worked examples + 7 ready rows)
+  - Year Dashboard: native combo chart — Income vs Spent columns + savings-rate
+    line — driven by the live B6:F18 ranges
+No macros — formulas + native features only (Excel 2010+ / Google Sheets)."""
 import os
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.chart import BarChart, LineChart, Reference
+from openpyxl.chart.shapes import GraphicalProperties
+from openpyxl.drawing.line import LineProperties
 from openpyxl.utils import get_column_letter
 
 OUT = "/home/user/fb-marketplace-autoresponder/venture/07-automation/tracker/publish-queue/paycheck-budget-v1"
@@ -22,6 +35,7 @@ ALT_FILL = PatternFill("solid", fgColor=LIGHT)
 thin = Side(style="thin", color="CCCCCC")
 BORDER = Border(left=thin, right=thin, top=thin, bottom=thin)
 MONEY = '$#,##0.00;($#,##0.00);"-"'
+MONEY0 = "$#,##0.00;($#,##0.00)"  # hero cells: 0 renders $0.00, never "-"
 PCT = "0.0%"
 
 wb = Workbook()
@@ -45,8 +59,14 @@ rows = [
     ("3. As you spend, fill in Actual. The sheet shows exactly where you stand — no math, ever.", ""),
     ("", ""),
     ("THE OTHER TABS", "SEC"),
-    ("• Debt Snowball — list debts smallest to largest; see the payoff month for each one.", ""),
-    ("• Year Dashboard — log each month once; watch your savings rate trend up.", ""),
+    ("• Debt Snowball — list up to 10 debts smallest to largest; see the payoff month for each one.", ""),
+    ("• Year Dashboard — log each month once; watch the chart fill in and your savings rate trend up.", ""),
+    ("", ""),
+    ("TWO OR MORE CHECKS A MONTH? (most people!)", "SEC"),
+    ("One tab = one paycheck. When the next check lands, make a copy of the 'Paycheck Budget' tab:", ""),
+    ("• Google Sheets: right-click the tab → Duplicate.   • Excel: right-click the tab → Move or Copy → tick 'Create a copy'.", ""),
+    ("Rename each copy for its check (e.g. 'Aug 1 check', 'Aug 15 check') and budget that check to $0.", ""),
+    ("At the end of the month, add your checks together and log one line on the Year Dashboard.", ""),
     ("", ""),
     ("COLOR LEGEND", "SEC"),
     ("Yellow cells = yours to edit.  Everything else calculates automatically — please don't type over it.", ""),
@@ -54,6 +74,7 @@ rows = [
     ("", ""),
     ("GOOGLE SHEETS USERS", "SEC"),
     ("Upload this file to Google Drive, then open it — it converts automatically and all formulas work.", ""),
+    ("The Year Dashboard chart converts to a Sheets chart too — colors may shift slightly; the numbers are identical.", ""),
     ("", ""),
     ("Questions or a formula acting up? Message us on Etsy any time — we answer fast and we'll fix it.", ""),
 ]
@@ -81,6 +102,8 @@ ws["B4"] = "Paycheck date:"; ws["B4"].font = BB
 ws["C4"] = "2026-08-15"; ws["C4"].fill = INPUT_FILL; ws["C4"].font = B; ws["C4"].border = BORDER
 ws["B5"] = "Paycheck amount:"; ws["B5"].font = BB
 ws["C5"] = 2400; ws["C5"].fill = INPUT_FILL; ws["C5"].number_format = MONEY; ws["C5"].border = BORDER
+ws["B6"] = "One tab = one paycheck. Next check? Duplicate this tab — the how-to is on START HERE."
+ws["B6"].font = SMALL
 
 def section(ws, start, title, items):
     ws.merge_cells(start_row=start, start_column=2, end_row=start, end_column=5)
@@ -122,14 +145,17 @@ sr = save_total + 2
 ws.merge_cells(start_row=sr, start_column=2, end_row=sr, end_column=5)
 ws.cell(row=sr, column=2, value="THE BOTTOM LINE").font = H2
 ws.cell(row=sr, column=2).fill = HEAD_FILL
+# labels merged across B:D so the full text always shows; values sit in E
+# (under Difference) and render $0.00 — never a dash — when you hit zero.
 labels = [
     ("Left to Assign (planned) — get this to $0", f"=C5-C{bills_total}-C{spend_total}-C{save_total}"),
     ("Actually remaining (real money right now)", f"=C5-D{bills_total}-D{spend_total}-D{save_total}"),
 ]
 for i, (lab, formula) in enumerate(labels):
     rr = sr + 1 + i
+    ws.merge_cells(start_row=rr, start_column=2, end_row=rr, end_column=4)
     ws.cell(row=rr, column=2, value=lab).font = BB
-    fc = ws.cell(row=rr, column=3, value=formula); fc.font = BB; fc.number_format = MONEY; fc.border = BORDER
+    fc = ws.cell(row=rr, column=5, value=formula); fc.font = BB; fc.number_format = MONEY0; fc.border = BORDER
 ws.cell(row=sr + 3, column=2, value="Tip: 'Left to Assign' at $0 means every dollar has a job before you spend it.").font = SMALL
 ws.freeze_panes = "A7"
 
@@ -149,17 +175,21 @@ ws["C5"] = 100; ws["C5"].fill = INPUT_FILL; ws["C5"].number_format = MONEY; ws["
 hdrs = ["Debt", "Balance", "APR", "Min payment", "You pay", "Months to payoff"]
 for i, h in enumerate(hdrs):
     c = ws.cell(row=7, column=2 + i, value=h); c.font = BB; c.fill = ALT_FILL; c.border = BORDER
+# 10 debt rows: 3 worked examples + 7 blank yellow rows ready for real debts
 debts = [("Store card", 640, 0.279, 35), ("Credit card", 2850, 0.246, 75), ("Car loan", 9400, 0.069, 310)]
-for i, (name, bal, apr, minp) in enumerate(debts):
+N_DEBT_ROWS = 10
+for i in range(N_DEBT_ROWS):
     r = 8 + i
+    name, bal, apr, minp = debts[i] if i < len(debts) else (None, None, None, None)
     ws.cell(row=r, column=2, value=name).font = B
     b = ws.cell(row=r, column=3, value=bal); b.fill = INPUT_FILL; b.number_format = MONEY
     a = ws.cell(row=r, column=4, value=apr); a.fill = INPUT_FILL; a.number_format = PCT
     m = ws.cell(row=r, column=5, value=minp); m.fill = INPUT_FILL; m.number_format = MONEY
-    yp = ws.cell(row=r, column=6, value=f"=E{r}+IF(ROW()=8,$C$5,0)"); yp.number_format = MONEY
-    mo = ws.cell(row=r, column=7, value=f'=IFERROR(ROUNDUP(NPER(D{r}/12,-F{r},C{r}),0),"raise payment")')
+    yp = ws.cell(row=r, column=6, value=f'=IF(OR($C{r}="",$C{r}=0),"",E{r}+IF(ROW()=8,$C$5,0))'); yp.number_format = MONEY
+    mo = ws.cell(row=r, column=7,
+                 value=f'=IF(OR($C{r}="",$C{r}=0),"",IFERROR(ROUNDUP(NPER(D{r}/12,-F{r},C{r}),0),"raise payment"))')
     for col in range(2, 8): ws.cell(row=r, column=col).border = BORDER
-tr = 8 + len(debts)
+tr = 8 + N_DEBT_ROWS
 ws.cell(row=tr, column=2, value="Total").font = BB
 ws.cell(row=tr, column=3, value=f"=SUM(C8:C{tr-1})").font = BB
 ws.cell(row=tr, column=6, value=f"=SUM(F8:F{tr-1})").font = BB
@@ -202,6 +232,48 @@ ws.cell(row=tr, column=6, value=f'=IF(OR(C{tr}="",C{tr}=0),"",E{tr}/C{tr})').fon
 ws.cell(row=tr, column=6).number_format = PCT
 for col in range(2, 7): ws.cell(row=tr, column=col).fill = ALT_FILL; ws.cell(row=tr, column=col).border = BORDER
 ws.cell(row=tr + 2, column=2, value="August row is a worked example — clear it and enter your own months.").font = SMALL
+
+# --- native combo chart: Income vs Spent columns + savings-rate line ---------
+# Driven by the live ranges (B6:F18), so the chart fills in as months are logged.
+bar = BarChart()
+bar.type = "col"
+bar.grouping = "clustered"
+bar.style = 10
+bar.title = "Your year at a glance"
+bar.add_data(Reference(ws, min_col=3, max_col=4, min_row=6, max_row=18), titles_from_data=True)  # Income, Spent
+bar.set_categories(Reference(ws, min_col=2, min_row=7, max_row=18))  # month names
+bar.series[0].graphicalProperties = GraphicalProperties(solidFill=NAVY)   # Income
+bar.series[1].graphicalProperties = GraphicalProperties(solidFill=GOLD)   # Spent
+bar.y_axis.numFmt = "$#,##0"
+bar.y_axis.majorGridlines = None
+bar.y_axis.scaling.min = 0  # bars must grow from $0, not float
+line = LineChart()
+line.add_data(Reference(ws, min_col=6, max_col=6, min_row=6, max_row=18), titles_from_data=True)  # Savings rate
+lp = LineProperties(solidFill=TEAL, w=28000)
+line.series[0].graphicalProperties = GraphicalProperties(ln=lp)
+line.series[0].smooth = False
+line.series[0].marker.symbol = "circle"  # visible even with a single month logged
+line.series[0].marker.size = 7
+line.series[0].marker.graphicalProperties = GraphicalProperties(solidFill=TEAL)
+line.y_axis.axId = 200
+line.y_axis.title = None
+line.y_axis.numFmt = "0%"
+line.y_axis.majorGridlines = None
+line.y_axis.scaling.min = 0
+line.y_axis.crosses = "max"  # secondary percent axis on the right
+bar += line
+bar.legend.position = "b"
+bar.width = 17
+bar.height = 10
+ws.add_chart(bar, "H4")  # beside the table: table + chart = one dashboard view
+
+# print setup: landscape, fit to one page wide — Ctrl+P gives whole tabs, not confetti
+from openpyxl.worksheet.properties import PageSetupProperties
+for sheet in wb.worksheets:
+    sheet.page_setup.orientation = "landscape"
+    sheet.sheet_properties.pageSetUpPr = PageSetupProperties(fitToPage=True)
+    sheet.page_setup.fitToWidth = 1
+    sheet.page_setup.fitToHeight = 0
 
 path = os.path.join(OUT, "Paycheck-Budget-System.xlsx")
 wb.save(path)
