@@ -25,6 +25,13 @@ Gig images: `../05-marketing/creatives/fiverr/` (1280×769). Delivery SOP per gi
 **Requirements:** the niche/product/idea · what decision this feeds (launch? invest? kill?) · budget scale (so the math fits reality) · deadline?
 **FAQ:** "Will you just tell me it's a great idea?" → No. If the numbers say don't, the report says don't — that's the product.
 
+## Gig 4 — Custom AI Receptionist / Assistant Demo Build (added 2026-08-03, owner "sell AI assistants" directive)
+**Title:** I will build a custom AI voice receptionist demo for your business
+**Tiers:** Basic $95: working voice agent configured with your business (greeting, services, hours, FAQ answers) on your free ElevenLabs account + setup guide, 3-day · Standard $195: + appointment-booking and emergency-triage conversation flows + escalation rules + a test-call transcript, 4-day · Premium $350: full receptionist configuration + phone-number connection walkthrough (Twilio/SIP) + 30-min handoff notes doc, 5-day, 2 revisions
+**Description:** Hear your own AI receptionist answer YOUR business's calls before you commit to anything. Tell me your services, hours, and pricing; I deliver a working voice agent you can talk to in your browser — it greets callers, answers your real FAQs, books appointments, and knows when to say "let me take your number and have someone call you." Built on ElevenLabs (free tier works for the demo — I set it up on your account so you own it outright). Honest scope: this is a configured demo/starter agent, not a managed phone service; connecting it to a real phone line is covered in the Premium walkthrough.
+**Requirements:** business name + what you do · services & rough pricing to quote · hours + what counts as an emergency for you · how you want after-hours calls handled (book / message / escalate)?
+**FAQ:** "Will it sound robotic?" → Listen to my portfolio demo first — modern voice AI is startlingly natural; judge with your own ears. · "Do I need technical skills?" → No; the setup guide is click-by-click, and the agent lives in your own free account. · "Can it replace my answering service?" → The Premium tier gets it onto a real number; for most shops it handles routine and after-hours calls, and hands complex ones to a human — I'm honest about limits in the handoff notes.
+
 ## Fulfillment SOPs (AI-executed)
 1. Order in → requirements auto-logged in `tracker/experiments.csv` (channel=fiverr) → AI produces the deliverable via existing pipelines (listing-copy generator / xlsx build+verify pattern / research-agent pattern with sources).
 2. Human relay pastes delivery + a 2-line personal note; sets expectations honestly; never promises rank/sales/income.
