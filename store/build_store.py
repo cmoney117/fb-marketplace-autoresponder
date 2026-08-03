@@ -299,9 +299,13 @@ def buy_button(p, label):
         return f'<a class="btn gold" href="{p["payment_link"]}" data-slug="{p["slug"]}">{label}</a>'
     return f'<span class="btn soon" data-slug="{p["slug"]}" aria-disabled="true" title="Checkout is being wired up — nothing is charged today">Checkout opens this week</span>'
 
+def pay_provider(p):
+    link = p.get("payment_link") or ""
+    return "Gumroad" if "gumroad.com" in link else "Stripe"
+
 def buy_trust(p):
     if checkout_live(p):
-        return '<p class="trust">Secure checkout by Stripe · Instant delivery · No subscription · No account needed</p>'
+        return f'<p class="trust">Secure checkout by {pay_provider(p)} · Instant delivery · No subscription · No account needed</p>'
     return '<p class="trust">Payments are being switched on — no orders are taken until checkout is live. Check back shortly.</p>'
 
 def product_page(p):
@@ -348,7 +352,7 @@ def build():
 <h2 id="delivery">Delivery</h2>
 <p>Digital products deliver instantly: a download link appears on the confirmation page and is emailed to you right after checkout. Lost the link? Email us any time — forever.</p>
 <h2 id="terms">Terms</h2>
-<p>Products are for personal use (or single-business use for business templates). Please don't resell or redistribute the files. Calculators and planners are organizational tools, not financial advice. Charges appear as {CONFIG['statement_descriptor']} on your statement.</p>
+<p>Products are for personal use (or single-business use for business templates). Please don't resell or redistribute the files. Calculators and planners are organizational tools, not financial advice. The charge on your card statement carries the name shown at checkout — Gumroad (our checkout provider) for card purchases, or {CONFIG['statement_descriptor']} for purchases made via our Stripe links.</p>
 <h2 id="privacy">Privacy</h2>
 <p>We collect only what checkout requires (handled by Stripe) and your email for delivery. No data sales, no spam — you'll only hear from us about your order unless you opt in to more.</p>
 <h2 id="contact">Contact</h2>
