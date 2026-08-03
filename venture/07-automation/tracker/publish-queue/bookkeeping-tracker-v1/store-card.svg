@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" font-family="Helvetica,Arial,sans-serif">
+<rect width="1200" height="1200" fill="#f8f6f0"/>
+<rect width="1200" height="200" fill="#1f3a5f"/>
+<text x="600" y="92" text-anchor="middle" font-size="56" font-weight="bold" fill="#ffffff">SMALL BUSINESS BOOKKEEPING</text>
+<text x="600" y="160" text-anchor="middle" font-size="56" font-weight="bold" fill="#f2c14e">&amp; INVOICE TRACKER</text>
+<text x="600" y="262" text-anchor="middle" font-size="33" fill="#282c34">Every dollar in, every dollar out, every invoice chased —</text>
+<text x="600" y="306" text-anchor="middle" font-size="33" font-weight="bold" fill="#282c34">one spreadsheet runs the money side of your business.</text>
+<rect x="170" y="350" width="860" height="416" rx="16" fill="#ffffff" stroke="#d9d4c8" stroke-width="2"/>
+<rect x="170" y="350" width="860" height="64" fill="#2e7d6b" rx="16"/>
+<rect x="170" y="384" width="860" height="30" fill="#2e7d6b"/>
+<text x="205" y="393" font-size="30" font-weight="bold" fill="#ffffff">THIS YEAR AT A GLANCE</text>
+<text x="215" y="472" font-size="32" fill="#282c34">Money in</text><text x="985" y="472" text-anchor="end" font-size="32" font-weight="bold" fill="#1f3a5f">$4,650</text>
+<text x="215" y="548" font-size="32" fill="#282c34">Overdue invoices</text><text x="985" y="548" text-anchor="end" font-size="32" font-weight="bold" fill="#1f3a5f">2 — $610</text>
+<text x="215" y="624" font-size="32" fill="#282c34">Profit so far</text><text x="985" y="624" text-anchor="end" font-size="32" font-weight="bold" fill="#1f3a5f">$3,925</text>
+<rect x="178" y="662" width="844" height="68" fill="#f0f3ee"/>
+<text x="215" y="708" font-size="32" font-weight="bold" fill="#1f3a5f">SUGGESTED TAX SET-ASIDE*</text><text x="985" y="708" text-anchor="end" font-size="32" font-weight="bold" fill="#2e7d6b">20.5%</text>
+<text x="600" y="800" text-anchor="middle" font-size="24" font-style="italic" fill="#5a5f69">*Example figures. The tax line is an estimate only — not tax advice.</text>
+<text x="180" y="880" font-size="34" font-weight="bold" fill="#2e7d6b">&#10003;</text><text x="230" y="880" font-size="32" fill="#282c34">Income &amp; expense ledger with monthly subtotals</text>
+<text x="180" y="944" font-size="34" font-weight="bold" fill="#2e7d6b">&#10003;</text><text x="230" y="944" font-size="32" fill="#282c34">Invoice tracker flags OVERDUE + totals who owes you</text>
+<text x="180" y="1008" font-size="34" font-weight="bold" fill="#2e7d6b">&#10003;</text><text x="230" y="1008" font-size="32" fill="#282c34">Quarterly tax set-aside estimate + mileage log</text>
+<text x="180" y="1072" font-size="34" font-weight="bold" fill="#2e7d6b">&#10003;</text><text x="230" y="1072" font-size="32" fill="#282c34">P&amp;L dashboard — profit by month, year totals</text>
+<rect y="1110" width="1200" height="90" fill="#f2c14e"/>
+<text x="600" y="1167" text-anchor="middle" font-size="32" font-weight="bold" fill="#282c34">Google Sheets + Excel&#160;&#160;&#8226;&#160;&#160;No macros&#160;&#160;&#8226;&#160;&#160;Instant download</text>
+</svg>
