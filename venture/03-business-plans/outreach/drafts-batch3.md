@@ -26,7 +26,7 @@ Reply "no thanks" and you'll never hear from me again.
 
 Hi there —
 
-Found Glenn's 24hr Towing while looking at Green Bay towing companies — family-run 45+ years with 24hr literally in the company name; contact page still lists a fax line — minimal phone infrastructure.
+Found Glenn's 24hr Towing while looking at Green Bay towing companies — family-run 45+ years with 24hr literally in the company name.
 
 You're one of the few that actually answer around the clock — so you know what that costs: either an answering service that just takes messages, or somebody's phone going off at 2am.
 
@@ -43,9 +43,9 @@ Reply "no thanks" and you'll never hear from me again.
 
 Hi Josh —
 
-Found Bozeman Road Rescue while looking at Belgrade towing companies — their own contact page admits written inquiries wait up to 3 hours and tells people to call for a faster response — 24/7 family towing outfit, 20+ years in Bozeman.
+Found Bozeman Road Rescue while looking at Belgrade towing companies — 24/7 family towing outfit, 20+ years in Bozeman.
 
-One question: when a customer calls after hours because their car dies on the highway at midnight, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+Your own contact page says written inquiries can wait 3 hours and tells people to call instead — so at 2am, every job rides on one phone getting answered. What happens when it's already on a call?
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
@@ -60,7 +60,7 @@ Reply "no thanks" and you'll never hear from me again.
 
 Hi there —
 
-Found Knights Towing while looking at Helena towing companies — site routes larger jobs to a gmail address and everything else to one phone number — family-owned 24/7 shop with no dispatch layer.
+Found Knights Towing while looking at Helena towing companies — family-owned 24/7 shop where one phone number handles everything.
 
 You're one of the few that actually answer around the clock — so you know what that costs: either an answering service that just takes messages, or somebody's phone going off at 2am.
 
@@ -89,16 +89,16 @@ Reply "no thanks" and you'll never hear from me again.
 
 ---
 
-## 6. [GAP] Northland Towing (Kansas City, MO) — info@24hourtowingcompany.com
-**Subject:** quick one — who answers Northland Towing's phone at 9pm?
+## 6. [COST] Northland Towing (Kansas City, MO) — info@24hourtowingcompany.com
+**Subject:** quick one — what does answering 24/7 actually cost Northland Towing?
 
 Hi there —
 
 Found Northland Towing while looking at Kansas City towing companies — their domain is literally 24hourtowingcompany.com — serving the KC metro since 1995, the whole brand promise rests on answering at any hour.
 
-One question: when a customer calls after hours because their car dies on the highway at midnight, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+You're one of the few that actually answer around the clock — so you know what that costs: either an answering service that just takes messages, or somebody's phone going off at 2am.
 
-We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -124,7 +124,7 @@ Reply "no thanks" and you'll never hear from me again.
 ---
 
 ## 8. [GAP] Alabama Tree Pros (Trafford, AL) — contact@alabamatreepros.com
-**Subject:** quick one — who answers Alabama Tree Pros's phone at 9pm?
+**Subject:** quick one — who answers Alabama Tree Pros' phone at 9pm?
 
 Hi there —
 
@@ -158,7 +158,7 @@ Reply "no thanks" and you'll never hear from me again.
 ---
 
 ## 10. [GAP] The Well Guys (Seymour, CT) — thewellwaterguys@gmail.com
-**Subject:** quick one — who answers The Well Guys's phone at 9pm?
+**Subject:** quick one — who answers The Well Guys' phone at 9pm?
 
 Hi there —
 
@@ -192,13 +192,13 @@ Reply "no thanks" and you'll never hear from me again.
 ---
 
 ## 12. [GAP] Top Notch Chimney Sweeps & Services (Des Moines, IA) — topnotchchimney@gmail.com
-**Subject:** quick one — who answers Top Notch Chimney Sweeps & Services's phone at 9pm?
+**Subject:** quick one — who answers Top Notch Chimney Sweeps & Services' phone at 9pm?
 
 Hi there —
 
 Found Top Notch Chimney Sweeps & Services while looking at Des Moines chimney/dryer vent companies — locally owned, family operated since 2002 covering Des Moines and Ames — runs on a gmail address, no office staff apparent.
 
-One question: when a customer calls after hours because a chimney-fire scare sends them calling after dark, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a chimney-fire scare has someone calling after dark, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
@@ -213,9 +213,9 @@ Reply "no thanks" and you'll never hear from me again.
 
 Hi there —
 
-Found Chimney Sweep Clean while looking at Baltimore chimney/dryer vent companies — one small crew advertising 18+ service-area cities across the Baltimore metro (Annapolis to Hagerstown) — huge geographic promise for a shop reachable only by one cell and a gmail.
+Found Chimney Sweep Clean while looking at Baltimore chimney/dryer vent companies — one crew covering 18+ cities across the Baltimore metro, Annapolis to Hagerstown — that's a lot of ground for one phone.
 
-One question: when a customer calls after hours because a chimney-fire scare sends them calling after dark, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a chimney-fire scare has someone calling after dark, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
@@ -226,7 +226,7 @@ Reply "no thanks" and you'll never hear from me again.
 ---
 
 ## 14. [GAP] Northern Nevada Glass (Reno, NV) — jordan@northernnevadaglass.com
-**Subject:** quick one, Jordan — who answers Northern Nevada Glass's phone at 9pm?
+**Subject:** quick one, Jordan — who answers Northern Nevada Glass' phone at 9pm?
 
 Hi Jordan —
 
@@ -264,7 +264,7 @@ Reply "no thanks" and you'll never hear from me again.
 
 Hi there —
 
-Found Brock's Plumbing Heating & Air Conditioning while looking at Saint Albans HVAC/plumbing companies — family-owned company claiming 24/7 emergency availability with a PO Box for an office — owner is almost certainly fielding after-hours calls personally.
+Found Brock's Plumbing Heating & Air Conditioning while looking at Saint Albans HVAC/plumbing companies — family-owned with 24/7 emergency availability — which in a shop your size almost always means the owner's cell IS the after-hours plan.
 
 You're one of the few that actually answer around the clock — so you know what that costs: either an answering service that just takes messages, or somebody's phone going off at 2am.
 
@@ -281,7 +281,7 @@ Reply "no thanks" and you'll never hear from me again.
 
 Hi there —
 
-Found ProDrain & Rooter Service while looking at Portland drain cleaning companies — family owned since 1995 serving the Portland metro; contact email is office@ — a small office answers, so nights/weekends clogs likely hit voicemail.
+Found ProDrain & Rooter Service while looking at Portland drain cleaning companies — family owned since 1995 serving the Portland metro; a small office answers the phones — which usually means nights and weekends go to voicemail.
 
 One question: when a customer calls after hours because a backed-up main floods the basement on a Saturday night, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
@@ -298,7 +298,7 @@ Reply "no thanks" and you'll never hear from me again.
 
 Hi there —
 
-Found Major Drain while looking at Omaha drain cleaning companies — family-owned Omaha drain specialist whose address is a Dodge Street mail-drop suite (#345) — truck-based operation with no storefront or front desk.
+Found Major Drain while looking at Omaha drain cleaning companies — family-owned Omaha drain specialist that runs from the trucks — no front desk between the customer and the crew.
 
 One question: when a customer calls after hours because a backed-up main floods the basement on a Saturday night, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 

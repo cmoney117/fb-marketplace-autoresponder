@@ -17,7 +17,7 @@ Savings Tracker Spreadsheet, Savings Goal Planner Google Sheets Excel, 52 Week M
 `savings tracker` · `savings goal tracker` · `savings planner` · `sinking funds` · `52 week challenge` · `savings challenge` · `emergency fund` · `savings spreadsheet` · `money tracker` · `money saving chart` · `google sheets budget` · `budget spreadsheet` · `digital download`
 
 **Description:**
-Every goal gets a number, a date, and a plan.
+Every goal gets a number, a monthly amount, and a plan.
 
 Up to 8 goals with an automatic save-per-month plan, a deposit log, and the classic 52-Week Challenge built in ($1,378 by week 52).
 

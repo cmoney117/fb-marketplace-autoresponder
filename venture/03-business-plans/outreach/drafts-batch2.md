@@ -175,13 +175,13 @@ Reply "no thanks" and you'll never hear from me again.
 ---
 
 ## 11. [GAP] Central Exterminating Services (Lincolnville Center, ME) — office@centralexterminating.me
-**Subject:** quick one, Bruce — who answers Central Exterminating Services's phone at 9pm?
+**Subject:** quick one, Bruce — who answers Central Exterminating Services' phone at 9pm?
 
 Hi Bruce —
 
 Found Central Exterminating Services while looking at Lincolnville Center pest control companies — family owned since 1983, started by Bruce and Becky Richards and now run by their sons Bruce and Jesse, serving Midcoast Maine.
 
-One question: when a customer calls after hours because they hear scratching in the wall after hours, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a customer calls after hours because they hear scratching in the wall, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
@@ -198,7 +198,7 @@ Hi there —
 
 Found Kapture Pest Control while looking at Old Tappan pest control companies — locally owned NJ company that advertises same-day service and customers having a direct line to the owner.
 
-One question: when a customer calls after hours because they hear scratching in the wall after hours, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a customer calls after hours because they hear scratching in the wall, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
@@ -259,16 +259,16 @@ Reply "no thanks" and you'll never hear from me again.
 
 ---
 
-## 16. [COST] Local Water Damage Restoration (Charlotte, NC) — office@yourlocalwaterdamagerestoration.com
-**Subject:** quick one — what does answering 24/7 actually cost Local Water Damage Restoration?
+## 16. [GAP] Local Water Damage Restoration (Charlotte, NC) — office@yourlocalwaterdamagerestoration.com
+**Subject:** quick one — who answers Local Water Damage Restoration's phone at 9pm?
 
 Hi there —
 
-Found Local Water Damage Restoration while looking at Charlotte water damage restoration companies — family-owned company advertising 24/7 emergency water removal across Charlotte, Greensboro and Winston-Salem; indexed pages push the contact form and show no phone number.
+Found Local Water Damage Restoration while looking at Charlotte water damage restoration companies — 24/7 emergency water removal across Charlotte, Greensboro and Winston-Salem. One thing jumped out: the pages I found push a contact form, no phone number.
 
-You're one of the few that actually answer around the clock — so you know what that costs: either an answering service that just takes messages, or somebody's phone going off at 2am.
+When someone's got water coming through the ceiling at 2am, they're not filling out a form — they're calling whoever answers.
 
-We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when water's coming through the ceiling at 2am), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219

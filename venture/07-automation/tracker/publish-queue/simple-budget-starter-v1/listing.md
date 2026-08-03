@@ -10,8 +10,8 @@
 
 **Type:** Digital download · **Category:** accept Etsy's suggestion for "simple budget spreadsheet" · **Price:** $9.99 · **Quantity:** 999
 
-**Title:**
-Simple Budget Spreadsheet, Easy Budget Template Google Sheets Excel, ADHD Budget Planner, Monthly Budget, Bill Payment Tracker, Digital Download
+**Title (126 chars — Etsy max 140):**
+Simple Budget Spreadsheet, Easy Budget Template Google Sheets Excel, ADHD Budget Planner, Monthly Budget, Bill Payment Tracker
 
 **Tags (13):**
 `simple budget` · `easy budget` · `budget spreadsheet` · `budget template` · `adhd budget` · `adhd planner` · `monthly budget` · `bill tracker` · `budget google sheets` · `beginner budget` · `money tracker` · `bill calendar` · `budget for beginners`

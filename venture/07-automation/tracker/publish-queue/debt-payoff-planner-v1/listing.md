@@ -22,7 +22,7 @@ Snowball or Avalanche — see your debt-free date either way.
 Enter your debts and your extra payment, see the payoff months under each strategy, pick the plan you'll stick to, and log every win.
 
 WHAT YOU GET (instant download, use forever)
-★ Room for 10 debts, with a pre-ranked worked example
+★ List up to 10 debts; compare your top 5 side-by-side under Snowball vs Avalanche (a pre-ranked worked example shows you how)
 ★ Months-to-payoff calculated for you, extra payment included
 ★ Snowball vs Avalanche side-by-side — pick with eyes open
 ★ Progress tab that makes paying debt weirdly satisfying

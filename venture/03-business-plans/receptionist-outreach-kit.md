@@ -10,12 +10,21 @@ Vibe Prospecting (connected) can pull HVAC/plumbing/electrical businesses by geo
 
 ## The sequence (4 touches, 4 days apart, stops forever on any reply/unsubscribe)
 
+**Footer rule (CAN-SPAM):** every touch — 1 through 4 — carries the same footer: `AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219 · Reply "no thanks" and you'll never hear from me again.` The physical address and working opt-out are required on every commercial email, not just the first.
+
 **Email 1 — the demo IS the pitch.** Subject: `quick one, {FirstName} — who answers {Company}'s phone at 9pm?`
 > {FirstName} — found {Company} while looking at {city} {trade} companies (nice reviews on {specific detail}). One question: when a customer calls at 9pm with {trade-specific emergency}, what happens? If the answer is "voicemail," that job usually goes to whoever picks up. We built an AI receptionist for service companies — it answers 24/7, triages emergencies, books the job. Don't trust me; test it: click here and talk to it — it's answering for a fake HVAC company right now: {demo link}. Try to stump it. — {SenderName}, AnswerPine · {address} · reply "no thanks" and you'll never hear from me again.
 
-**Email 2 (+4d).** Subject: `the 9pm call, again` — one stat-led paragraph (missed-call cost math for their trade, sourced honestly), demo link again.
-**Email 3 (+8d).** Subject: `what it costs you vs what it costs` — $249/mo vs one recovered job; founding-five $149 lifetime rate; setup-form link.
-**Email 4 (+12d).** Subject: `closing the file on {Company}` — polite breakup note, door open, unsubscribe reiterated. Then done — no exceptions.
+**Email 2 (+4d) — the math, sourced honestly (their numbers, no invented stats).** Subject: `the 9pm call, again`
+> Hi — Cody again (the AI receptionist). No made-up industry stats, just your math: if your average job is $300 and one after-hours call a week hits voicemail, that's roughly $15,000 a year going to whoever picks up. Your numbers are different — that's worth 60 seconds to check. The demo's still up if you want to lean on it: {demo link}. — Cody, AnswerPine · {footer per the rule above}
+
+**Email 3 (+8d) — price vs one recovered job.** Subject: `one missed job vs $249`
+> AnswerPine is $249/mo flat — for most trades, one recovered after-hours job covers it. The first five businesses lock in $149/mo for life. Setup is a 10-minute form, and you hear it answering as YOUR company on a private test number before you pay a dollar: {form link}. — Cody, AnswerPine · {footer per the rule above}
+
+**Email 4 (+12d) — polite breakup, door open.** Subject: `closing the file on {Company}`
+> No reply needed — I'll assume the phones are covered and stop here. If a 2am voicemail ever costs you a job you wanted, the demo will still be at {landing URL}. Good luck out there. — Cody, AnswerPine · {footer per the rule above}
+
+Then done — no exceptions.
 
 ## Ownerless close path
 Demo (self-serve) → Jotform onboarding → Stripe subscription link → AI configures their agent from the form → private test number → go-live email. A human appears nowhere on our side; the tripwire is only if a prospect explicitly demands a phone call with a person (weekly report will surface it — a commission closer or VA can be added then).
