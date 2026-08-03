@@ -1,6 +1,6 @@
-# AnswerPine — Email 1 drafts, batch 3 (STAGED — awaiting owner mailing address; GO already given 2026-08-03)
+# AnswerPine — Email 1 drafts, batch 3 (SEND-READY — address baked in 2026-08-03, owner GO on record)
 
-**Same send gate + rules as batches 1-2:** mailing address replaces `[MAILING ADDRESS]`, ≤50/day across ALL batches combined (52 staged total — day 1 sends 50, day 2 the rest), every send logged to tracker/outreach-log.csv, any reply → suppression forever. GAP angle = coverage hole; COST angle = shop genuinely answers 24/7, pitch is what that costs.
+**Same send gate + rules as batches 1-2:** mailing address replaces `AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219`, ≤50/day across ALL batches combined (52 staged total — day 1 sends 50, day 2 the rest), every send logged to tracker/outreach-log.csv, any reply → suppression forever. GAP angle = coverage hole; COST angle = shop genuinely answers 24/7, pitch is what that costs.
 
 ---
 
@@ -16,7 +16,7 @@ You're one of the few that actually answer around the clock — so you know what
 We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -33,7 +33,7 @@ You're one of the few that actually answer around the clock — so you know what
 We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -50,7 +50,7 @@ One question: when a customer calls after hours because their car dies on the hi
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -67,7 +67,7 @@ You're one of the few that actually answer around the clock — so you know what
 We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -84,7 +84,7 @@ You're one of the few that actually answer around the clock — so you know what
 We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -101,7 +101,7 @@ One question: when a customer calls after hours because their car dies on the hi
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -118,7 +118,7 @@ One question: when a customer calls after hours because a storm drops a limb thr
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -135,7 +135,7 @@ One question: when a customer calls after hours because a storm drops a limb thr
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -152,7 +152,7 @@ You're one of the few that actually answer around the clock — so you know what
 We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when the well quits and the taps run dry on a Sunday), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -169,7 +169,7 @@ One question: when a customer calls after hours because the well quits and the t
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -186,7 +186,7 @@ One question: when a customer calls after hours because the well quits and the t
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -203,7 +203,7 @@ One question: when a customer calls after hours because a chimney-fire scare sen
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -220,7 +220,7 @@ One question: when a customer calls after hours because a chimney-fire scare sen
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -237,7 +237,7 @@ One question: when a customer calls after hours because a shattered window needs
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -254,7 +254,7 @@ One question: when a customer calls after hours because the AC dies on the hotte
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -271,7 +271,7 @@ You're one of the few that actually answer around the clock — so you know what
 We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when the furnace quits on the coldest night of the year), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -288,7 +288,7 @@ One question: when a customer calls after hours because a backed-up main floods 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -305,5 +305,5 @@ One question: when a customer calls after hours because a backed-up main floods 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.

@@ -1,6 +1,6 @@
-# AnswerPine — Email 1 drafts, batch 1 (STAGED — DO NOT SEND YET)
+# AnswerPine — Email 1 drafts, batch 1 (SEND-READY — address baked in 2026-08-03, owner GO on record)
 
-**Send gate (all must be true):** (1) owner has provided the business mailing address (CAN-SPAM: required in every send — replace `[MAILING ADDRESS]` below); (2) owner has green-lit sending. **Send rules:** ≤50/day total; log every send to `tracker/outreach-log.csv` (create on first send: date,company,email,touch,result); any reply or "no thanks" → suppression forever (Emails 2–4 cancelled for that company); Email 2 at +4 days, 3 at +8, 4 at +12 per `receptionist-outreach-kit.md`. Sender: twopillarsmarketingteam@gmail.com, display name "Cody at AnswerPine". Demo link is the live ElevenLabs agent (public, no login). Swap demo link + add landing page link once answerpine.com is live.
+**Send gate (all must be true):** (1) owner has provided the business mailing address (CAN-SPAM: required in every send — replace `AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219` below); (2) owner has green-lit sending. **Send rules:** ≤50/day total; log every send to `tracker/outreach-log.csv` (create on first send: date,company,email,touch,result); any reply or "no thanks" → suppression forever (Emails 2–4 cancelled for that company); Email 2 at +4 days, 3 at +8, 4 at +12 per `receptionist-outreach-kit.md`. Sender: twopillarsmarketingteam@gmail.com, display name "Cody at AnswerPine". Demo link is the live ElevenLabs agent (public, no login). Swap demo link + add landing page link once answerpine.com is live.
 
 ---
 
@@ -11,12 +11,12 @@ Hi there —
 
 Found All in The Family Plumbing while looking at Houston plumbing companies — family-owned Houston-area shop; company page cites 48+ years of experience and a 100% satisfaction guarantee with no hidden fees or trip charges.
 
-One question: when a customer calls at 9pm because a pipe bursts at 9pm, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a customer calls at 9pm because a pipe bursts, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -28,12 +28,12 @@ Hi Greg —
 
 Found Swartz Electric while looking at Colorado Springs electrical companies — about page names owner Greg Swartz as 'the face of Swartz Electric' and says the company has served Colorado Springs since 2006.
 
-One question: when a customer calls at 9pm because half the house goes dark at 9pm, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a customer calls at 9pm because half the house goes dark, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -50,7 +50,7 @@ One question: when a customer calls at 9pm because their AC dies on the hottest 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -62,12 +62,12 @@ Hi Jason —
 
 Found Jason Bonta Electric LLC while looking at Sugar Hill electrical companies — founded by Jason and Natalie Bonta, family owned and operated since 2011; site lists hours Mon-Fri 7am-8pm with weekends by appointment only.
 
-One question: when a customer calls at 9pm because half the house goes dark at 9pm, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a customer calls at 9pm because half the house goes dark, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -79,12 +79,12 @@ Hi there —
 
 Found Precision Plumbing Company while looking at Whites Creek plumbing companies — site says serving middle Tennessee homeowners and businesses since 1978.
 
-One question: when a customer calls at 9pm because a pipe bursts at 9pm, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a customer calls at 9pm because a pipe bursts, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -101,7 +101,7 @@ One question: when a customer calls at 9pm because their AC dies on the hottest 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -118,7 +118,7 @@ One question: when a customer calls at 9pm because their AC dies on the hottest 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -130,12 +130,12 @@ Hi there —
 
 Found The Family Plumber while looking at Surprise plumbing companies — family-run shop rooted in Surprise; site touts being one of the only local plumbing companies offering on-demand video for plumbing emergencies.
 
-One question: when a customer calls at 9pm because a pipe bursts at 9pm, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a customer calls at 9pm because a pipe bursts, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -152,7 +152,7 @@ One question: when a customer calls at 9pm because their AC dies on the hottest 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -164,12 +164,12 @@ Hi George —
 
 Found Calabrese Plumbing while looking at Fairfax plumbing companies — owned and operated by George M. Calabrese, serving Fairfax County since 1988, with 20 years as a Master Plumber per their site.
 
-One question: when a customer calls at 9pm because a pipe bursts at 9pm, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a customer calls at 9pm because a pipe bursts, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -181,12 +181,12 @@ Hi there —
 
 Found Laswell Electric Company while looking at Louisville electrical companies — family-owned since 1995 and BBB accredited per their site; offers free online estimates.
 
-One question: when a customer calls at 9pm because half the house goes dark at 9pm, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a customer calls at 9pm because half the house goes dark, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -198,12 +198,12 @@ Hi Nick —
 
 Found The Plumber LLC while looking at Stillwater plumbing companies — about page names owner Nick Vadnais as a 4th-generation owner/master plumber; contact page invites customers to call or text.
 
-One question: when a customer calls at 9pm because a pipe bursts at 9pm, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a customer calls at 9pm because a pipe bursts, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -215,12 +215,12 @@ Hi there —
 
 Found Envision Electric while looking at West Bountiful electrical companies — in business since 2001; contact page lists availability Mon-Sun 7am-10pm plus 24/7 emergency electrical service across Northern Utah.
 
-One question: when a customer calls at 9pm because half the house goes dark at 9pm, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a customer calls at 9pm because half the house goes dark, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -237,7 +237,7 @@ One question: when a customer calls at 9pm because their AC dies on the hottest 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -249,12 +249,12 @@ Hi there —
 
 Found Diamond State Plumbing while looking at Little Rock plumbing companies — locally owned since 2018; site lists office hours 8am-5pm Mon-Fri while also advertising an emergency plumbing service page.
 
-One question: when a customer calls at 9pm because a pipe bursts at 9pm, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
+One question: when a customer calls at 9pm because a pipe bursts, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -271,7 +271,7 @@ One question: when a customer calls at 9pm because their AC dies on the hottest 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
 
 ---
@@ -288,5 +288,5 @@ One question: when a customer calls at 9pm because their AC dies on the hottest 
 We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
 
 — Cody, AnswerPine
-[MAILING ADDRESS]
+AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 Reply "no thanks" and you'll never hear from me again.
