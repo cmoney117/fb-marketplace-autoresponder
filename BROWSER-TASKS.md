@@ -43,6 +43,12 @@ At https://gumroad.com/signup sign up with the Google account (twopillarsmarketi
 A product saved as draft = NOT done. Paste all 7 PUBLIC product URLs labeled under DONE. Cloud Claude then wires the store's buy buttons to these URLs.
 (STATUS 2026-08-03: worker verified ALL assets twice — 7 dl/ folders with real files, 7 PNG covers including the 3 converted ones. Verification is COMPLETE; do not re-verify. This task is runnable the moment Cody creates the account and gives publish approval in the Cowork chat — then stage + publish all 7 and paste URLs.)
 
+## ⚡ TASK-008H — Gumroad: publish products 8 and 9 (run AFTER TASK-008G's account+7 exist; spends nothing)
+Two more products, same pattern as 008G (download files from GitHub at .../store/site/dl/, covers from .../store/site/img/):
+⑧ "Small Business Bookkeeping & Invoice Tracker" $17.99 on Gumroad — files in `dl/bc921afa4e7f18a4/`, cover `img/bookkeeping-tracker.png` — "Income & expense ledger, invoice tracker with overdue aging, quarterly tax estimate (estimate only — not tax advice), P&L dashboard, and mileage log. Works in free Google Sheets and Excel."
+⑨ "Meal Plan & Grocery Budget Planner" $10.99 on Gumroad — files in `dl/43a632d11df5834d/`, cover `img/meal-grocery-planner.png` — "4-week meal grid, grocery list that totals against your budget before you shop, 3-store price book, and pantry inventory. Works in free Google Sheets and Excel."
+PUBLISH both (draft = not done), paste both public URLs under DONE.
+
 ## ⚡ TASK-012 — Send the 17 AnswerPine outreach drafts (owner directed "sell in every way possible" + provided the mailing address; confirm with Cody in your chat if you need action-time approval)
 In Gmail (the connected account): open Drafts — there are 17 drafts with subjects starting "quick one" addressed to home-services companies. For EACH: verify it contains the Nashville mailing address (159 4th Ave N, Ste 100 #2179) and the "Reply 'no thanks'" opt-out line, then click Send. Space them out if easy (a few minutes apart is ideal; all-at-once is acceptable). Log to the results doc under DONE: "TASK-012: sent N of 17" + any that failed/bounced. NEVER send to anyone who has previously replied "no thanks" (none have yet — this is the first send). Do not edit draft contents beyond fixing an obvious typo.
 
