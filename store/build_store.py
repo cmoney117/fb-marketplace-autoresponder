@@ -110,7 +110,7 @@ PRODUCTS = [
             "$1,000 Emergency Fund chart (25 × $40)",
             "Print as many times as you like, forever",
         ],
-        "img": "img/challenge-pack.svg",
+        "img": "img/challenge-pack.png",
         "faq": [
             ("Do I need a special printer?", "Any home printer — black and white looks great too."),
             ("How do I get it?", "Instant download after checkout, plus email delivery."),
@@ -132,7 +132,7 @@ PRODUCTS = [
             "Vendor Payment Schedule — deposits, balances, due dates, paid so far vs still to pay",
             "Works in Google Sheets (free) and Excel",
         ],
-        "img": "img/wedding-budget.svg",
+        "img": "img/wedding-budget.png",
         "faq": [
             ("Can I change the categories?", "All of them — names, percentages, amounts. The math follows."),
             ("How many guests fit?", "100 rows ready to go; the RSVP and meal counters cover them all."),
@@ -156,7 +156,7 @@ PRODUCTS = [
             "Designed ADHD-friendly: minimal inputs, instant feedback, zero maintenance guilt",
             "Works in Google Sheets (free) and Excel",
         ],
-        "img": "img/simple-budget.svg",
+        "img": "img/simple-budget.png",
         "faq": [
             ("Why so small?", "On purpose. Ten lines you'll actually update beat forty categories you'll abandon by February."),
             ("How is this different from The Paycheck Budget?", "This is the minimal starter — one page a month. The Paycheck Budget is the full per-paycheck system with debt snowball and year dashboard."),
