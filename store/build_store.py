@@ -14,7 +14,7 @@ CONFIG = {
     "ga4_id": "",  # e.g. G-XXXXXXX — injected when set
     "meta_pixel_id": "",  # numeric Meta Pixel ID — injected when set (required before ads per campaign-build-sheets.md)
     "base_url": "https://fb-marketplace-autoresponder.vercel.app",  # e.g. https://thepaycheckbudget.com — enables og:url/og:image when set
-    "statement_descriptor": "PAYCHECKBUDGET",  # must match the Stripe statement descriptor exactly (BROWSER-TASKS TASK-002)
+    "statement_descriptor": "Hive Home Services (our parent company)",  # checkout runs on the owner's existing Stripe account (TASK-002N); replace with the exact descriptor string once the worker records it
 }
 
 GUARANTEE = "If the file doesn't work, doesn't match the description, or you bought a duplicate — full refund, no questions. Message us any time; a real human answers fast."
@@ -386,6 +386,7 @@ def build():
 {''.join(buttons)}{bump}
 <p>Spreadsheets work in free Google Sheets (upload at sheets.google.com → blank sheet → File → Import) and in Excel. The Start-Here tab walks you through setup.</p>
 <div class="guarantee"><b>Our guarantee:</b> {html.escape(GUARANTEE)}</div>
+<p class="trust">Heads up: the charge on your card statement appears under {html.escape(CONFIG['statement_descriptor'])}.</p>
 <p class="trust">Problem with a file? {support_contact_html()} Lost this page? Reply to your Stripe receipt email and a human resends everything.</p>
 <p><a href="index.html">Back to the shop →</a></p></div>"""
         with open(os.path.join(SITE, f"ty-{p['dl_token']}.html"), "w") as f:

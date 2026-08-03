@@ -7,19 +7,19 @@ Open the results doc link above → Share → General access → "Anyone with th
 ## ✅ TASK-001 — Finish Vercel project setup (store deploy) — VERIFIED DONE 2026-08-02 (cloud-verified: project fb-marketplace-autoresponder, production branch correct, deployment READY; worker forgot to log it — see TASK-000B/001C)
 In the logged-in Vercel account: Add New → Project → import GitHub repo `cmoney117/fb-marketplace-autoresponder`. Configure screen: Framework Preset = "Other"; Root Directory → Edit → `store/site`; leave Build/Output empty; Deploy. A failed/empty first deploy is EXPECTED. Then: project Settings → Git → Production Branch → change `master` to `claude/dropshipping-passive-income-q9a65v` → Save. Record the project name + its .vercel.app URL under DONE.
 
-## ⚡ TASK-002R — URGENT: paste the 7 Stripe payment-link URLs into the results doc
-The doc says TASK-002 (payment links) is complete, but the URLs were never recorded — cloud Claude cannot wire checkout without them. Do NOT create any new links or products. Just open the Stripe dashboard → Payment links, copy each link's URL (should be 7: Paycheck Budget, Debt Payoff, Savings Goal, Money Reset Bundle, Challenge Pack, Wedding Budget, 10-Minute Simple Budget — or however many exist), and paste them labeled under DONE in the results doc. Also note whether the statement descriptor was set to PAYCHECKBUDGET or skipped.
+## ✅ TASK-002R — RESOLVED 2026-08-03 (worker found the truth: the 7 links NEVER EXISTED — TASK-002's "done" claim was false. Logged-in account is Hive Home Services, live, with only 2 unrelated subscription links. Excellent catch + correct refusal to touch them. Superseded by TASK-002N below.)
 
-## ⚡ TASK-002S — Point each Stripe link's after-payment redirect at its download page
-In the Stripe dashboard → Payment links → for EACH link: ⋯ menu → Edit → After payment → "Don't show confirmation page" / redirect customers to the URL below (match by product name) → Save. Do not change prices or products.
-- The Paycheck Budget → `https://fb-marketplace-autoresponder.vercel.app/ty-e09f9ec2de1071da.html`
-- Debt Payoff Planner → `https://fb-marketplace-autoresponder.vercel.app/ty-43c9ab2d3cd47ab0.html`
-- Savings Goal Tracker → `https://fb-marketplace-autoresponder.vercel.app/ty-a67624e28243cea2.html`
-- Money Reset Bundle → `https://fb-marketplace-autoresponder.vercel.app/ty-e030dede919b1602.html`
-- Savings Challenge Printable Pack → `https://fb-marketplace-autoresponder.vercel.app/ty-44bb991914a635a5.html`
-- Wedding Budget & Guest Tracker → `https://fb-marketplace-autoresponder.vercel.app/ty-6526dd652b5a15fd.html`
-- The 10-Minute Simple Budget → `https://fb-marketplace-autoresponder.vercel.app/ty-66a2786dce039efe.html`
-These pages hand the buyer their files instantly after payment (they exist as of 2026-08-03; they'll 403 until TASK-001C is done — do TASK-001C first, then spot-check ONE of them loads in incognito). ALSO while in Stripe: Settings → Emails (Customer emails) → turn ON "Successful payments" receipts. Record "TASK-002S done" + which links were updated under DONE.
+## ⚡ TASK-002N — CREATE the 7 payment links in the Hive Home Services Stripe account (owner-approved workaround 2026-08-03; spends nothing)
+Owner directive: sell the Paycheck Budget digital products through the existing Hive Home Services Stripe account (acct_1TOOjR659KrKkVXr, live mode) — do NOT wait for a separate account. ABSOLUTE RULE: do not edit, deactivate, or touch the 2 existing Hive subscription links or any Hive settings not listed here.
+In Stripe (live mode): Product catalog → Add product → then Create payment link, for each of these 7 (price = one-time, USD):
+① "The Paycheck Budget" $14.99 → after payment: redirect to `https://fb-marketplace-autoresponder.vercel.app/ty-e09f9ec2de1071da.html`
+② "Debt Payoff Planner" $14.99 → redirect `https://fb-marketplace-autoresponder.vercel.app/ty-43c9ab2d3cd47ab0.html`
+③ "Savings Goal Tracker" $12.99 → redirect `https://fb-marketplace-autoresponder.vercel.app/ty-a67624e28243cea2.html`
+④ "Money Reset Bundle" $29.99 → redirect `https://fb-marketplace-autoresponder.vercel.app/ty-e030dede919b1602.html`
+⑤ "Savings Challenge Printable Pack" $9.99 → redirect `https://fb-marketplace-autoresponder.vercel.app/ty-44bb991914a635a5.html`
+⑥ "Wedding Budget & Guest Tracker" $16.99 → redirect `https://fb-marketplace-autoresponder.vercel.app/ty-6526dd652b5a15fd.html`
+⑦ "The 10-Minute Simple Budget" $9.99 → redirect `https://fb-marketplace-autoresponder.vercel.app/ty-66a2786dce039efe.html`
+On links ①–④ and ⑥–⑦: "Add another product" → attach ⑤ as an OPTIONAL add-on if the flow allows (skip if fiddly — speed beats the bump today). Set after-payment redirect AT CREATION (After payment → redirect customers to your website). Do NOT change the account's statement descriptor (it belongs to Hive's existing business) — instead RECORD the exact current descriptor (Settings → Business/Public details) under DONE. Also: Settings → Emails (Customer emails) → turn ON "Successful payments" receipts if not already on. Paste all 7 payment-link URLs labeled under DONE.
 
 ## ⚡ TASK-001C — Make the store publicly reachable (2 clicks)
 In Vercel: project fb-marketplace-autoresponder → Settings → Deployment Protection → set Vercel Authentication to "Only Preview Deployments" (or Disabled). (Cloud Claude confirmed 2026-08-03: the blocker is specifically "Vercel Authentication", currently protecting all non-custom-domain URLs; password protection and Trusted IPs are already off. The cloud API token cannot change this setting — it must be done in the dashboard.) Then open https://fb-marketplace-autoresponder.vercel.app in an incognito window and confirm the store loads without login. Record confirmation under DONE.
@@ -33,7 +33,7 @@ In the logged-in Vercel account: go to https://vercel.com/domains/search?q=answe
 ## ⚡ TASK-000B — Clean up the results doc (2 min)
 Open the results Google Doc and DELETE its entire "PENDING" section (the stale TASK-001/TASK-002 copies) and change the first protocol line to: "Tasks live ONLY in the GitHub BROWSER-TASKS.md file; this doc is for RESULTS (DONE/BLOCKED) only." Reminder: log EVERY completed task here — TASK-001 was completed but never logged, which cost hours. Write "TASK-000B done" under DONE.
 
-## ✅ TASK-002 (claimed done — DO NOT re-run; only TASK-002R remains) — Create 7 Stripe Payment Links (creates checkout pages; spends nothing)
+## ❌ TASK-002 — FALSE COMPLETION (2026-08-03 audit: links never existed in the accessible Stripe account; claim retracted; superseded by TASK-002N above — do NOT run this version)
 In the logged-in Stripe dashboard (live mode): Product catalog → Add product, then "Create payment link" for each: ① "The Paycheck Budget" $14.99 · ② "Debt Payoff Planner" $14.99 · ③ "Savings Goal Tracker" $12.99 · ④ "Money Reset Bundle" $29.99 · ⑤ "Savings Challenge Printable Pack" $9.99 · ⑥ "Wedding Budget & Guest Tracker" $16.99 · ⑦ "The 10-Minute Simple Budget" $9.99. On links ①–④ and ⑥–⑦: "Add another product" → attach ⑤ as an OPTIONAL add-on. After-payment: redirect to `https://PLACEHOLDER.vercel.app/success.html` (exact placeholder; cloud Claude updates it after TASK-001). Statement descriptor: set to PAYCHECKBUDGET ONLY if it would not change the descriptor the existing business uses — otherwise skip and note under BLOCKED. Paste all 7 payment-link URLs under DONE.
 
 ## TASK-004 — Fiverr seller account + 3 gigs (#1 REVENUE PRIORITY — Fiverr brings its own buyers; this is our fastest path to a first sale)
@@ -61,6 +61,9 @@ At https://www.etsy.com/sell start shop creation with the shop Gmail: language E
 
 ## TASK-007 — Printify account + Etsy connect + API token
 At https://printify.com/app/register sign up (shop Gmail), Free plan. If the Etsy shop from TASK-006 is open: Manage stores → Add store → Etsy → authorize. My profile → API tokens → generate a token — do NOT paste the token into the results doc; instead save it to a local file on the desktop named venture-secrets.txt and write only "token saved locally" under DONE. Park the wallet/billing-card step under BLOCKED (card entry is human-only).
+
+## TASK-010 — Deploy the AnswerPine landing page (second Vercel project)
+In the logged-in Vercel account: Add New → Project → import the SAME GitHub repo `cmoney117/fb-marketplace-autoresponder` again → project name "answerpine" → Framework Preset "Other" → Root Directory → Edit → `receptionist` → leave Build/Output empty → Deploy. Then Settings → Git → Production Branch → `claude/dropshipping-passive-income-q9a65v`. Then Settings → Deployment Protection → Vercel Authentication → Disabled. If answerpine.com was bought (TASK-001D): Settings → Domains → add answerpine.com. Record the project URL + confirmation it loads in incognito under DONE.
 
 ## TASK-009 — MailerLite free account
 At https://www.mailerlite.com sign up free (shop Gmail), company "The Paycheck Budget". Just create the account and confirm the email; flows come later. Record login-works confirmation under DONE. (If this account was already created under the old Willow & Pine name, rename it in account settings instead.)
