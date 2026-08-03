@@ -2,7 +2,7 @@
 """Static storefront generator. Edit PRODUCTS/CONFIG, run, deploy the store/site/ folder.
 Payment links: set per-product 'payment_link' to the real Stripe Payment Link URL when keys exist.
 """
-import os, html
+import os, html, shutil
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = os.path.join(ROOT, "site")
@@ -19,12 +19,17 @@ CONFIG = {
 
 GUARANTEE = "If the file doesn't work, doesn't match the description, or you bought a duplicate — full refund, no questions. Message us any time; a real human answers fast."
 
+# Source folder for deliverable files (copied into site/dl/<token>/ at build).
+PQ = os.path.join(os.path.dirname(ROOT), "venture", "07-automation", "tracker", "publish-queue")
+
 PRODUCTS = [
     {
         "slug": "paycheck-budget",
         "name": "The Paycheck Budget",
         "price": "$14.99",
         "payment_link": "#",
+        "dl_token": "e09f9ec2de1071da",
+        "files": ["paycheck-budget-v1/Paycheck-Budget-System.xlsx"],
         "headline": "The spreadsheet that budgets the way you actually get paid.",
         "sub": "Zero-based budgeting, one paycheck at a time. Enter your check, give every dollar a job, watch 'Left to Assign' hit $0. No math, no guesswork.",
         "bullets": [
@@ -48,6 +53,8 @@ PRODUCTS = [
         "name": "Debt Payoff Planner",
         "price": "$14.99",
         "payment_link": "#",
+        "dl_token": "43c9ab2d3cd47ab0",
+        "files": ["debt-payoff-planner-v1/Debt-Payoff-Planner.xlsx"],
         "headline": "Snowball or Avalanche — see your debt-free date either way.",
         "sub": "Enter your debts and your extra payment, see the payoff months under each strategy, pick the plan you'll stick to, and log every win.",
         "bullets": [
@@ -70,6 +77,8 @@ PRODUCTS = [
         "name": "Savings Goal Tracker",
         "price": "$12.99",
         "payment_link": "#",
+        "dl_token": "a67624e28243cea2",
+        "files": ["savings-goal-tracker-v1/Savings-Goal-Tracker.xlsx"],
         "headline": "Every goal gets a number, a date, and a plan.",
         "sub": "Up to 8 goals with an automatic save-per-month plan, a deposit log, and the classic 52-Week Challenge built in ($1,378 by week 52).",
         "bullets": [
@@ -90,6 +99,8 @@ PRODUCTS = [
         "name": "Savings Challenge Printable Pack",
         "price": "$9.99",
         "payment_link": "#",
+        "dl_token": "44bb991914a635a5",
+        "files": ["savings-challenge-pack-v1/52-Week-Challenge.pdf", "savings-challenge-pack-v1/Biweekly-Challenge.pdf", "savings-challenge-pack-v1/1000-Emergency-Fund.pdf", "savings-challenge-pack-v1/No-Spend-Month.pdf"],
         "headline": "Four challenges that make saving weirdly fun.",
         "sub": "52-Week Challenge ($1,378), Biweekly Challenge ($2,106), $1,000 Emergency Fund chart, and a No-Spend Month tracker. Print at home, check the boxes, watch it stack.",
         "bullets": [
@@ -110,6 +121,8 @@ PRODUCTS = [
         "name": "Wedding Budget & Guest Tracker",
         "price": "$16.99",
         "payment_link": "#",
+        "dl_token": "6526dd652b5a15fd",
+        "files": ["wedding-budget-planner-v1/Wedding-Budget-Guest-Tracker.xlsx"],
         "headline": "Plan the wedding, not a spreadsheet.",
         "sub": "The budget, the guest list, and every vendor payment in one organized file. Typical %-of-budget guidance, RSVPs and meals counted for you, and no deposit ever sneaks up on you.",
         "bullets": [
@@ -132,6 +145,8 @@ PRODUCTS = [
         "name": "The 10-Minute Simple Budget",
         "price": "$9.99",
         "payment_link": "#",
+        "dl_token": "66a2786dce039efe",
+        "files": ["simple-budget-starter-v1/10-Minute-Simple-Budget.xlsx"],
         "headline": "The budget for people who hate budgeting.",
         "sub": "One page. Money in, ten spending lines, and a LEFT OVER box. Traffic-light colors do the judging — ten minutes to set up, two to update.",
         "bullets": [
@@ -154,6 +169,8 @@ PRODUCTS = [
         "price": "$29.99",
         "compare_at": "$42.97",
         "payment_link": "#",
+        "dl_token": "e030dede919b1602",
+        "files": ["paycheck-budget-v1/Paycheck-Budget-System.xlsx", "debt-payoff-planner-v1/Debt-Payoff-Planner.xlsx", "savings-goal-tracker-v1/Savings-Goal-Tracker.xlsx"],
         "headline": "Budget it. Crush the debt. Build the savings. One bundle.",
         "sub": "All three tools in one instant download: give every dollar a job one paycheck at a time, see your debt-free date, and put every savings goal on a schedule. Set up the first one in about 10 minutes.",
         "bullets": [
@@ -241,10 +258,12 @@ def contact_section_html():
             "Until checkout is live nothing can be ordered on this site, so no customer is ever waiting on an answer. "
             "Bought one of our tools on Etsy or Gumroad? Message us there — same humans, fast replies.")
 
-def page(title, body, desc="", path="", img="", purchase=False):
+def page(title, body, desc="", path="", img="", purchase=False, noindex=False):
     ga = GA4.format(gid=CONFIG["ga4_id"]) if CONFIG["ga4_id"] else ""
     px = PIXEL.format(pid=CONFIG["meta_pixel_id"], extra="fbq('track','Purchase');" if purchase else "") if CONFIG["meta_pixel_id"] else ""
     og = f'\n<meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:type" content="website">'
+    if noindex:
+        og += '<meta name="robots" content="noindex,nofollow">'
     if CONFIG["base_url"]:
         og += f'<meta property="og:url" content="{CONFIG["base_url"]}/{path}">'
         if img:
@@ -343,6 +362,36 @@ def build():
 <p><a class="btn" href="index.html">Back to the shop</a></p></div>"""
     with open(os.path.join(SITE, "success.html"), "w") as f:
         f.write(page(f"Order confirmed — {CONFIG['brand']}", success, "Your order is confirmed — download link on the way.", path="success.html", purchase=True))
+    # Per-product delivery: tokenized thank-you page + files under site/dl/<token>/.
+    # Stripe Payment Links redirect here after payment (BROWSER-TASKS TASK-002S).
+    for p in PRODUCTS:
+        if not p.get("dl_token") or not p.get("files"):
+            continue
+        dl_dir = os.path.join(SITE, "dl", p["dl_token"])
+        os.makedirs(dl_dir, exist_ok=True)
+        buttons = []
+        for rel in p["files"]:
+            src = os.path.join(PQ, rel)
+            fname = os.path.basename(rel)
+            shutil.copyfile(src, os.path.join(dl_dir, fname))
+            size_kb = max(1, os.path.getsize(src) // 1024)
+            buttons.append(f'<p><a class="btn gold" href="dl/{p["dl_token"]}/{fname}" download>Download {html.escape(fname)}</a> <span class="trust">({size_kb} KB)</span></p>')
+        bump = ""
+        if p["slug"] != "savings-challenge-pack":
+            pack = next((x for x in PRODUCTS if x["slug"] == "savings-challenge-pack"), None)
+            if pack and pack.get("dl_token"):
+                bump = f'<p class="upsell">Added the <b>Savings Challenge Printable Pack</b> at checkout? <a href="ty-{pack["dl_token"]}.html">Download it here →</a></p>'
+        ty = f"""<div class="wrap policy"><h1>Thank you! 🎉 Your {html.escape(p['name'])} is ready.</h1>
+<p><b>Download your file{'s' if len(p['files']) > 1 else ''} below right now</b> — no account needed. Bookmark this page; your download link never expires, and a backup copy is emailed to you.</p>
+{''.join(buttons)}{bump}
+<p>Spreadsheets work in free Google Sheets (upload at sheets.google.com → blank sheet → File → Import) and in Excel. The Start-Here tab walks you through setup.</p>
+<div class="guarantee"><b>Our guarantee:</b> {html.escape(GUARANTEE)}</div>
+<p class="trust">Problem with a file? {support_contact_html()} Lost this page? Reply to your Stripe receipt email and a human resends everything.</p>
+<p><a href="index.html">Back to the shop →</a></p></div>"""
+        with open(os.path.join(SITE, f"ty-{p['dl_token']}.html"), "w") as f:
+            f.write(page(f"Your download — {CONFIG['brand']}", ty, "Order confirmed — your files are ready to download.", path=f"ty-{p['dl_token']}.html", purchase=True, noindex=True))
+    with open(os.path.join(SITE, "robots.txt"), "w") as f:
+        f.write("User-agent: *\nDisallow: /dl/\nDisallow: /ty-\n")
     print("built", SITE)
 
 if __name__ == "__main__":

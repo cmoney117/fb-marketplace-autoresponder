@@ -10,6 +10,17 @@ In the logged-in Vercel account: Add New → Project → import GitHub repo `cmo
 ## ⚡ TASK-002R — URGENT: paste the 7 Stripe payment-link URLs into the results doc
 The doc says TASK-002 (payment links) is complete, but the URLs were never recorded — cloud Claude cannot wire checkout without them. Do NOT create any new links or products. Just open the Stripe dashboard → Payment links, copy each link's URL (should be 7: Paycheck Budget, Debt Payoff, Savings Goal, Money Reset Bundle, Challenge Pack, Wedding Budget, 10-Minute Simple Budget — or however many exist), and paste them labeled under DONE in the results doc. Also note whether the statement descriptor was set to PAYCHECKBUDGET or skipped.
 
+## ⚡ TASK-002S — Point each Stripe link's after-payment redirect at its download page
+In the Stripe dashboard → Payment links → for EACH link: ⋯ menu → Edit → After payment → "Don't show confirmation page" / redirect customers to the URL below (match by product name) → Save. Do not change prices or products.
+- The Paycheck Budget → `https://fb-marketplace-autoresponder.vercel.app/ty-e09f9ec2de1071da.html`
+- Debt Payoff Planner → `https://fb-marketplace-autoresponder.vercel.app/ty-43c9ab2d3cd47ab0.html`
+- Savings Goal Tracker → `https://fb-marketplace-autoresponder.vercel.app/ty-a67624e28243cea2.html`
+- Money Reset Bundle → `https://fb-marketplace-autoresponder.vercel.app/ty-e030dede919b1602.html`
+- Savings Challenge Printable Pack → `https://fb-marketplace-autoresponder.vercel.app/ty-44bb991914a635a5.html`
+- Wedding Budget & Guest Tracker → `https://fb-marketplace-autoresponder.vercel.app/ty-6526dd652b5a15fd.html`
+- The 10-Minute Simple Budget → `https://fb-marketplace-autoresponder.vercel.app/ty-66a2786dce039efe.html`
+These pages hand the buyer their files instantly after payment (they exist as of 2026-08-03; they'll 403 until TASK-001C is done — do TASK-001C first, then spot-check ONE of them loads in incognito). Record "TASK-002S done" + which links were updated under DONE.
+
 ## ⚡ TASK-001C — Make the store publicly reachable (2 clicks)
 In Vercel: project fb-marketplace-autoresponder → Settings → Deployment Protection → set Vercel Authentication to "Only Preview Deployments" (or Disabled). (Cloud Claude confirmed 2026-08-03: the blocker is specifically "Vercel Authentication", currently protecting all non-custom-domain URLs; password protection and Trusted IPs are already off. The cloud API token cannot change this setting — it must be done in the dashboard.) Then open https://fb-marketplace-autoresponder.vercel.app in an incognito window and confirm the store loads without login. Record confirmation under DONE.
 
