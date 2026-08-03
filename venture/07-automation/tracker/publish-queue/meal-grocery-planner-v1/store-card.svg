@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" font-family="Helvetica,Arial,sans-serif">
+<rect width="1200" height="1200" fill="#f8f6f0"/>
+<rect width="1200" height="210" fill="#1f3a5f"/>
+<text x="600" y="95" text-anchor="middle" font-size="64" font-weight="bold" fill="#ffffff">MEAL PLAN &amp; GROCERY</text>
+<text x="600" y="168" text-anchor="middle" font-size="64" font-weight="bold" fill="#ffffff">BUDGET PLANNER</text>
+<text x="600" y="272" text-anchor="middle" font-size="34" fill="#282c34">The grocery bill is decided before you leave the house —</text>
+<text x="600" y="316" text-anchor="middle" font-size="34" font-weight="bold" fill="#282c34">see over or under before you shop.</text>
+<rect x="250" y="360" width="700" height="450" rx="20" fill="#ffffff" stroke="#d9d4c8" stroke-width="3"/>
+<rect x="250" y="360" width="700" height="66" rx="20" fill="#2e7d6b"/>
+<rect x="250" y="404" width="700" height="22" fill="#2e7d6b"/>
+<text x="285" y="405" font-size="30" font-weight="bold" fill="#ffffff">GROCERY LIST — WEEK 1</text>
+<text x="295" y="490" font-size="32" fill="#282c34">Weekly budget</text><text x="905" y="490" text-anchor="end" font-size="32" font-weight="bold" fill="#1f3a5f">$150.00</text>
+<text x="295" y="560" font-size="32" fill="#282c34">List total (est.)</text><text x="905" y="560" text-anchor="end" font-size="32" font-weight="bold" fill="#1f3a5f">$134.86</text>
+<text x="295" y="630" font-size="32" fill="#282c34">In cart so far</text><text x="905" y="630" text-anchor="end" font-size="32" font-weight="bold" fill="#1f3a5f">$22.92</text>
+<rect x="262" y="666" width="676" height="76" fill="#f4f6f8"/>
+<text x="295" y="716" font-size="32" font-weight="bold" fill="#1f3a5f">LEFT VS BUDGET</text><text x="905" y="716" text-anchor="end" font-size="34" font-weight="bold" fill="#2e7d6b">$15.14</text>
+<circle cx="185" cy="880" r="9" fill="#f2c14e"/><text x="220" y="892" font-size="34" fill="#282c34">4-week meal plan + auto-totaled grocery list</text>
+<circle cx="185" cy="948" r="9" fill="#f2c14e"/><text x="220" y="960" font-size="34" fill="#282c34">Traffic lights show over / under before you shop</text>
+<circle cx="185" cy="1016" r="9" fill="#f2c14e"/><text x="220" y="1028" font-size="34" fill="#282c34">Price Book compares 3 stores — cheapest highlighted</text>
+<circle cx="185" cy="1084" r="9" fill="#f2c14e"/><text x="220" y="1096" font-size="34" fill="#282c34">Pantry use-first flags help cut food waste</text>
+<rect y="1130" width="1200" height="70" fill="#f2c14e"/>
+<text x="600" y="1175" text-anchor="middle" font-size="34" font-weight="bold" fill="#282c34">Google Sheets + Excel  •  Instant Download  •  No macros</text>
+</svg>
