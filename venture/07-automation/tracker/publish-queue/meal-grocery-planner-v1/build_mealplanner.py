@@ -6,14 +6,28 @@ NO macros, works in Excel and free Google Sheets). Worked-example source data
 lives in the module-level constants below so verify_mealplanner.py can import
 them and recompute every expected value independently.
 
+v2 (2026-08-03, per product-experience-review.md):
+  - Data-validation dropdowns replace every "type Yes exactly" cell (Got it?,
+    Use first?, pantry Where, week picker) — P1-3.
+  - Hero/total cells format 0 as "$0.00", never "-" — P1-4 / P3-8.
+  - Native bar chart on Monthly Grocery Budget (weekly actual vs budget),
+    house palette, driven by the real C9:D12 range — P1-2.
+  - "This week's dinners" live panel on the Grocery List Builder pulls the
+    picked week's dinners from the Weekly Meal Plan — P2-5 (honest "builder").
+  - Sheet protection (no password) with yellow input cells unlocked — P2-6.
+  - Print setup on every tab: print area, fit-to-width, repeated headers — P2-7.
+
 Run: python3 build_mealplanner.py
-Then verify: python3 verify_mealplanner.py  (run scripts/recalc.py in between
-for the cached-value pass, see listing.md QA status).
+Then LibreOffice-recalc + verify: python3 verify_mealplanner.py --recalc
 """
 import os
 from openpyxl import Workbook
-from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.chart import BarChart, Reference
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side, Protection
 from openpyxl.formatting.rule import CellIsRule, FormulaRule
+from openpyxl.utils import get_column_letter
+from openpyxl.worksheet.datavalidation import DataValidation
+from openpyxl.worksheet.properties import PageSetupProperties
 
 OUT = "/home/user/fb-marketplace-autoresponder/venture/07-automation/tracker/publish-queue/meal-grocery-planner-v1"
 XLSX = os.path.join(OUT, "Meal-Plan-Grocery-Budget-Planner.xlsx")
@@ -30,7 +44,8 @@ SEC_FILL = PatternFill("solid", fgColor=TEAL)
 ALT_FILL = PatternFill("solid", fgColor=LIGHT)
 thin = Side(style="thin", color="CCCCCC")
 BORDER = Border(left=thin, right=thin, top=thin, bottom=thin)
-MONEY = '$#,##0.00;($#,##0.00);"-"'
+MONEY = '$#,##0.00;($#,##0.00);"-"'        # input cells: blank-ish dash for 0
+MONEY_HERO = '$#,##0.00;($#,##0.00)'       # calc/total cells: 0 renders "$0.00"
 PCT = "0.0%"
 # traffic-light fills (classic Excel good/neutral/bad — same trio as simple-budget-starter)
 GREEN_FILL = PatternFill("solid", fgColor="C6EFCE"); GREEN_FONT = Font(name="Arial", color="006100")
@@ -111,6 +126,20 @@ PANTRY = [  # (item, where, qty, use-first "Yes"/"", notes)
     ("Bread", "Freezer", "1 loaf", "", ""),
 ]
 PAN_FIRST, PAN_LAST = 9, 58  # 50 pantry rows
+PANTRY_PLACES = ("Pantry", "Fridge", "Freezer", "Counter", "Garage")
+
+# dinner panel on Grocery List Builder (P2-5): week picker + 7 live pulls
+# (rows 1-9 only, so the repeated print-title row 10 stays clean)
+DINNER_WEEK_CELL = "H2"          # yellow dropdown 1-4
+DINNER_FIRST_ROW = 3             # H3..H9 = Mon..Sun
+# Weekly Meal Plan geometry: week n block starts at row 6+(n-1)*8, dinner row = 8n+2
+DINNER_ROW_FORMULA = "8*$H$2+2"
+
+
+def dinner_formula(day_index):
+    col = get_column_letter(3 + day_index)  # C..I on Weekly Meal Plan
+    ref = f"INDEX('Weekly Meal Plan'!{col}$1:{col}$40,{DINNER_ROW_FORMULA})"
+    return f'=IF({ref}="","",{ref})'
 
 
 def banner(ws, ref, text, font=None):
@@ -128,6 +157,40 @@ def traffic(ws, rng):
     ws.conditional_formatting.add(rng, CellIsRule(operator="greaterThan", formula=["0"], fill=GREEN_FILL, font=GREEN_FONT))
     ws.conditional_formatting.add(rng, CellIsRule(operator="equal", formula=["0"], fill=YEL_FILL, font=YEL_FONT))
     ws.conditional_formatting.add(rng, CellIsRule(operator="lessThan", formula=["0"], fill=RED_FILL, font=RED_FONT))
+
+
+def dropdown(ws, options, ranges, strict=True, error=None):
+    """List data-validation (converts cleanly to Google Sheets dropdowns)."""
+    dv = DataValidation(type="list", formula1='"' + ",".join(options) + '"', allow_blank=True)
+    dv.showErrorMessage = strict
+    if strict:
+        dv.errorTitle = "Pick from the dropdown"
+        dv.error = error or ("Please pick one of: " + ", ".join(options) + " (or leave blank).")
+    ws.add_data_validation(dv)
+    for rng in ranges:
+        dv.add(rng)
+    return dv
+
+
+def print_setup(ws, area, orient="portrait", titles=None):
+    """P2-7: real page setup so the buyer's Ctrl+P looks intentional."""
+    ws.print_area = area
+    ws.page_setup.orientation = orient
+    ws.page_setup.fitToWidth = 1
+    ws.page_setup.fitToHeight = 0
+    ws.sheet_properties.pageSetUpPr = PageSetupProperties(fitToPage=True)
+    if titles:
+        ws.print_title_rows = titles
+
+
+def protect(ws):
+    """P2-6: lock formulas, unlock yellow inputs, protect with no password."""
+    for row in ws.iter_rows():
+        for cell in row:
+            rgb = getattr(cell.fill.fgColor, "rgb", None)
+            if isinstance(rgb, str) and rgb.endswith(YELLOW):
+                cell.protection = Protection(locked=False)
+    ws.protection.sheet = True
 
 
 def build():
@@ -148,12 +211,13 @@ def build():
         ("shrinks a grocery bill: check the pantry, plan the meals, price the list, then shop with a number in mind.", ""),
         ("", ""),
         ("HOW TO USE (4 steps)", "SEC"),
-        ("1. 'Pantry Inventory' — flag Use first? = Yes on anything that should get eaten soon.", ""),
+        ("1. 'Pantry Inventory' — set Use first? to Yes (it's a dropdown) on anything that should get eaten soon.", ""),
         ("2. 'Weekly Meal Plan' — plan 7 days around those use-first items. Dinners first; Week 1 is a full example.", ""),
-        ("3. 'Grocery List Builder' — set your weekly budget in the yellow cell, list what you need with estimated", ""),
-        ("    prices, and watch 'Left vs budget'. If it goes red, swap or cut items BEFORE you're in the store.", ""),
-        ("4. 'Monthly Grocery Budget' — after each week's shop, log what you really spent. The month view shows", ""),
-        ("    budget left and how the month compares to last month.", ""),
+        ("3. 'Grocery List Builder' — set your weekly budget in the yellow cell. Your chosen week's dinners appear", ""),
+        ("    on the right (pick the week number), so you build the list beside the plan. Price the items and watch", ""),
+        ("    'Left vs budget'. If it goes red, swap or cut items BEFORE you're in the store.", ""),
+        ("4. 'Monthly Grocery Budget' — after each week's shop, log what you really spent. The bar chart shows each", ""),
+        ("    week's spend against budget, and the month view compares to last month.", ""),
         ("", ""),
         ("THE OTHER TAB", "SEC"),
         ("• Price Book — jot prices for your 20 staples across 3 stores (rename the yellow store headers).", ""),
@@ -165,9 +229,13 @@ def build():
         ("grocery list that comes to $134.86 — so 'Left vs budget' shows $15.14 green before you leave the house.", ""),
         ("The monthly tab shows $583.17 spent of a $600 budget, $71.83 less than the month before.", ""),
         ("", ""),
-        ("COLOR LEGEND", "SEC"),
-        ("Yellow cells = yours to edit.  Everything else calculates automatically — please don't type over it.", ""),
+        ("COLOR LEGEND & DROPDOWNS", "SEC"),
+        ("Yellow cells = yours to edit.  Everything else calculates automatically.", ""),
         ("Traffic lights: green = under budget (or cheapest price) · amber = right at it (or use-first) · red = over.", ""),
+        ("Got it?, Use first?, Where and the week picker are dropdowns — pick a value, no typing needed.", ""),
+        ("Each sheet is protected with NO password so formulas can't be typed over by accident. To change the", ""),
+        ("layout anyway: Review → Unprotect Sheet (Excel) — Google Sheets just shows a friendly warning instead.", ""),
+        ("Every tab is print-ready: File → Print gives you one clean page-width, headers repeated.", ""),
         ("", ""),
         ("GOOGLE SHEETS USERS", "SEC"),
         ("Upload this file to Google Drive, then open it — it converts automatically and all formulas work.", ""),
@@ -184,6 +252,7 @@ def build():
         else:
             cell.font = B
         r += 1
+    print_setup(ws, f"B1:E{r}", "portrait")
 
     # ---------- Tab 2: Weekly Meal Plan ----------
     ws = wb.create_sheet("Weekly Meal Plan")
@@ -206,8 +275,9 @@ def build():
         ws.cell(row=s + 1, column=2).fill = ALT_FILL; ws.cell(row=s + 1, column=2).border = BORDER
         for j, meal in enumerate(MEAL_ROWS):
             rr = s + 2 + j
-            ws.cell(row=rr, column=2, value=meal).font = BB
-            ws.cell(row=rr, column=2).border = BORDER
+            mc = ws.cell(row=rr, column=2, value=meal)
+            mc.font = BB; mc.border = BORDER
+            mc.alignment = Alignment(vertical="top")
             for i in range(7):
                 v = WEEK1_MEALS[meal][i] if w == 0 else None
                 c = ws.cell(row=rr, column=3 + i, value=v)
@@ -218,32 +288,53 @@ def build():
         cc = ws.cell(row=cr, column=3, value=f"=COUNTA(C{s + 2}:I{s + 5})")
         cc.font = BB; cc.fill = ALT_FILL; cc.border = BORDER
     ws.freeze_panes = "A6"
+    print_setup(ws, "B1:I37", "landscape")
 
     # ---------- Tab 3: Grocery List Builder ----------
     ws = wb.create_sheet("Grocery List Builder")
     ws.sheet_view.showGridLines = False
     ws.column_dimensions["A"].width = 3
     for c, w in zip("BCDE", (30, 13, 10, 28)): ws.column_dimensions[c].width = w
+    ws.column_dimensions["F"].width = 2
+    ws.column_dimensions["G"].width = 9
+    ws.column_dimensions["H"].width = 28
     banner(ws, "B2:E2", "GROCERY LIST BUILDER")
     ws["B4"] = "Weekly grocery budget:"; ws["B4"].font = BB
     ws["C4"] = WEEKLY_BUDGET; ws["C4"].fill = INPUT_FILL; ws["C4"].number_format = MONEY; ws["C4"].border = BORDER
-    ws["B5"] = "Build the list from your meal plan. If 'Left vs budget' goes red, swap or cut items BEFORE the store — that's the whole trick."
+    ws["B5"] = "Build the list from the dinners on the right (pulled live from the Weekly Meal Plan — pick the week number). If 'Left vs budget' goes red, swap or cut items BEFORE the store."
     ws["B5"].font = SMALL
     ws["B6"] = "Grocery list total (est.):"; ws["B6"].font = BB
-    ws["C6"] = "=C20+C30+C40+C50+C60+C70"; ws["C6"].font = BB; ws["C6"].number_format = MONEY
+    ws["C6"] = "=C20+C30+C40+C50+C60+C70"; ws["C6"].font = BB; ws["C6"].number_format = MONEY_HERO
     ws["C6"].fill = ALT_FILL; ws["C6"].border = BORDER
     ws["B7"] = "Left vs budget:"; ws["B7"].font = BB
-    ws["C7"] = "=C4-C6"; ws["C7"].font = BB; ws["C7"].number_format = MONEY; ws["C7"].border = BORDER
+    ws["C7"] = "=C4-C6"; ws["C7"].font = BB; ws["C7"].number_format = MONEY_HERO; ws["C7"].border = BORDER
     ws["B8"] = "In cart so far (marked Yes):"; ws["B8"].font = BB
-    ws["C8"] = '=SUMIF(D12:D69,"Yes",C12:C69)'; ws["C8"].font = BB; ws["C8"].number_format = MONEY
+    ws["C8"] = '=SUMIF(D12:D69,"Yes",C12:C69)'; ws["C8"].font = BB; ws["C8"].number_format = MONEY_HERO
     ws["C8"].fill = ALT_FILL; ws["C8"].border = BORDER
-    ws["B9"] = "Mark Got it? = Yes as you shop — 'In cart so far' keeps a running total. Type Yes exactly."
+    ws["B9"] = "Set Got it? to Yes as you shop (it's a dropdown) — 'In cart so far' keeps a running total."
     ws["B9"].font = SMALL
     traffic(ws, "C7")
+    # ----- live dinner panel (pulled from Weekly Meal Plan), rows 1-9 -----
+    ws.merge_cells("G1:H1")
+    ws["G1"] = "THIS WEEK'S DINNERS"; ws["G1"].font = H2; ws["G1"].fill = SEC_FILL
+    ws["G1"].alignment = Alignment(horizontal="center", vertical="center")
+    ws.row_dimensions[1].height = 20
+    ws["G2"] = "Week #:"; ws["G2"].font = BB
+    ws["G2"].alignment = Alignment(vertical="center")
+    wk = ws[DINNER_WEEK_CELL]; wk.value = 1; wk.fill = INPUT_FILL; wk.border = BORDER; wk.font = BB
+    wk.alignment = Alignment(vertical="center")
+    for i, d in enumerate(DAYS):
+        r = DINNER_FIRST_ROW + i
+        lab = ws.cell(row=r, column=7, value=d); lab.font = BB; lab.fill = ALT_FILL; lab.border = BORDER
+        f = ws.cell(row=r, column=8, value=dinner_formula(i))
+        f.font = B; f.fill = ALT_FILL; f.border = BORDER
+    dropdown(ws, ("1", "2", "3", "4"), [DINNER_WEEK_CELL], strict=True,
+             error="Pick a week number from 1 to 4.")
     hdrs = ["Item", "Est. price", "Got it?", "Notes"]
     for i, h in enumerate(hdrs):
         c = ws.cell(row=10, column=2 + i, value=h); c.font = BB; c.fill = ALT_FILL; c.border = BORDER
     r = 11
+    got_ranges = []
     for cat, items in GROCERY:
         ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=5)
         t = ws.cell(row=r, column=2, value=cat); t.font = H2; t.fill = SEC_FILL
@@ -259,13 +350,17 @@ def build():
             for cc in (ws.cell(row=rr, column=2), p, g, n):
                 cc.fill = INPUT_FILL; cc.border = BORDER
         sub = first + ROWS_PER_CAT
+        got_ranges.append(f"D{first}:D{sub - 1}")
         ws.cell(row=sub, column=2, value=f"{cat.title()} subtotal").font = BB
         sc = ws.cell(row=sub, column=3, value=f"=SUM(C{first}:C{sub - 1})")
-        sc.font = BB; sc.number_format = MONEY
+        sc.font = BB; sc.number_format = MONEY_HERO
         for col in range(2, 6):
             c = ws.cell(row=sub, column=col); c.fill = ALT_FILL; c.border = BORDER
         r = sub + 1
+    dropdown(ws, ("Yes", "No"), got_ranges, strict=True,
+             error="Pick Yes (in the cart) or No — the running total counts Yes.")
     ws.freeze_panes = "A11"
+    print_setup(ws, "B1:H70", "landscape", titles="10:10")
 
     # ---------- Tab 4: Price Book ----------
     ws = wb.create_sheet("Price Book")
@@ -291,7 +386,7 @@ def build():
         st = ws.cell(row=r, column=7, value=f'=IF(COUNT(D{r}:F{r})=0,"",INDEX($D$6:$F$6,MATCH(MIN(D{r}:F{r}),D{r}:F{r},0)))')
         st.font = B
         cp = ws.cell(row=r, column=8, value=f'=IF(COUNT(D{r}:F{r})=0,"",MIN(D{r}:F{r}))')
-        cp.number_format = MONEY
+        cp.number_format = MONEY_HERO
         for col in range(2, 9):
             c = ws.cell(row=r, column=col); c.border = BORDER
             if col <= 6: c.fill = INPUT_FILL
@@ -300,6 +395,7 @@ def build():
         FormulaRule(formula=[f'AND(D{PB_FIRST}<>"",D{PB_FIRST}=MIN($D{PB_FIRST}:$F{PB_FIRST}))'],
                     fill=GREEN_FILL, font=GREEN_FONT))
     ws.freeze_panes = "A7"
+    print_setup(ws, f"B1:H{PB_LAST}", "landscape", titles="6:6")
 
     # ---------- Tab 5: Monthly Grocery Budget ----------
     ws = wb.create_sheet("Monthly Grocery Budget")
@@ -320,9 +416,9 @@ def build():
     for i, actual in enumerate(WEEK_ACTUALS):
         r = 9 + i
         ws.cell(row=r, column=2, value=f"Week {i + 1}").font = B
-        bc = ws.cell(row=r, column=3, value="=$C$4/4"); bc.number_format = MONEY
+        bc = ws.cell(row=r, column=3, value="=$C$4/4"); bc.number_format = MONEY_HERO
         ac = ws.cell(row=r, column=4, value=actual); ac.fill = INPUT_FILL; ac.number_format = MONEY
-        dc = ws.cell(row=r, column=5, value=f"=C{r}-D{r}"); dc.number_format = MONEY
+        dc = ws.cell(row=r, column=5, value=f"=C{r}-D{r}"); dc.number_format = MONEY_HERO
         for col in range(2, 6): ws.cell(row=r, column=col).border = BORDER
     ws.cell(row=13, column=2, value="Month total").font = BB
     ws.cell(row=13, column=3, value="=SUM(C9:C12)").font = BB
@@ -330,15 +426,15 @@ def build():
     ws.cell(row=13, column=5, value="=C13-D13").font = BB
     for col in range(2, 6):
         c = ws.cell(row=13, column=col); c.fill = ALT_FILL; c.border = BORDER
-        if col > 2: c.number_format = MONEY
+        if col > 2: c.number_format = MONEY_HERO
     traffic(ws, "E9:E13")
     ws.merge_cells("B15:E15")
     ws["B15"] = "THE BOTTOM LINE"; ws["B15"].font = H2; ws["B15"].fill = HEAD_FILL
     lines = [
-        ("Spent this month:", "=D13", MONEY),
-        ("Left in budget:", "=C4-D13", MONEY),
+        ("Spent this month:", "=D13", MONEY_HERO),
+        ("Left in budget:", "=C4-D13", MONEY_HERO),
         ("% of budget used:", '=IF(C4=0,"",D13/C4)', PCT),
-        ("vs last month (+ means you spent less):", "=C5-D13", MONEY),
+        ("vs last month (+ means you spent less):", "=C5-D13", MONEY_HERO),
     ]
     for i, (lab, formula, fmt) in enumerate(lines):
         r = 16 + i
@@ -348,7 +444,23 @@ def build():
     ws["B21"] = ("'vs last month' just shows the difference — when it turns green, it's usually the pantry flags, "
                  "the priced list, and the Price Book doing their job.")
     ws["B21"].font = SMALL
+    # ----- native bar chart: weekly actual vs budget (P1-2) -----
+    chart = BarChart()
+    chart.type = "col"; chart.grouping = "clustered"
+    chart.title = "Weekly grocery spend vs budget"
+    data = Reference(ws, min_col=3, max_col=4, min_row=8, max_row=12)   # headers + weeks 1-4
+    cats = Reference(ws, min_col=2, min_row=9, max_row=12)
+    chart.add_data(data, titles_from_data=True)
+    chart.set_categories(cats)
+    chart.series[0].graphicalProperties.solidFill = NAVY   # Budget
+    chart.series[1].graphicalProperties.solidFill = TEAL   # Actual spent
+    chart.gapWidth = 80; chart.overlap = -10
+    chart.y_axis.numFmt = "$#,##0"
+    chart.legend.position = "b"
+    chart.width = 15.5; chart.height = 9
+    ws.add_chart(chart, "B23")
     ws.freeze_panes = "A8"
+    print_setup(ws, "B1:F42", "portrait")
 
     # ---------- Tab 6: Pantry Inventory ----------
     ws = wb.create_sheet("Pantry Inventory")
@@ -360,8 +472,8 @@ def build():
     ws["C4"] = f"=COUNTA(B{PAN_FIRST}:B{PAN_LAST})"; ws["C4"].font = BB; ws["C4"].fill = ALT_FILL; ws["C4"].border = BORDER
     ws["B5"] = "Flagged use-first:"; ws["B5"].font = BB
     ws["C5"] = f'=COUNTIF(E{PAN_FIRST}:E{PAN_LAST},"Yes")'; ws["C5"].font = BB; ws["C5"].fill = ALT_FILL; ws["C5"].border = BORDER
-    ws["B6"] = ("Shop your kitchen first. Flag Use first? = Yes on anything ageing out, then plan this week's dinners "
-                "around those rows — that's food you already paid for. Type Yes exactly; the counter counts that word.")
+    ws["B6"] = ("Shop your kitchen first. Set Use first? to Yes (it's a dropdown) on anything ageing out, then plan "
+                "this week's dinners around those rows — that's food you already paid for.")
     ws["B6"].font = SMALL
     hdrs = ["Item", "Where", "Qty on hand", "Use first?", "Notes"]
     for i, h in enumerate(hdrs):
@@ -374,7 +486,14 @@ def build():
     ws.conditional_formatting.add(
         f"E{PAN_FIRST}:E{PAN_LAST}",
         CellIsRule(operator="equal", formula=['"Yes"'], fill=YEL_FILL, font=YEL_FONT))
+    dropdown(ws, ("Yes", "No"), [f"E{PAN_FIRST}:E{PAN_LAST}"], strict=True,
+             error="Pick Yes or No — the use-first counter counts Yes.")
+    dropdown(ws, PANTRY_PLACES, [f"C{PAN_FIRST}:C{PAN_LAST}"], strict=False)  # advisory — own words welcome
     ws.freeze_panes = "A9"
+    print_setup(ws, f"B1:F{PAN_LAST}", "landscape", titles="8:8")
+
+    for name in wb.sheetnames:
+        protect(wb[name])
 
     wb.save(XLSX)
     print("saved", XLSX)

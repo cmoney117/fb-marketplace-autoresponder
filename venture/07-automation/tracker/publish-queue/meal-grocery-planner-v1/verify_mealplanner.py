@@ -7,32 +7,75 @@ Imports ONLY the worked-example source data from build_mealplanner.py, then:
      and that no unexpected formula cell exists anywhere in the workbook;
   3. evaluates the closed set of numeric formulas with a mini evaluator
      (SUM / SUMIF / COUNTIF / COUNTA / COUNT / MIN + arithmetic) and compares;
-  4. if the file has been recalculated (scripts/recalc.py), compares every
-     cached value — including the IF/INDEX/MATCH price-book cells — to expected;
+  4. if the file has been recalculated (--recalc, see below), compares every
+     cached value — including IF/INDEX/MATCH price-book + dinner-panel cells;
   5. checks the traffic-light + cheapest-price conditional formatting ranges,
-     that no input (yellow) cell holds a formula, no macros, no banned
-     post-2007 functions, and the exact tab list.
+     the data-validation dropdowns (P1-3), the native bar chart with
+     house-palette series colors (P1-2), sheet protection with unlocked yellow
+     inputs (P2-6), print setup on every tab (P2-7), that no total/hero formula
+     cell renders 0 as "-" (P1-4), that no input (yellow) cell holds a formula,
+     no macros, no banned post-2007 functions, and the exact tab list.
+
+--recalc: converts the workbook through headless LibreOffice so every formula
+gets a cached value (nice first open everywhere), then re-injects the
+openpyxl-built chart XML because LibreOffice drops the brand series colors.
+Run: python3 build_mealplanner.py && python3 verify_mealplanner.py --recalc
 
 Exits non-zero on any failure.
 """
 import os
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 import zipfile
 
 from openpyxl import load_workbook
+from openpyxl.utils import get_column_letter, range_boundaries, coordinate_to_tuple
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_mealplanner import (  # worked-example data only
     XLSX, WEEK1_MEALS, MEAL_ROWS, WEEKLY_BUDGET, ROWS_PER_CAT, GROCERY,
     STORES, PRICE_ROWS, PB_FIRST, PB_LAST, MONTH_BUDGET, LAST_MONTH_TOTAL,
-    WEEK_ACTUALS, PANTRY, PAN_FIRST, PAN_LAST,
+    WEEK_ACTUALS, PANTRY, PAN_FIRST, PAN_LAST, PANTRY_PLACES,
+    DINNER_WEEK_CELL, DINNER_FIRST_ROW, dinner_formula,
 )
 
 TOL = 0.005
 TABS = ["START HERE", "Weekly Meal Plan", "Grocery List Builder",
         "Price Book", "Monthly Grocery Budget", "Pantry Inventory"]
 BANNED = re.compile(r"\b(XLOOKUP|XMATCH|SORT|FILTER|UNIQUE|SEQUENCE|TEXTJOIN|CONCAT|IFS|SWITCH|MAXIFS|MINIFS)\s*\(")
+CHART_PART = "xl/charts/chart1.xml"
+
+
+# ------------------------------------------------------------------- recalc
+def recalc():
+    """LibreOffice-recalc XLSX in place, preserving the openpyxl chart XML."""
+    with zipfile.ZipFile(XLSX) as z:
+        chart_xml = z.read(CHART_PART)
+    tmp = tempfile.mkdtemp(prefix="mealplanner-recalc-")
+    try:
+        subprocess.run(
+            ["soffice", "--headless", f"-env:UserInstallation=file://{tmp}/lo-profile",
+             "--convert-to", "xlsx", "--outdir", tmp, XLSX],
+            check=True, capture_output=True, timeout=300)
+        conv = os.path.join(tmp, os.path.basename(XLSX))
+        assert os.path.exists(conv), "LibreOffice produced no output"
+        patched = conv + ".patched"
+        with zipfile.ZipFile(conv) as zin, zipfile.ZipFile(patched, "w", zipfile.ZIP_DEFLATED) as zout:
+            names = zin.namelist()
+            assert CHART_PART in names, "chart part lost in LibreOffice round-trip"
+            for name in names:
+                zout.writestr(name, chart_xml if name == CHART_PART else zin.read(name))
+        shutil.move(patched, XLSX)
+        print("recalculated via LibreOffice (chart XML preserved)")
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+if "--recalc" in sys.argv:
+    recalc()
 
 # ---------------------------------------------------------------- expectations
 # Recomputed straight from the source data — no spreadsheet ranges involved.
@@ -49,6 +92,7 @@ pct_used = month_spent / MONTH_BUDGET
 vs_last = round(LAST_MONTH_TOTAL - month_spent, 2)
 pantry_items = sum(1 for row in PANTRY if row[0])
 pantry_flags = sum(1 for row in PANTRY if row[3] == "Yes")
+dinners_w1 = list(WEEK1_MEALS["Dinner"])  # week picker ships set to 1
 pb_expected = []  # (cheapest store name, cheapest price) per worked-example row
 for item, size, *prices in PRICE_ROWS:
     mn = min(prices)
@@ -86,6 +130,11 @@ FORMULAS[(GL, "C6")] = "=" + "+".join(f"C{sr}" for sr in sub_rows)
 VALUES[(GL, "C6")] = list_total
 FORMULAS[(GL, "C7")] = "=C4-C6"; VALUES[(GL, "C7")] = left_vs_budget
 FORMULAS[(GL, "C8")] = '=SUMIF(D12:D69,"Yes",C12:C69)'; VALUES[(GL, "C8")] = in_cart
+for i in range(7):  # dinner panel H4..H10 pulls the picked week's dinners
+    coord = f"H{DINNER_FIRST_ROW + i}"
+    FORMULAS[(GL, coord)] = dinner_formula(i)
+    VALUES[(GL, coord)] = dinners_w1[i]
+    EVAL_SKIP.add((GL, coord))
 
 for r in range(PB_FIRST, PB_LAST + 1):
     FORMULAS[(PB, f"G{r}")] = f'=IF(COUNT(D{r}:F{r})=0,"",INDEX($D$6:$F$6,MATCH(MIN(D{r}:F{r}),D{r}:F{r},0)))'
@@ -154,11 +203,16 @@ def evaluate(ws, formula):
 # ------------------------------------------------------------------ the checks
 YELLOW = "FFF2CC"
 wb = load_workbook(XLSX)                    # formula strings
-wbv = load_workbook(XLSX, data_only=True)   # cached values (present after recalc)
+wbv = load_workbook(XLSX, data_only=True)   # cached values (present after --recalc)
 
 assert wb.sheetnames == TABS, f"tab list changed: {wb.sheetnames}"
 
-# 1+2: every formula cell accounted for, exact string, not yellow-filled
+# 1+2: every formula cell accounted for, exact string, not yellow-filled,
+#      locked (P2-6), and never formatting 0 as "-" (P1-4)
+def is_yellow(cell):
+    rgb = getattr(cell.fill.fgColor, "rgb", None)
+    return isinstance(rgb, str) and rgb.endswith(YELLOW)
+
 seen = 0
 for sheet in wb.sheetnames:
     ws = wb[sheet]
@@ -170,9 +224,10 @@ for sheet in wb.sheetnames:
                 assert cell.value == FORMULAS[key], \
                     f"{key}: formula is {cell.value!r}, expected {FORMULAS[key]!r}"
                 assert not BANNED.search(cell.value), f"{key}: banned function in {cell.value!r}"
-                fill = cell.fill.fgColor.rgb
-                assert not (isinstance(fill, str) and fill.endswith(YELLOW)), \
-                    f"{key}: formula cell has the edit-me yellow fill"
+                assert not is_yellow(cell), f"{key}: formula cell has the edit-me yellow fill"
+                assert cell.protection.locked in (None, True), f"{key}: formula cell is unlocked"
+                assert '"-"' not in cell.number_format, \
+                    f"{key}: calc cell would render 0 as a dash ({cell.number_format!r})"
                 seen += 1
 missing = set(FORMULAS) - {(s, c) for s in wb.sheetnames for c in
                            [cell.coordinate for row in wb[s].iter_rows() for cell in row
@@ -189,7 +244,7 @@ for key, want in VALUES.items():
     assert abs(got - want) < TOL, f"{key}: evaluated {got}, expected {want}"
     evaluated += 1
 
-# 4: cached values (LibreOffice recalc) — covers the IF/INDEX/MATCH cells too
+# 4: cached values (LibreOffice recalc) — covers IF/INDEX/MATCH + dinner cells
 cached = 0
 have_cached = wbv[GL]["C6"].value is not None
 if have_cached:
@@ -239,13 +294,91 @@ assert any(r.type == "cellIs" and r.operator == "equal" and r.formula == ['"Yes"
 
 # 5c: no macros in the package
 with zipfile.ZipFile(XLSX) as z:
-    assert not any("vbaProject" in n for n in z.namelist()), "workbook contains a macro project"
+    names = z.namelist()
+    assert not any("vbaProject" in n for n in names), "workbook contains a macro project"
+    chart_parts = [n for n in names if re.match(r"xl/charts/chart\d+\.xml$", n)]
+    chart_xml = z.read(CHART_PART).decode("utf-8", "ignore")
+
+# 5d: data-validation dropdowns replace every "type Yes exactly" cell (P1-3)
+def covered(ws, coord):
+    """formula1 of the list validation covering coord, else None."""
+    col, row = coordinate_to_tuple(coord)[1], coordinate_to_tuple(coord)[0]
+    for dv in ws.data_validations.dataValidation:
+        for rng in str(dv.sqref).split():
+            c1, r1, c2, r2 = range_boundaries(rng)
+            if c1 <= col <= c2 and r1 <= row <= r2:
+                return dv
+    return None
+
+def assert_dropdown(sheet, coords, options, strict):
+    want = '"' + ",".join(options) + '"'
+    for coord in coords:
+        dv = covered(wb[sheet], coord)
+        assert dv is not None, f"{sheet}!{coord}: no dropdown covers it"
+        assert dv.type == "list" and dv.formula1 == want, \
+            f"{sheet}!{coord}: dropdown is {dv.formula1!r}, expected {want!r}"
+        assert bool(dv.showErrorMessage) == strict, \
+            f"{sheet}!{coord}: strictness {dv.showErrorMessage} != {strict}"
+
+got_probe = [f"D{sr - ROWS_PER_CAT}" for sr in sub_rows] + [f"D{sr - 1}" for sr in sub_rows]
+assert_dropdown(GL, got_probe, ("Yes", "No"), True)
+assert_dropdown(GL, [DINNER_WEEK_CELL], ("1", "2", "3", "4"), True)
+assert_dropdown(PI, [f"E{PAN_FIRST}", f"E{PAN_LAST}"], ("Yes", "No"), True)
+assert_dropdown(PI, [f"C{PAN_FIRST}", f"C{PAN_LAST}"], PANTRY_PLACES, False)
+# subtotal rows must NOT sit inside the Got-it dropdown
+for sr in sub_rows:
+    dv = covered(wb[GL], f"D{sr}")
+    assert dv is None, f"{GL}!D{sr}: subtotal row caught by a dropdown"
+
+# 5e: native bar chart, real ranges, house palette (P1-2)
+assert chart_parts == [CHART_PART], f"expected exactly one chart part, got {chart_parts}"
+assert "barChart" in chart_xml, "chart is not a bar chart"
+for ref in ("$C$9:$C$12", "$D$9:$D$12", "$B$9:$B$12"):
+    assert ref in chart_xml, f"chart does not reference the real range {ref}"
+assert len(re.findall(r"<(?:c:)?ser>", chart_xml)) == 2, "chart must plot exactly Budget + Actual"
+for color in ("1F3A5F", "2E7D6B"):
+    assert color in chart_xml, f"house-palette color {color} missing from chart"
+assert len(wb[MB]._charts) == 1, "chart not anchored on the Monthly Grocery Budget tab"
+
+# 5f: sheet protection — formulas locked, yellow inputs unlocked (P2-6)
+yellow_unlocked = 0
+for sheet in wb.sheetnames:
+    ws = wb[sheet]
+    assert ws.protection.sheet, f"{sheet}: sheet protection is off"
+    assert not ws.protection.password, f"{sheet}: protection must be password-free"
+    for row in ws.iter_rows():
+        for cell in row:
+            if is_yellow(cell):
+                assert cell.protection.locked is False, \
+                    f"{sheet}!{cell.coordinate}: yellow input cell is locked"
+                yellow_unlocked += 1
+assert yellow_unlocked > 200, f"suspiciously few unlocked inputs: {yellow_unlocked}"
+
+# 5g: print setup on every tab (P2-7)
+ORIENT = {TABS[0]: "portrait", MP: "landscape", GL: "landscape",
+          PB: "landscape", MB: "portrait", PI: "landscape"}
+for sheet in wb.sheetnames:
+    ws = wb[sheet]
+    assert ws.print_area, f"{sheet}: no print area"
+    assert ws.page_setup.orientation == ORIENT[sheet], \
+        f"{sheet}: orientation {ws.page_setup.orientation}, expected {ORIENT[sheet]}"
+    assert int(ws.page_setup.fitToWidth or 0) == 1, f"{sheet}: not fit-to-width"
+    pspr = ws.sheet_properties.pageSetUpPr
+    assert pspr is not None and pspr.fitToPage, f"{sheet}: fitToPage flag missing"
+for sheet, titles in ((GL, "$10:$10"), (PB, "$6:$6"), (PI, "$8:$8")):
+    got = wb[sheet].print_title_rows
+    assert got and got.replace("$", "") == titles.replace("$", ""), \
+        f"{sheet}: repeat-header rows are {got!r}"
 
 print(f"VERIFIED: {seen} formula strings exact · {evaluated} evaluated in Python · "
       f"{cached} cached values checked{'' if have_cached else ' (recalc not run — cached pass skipped)'}")
 print(f"  grocery list: ${list_total:,.2f} of ${WEEKLY_BUDGET} -> left vs budget ${left_vs_budget:,.2f} (green); in cart ${in_cart:,.2f}")
 print(f"  meal plan: week 1 counter {meal_count_w1}/28, weeks 2-4 = 0")
+print(f"  dinner panel: week picker=1 -> {dinners_w1[0]!r} ... {dinners_w1[-1]!r} pulled live")
 print(f"  month: spent ${month_spent:,.2f} of ${MONTH_BUDGET} -> left ${month_left:,.2f}, {pct_used:.1%} used, ${vs_last:,.2f} less than last month")
-print(f"  weekly over/under {week_diffs} -> green/red/amber/green all exercised")
+print(f"  weekly over/under {week_diffs} -> green/red/amber/green all exercised; 0 renders $0.00 not '-'")
 print(f"  price book: {len(PRICE_ROWS)} rows, cheapest = {[s for s, _ in pb_expected]}")
 print(f"  pantry: {pantry_items} items, {pantry_flags} use-first flags")
+print(f"  dropdowns: Got it? Yes/No · week 1-4 · Use first? Yes/No · Where {'/'.join(PANTRY_PLACES)}")
+print(f"  chart: clustered bars, Budget(C9:C12, navy) vs Actual(D9:D12, teal) on {MB}")
+print(f"  protection: 6 sheets locked (no password), {yellow_unlocked} yellow input cells unlocked; print setup on all tabs")
