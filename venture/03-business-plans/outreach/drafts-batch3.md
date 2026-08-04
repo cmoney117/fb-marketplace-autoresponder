@@ -1,11 +1,11 @@
 # AnswerPine — Email 1 drafts, batch 3 (SEND-READY — address baked in 2026-08-03, owner GO on record)
 
-**Same send gate + rules as batches 1-2:** mailing address replaces `AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219`, ≤50/day across ALL batches combined (52 staged total — day 1 sends 50, day 2 the rest), every send logged to tracker/outreach-log.csv, any reply → suppression forever. GAP angle = coverage hole; COST angle = shop genuinely answers 24/7, pitch is what that costs.
+**Same send gate + rules as batches 1-2:** mailing address baked into every footer (`AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219`), ≤50/day across ALL batches combined (52 staged total — day 1 sends 50, day 2 the rest), every send logged to tracker/outreach-log.csv, any reply → suppression forever. GAP angle = coverage hole; COST angle = shop genuinely answers 24/7, pitch is what that costs.
 
 ---
 
 ## 1. [COST] Waldera's Towing (New Berlin, WI) — dispatch@walderastowing.com
-**Subject:** quick one — what does answering 24/7 actually cost Waldera's Towing?
+**Subject:** what does answering 24/7 actually cost Waldera's Towing?
 
 Hi there —
 
@@ -13,7 +13,7 @@ Found Waldera's Towing while looking at New Berlin towing companies — site say
 
 You're one of the few that actually answer around the clock — so you know what that costs: either an answering service that just takes messages, or somebody's phone going off at 2am.
 
-We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -22,7 +22,7 @@ Reply "no thanks" and you'll never hear from me again.
 ---
 
 ## 2. [COST] Glenn's 24hr Towing (Green Bay, WI) — info@glenns24hrtowing.com
-**Subject:** quick one — what does answering 24/7 actually cost Glenn's 24hr Towing?
+**Subject:** what does answering 24/7 actually cost Glenn's 24hr Towing?
 
 Hi there —
 
@@ -30,7 +30,7 @@ Found Glenn's 24hr Towing while looking at Green Bay towing companies — family
 
 You're one of the few that actually answer around the clock — so you know what that costs: either an answering service that just takes messages, or somebody's phone going off at 2am.
 
-We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -47,7 +47,7 @@ Found Bozeman Road Rescue while looking at Belgrade towing companies — 24/7 fa
 
 Your own contact page says written inquiries can wait 3 hours and tells people to call instead — so at 2am, every job rides on one phone getting answered. What happens when it's already on a call?
 
-We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -56,7 +56,7 @@ Reply "no thanks" and you'll never hear from me again.
 ---
 
 ## 4. [COST] Knights Towing (Helena, MT) — knightstowingmt@gmail.com
-**Subject:** quick one — what does answering 24/7 actually cost Knights Towing?
+**Subject:** what does answering 24/7 actually cost Knights Towing?
 
 Hi there —
 
@@ -64,7 +64,7 @@ Found Knights Towing while looking at Helena towing companies — family-owned 2
 
 You're one of the few that actually answer around the clock — so you know what that costs: either an answering service that just takes messages, or somebody's phone going off at 2am.
 
-We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -73,7 +73,7 @@ Reply "no thanks" and you'll never hear from me again.
 ---
 
 ## 5. [COST] Solo's Towing & Recovery (Carriere, MS) — solos_towing@charter.net
-**Subject:** quick one — what does answering 24/7 actually cost Solo's Towing & Recovery?
+**Subject:** what does answering 24/7 actually cost Solo's Towing & Recovery?
 
 Hi there —
 
@@ -81,7 +81,7 @@ Found Solo's Towing & Recovery while looking at Carriere towing companies — ru
 
 You're one of the few that actually answer around the clock — so you know what that costs: either an answering service that just takes messages, or somebody's phone going off at 2am.
 
-We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -90,7 +90,7 @@ Reply "no thanks" and you'll never hear from me again.
 ---
 
 ## 6. [COST] Northland Towing (Kansas City, MO) — info@24hourtowingcompany.com
-**Subject:** quick one — what does answering 24/7 actually cost Northland Towing?
+**Subject:** what does answering 24/7 actually cost Northland Towing?
 
 Hi there —
 
@@ -98,7 +98,7 @@ Found Northland Towing while looking at Kansas City towing companies — their d
 
 You're one of the few that actually answer around the clock — so you know what that costs: either an answering service that just takes messages, or somebody's phone going off at 2am.
 
-We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when their car dies on the highway at midnight), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -115,7 +115,7 @@ Found Liscombe Tree Service while looking at St. Charles tree service companies 
 
 One question: when a customer calls after hours because a storm drops a limb through the roof at 2am, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
-We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -132,7 +132,7 @@ Found Alabama Tree Pros while looking at Trafford tree service companies — adv
 
 One question: when a customer calls after hours because a storm drops a limb through the roof at 2am, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
-We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -141,7 +141,7 @@ Reply "no thanks" and you'll never hear from me again.
 ---
 
 ## 9. [COST] Epping Well and Pump (Epping, NH) — info@eppingwell.com
-**Subject:** quick one — what does answering 24/7 actually cost Epping Well and Pump?
+**Subject:** what does answering 24/7 actually cost Epping Well and Pump?
 
 Hi there —
 
@@ -149,7 +149,7 @@ Found Epping Well and Pump while looking at Epping well pump service companies �
 
 You're one of the few that actually answer around the clock — so you know what that costs: either an answering service that just takes messages, or somebody's phone going off at 2am.
 
-We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when the well quits and the taps run dry on a Sunday), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when the well quits and the taps run dry on a Sunday), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -166,7 +166,7 @@ Found The Well Guys while looking at Seymour well pump service companies — fam
 
 One question: when a customer calls after hours because the well quits and the taps run dry on a Sunday, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
-We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -183,7 +183,7 @@ Found Michael Barlow Well Drilling Service while looking at Bel Air well pump se
 
 One question: when a customer calls after hours because the well quits and the taps run dry on a Sunday, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
-We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -200,7 +200,7 @@ Found Top Notch Chimney Sweeps & Services while looking at Des Moines chimney/dr
 
 One question: when a chimney-fire scare has someone calling after dark, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
-We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -217,7 +217,7 @@ Found Chimney Sweep Clean while looking at Baltimore chimney/dryer vent companie
 
 One question: when a chimney-fire scare has someone calling after dark, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
-We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -234,7 +234,7 @@ Found Northern Nevada Glass while looking at Reno glass repair companies — fam
 
 One question: when a customer calls after hours because a shattered window needs board-up at 2am, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
-We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -251,7 +251,7 @@ Found Gem Heating & Air Conditioning while looking at Boise HVAC companies — p
 
 One question: when a customer calls after hours because the AC dies on the hottest night of the year, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
-We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -260,7 +260,7 @@ Reply "no thanks" and you'll never hear from me again.
 ---
 
 ## 16. [COST] Brock's Plumbing Heating & Air Conditioning (Saint Albans, VT) — info@brocksheating.com
-**Subject:** quick one — what does answering 24/7 actually cost Brock's Plumbing Heating & Air Conditioning?
+**Subject:** what does answering 24/7 actually cost Brock's Plumbing Heating & Air Conditioning?
 
 Hi there —
 
@@ -268,7 +268,7 @@ Found Brock's Plumbing Heating & Air Conditioning while looking at Saint Albans 
 
 You're one of the few that actually answer around the clock — so you know what that costs: either an answering service that just takes messages, or somebody's phone going off at 2am.
 
-We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when the furnace quits on the coldest night of the year), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies that answers like a trained dispatcher — it triages the real emergencies (like when the furnace quits on the coldest night of the year), books the routine jobs, and never sleeps or bills overtime. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -285,7 +285,7 @@ Found ProDrain & Rooter Service while looking at Portland drain cleaning compani
 
 One question: when a customer calls after hours because a backed-up main floods the basement on a Saturday night, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
-We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
@@ -302,7 +302,7 @@ Found Major Drain while looking at Omaha drain cleaning companies — family-own
 
 One question: when a customer calls after hours because a backed-up main floods the basement on a Saturday night, what happens? If the answer is "voicemail," that job usually goes to whoever picks up.
 
-We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it.
+We built an AI receptionist for service companies — it answers 24/7, triages real emergencies, and books the job. Don't take my word for it; talk to it right now (it's answering for a fictional HVAC company as a demo): https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj73 — try to stump it. If it fumbles anything, reply and tell me what — I fix it the same day.
 
 — Cody, AnswerPine
 AnswerPine — 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
