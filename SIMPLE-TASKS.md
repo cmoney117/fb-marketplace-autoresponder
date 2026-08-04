@@ -19,4 +19,9 @@ Open https://elevenlabs.io/app/talk-to?agent_id=agent_5001kz0fckd3ep5scqkwfhhgvj
 Open each product page listed on https://pillarsmarketer.gumroad.com. For each: confirm it shows a price and an "I want this" button.
 - Add one line per product: `MINI: S4 <product name> — price shown: <price>, buy button: YES/NO`
 
+## S5 — Opportunity scout (twice a day; READ ONLY — never comment, post, vote, or log in)
+Open these in a private window and scan the newest ~20 posts in each: https://www.reddit.com/r/budget/new/ · https://www.reddit.com/r/Frugal/new/ · https://www.reddit.com/r/mealprep/new/ · https://www.reddit.com/r/smallbusiness/new/
+For any post asking for a budget/savings/meal-planning/bookkeeping template or spreadsheet recommendation, add one line: `MINI: S5 LEAD — <subreddit> — "<post title>" — <link>`
+If nothing fits: `MINI: S5 no leads this scan`. NEVER write anything on Reddit itself — you are eyes only.
+
 _That's the whole job. When all checks are green and unchanged, one line per run is enough: `MINI: all checks unchanged`._
