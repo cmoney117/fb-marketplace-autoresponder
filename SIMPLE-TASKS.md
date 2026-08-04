@@ -20,7 +20,7 @@ Open each product page listed on https://pillarsmarketer.gumroad.com. For each: 
 - Add one line per product: `MINI: S4 <product name> — price shown: <price>, buy button: YES/NO`
 
 ## S5 — Opportunity scout (twice a day; READ ONLY — never comment, post, vote, or log in)
-Open these in a private window and scan the newest ~20 posts in each: https://www.reddit.com/r/budget/new/ · https://www.reddit.com/r/Frugal/new/ · https://www.reddit.com/r/mealprep/new/ · https://www.reddit.com/r/smallbusiness/new/
+Open these in a private window and scan the newest ~20 posts in each: https://www.reddit.com/r/budget/new/ · https://www.reddit.com/r/Frugal/new/ · https://www.reddit.com/r/mealprep/new/ · https://www.reddit.com/r/smallbusiness/new/ · https://www.reddit.com/r/googlesheets/new/ · https://www.reddit.com/r/excel/new/ · https://www.reddit.com/r/ynab/new/ · https://www.reddit.com/r/weddingplanning/new/
 For any post asking for a budget/savings/meal-planning/bookkeeping template or spreadsheet recommendation, add one line: `MINI: S5 LEAD — <subreddit> — "<post title>" — <link>`
 If nothing fits: `MINI: S5 no leads this scan`. NEVER write anything on Reddit itself — you are eyes only.
 

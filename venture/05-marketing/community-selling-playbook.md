@@ -196,3 +196,16 @@ Voice rules for all drafts: first person, plain-spoken, no hype words, no income
 - UK Business Forums: [New rules for posting in the Marketplace](https://www.ukbusinessforums.co.uk/threads/new-rules-for-posting-in-the-marketplace.364037/); [businessforum.uk Products and Services Marketplace](https://www.businessforum.uk/forums/products-and-services-marketplace.48/)
 - FB promo-day group mechanics: [ThriveOnEtsy — Etsy promotion through Facebook groups](https://thriveonetsy.com/etsy-shop-promotion-through-facebook-groups/), [Millennial Boss — 20 Etsy Seller Facebook Groups](https://millennialboss.com/etsy-seller-facebook-groups/), [Digitally Purposed — How to Use Facebook to Promote an Etsy Shop](https://digitallypurposed.medium.com/how-to-use-facebook-to-promote-an-etsy-shop-de18ae073748)
 - Reddit sitewide 90/10 norm and shilling bans: [redship complete guide](https://redship.io/blog/reddit-self-promotion-rules), [Soar subreddit rules database](https://www.soar.sh/blog/self-promotion-rules-by-subreddit-database), [KarmaGuy guide](https://karmaguy.io/en/blog/reddit-self-promotion-rules)
+
+## Reply templates for scouted requests (added 2026-08-04 — for MINI: S5 leads; Claude personalizes per thread, Cody pastes)
+**Pattern A — "anyone have a good budget template?"**
+> I made one for exactly this — zero-based, budgets by paycheck instead of by month (that mismatch is what breaks most templates). Happy to share the link if that's allowed here, or DM me. Either way: whatever template you pick, the feature that matters most is a "left to assign" number that hits $0 — that's the whole method.
+**Pattern B — "how do I track debt payoff?"**
+> Two numbers change everything: your payoff date and what your extra payment saves you. I built a spreadsheet that calculates both (snowball vs avalanche side by side) — link if allowed/DM. If you'd rather DIY it: amortize each debt at APR/12, roll every freed-up minimum onto the next debt.
+**Pattern C — "meal planning on a budget?"**
+> The trick that worked for us: total the grocery list against a budget number BEFORE the store, not after. I made a planner that does it automatically (link if allowed) — but even on paper, pre-totaling the list is the 80/20.
+**Pattern D — small business "how do you track invoices/expenses?"**
+> Solo/small operation? You likely don't need software yet — a ledger with monthly subtotals, an invoice tab with overdue aging, and a quarterly set-aside estimate covers it. I built exactly that as a spreadsheet (link if allowed). Software earns its subscription around your first employee.
+**Pattern E — wedding budget chaos**
+> The two tabs that save weddings: a budget with "left to plan" against your real total, and a vendor payment schedule so no deposit sneaks up on you. Made a spreadsheet with both + RSVP counting (link if allowed/DM).
+**Rules:** always follow the sub's link policy (no-link variant = offer DM), always "I made this" disclosure if linking, never post the same text twice in one community, answer the actual question first — the value stands even if they never click.
