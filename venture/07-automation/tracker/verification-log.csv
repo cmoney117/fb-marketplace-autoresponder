@@ -8,3 +8,11 @@ date,artifact,method,result,notes
 2026-08-02,elevenlabs-demo-agent,prior-day API create+customer-audit embed check,PASS-PRIOR,direct re-check scheduled next audit
 2026-08-02,venture-triggers,firings observed today,PASS,daily-ops 13:30Z and evening-audit 02:00Z both fired
 2026-08-02,emails-sent-vs-draft,Gmail,N/A,no sends claimed yet
+2026-08-04T02:00Z,egress-proxy,WebFetch example.com,403 proxy-blocked — all public-URL checks inconclusive-proxy; API tools used
+2026-08-04T02:00Z,store-public,Vercel API get_project_deployment_protection,STILL PROTECTED (ssoProtection all_except_custom_domains) — TASK-001C correctly unmarked
+2026-08-04T02:00Z,gumroad-products,results doc run-2 entry (read 01:25Z),account pillarsmarketer.gumroad.com public but 0 products — 008G/008H correctly unmarked
+2026-08-04T02:00Z,outreach-sends,Gmail SENT verified 19:25Z + outreach-log.csv,17/17 sent (1 bounce suppressed) — TASK-012 ✅ matches evidence
+2026-08-04T02:00Z,demo-agent,ElevenLabs get_agent_link,agent exists and public (no auth token required) — demo link in sent emails functional
+2026-08-04T02:00Z,checkmark-crosscheck,doc claims vs BROWSER-TASKS.md,all claimed completions marked (000/002R/012); no unmarked completions; no spin risk; false TASK-002 stays ❌-closed
+2026-08-04T02:00Z,product-catalog,verify scripts re-run this evening (rounds 1-3),9/9 products upgraded+verified; store delivery files refreshed (commit dd1e8a9)
+2026-08-04T02:00Z,domains,Vercel (no domain events),thepaycheckbudget.com + answerpine.com NOT purchased — 001B/001D correctly unmarked
