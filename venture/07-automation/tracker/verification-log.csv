@@ -16,3 +16,15 @@ date,artifact,method,result,notes
 2026-08-04T02:00Z,checkmark-crosscheck,doc claims vs BROWSER-TASKS.md,all claimed completions marked (000/002R/012); no unmarked completions; no spin risk; false TASK-002 stays ❌-closed
 2026-08-04T02:00Z,product-catalog,verify scripts re-run this evening (rounds 1-3),9/9 products upgraded+verified; store delivery files refreshed (commit dd1e8a9)
 2026-08-04T02:00Z,domains,Vercel (no domain events),thepaycheckbudget.com + answerpine.com NOT purchased — 001B/001D correctly unmarked
+2026-08-05T02:18Z,egress-proxy,WebFetch example.com,403 proxy-blocked — all public-URL checks inconclusive-proxy this run; API/dashboard evidence used instead
+2026-08-05T02:18Z,store-public,Vercel API get_project_deployment_protection,STILL PROTECTED (ssoProtection all_except_custom_domains) — Cody also could not find the setting in the dashboard tonight; escalated as possible account-role issue in NEEDS-HUMAN
+2026-08-05T02:18Z,gumroad-products,Cody dashboard screenshot + BROWSER-TASKS.md URLs,9/9 Published with recorded URLs — dashboard-verified not full external-fetch; incognito eyeball check still queued to desktop worker (proxy-blocked here)
+2026-08-05T02:18Z,gumroad-price-accuracy,cross-check vs store/site/*.html,7/9 were drifted per last screenshot; Cody directed live fix 2026-08-04 but unconfirmed this run — TASK-008I queued
+2026-08-05T02:18Z,store-buy-buttons,git diff + Vercel deployment record (dpl_CXaPdPEAc2b2AfjAHWH76PfEfT58 READY),WIRED — all 9 product pages link live Gumroad URLs; still publicly unreachable pending deployment-protection fix
+2026-08-05T02:18Z,outreach-sends,Gmail search_threads in:sent,17/17 wave-1 confirmed SENT not draft — matches outreach-log.csv incl. 1 bounce; wave 2-4 (~35-50 drafts) still unsent, TASK-013 queued
+2026-08-05T02:18Z,demo-agent,ElevenLabs get_agent,PASS — agent_5001kz0fckd3ep5scqkwfhhgvj73 exists active public (enable_auth false), config coherent
+2026-08-05T02:18Z,jotform-form,Jotform MCP search (direct API not WebFetch),PASS — form 262131333242039 "AI Receptionist Setup" confirmed exists via Jotform's own API; upgraded from 2026-08-02's INCONCLUSIVE
+2026-08-05T02:18Z,agent-run-commits,git log 24h + list_triggers (38 total paginated),DAILY-OPS CHAIN LAPSED — last daily-ops commit 2026-08-03; ~13:30Z send_later chain never re-armed after 2026-08-03T13:30; flagged in NEEDS-HUMAN (blocked on missing Etsy/Printify API tokens anyway, not urgent)
+2026-08-05T02:18Z,venture-triggers,list_triggers,MOSTLY ARMED — Bridge-Check cron alive (next 02:43Z) + Weekly-listings cron alive (next Mon); daily-ops one-shot chain dead (see above); this evening-verification chain alive (proven by this run) and being re-armed again at close
+2026-08-05T02:18Z,checkmark-crosscheck,BROWSER-TASKS.md vs results doc vs actual state,FIXED THIS RUN — 008G/008H/000B were true-done but unmarked until this session edited the file; 002N closed (Gumroad-only decision); no unmarked completions remain
+2026-08-05T02:18Z,sales-pipeline,tracker/orders.csv,PASS — zero rows, matches reality (zero real sales; store still gated, Gumroad just went live hours ago)
