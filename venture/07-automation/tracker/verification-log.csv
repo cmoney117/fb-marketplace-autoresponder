@@ -35,3 +35,11 @@ date,artifact,method,result,notes
 2026-08-06T02:33Z,outreach-sends,Gmail search_threads newer_than:2d,ZERO new sends found — TASK-013 has stalled since wave-1 (2026-08-03); flagged as newly-stuck (was previously just \"queued\", now genuinely stalled two days)
 2026-08-06T02:33Z,agent-run-commits,git log since 17ffe09,ONE commit only (this session's own NEEDS-HUMAN edit from last night) — daily-ops chain remains lapsed, unchanged from last audit
 2026-08-06T02:33Z,sales-pipeline,tracker/orders.csv,PASS — zero rows, matches reality
+2026-08-08T16:57Z,egress-proxy,WebFetch example.com,EGRESS_BLOCKED again — all public-URL checks inconclusive-proxy this run
+2026-08-08T16:57Z,store-public,Cody's own direct external confirmation (told cloud Claude the site loaded, no login prompt) + Vercel API stable at preview-only for 2 days,PASS — first fully-confirmed pass all engagement; strongest evidence tier (real human, real browser, real result)
+2026-08-08T16:57Z,vercel-project-name,Vercel API get_project,STILL "fb-marketplace-autoresponder" — rename discussed 2026-08-06, not executed; re-escalated with a ready-to-paste agent prompt
+2026-08-08T16:57Z,domains,Vercel check_domain_availability_and_price,STILL NOT PURCHASED — 3rd consecutive audit with zero progress; both still available
+2026-08-08T16:57Z,gumroad-price-accuracy,no new evidence,STILL UNCONFIRMED — 3rd consecutive audit; escalating harder in NEEDS-HUMAN
+2026-08-08T16:57Z,outreach-sends,Gmail search_threads newer_than:3d,ZERO — TASK-013 fully stalled since wave-1 (2026-08-03), now 5 days with no progress
+2026-08-08T16:57Z,agent-run-commits,git log since 2974d78,ZERO new commits in ~2.5 days — daily-ops chain remains dead, no other automation activity either
+2026-08-08T16:57Z,sales-pipeline,tracker/orders.csv,PASS — zero rows, matches reality (store just became confirmed-public, no traffic driven yet)
