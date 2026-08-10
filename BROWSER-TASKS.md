@@ -8,9 +8,8 @@
 ✅ **Store public is CONFIRMED FIXED** — Cody personally checked in incognito, loads with no login prompt. First fully-confirmed win of the project; TASK-001C below is now ✅. Everything downstream of that is now genuinely worth pursuing since real customers could actually land on the site.
 Three items have now gone THREE consecutive nightly audits with zero movement — these are the real priorities:
 1. **Domains still not purchased** (thepaycheckbudget.com + answerpine.com) — a Vercel in-dashboard agent fixed deployment protection on 2026-08-06 but skipped the domain step. Ready-to-paste re-dispatch prompt is in NEEDS-HUMAN.md item 2 — also now bundled with the project-rename request (item 3 there), so one agent run can do both.
-2. **Gumroad price/name fixes (TASK-008I) still unconfirmed** since 2026-08-04 — just need one screenshot of the Products list to close this out for good.
-3. **TASK-013 outreach has fully stalled** — 5 days, zero sends, dozens of drafts sitting idle.
-4. **TASK-003 / TASK-003B** (Pinterest) then **TASK-005** (Meta) then **TASK-004** (Fiverr) then **TASK-006/007** (Etsy/Printify) — all human-signup-gated, expect most to land in BLOCKED at an ID/phone-verification wall; still worth attempting each once so Cody knows exactly which single step is left.
+2. **TASK-013 outreach has fully stalled** — 5 days, zero sends, dozens of drafts sitting idle.
+3. **TASK-003 / TASK-003B** (Pinterest) then **TASK-005** (Meta) then **TASK-004** (Fiverr) then **TASK-006/007** (Etsy/Printify) — all human-signup-gated, expect most to land in BLOCKED at an ID/phone-verification wall; still worth attempting each once so Cody knows exactly which single step is left.
 Skip TASK-002N entirely — closed below, decision made to stay Gumroad-only.
 
 ## 🚦 CODY'S UNBLOCK LIST (updated 2026-08-08)
@@ -19,7 +18,7 @@ Skip TASK-002N entirely — closed below, decision made to stay Gumroad-only.
 3. **Domains + project rename — bundled ask, see NEEDS-HUMAN.md items 2-3 for the exact re-dispatch prompt.** Cloud Claude's API token is hard-blocked from both (confirmed, not retriable); the Vercel in-dashboard agent is the proven path (it already did the deployment-protection fix).
 4. ~~Stripe (TASK-002N)~~ — RESOLVED, moot. Decision made: Gumroad-only as merchant of record. Do not touch the Hive Stripe account.
 5. ~~Outreach mailing address~~ — RESOLVED. Nashville address (159 4th Ave N, Ste 100 #2179) has been in the TASK-012/013 email footers since wave 1; no further input needed here.
-6. **Gumroad price/name fixes:** unconfirmed for THREE straight audits now — see TASK-008I below. One screenshot closes this out.
+6. ~~Gumroad price/name fixes~~ — ✅ DONE 2026-08-10 (worker confirmed all 7 correct in 4 consecutive verifications; cloud Claude marked ✅).
 
 ## ✅ TASK-000 — Make the results doc readable by cloud Claude — DONE (verified in doc 2026-08-02; sorry for the re-runs, this checkmark was late)
 Open the results doc link above → Share → General access → "Anyone with the link" → Viewer → Done. (This lets the cloud agent read your results; it can already read nothing else of the Drive.) Write "TASK-000 done" under DONE.
@@ -48,7 +47,7 @@ Store buy buttons are already wired to all 7 of these URLs by cloud Claude (2026
 ⑨ Meal Plan & Grocery Budget Planner — https://pillarsmarketer.gumroad.com/l/yicoo — $12.99, correct, no fix needed
 Store buy buttons wired to both by cloud Claude (2026-08-04).
 
-## ⚡ TASK-008I — Verify/fix the 7 Gumroad price + name mismatches (NEW, 2026-08-04 — top priority, do this first)
+## ✅ TASK-008I — ALL 7 PRODUCTS CONFIRMED CORRECT — DONE 2026-08-10 (verified 4× by worker; cloud Claude marks ✅)
 When all 9 products were checked against the live site, 7 of 9 had the wrong price and/or a shortened product name (probably from the worker picking reasonable-sounding values instead of the exact spec). Cody told the worker to fix all 7 live in a Cowork chat session on 2026-08-04, but that fix is UNCONFIRMED as of this file update. Open each of the 7 products below and confirm the price and name now match exactly; fix any that don't. Do not touch file, cover, description, or the installment/pay-in-2 setting on any of them — those are already correct.
 1. Debt Payoff Planner (.../l/shveer) → price must be $14.99
 2. Savings Goal Tracker (.../l/lowzaed) → price must be $12.99
