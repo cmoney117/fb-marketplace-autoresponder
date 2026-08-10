@@ -50,3 +50,12 @@ date,artifact,method,result,notes
 2026-08-09T17:02Z,outreach-sends,Gmail search_threads newer_than:1d,ZERO — TASK-013 now 6 days stalled
 2026-08-09T17:02Z,agent-run-commits,git log since 2a7484b,ZERO new commits — daily-ops chain still dead
 2026-08-09T17:02Z,sales-pipeline,tracker/orders.csv,PASS — zero rows, matches reality
+2026-08-10T17:07Z,egress-proxy,WebFetch example.com,EGRESS_BLOCKED again — API fallback used
+2026-08-10T17:07Z,store-public,Vercel API get_project_deployment_protection,STABLE — still preview-only, 4 days since Cody's confirmation, no regression
+2026-08-10T17:07Z,gumroad-price-accuracy,BROWSER-TASKS.md (external update pulled via git),RESOLVED — TASK-008I marked ✅ 2026-08-10, worker confirmed all 7 products correct across 4 consecutive checks; closing out a 3-audit-old red item
+2026-08-10T17:07Z,domains,Vercel check_domain_availability_and_price,STILL NOT PURCHASED — 5th consecutive audit, zero movement
+2026-08-10T17:07Z,vercel-project-name,Vercel API get_project,STILL "fb-marketplace-autoresponder" — rename still not executed
+2026-08-10T17:07Z,outreach-sends,Gmail search_threads newer_than:1d,ZERO — TASK-013 now 6 days stalled
+2026-08-10T17:07Z,hive-groups-file,git log (informational only — out of scope for this venture's ground-truth table),NEW FILE HIVE-GROUPS.md added by another session for a separate business (Hive Home Services FB lead-scanning) — noted, not evaluated, does not affect Paycheck Budget artifacts
+2026-08-10T17:07Z,agent-run-commits,git log since 7880484,2 commits (TASK-008I confirmation + HIVE-GROUPS.md) — still no daily-ops-tagged commit; chain remains dead
+2026-08-10T17:07Z,sales-pipeline,tracker/orders.csv,PASS — zero rows; today's organic push (r/SideProject post + personal share) was same-day, no expectation of same-day rows yet

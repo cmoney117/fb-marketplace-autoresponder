@@ -4,13 +4,13 @@
 
 **UNATTENDED RUNS (added after the 2026-08-03 6AM run):** every remaining task is gated on the 🚦 list below. If no new approval from Cody exists in your Cowork chat since your last run, do NOT re-verify assets or re-write BLOCKED reports. Write at most one line ("no-op, awaiting Cody") and end the run. The moment Cody's signup/approval exists, resume top-down.
 
-## ⭐ NEXT UP (2026-08-08, cloud Claude — read this first, top-down order below is stale in places)
-✅ **Store public is CONFIRMED FIXED** — Cody personally checked in incognito, loads with no login prompt. First fully-confirmed win of the project; TASK-001C below is now ✅. Everything downstream of that is now genuinely worth pursuing since real customers could actually land on the site.
-Three items have now gone THREE consecutive nightly audits with zero movement — these are the real priorities:
-1. **Domains still not purchased** (thepaycheckbudget.com + answerpine.com) — a Vercel in-dashboard agent fixed deployment protection on 2026-08-06 but skipped the domain step. Ready-to-paste re-dispatch prompt is in NEEDS-HUMAN.md item 2 — also now bundled with the project-rename request (item 3 there), so one agent run can do both.
-2. **TASK-013 outreach has fully stalled** — 5 days, zero sends, dozens of drafts sitting idle.
+## ⭐ NEXT UP (2026-08-10, cloud Claude — read this first, top-down order below is stale in places)
+✅ Store public confirmed (2026-08-08, stable 4 days). ✅ Gumroad price/name fixes confirmed (2026-08-10, TASK-008I closed — longest-standing item finally resolved). Remaining real priorities:
+1. **Domains still not purchased** (thepaycheckbudget.com + answerpine.com) — 5th consecutive audit, zero movement. Ready-to-paste re-dispatch prompt (bundled with project rename) is in NEEDS-HUMAN.md items 3-4.
+2. **TASK-013 outreach has fully stalled** — 6 days, zero sends, dozens of drafts sitting idle.
 3. **TASK-003 / TASK-003B** (Pinterest) then **TASK-005** (Meta) then **TASK-004** (Fiverr) then **TASK-006/007** (Etsy/Printify) — all human-signup-gated, expect most to land in BLOCKED at an ID/phone-verification wall; still worth attempting each once so Cody knows exactly which single step is left.
 Skip TASK-002N entirely — closed below, decision made to stay Gumroad-only.
+Note: same-day organic push happened 2026-08-10 (r/SideProject launch post + personal share, driven by Cody directly, not the worker) — outside this file's scope but worth knowing traffic may be arriving.
 
 ## 🚦 CODY'S UNBLOCK LIST (updated 2026-08-08)
 1. ~~Gumroad signup~~ — DONE. 9/9 products published at pillarsmarketer.gumroad.com, buy buttons already wired into the live store code by cloud Claude.
