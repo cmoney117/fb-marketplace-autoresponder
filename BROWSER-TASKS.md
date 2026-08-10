@@ -4,6 +4,30 @@
 
 **UNATTENDED RUNS (added after the 2026-08-03 6AM run):** every remaining task is gated on the 🚦 list below. If no new approval from Cody exists in your Cowork chat since your last run, do NOT re-verify assets or re-write BLOCKED reports. Write at most one line ("no-op, awaiting Cody") and end the run. The moment Cody's signup/approval exists, resume top-down.
 
+## ♻️ HIVE-SCAN — 24/7 Hive Home Services Lead Scanner (PERPETUAL — NEVER mark ✅, run EVERY session even while awaiting Cody)
+**This task runs regardless of Cody authorization status. It is NOT gated on the 🚦 list. Run it on EVERY browser session.**
+
+Scan Facebook groups for Hive Home Services leads using the group list at:
+https://github.com/cmoney117/fb-marketplace-autoresponder/blob/claude/dropshipping-passive-income-q9a65v/HIVE-GROUPS.md
+
+**Each run: pick 5-8 TIER 1 groups from HIVE-GROUPS.md (rotate through them across runs so all groups get covered over time) and scan each for leads.**
+
+**Scanning steps per group:**
+1. Navigate to the group URL from HIVE-GROUPS.md
+2. Scroll down at least 20-30 posts
+3. Look for posts containing: "looking for [service]", "anyone recommend", "ISO [service]", "need a [contractor/handyman/cleaner/etc.]", "anyone know a good"
+4. Services to flag: lawn care, handyman, cleaning, gutters, pressure wash, painting, plumber, HVAC, pest control, fence, deck, roof, window cleaning, carpet cleaning, moving, landscaping, tree service
+5. Skip: mowing-only, mower repair, junk removal, or anything clearly under $150
+
+**When you find a lead:** Reply to the post as Cody / Hive Home Services — friendly consultative tone, NOT a hard sell. Example: "Hey! Hive Home Services covers exactly that — we do [X] throughout [area]. I can have someone out this week. Feel free to DM me for a quick quote!"
+- NEVER post if Cody already replied to that post
+- Log in results doc under HIVE-LEADS: "[Group] — [what they need] — [replied/noted] — [date]"
+
+**Also check for new groups:** If you see unfamiliar group names in the sidebar that look relevant (home services, community, military families, local TN/KY), append the URL to TIER 3 in HIVE-GROUPS.md.
+
+**After scanning:** log "HIVE-SCAN complete — [N] groups checked, [M] leads found/replied" in results doc.
+**Do NOT mark this task ✅ — it is perpetual.**
+
 ## ⭐ NEXT UP (2026-08-10, cloud Claude — read this first, top-down order below is stale in places)
 ✅ Store public confirmed (2026-08-08, stable 4 days). ✅ Gumroad price/name fixes confirmed (2026-08-10, TASK-008I closed — longest-standing item finally resolved). Remaining real priorities:
 1. **Domains still not purchased** (thepaycheckbudget.com + answerpine.com) — 5th consecutive audit, zero movement. Ready-to-paste re-dispatch prompt (bundled with project rename) is in NEEDS-HUMAN.md items 3-4.
