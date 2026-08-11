@@ -59,3 +59,7 @@ date,artifact,method,result,notes
 2026-08-10T17:07Z,hive-groups-file,git log (informational only — out of scope for this venture's ground-truth table),NEW FILE HIVE-GROUPS.md added by another session for a separate business (Hive Home Services FB lead-scanning) — noted, not evaluated, does not affect Paycheck Budget artifacts
 2026-08-10T17:07Z,agent-run-commits,git log since 7880484,2 commits (TASK-008I confirmation + HIVE-GROUPS.md) — still no daily-ops-tagged commit; chain remains dead
 2026-08-10T17:07Z,sales-pipeline,tracker/orders.csv,PASS — zero rows; today's organic push (r/SideProject post + personal share) was same-day, no expectation of same-day rows yet
+2026-08-11T17:15Z,egress-proxy,WebFetch example.com,EGRESS_BLOCKED again — API fallback used
+2026-08-11T17:15Z,store-public,Vercel API get_project_deployment_protection,STABLE — still preview-only, 5 days since Cody's confirmation
+2026-08-11T17:15Z,domains-rename-outreach,Vercel API + Gmail search_threads + git log,ZERO MOVEMENT overnight despite literal click-by-click re-dispatch (TASK-001B/001D/001E/013) with pre-authorization — both domains still available; project still "fb-marketplace-autoresponder"; zero new sends to any of the 35-address list. Strong signal the Mac mini worker is NOT actually set up/running yet (open question from prior session unanswered) — flagged hard in NEEDS-HUMAN
+2026-08-11T17:15Z,sales-pipeline,tracker/orders.csv,PASS — zero rows, matches reality
