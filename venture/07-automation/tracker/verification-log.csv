@@ -63,3 +63,7 @@ date,artifact,method,result,notes
 2026-08-11T17:15Z,store-public,Vercel API get_project_deployment_protection,STABLE — still preview-only, 5 days since Cody's confirmation
 2026-08-11T17:15Z,domains-rename-outreach,Vercel API + Gmail search_threads + git log,ZERO MOVEMENT overnight despite literal click-by-click re-dispatch (TASK-001B/001D/001E/013) with pre-authorization — both domains still available; project still "fb-marketplace-autoresponder"; zero new sends to any of the 35-address list. Strong signal the Mac mini worker is NOT actually set up/running yet (open question from prior session unanswered) — flagged hard in NEEDS-HUMAN
 2026-08-11T17:15Z,sales-pipeline,tracker/orders.csv,PASS — zero rows, matches reality
+2026-08-12T17:19Z,egress-proxy,WebFetch example.com,EGRESS_BLOCKED again — API fallback used
+2026-08-12T17:19Z,store-public,Vercel API get_project_deployment_protection,STABLE — still preview-only, 6 days no regression
+2026-08-12T17:19Z,domains-rename-outreach,Vercel API + Gmail search_threads + git log,ZERO MOVEMENT — 3rd consecutive audit since pre-authorized literal re-dispatch; no new commits at all since last audit. Both domains still available, project still unrenamed, zero new outreach sends
+2026-08-12T17:19Z,sales-pipeline,tracker/orders.csv,PASS — zero rows, matches reality
