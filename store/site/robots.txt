@@ -1,3 +1,5 @@
 User-agent: *
 Disallow: /dl/
 Disallow: /ty-
+
+Sitemap: https://fb-marketplace-autoresponder.vercel.app/sitemap.xml
