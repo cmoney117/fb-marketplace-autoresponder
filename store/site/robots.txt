@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /dl/
 Disallow: /ty-
 
-Sitemap: https://fb-marketplace-autoresponder.vercel.app/sitemap.xml
+Sitemap: https://paycheck-budget-usa1.vercel.app/sitemap.xml
