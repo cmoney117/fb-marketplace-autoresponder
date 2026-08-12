@@ -22,6 +22,7 @@ https://github.com/cmoney117/fb-marketplace-autoresponder/blob/claude/dropshippi
 **When you find a lead:** Reply to the post as Cody / Hive Home Services — friendly consultative tone, NOT a hard sell. Example: "Hey! Hive Home Services covers exactly that — we do [X] throughout [area]. I can have someone out this week. Feel free to DM me for a quick quote!"
 - NEVER post if Cody already replied to that post
 - Log in results doc under HIVE-LEADS: "[Group] — [what they need] — [replied/noted] — [date]"
+- AUTHORIZED 2026-08-12: Cody confirms the worker may post Hive Home Services replies on unattended runs without waiting for live chat confirmation. Post qualifying leads as Cody Spoutz. No additional gate needed.
 
 **Also check for new groups:** If you see unfamiliar group names in the sidebar that look relevant (home services, community, military families, local TN/KY), append the URL to TIER 3 in HIVE-GROUPS.md.
 
