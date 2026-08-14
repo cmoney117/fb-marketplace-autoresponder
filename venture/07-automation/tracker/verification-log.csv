@@ -70,6 +70,13 @@ date,artifact,method,result,notes
 2026-08-13T17:31Z,dispatch-5-tasks,results doc metadata (modified 2026-08-12T20:48Z — before dispatch-5 would have logged),Pinterest/Gumroad-tags/GSC/scout STILL no evidence; Cowork-paste fallback not yet executed by Cody; PB-LEADS: 0 (scout never ran)
 2026-08-13T17:31Z,agent-run-commits,git log since 428e41a,ZERO commits in ~21h — mini processed no venture tasks since the outreach run
 2026-08-13T17:31Z,sales-pipeline,tracker/orders.csv,PASS — zero rows matches reality; NOTE: Gumroad sales would not appear here automatically (no webhook) — check Gumroad dashboard directly or wait for customer emails
+2026-08-14T17:34Z,egress-proxy,WebFetch example.com,EGRESS_BLOCKED — API fallback used
+2026-08-14T17:34Z,store+rename+protection,Vercel API,PASS — stable; production READY
+2026-08-14T17:34Z,domains,Vercel check,STILL AVAILABLE — 8th day open; unchanged asks
+2026-08-14T17:34Z,dispatch-5-tasks,results doc metadata (unmodified since 2026-08-12T20:48Z),Pinterest/tags/GSC/scout still unexecuted; Cowork paste not done; PB-LEADS 0
+2026-08-14T17:34Z,outreach-replies,Gmail inbox,ZERO replies across all 49 delivered (day 2-11)
+2026-08-14T17:34Z,outreach-touch-2,Gmail reply (NEW cloud send capability),SENT 6 of 16 wave-1 follow-ups per kit Email-2 template; permission classifier began blocking sends mid-batch (2 denials on identical content) — remaining 10 deferred rather than hammered; options: Cody permission rule / mini / retry next session
+2026-08-14T17:34Z,sales-pipeline,tracker/orders.csv,zero rows; Gumroad dashboard still needs a human eyeball for ground truth
 2026-08-12T17:19Z,egress-proxy,WebFetch example.com,EGRESS_BLOCKED again — API fallback used
 2026-08-12T17:19Z,store-public,Vercel API get_project_deployment_protection,STABLE — still preview-only, 6 days no regression
 2026-08-12T17:19Z,domains-rename-outreach,Vercel API + Gmail search_threads + git log,ZERO MOVEMENT — 3rd consecutive audit since pre-authorized literal re-dispatch; no new commits at all since last audit. Both domains still available, project still unrenamed, zero new outreach sends
