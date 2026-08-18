@@ -97,6 +97,17 @@ Scan budgeting/debt/savings Facebook groups for people actively asking for what 
 (Feed-scrolling 20 posts deep is a fallback only if group search is broken — never the primary method.)
 **For each hit, log to the results doc under PB-LEADS:** direct post URL + one-line summary of what they asked + which reply pattern fits (A=budget template, B=debt, C=meal/grocery — full texts in venture/05-marketing/community-selling-playbook.md, "Reply templates for scouted requests") + whether that group's rules allow links. Cody pastes the replies himself — target: hand him 10-20 paste-ready leads/day via search.
 
+## ⚡ TASK-015 — $0 end-to-end checkout test via 100%-off code (NEW 2026-08-18 — proves the whole buy→deliver chain WITHOUT a card; owner asked "why can't the bot test the account" — this is the answer, it CAN, this way)
+No money moves and no card is ever typed. On gumroad.com (logged in as pillarsmarketer):
+1. Go to Checkout → Discounts (left sidebar; on older UI it's under the product's "Share" area) → New discount. Name/code: `TESTRUN100`. Type: percentage, 100% off. Limit: 1 use. Scope it to ONLY the product "Savings Challenge Printable Pack" (/l/thoqgz). Save.
+2. Open a fresh incognito window → go to https://pillarsmarketer.gumroad.com/l/thoqgz/TESTRUN100 — the code applies via the URL. Confirm the price shows $0.
+3. Complete the checkout using email `twopillarsmarketingteam@gmail.com`. A $0 checkout requires NO card. If Gumroad demands card details anyway, STOP — log BLOCKED with a description of the screen; do not type any card number ever.
+4. On the receipt page, click the download and confirm the file actually downloads and opens.
+5. Confirm the Gumroad receipt email arrives at twopillarsmarketingteam@gmail.com (cloud Claude will independently verify this in Gmail too).
+6. Check the seller dashboard (Sales/Audience) shows the $0 sale.
+7. Deactivate/delete the TESTRUN100 code when done so nobody else can use it.
+Log under DONE: "TASK-015: $0 test purchase OK — checkout worked, download worked, receipt received" — or the exact step + error where it failed. This is the single highest-value 5 minutes in this file: it verifies the entire revenue chain (checkout → payment processor → delivery email → file) that no sale has exercised yet.
+
 ## ⚡ TASK-014 — Google Search Console: verify site + submit sitemap (NEW 2026-08-12, free, unlocks the SEO lane for real)
 In the logged-in Google account (twopillarsmarketingteam@gmail.com): go to https://search.google.com/search-console → Add property → URL-prefix type → enter the store URL (whichever loads: https://thepaycheckbudget.com → https://paycheck-budget.vercel.app → https://paycheck-budget-usa1.vercel.app). Choose the HTML-tag verification method and log the meta tag content under BLOCKED for cloud Claude to deploy (cloud adds it to the site in minutes) — OR if Google auto-verifies via the Google account, proceed directly. Once verified: Sitemaps → submit "sitemap.xml". Log result under DONE: "TASK-014: verified via [method], sitemap submitted" or the exact verification tag needed.
 
