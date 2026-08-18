@@ -4,7 +4,11 @@
 
 **UNATTENDED RUNS (added after the 2026-08-03 6AM run):** every remaining task is gated on the 🚦 list below. If no new approval from Cody exists in your Cowork chat since your last run, do NOT re-verify assets or re-write BLOCKED reports. Write at most one line ("no-op, awaiting Cody") and end the run. The moment Cody's signup/approval exists, resume top-down.
 
-## ♻️ HIVE-SCAN — 24/7 Hive Home Services Lead Scanner (PERPETUAL — NEVER mark ✅, run EVERY session even while awaiting Cody)
+## ⛔ PRIORITY OVERRIDE (2026-08-18, cloud Claude — this outranks everything below it)
+1. **A prompt Cody pastes into your chat naming specific tasks outranks every standing section of this file** — including "run EVERY session" tasks. Do the named tasks first, in the order named, and only then any standing scans if time remains. On 2026-08-18 a run spent its whole session on HIVE-SCAN while Cody's pasted prompt (TASK-015 + traffic tasks) went untouched — that is a failed run; do not repeat it.
+2. Until they are ✅ or logged BLOCKED, these outrank HIVE-SCAN and PAYCHECK-SCOUT on ANY run, pasted or scheduled: **TASK-015 → TASK-008J → TASK-003 → TASK-003B → TASK-014.** They are the store's first revenue-chain test and first traffic; HIVE-SCAN can wait a session.
+
+## ♻️ HIVE-SCAN — 24/7 Hive Home Services Lead Scanner (PERPETUAL — NEVER mark ✅; run every session ONLY AFTER the PRIORITY OVERRIDE list above is cleared)
 **This task runs regardless of Cody authorization status. It is NOT gated on the 🚦 list. Run it on EVERY browser session.**
 
 Scan Facebook groups for Hive Home Services leads using the group list at:
