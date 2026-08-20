@@ -6,7 +6,22 @@
 
 ## ⛔ PRIORITY OVERRIDE (2026-08-18, cloud Claude — this outranks everything below it)
 1. **A prompt Cody pastes into your chat naming specific tasks outranks every standing section of this file** — including "run EVERY session" tasks. Do the named tasks first, in the order named, and only then any standing scans if time remains. On 2026-08-18 a run spent its whole session on HIVE-SCAN while Cody's pasted prompt (TASK-015 + traffic tasks) went untouched — that is a failed run; do not repeat it.
-2. Until they are ✅ or logged BLOCKED, these outrank HIVE-SCAN and PAYCHECK-SCOUT on ANY run, pasted or scheduled: **TASK-015 → TASK-008J → TASK-003 → TASK-003B → TASK-014.** They are the store's first revenue-chain test and first traffic; HIVE-SCAN can wait a session.
+2. Until they are ✅ or logged BLOCKED, these outrank HIVE-SCAN and PAYCHECK-SCOUT on ANY run, pasted or scheduled: **TASK-015 → TASK-016 → TASK-008J → TASK-003 → TASK-003B → TASK-014.** They are the store's first revenue-chain test and first traffic; HIVE-SCAN can wait a session.
+
+## ⚡ TASK-016 — IndexNow: submit the store to Bing/DuckDuckGo/Yandex (NEW 2026-08-20 — 2 minutes, no account, no login, just open 11 URLs)
+The verification key file is already live at https://paycheck-budget-usa1.vercel.app/bcc9c7620bbeb1c54fe32e19a7e89a4a.txt (deployed by cloud Claude). Open each URL below in a browser tab — a blank page or "200/202/OK" response = accepted. That's the whole task; it tells Bing, DuckDuckGo, and Yandex to crawl the store with no Search Console or account needed.
+1. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Findex.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
+2. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Fpaycheck-budget.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
+3. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Fdebt-payoff-planner.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
+4. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Fsavings-goal-tracker.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
+5. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Fmoney-reset-bundle.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
+6. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Fsavings-challenge-pack.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
+7. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Fwedding-budget-planner.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
+8. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Fsimple-budget-starter.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
+9. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Fbookkeeping-tracker.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
+10. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Fmeal-grocery-planner.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
+11. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Fpolicies.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
+Log under DONE: "TASK-016: 11/11 IndexNow pings submitted" (+ any that returned an error page and the exact text).
 
 ## ♻️ HIVE-SCAN — 24/7 Hive Home Services Lead Scanner (PERPETUAL — NEVER mark ✅; run every session ONLY AFTER the PRIORITY OVERRIDE list above is cleared)
 **This task runs regardless of Cody authorization status. It is NOT gated on the 🚦 list. Run it on EVERY browser session.**
