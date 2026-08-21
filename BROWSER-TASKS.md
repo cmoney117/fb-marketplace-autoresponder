@@ -6,9 +6,12 @@
 
 ## ⛔ PRIORITY OVERRIDE (2026-08-18, cloud Claude — this outranks everything below it)
 1. **A prompt Cody pastes into your chat naming specific tasks outranks every standing section of this file** — including "run EVERY session" tasks. Do the named tasks first, in the order named, and only then any standing scans if time remains. On 2026-08-18 a run spent its whole session on HIVE-SCAN while Cody's pasted prompt (TASK-015 + traffic tasks) went untouched — that is a failed run; do not repeat it.
-2. Until they are ✅ or logged BLOCKED, these outrank HIVE-SCAN and PAYCHECK-SCOUT on ANY run, pasted or scheduled: **TASK-015 → TASK-016 → TASK-008J → TASK-003 → TASK-003B → TASK-014.** They are the store's first revenue-chain test and first traffic; HIVE-SCAN can wait a session.
+2. Until they are ✅ or logged BLOCKED, these outrank HIVE-SCAN and PAYCHECK-SCOUT on ANY run, pasted or scheduled: **TASK-015 → TASK-008J → TASK-003 → TASK-003B → TASK-014.** (TASK-016 ✅ done 2026-08-20.) They are the store's first revenue-chain test and first traffic; HIVE-SCAN can wait a session.
+3. TASK-015 is currently logged BLOCKED awaiting Cody: the worker needs Cody to type **"proceed with TASK-015"** in its Cowork chat, then it will run the $0 checkout test next run. Once that authorization exists, TASK-015 resumes top priority.
 
-## ⚡ TASK-016 — IndexNow: submit the store to Bing/DuckDuckGo/Yandex (NEW 2026-08-20 — 2 minutes, no account, no login, just open 11 URLs)
+## ✅ TASK-016 — DONE 2026-08-20, re-confirmed 2026-08-21 (worker submitted 11/11 IndexNow pings, all accepted — cloud Claude marks ✅ 2026-08-21; do NOT run again)
+Original task kept below for reference only.
+### (original) TASK-016 — IndexNow: submit the store to Bing/DuckDuckGo/Yandex (NEW 2026-08-20 — 2 minutes, no account, no login, just open 11 URLs)
 The verification key file is already live at https://paycheck-budget-usa1.vercel.app/bcc9c7620bbeb1c54fe32e19a7e89a4a.txt (deployed by cloud Claude). Open each URL below in a browser tab — a blank page or "200/202/OK" response = accepted. That's the whole task; it tells Bing, DuckDuckGo, and Yandex to crawl the store with no Search Console or account needed.
 1. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Findex.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
 2. https://api.indexnow.org/indexnow?url=https%3A%2F%2Fpaycheck-budget-usa1.vercel.app%2Fpaycheck-budget.html&key=bcc9c7620bbeb1c54fe32e19a7e89a4a
