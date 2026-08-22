@@ -6,7 +6,7 @@
 
 ## ⛔ PRIORITY OVERRIDE (2026-08-18, cloud Claude — this outranks everything below it)
 1. **A prompt Cody pastes into your chat naming specific tasks outranks every standing section of this file** — including "run EVERY session" tasks. Do the named tasks first, in the order named, and only then any standing scans if time remains. On 2026-08-18 a run spent its whole session on HIVE-SCAN while Cody's pasted prompt (TASK-015 + traffic tasks) went untouched — that is a failed run; do not repeat it.
-2. Until they are ✅ or logged BLOCKED, these outrank HIVE-SCAN and PAYCHECK-SCOUT on ANY run, pasted or scheduled: **TASK-015 → TASK-008J → TASK-003 → TASK-003B → TASK-014.** (TASK-016 ✅ done 2026-08-20.) They are the store's first revenue-chain test and first traffic; HIVE-SCAN can wait a session.
+2. Until they are ✅ or logged BLOCKED, these outrank HIVE-SCAN and PAYCHECK-SCOUT on ANY run, pasted or scheduled: **TASK-015 → TASK-003 → TASK-003B → TASK-014 → TASK-017.** (TASK-016 ✅ done 2026-08-20; TASK-008J ✅ done 2026-08-21 — do not re-run either.) They are the store's first revenue-chain test and first traffic; HIVE-SCAN can wait a session.
 3. TASK-015 is currently logged BLOCKED awaiting Cody: the worker needs Cody to type **"proceed with TASK-015"** in its Cowork chat, then it will run the $0 checkout test next run. Once that authorization exists, TASK-015 resumes top priority.
 
 ## ✅ TASK-016 — DONE 2026-08-20, re-confirmed 2026-08-21 (worker submitted 11/11 IndexNow pings, all accepted — cloud Claude marks ✅ 2026-08-21; do NOT run again)
@@ -123,9 +123,9 @@ Scan budgeting/debt/savings Facebook groups for people actively asking for what 
 No money moves and no card is ever typed. On gumroad.com (logged in as pillarsmarketer):
 1. Go to Checkout → Discounts (left sidebar; on older UI it's under the product's "Share" area) → New discount. Name/code: `TESTRUN100`. Type: percentage, 100% off. Limit: 1 use. Scope it to ONLY the product "Savings Challenge Printable Pack" (/l/thoqgz). Save.
 2. Open a fresh incognito window → go to https://pillarsmarketer.gumroad.com/l/thoqgz/TESTRUN100 — the code applies via the URL. Confirm the price shows $0.
-3. Complete the checkout using email `twopillarsmarketingteam@gmail.com`. A $0 checkout requires NO card. If Gumroad demands card details anyway, STOP — log BLOCKED with a description of the screen; do not type any card number ever.
+3. Complete the checkout using email `hivehomeservicestn@gmail.com` (IMPORTANT — changed 2026-08-22: this is the inbox cloud Claude can read, so it can independently verify the receipt; the twopillars inbox is not connected to the cloud session). A $0 checkout requires NO card. If Gumroad demands card details anyway, STOP — log BLOCKED with a description of the screen; do not type any card number ever.
 4. On the receipt page, click the download and confirm the file actually downloads and opens.
-5. Confirm the Gumroad receipt email arrives at twopillarsmarketingteam@gmail.com (cloud Claude will independently verify this in Gmail too).
+5. Confirm the Gumroad receipt email arrives at hivehomeservicestn@gmail.com (cloud Claude will independently verify this in Gmail too — changed 2026-08-22, see step 3).
 6. Check the seller dashboard (Sales/Audience) shows the $0 sale.
 7. Deactivate/delete the TESTRUN100 code when done so nobody else can use it.
 Log under DONE: "TASK-015: $0 test purchase OK — checkout worked, download worked, receipt received" — or the exact step + error where it failed. This is the single highest-value 5 minutes in this file: it verifies the entire revenue chain (checkout → payment processor → delivery email → file) that no sale has exercised yet.
@@ -133,7 +133,11 @@ Log under DONE: "TASK-015: $0 test purchase OK — checkout worked, download wor
 ## ⚡ TASK-014 — Google Search Console: verify site + submit sitemap (NEW 2026-08-12, free, unlocks the SEO lane for real)
 In the logged-in Google account (twopillarsmarketingteam@gmail.com): go to https://search.google.com/search-console → Add property → URL-prefix type → enter the store URL (whichever loads: https://thepaycheckbudget.com → https://paycheck-budget.vercel.app → https://paycheck-budget-usa1.vercel.app). Choose the HTML-tag verification method and log the meta tag content under BLOCKED for cloud Claude to deploy (cloud adds it to the site in minutes) — OR if Google auto-verifies via the Google account, proceed directly. Once verified: Sitemaps → submit "sitemap.xml". Log result under DONE: "TASK-014: verified via [method], sitemap submitted" or the exact verification tag needed.
 
-## ⚡ TASK-008J — Gumroad Discover tags on all 9 products (NEW 2026-08-12 — zero spend, unlocks Gumroad's own marketplace traffic; owner-directed "generate sales")
+## ⚡ TASK-017 — Gumroad sales-count check (PERPETUAL, read-only, 30 seconds — run at the END of every session)
+Open https://app.gumroad.com — read the dashboard's total sales / revenue figures (do NOT change anything). Log in results doc: "GUMROAD-SALES: N sales, $X lifetime, as of <date>". If N > 0 since last check, list each new sale (product, price, date) — cloud Claude cannot see the seller inbox, so this log line is the sales-visibility channel until API access exists. Never mark ✅.
+
+## ✅ TASK-008J — DONE 2026-08-21 (worker logged "tags set on 9 of 9"; cloud Claude marks ✅ 2026-08-22 — do not re-run)
+### (original) TASK-008J — Gumroad Discover tags on all 9 products (NEW 2026-08-12 — zero spend, unlocks Gumroad's own marketplace traffic; owner-directed "generate sales")
 On gumroad.com (logged in as pillarsmarketer): open each of the 9 products → find the tags/category section (usually under the Product tab or a "Share" / SEO area). For EACH product add a category if offered (Business & Money / Personal Finance or closest match) and up to 5 tags from its row below, then Save. Do NOT change name, price, files, covers, or descriptions.
 1. The Paycheck Budget (/l/ybyjs): budget spreadsheet, paycheck budget, biweekly budget, zero based budget, google sheets budget
 2. Debt Payoff Planner (/l/shveer): debt snowball, debt payoff, debt tracker, debt free, avalanche method
