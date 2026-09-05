@@ -187,3 +187,10 @@ date,company,email,touch,result
 2026-09-04,wave 5,CustomerService@Electrify247.com,1,Electrify Electric (MD/DC/VA) — Email-1 COST sent (thread 1a06df8d1a0f4aa9)
 2026-09-04,wave 5,downeastchimney@gmail.com,1,Downeast Chimney Sweep (Norwood MA) — Email-1 GAP sent (thread 1a06df8d619be5b4)
 2026-09-04,wave 5,info@wellguy.com,1,Northeast Water Wells (MA/NH) — Email-1 COST sent (thread 1a06df8dd2e91669)
+2026-09-05,wave 5b,SameDayGarages@gmail.com,1,Same Day Garage Door Repair (Lincoln NE) — Email-1 GAP sent 2026-09-05 (thread 1a072930c49b9f63)
+2026-09-05,wave 5b,info@obxlandscapeandtree.com,1,Rumaldo Landscape & Tree Service (Outer Banks NC) — Email-1 COST sent 2026-09-05 (thread 1a072938229f056c)
+2026-09-05,queued,emergencylockoutassistance@gmail.com,0,Emergency Lockout Assistance (Wayne County WV) — COST opener drafted; send blocked by classifier 2026-09-05; retry next run
+2026-09-05,queued,septic@cuzconcrete.com,0,Cuz Septic Service (Arlington WA) — GAP opener drafted; send blocked by classifier 2026-09-05; retry next run
+2026-09-05,queued,kailystree@gmail.com,0,Kailys Tree Service (Nashville TN; 24/7 emergency; licensed+insured 24 yrs) — COST; harvested 2026-09-05; send next run
+2026-09-05,queued,247lockoutking@gmail.com,0,24/7 Lockout King (Gainesville FL; mobile 24/7) — COST; harvested 2026-09-05; send next run
+2026-09-05,queued,bestviewfarminc@gmail.com,0,Vintage Wrecker (Baltimore MD; family-owned 24/7 heavy-duty towing) — COST; harvested 2026-09-05; send next run
