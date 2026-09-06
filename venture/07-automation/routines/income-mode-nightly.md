@@ -19,7 +19,7 @@ Scope: online sales only — Paycheck Budget store + AnswerPine. Never touch or 
    - Pick GAP vs COST per the kit rule; personalize the first line from the snippet; send via Gmail send_message; ≤50 sends/day total; stop after 2 consecutive classifier denials (retry singles once later).
 5. **Log**: append rows to `outreach-log.csv` (with thread ids) and one row to `verification-log.csv`; commit with the attribution footer; push.
 6. **Reporting rule**: if a sale, a Jotform signup, or a genuinely interested reply exists → message Cody immediately with the dollars/lead and next step. Otherwise end the turn with no text to Cody.
-7. **Re-arm** the nightly trigger 24h out with a short prompt pointing at this file.
+7. **Trigger**: a recurring daily routine (trig_01L7fPxPYfMu3rEu8MiSVZj8, 17:20 UTC) already fires this file into the session — no nightly re-arm needed; only re-create it if list_triggers shows it missing or disabled.
 
 ## Standing rules
 - Suppressed forever: info@eppingwell.com, info@cleanearthseptic.com, admin@tahomahc.com, support@elkappliance.com, info@24hourtowingcompany.com, info@michaelbarlowwelldrilling.com, plus any new "no thanks" or bounce.
