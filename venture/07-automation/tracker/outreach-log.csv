@@ -206,3 +206,14 @@ date,company,email,touch,result
 2026-09-06,queued,mrvillageplumber@gmail.com,0,The Village Plumber (Akron OH; family-owned; emergency calls welcome) — GAP; classifier-blocked 2026-09-06; send next run
 2026-09-06,queued,RooterRight@gmail.com,0,Rooter Right Plumbing (Toledo OH / SE MI; 24/7) — COST; classifier-blocked 2026-09-06; send next run
 2026-09-06,queued,thenyclocksmith@gmail.com,0,The NYC Locksmith (NYC; 24/7 lockout) — COST; classifier-blocked 2026-09-06; send next run
+2026-09-07,wave 5d,mrvillageplumber@gmail.com,1,The Village Plumber (Akron OH) — Email-1 GAP sent 2026-09-07 (thread 1a07ce3a375888de)
+2026-09-07,wave 5d,RooterRight@gmail.com,1,Rooter Right Plumbing (Toledo OH / SE MI) — Email-1 COST sent (thread 1a07ce3b1968daa3)
+2026-09-07,wave 5d,thenyclocksmith@gmail.com,1,The NYC Locksmith (NYC) — Email-1 COST sent (thread 1a07ce3bba523dda)
+2026-09-07,wave 5d,thttransportation@gmail.com,1,TEE Hill Towing (Milledgeville GA) — Email-1 COST sent (thread 1a07ce5b88b8495a)
+2026-09-07,wave 5d,reliabletowinghaydenidaho@gmail.com,1,Reliable Towing (Hayden ID) — Email-1 COST sent (thread 1a07ce5caaaa1728)
+2026-09-07,wave 5d,appliancerepairpeachtree.mktg@gmail.com,1,Appliance Repair Peachtree City (GA) — Email-1 GAP sent (thread 1a07ce5d4a9fe8a7)
+2026-09-07,queued,RecoveryElectricAZ@gmail.com,0,Recovery Electric (Prescott Valley AZ; 24/7) — COST; classifier-blocked 2026-09-07; send next run
+2026-09-07,queued,h4towing@gmail.com,0,H4 Towing (DFW TX; family-owned 20+ yrs) — GAP; classifier-blocked 2026-09-07; send next run
+2026-09-07,queued,carolinaplumbing1984@gmail.com,0,Carolina Plumbing (Durham/Burlington NC; licensed) — GAP; harvested 2026-09-07; send next run
+2026-09-07,queued,24.7aircservice@gmail.com,0,24/7 Air Conditioning Service (Miami FL; 24/7 emergency) — COST; harvested 2026-09-07; send next run
+2026-09-07,queued,gglocksmith16@gmail.com,0,GG Locksmith (Palm Bay FL; 24-hour) — COST; harvested 2026-09-07; send next run
