@@ -22,7 +22,7 @@ Scope: online sales only — Paycheck Budget store + AnswerPine. Never touch or 
 7. **Trigger**: a recurring daily routine (trig_01L7fPxPYfMu3rEu8MiSVZj8, 17:20 UTC) already fires this file into the session — no nightly re-arm needed; only re-create it if list_triggers shows it missing or disabled.
 
 ## Standing rules
-- Suppressed forever: info@eppingwell.com, info@cleanearthseptic.com, admin@tahomahc.com, support@elkappliance.com, info@24hourtowingcompany.com, info@michaelbarlowwelldrilling.com, plus any new "no thanks" or bounce.
+- Suppressed forever: info@eppingwell.com, info@cleanearthseptic.com, admin@tahomahc.com, support@elkappliance.com, info@24hourtowingcompany.com, info@michaelbarlowwelldrilling.com, barresse13@gmail.com, robinsonandfamilyplumbing@gmail.com, plus any new "no thanks" or bounce.
 - Never re-contact the original 46 (fully sequenced Aug 27) unless they reply first.
 - Never log a send without its returned message id.
 - Commit footer: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` + `Claude-Session: https://claude.ai/code/session_01YXXCjK6mADrUUCHM2odCz1`.
