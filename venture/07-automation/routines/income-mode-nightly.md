@@ -27,3 +27,5 @@ Scope: online sales only — Paycheck Budget store + AnswerPine. Never touch or 
 - Never log a send without its returned message id.
 - Commit footer: `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` + `Claude-Session: https://claude.ai/code/session_01YXXCjK6mADrUUCHM2odCz1`.
 - Re-clone the repo if the container was recycled.
+- Cadence pre-check (added 2026-09-13 after a second over-report): before every touch, get_thread the target thread and confirm the previous touch's logged msg id is actually present. If it is missing, the previous touch was NOT sent: annotate the log row with a CORRECTION, send the missing touch now, and re-base the cohort cadence from today. Never trust a logged id that has not been seen in a thread.
+- Harvest pattern of record (2026-09-13): WebSearch with allowed_domains ["patch.com"] and query `"@gmail.com" <trade> business listing` — Patch business listings print the contact email in the snippet.

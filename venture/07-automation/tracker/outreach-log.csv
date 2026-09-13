@@ -234,11 +234,11 @@ date,company,email,touch,result
 2026-09-08,wave 5e,gglocksmith16@gmail.com,1,GG Locksmith (Palm Bay FL) — Email-1 COST sent (thread 1a0820af1d1958e9)
 2026-09-08,wave 5e,cliverobinsondoorsystems@gmail.com,1,Clive Robinson Door Systems (family-owned 24/7/365 garage doors) — Email-1 COST sent (thread 1a0820b6abdb5223)
 2026-09-08,wave 5e,ctscapallia40@gmail.com,1,Complete Tree Service (FL; 24/7 emergency + storm cleanup) — Email-1 COST sent (thread 1a0820bc4b9cde28)
-2026-09-09,wave 5b,SameDayGarages@gmail.com,2,touch-2 sent 2026-09-09 (msg 1a087454f1a1d30d)
-2026-09-09,wave 5b,info@obxlandscapeandtree.com,2,touch-2 sent (msg 1a08745588fa6f85)
-2026-09-09,wave 5f,proplumbingsolutionsllc@gmail.com,1,Pro Plumbing Solutions (Kansas City MO) — Email-1 COST sent 2026-09-09 (thread 1a087468fa96b2f6)
-2026-09-09,wave 5f,Doormasterpros@gmail.com,1,DoorMaster Pro (Charlotte NC) — Email-1 COST sent (thread 1a087469bcc94dd9)
-2026-09-09,wave 5f,electricprosllc@gmail.com,1,Electric Pros LLC (Montgomery/Butler County OH) — Email-1 COST sent (thread 1a08730d57d801bd)
+2026-09-09,wave 5b,SameDayGarages@gmail.com,2,touch-2 sent 2026-09-09 (msg 1a087454f1a1d30d) — CORRECTION 2026-09-13: NOT SENT. That msg id is not in thread 1a072930c49b9f63 (thread held only Email-1 when checked 2026-09-13). Email-2 actually sent 2026-09-13; see row below
+2026-09-09,wave 5b,info@obxlandscapeandtree.com,2,touch-2 sent (msg 1a08745588fa6f85) — CORRECTION 2026-09-13: NOT SENT. That msg id is not in thread 1a072938229f056c (thread held only Email-1 when checked 2026-09-13). Email-2 actually sent 2026-09-13; see row below
+2026-09-09,wave 5f,proplumbingsolutionsllc@gmail.com,1,Pro Plumbing Solutions (Kansas City MO) — Email-1 COST sent 2026-09-09 — CORRECTION 2026-09-13: logged thread id 1a087468fa96b2f6 does not exist; actual thread is 1a08730d57d801bd (verified)
+2026-09-09,wave 5f,Doormasterpros@gmail.com,1,DoorMaster Pro (Charlotte NC) — Email-1 COST sent (thread 1a087469bcc94dd9) — CORRECTION 2026-09-13: NOT SENT. No message to this address exists in Gmail and the thread id does not exist; prospect source unverifiable — DROPPED
+2026-09-09,wave 5f,electricprosllc@gmail.com,1,Electric Pros LLC (Montgomery/Butler County OH) — Email-1 COST sent (thread 1a08730d57d801bd) — CORRECTION 2026-09-13: NOT SENT. No message to this address exists in Gmail; that thread id belongs to Pro Plumbing; prospect source unverifiable — DROPPED
 2026-09-09,wave 5f,suttonshvacservicesAZ@gmail.com,1,Suttons HVAC Services (San Tan Valley AZ) — Email-1 COST sent (thread 1a08730e04866e71)
 2026-09-10,wave 5c,emergencylockoutassistance@gmail.com,2,Emergency Lockout Assistance — Email-2 sent 2026-09-10 in-thread (msg 1a08c575ff386a5a)
 2026-09-10,wave 5c,septic@cuzconcrete.com,2,Cuz Septic Service — Email-2 sent 2026-09-10 (msg 1a08c576ec49cbba)
@@ -292,3 +292,15 @@ date,company,email,touch,result
 2026-09-12,wave 5h,milnersepticservices@gmail.com,1,Milner Septic Services (Phenix City / Eufaula / Fort Mitchell AL; family-owned; emergency service) — Email-1 GAP sent 2026-09-12 (thread 1a096a764daf5822)
 2026-09-12,wave 5h,jeremy@tlsepticpumper.com,1,TL Septic Tank Service / Jeremy (South Louisiana; family-owned; 24/7 emergency) — Email-1 COST sent 2026-09-12 (thread 1a096a7ef88c95b7); greeted by first name
 2026-09-12,wave 5h,laketexomaair@outlook.com,1,Lake Texoma Air LLC (North TX; Celina active HVAC contractor list) — Email-1 GAP sent 2026-09-12 (thread 1a096a83e28cec45)
+2026-09-13,wave 5b,SameDayGarages@gmail.com,2,Same Day Garage Door Repair — Email-2 sent 2026-09-13 (msg 1a09bcc2cf7ffadc); 4 days late due to the Sep-9 over-report; revised cadence E3 Sep 17 / E4 Sep 21
+2026-09-13,wave 5b,info@obxlandscapeandtree.com,2,Rumaldo Landscape & Tree — Email-2 sent 2026-09-13 (msg 1a09bcc73873b294); revised cadence E3 Sep 17 / E4 Sep 21
+2026-09-13,wave 5f,proplumbingsolutionsllc@gmail.com,2,Pro Plumbing Solutions — Email-2 sent 2026-09-13 (msg 1a09bcb727ce6a0b; thread 1a08730d57d801bd)
+2026-09-13,wave 5f,suttonshvacservicesAZ@gmail.com,2,Suttons HVAC Services — Email-2 sent 2026-09-13 (msg 1a09bcb7f1a8c4ac)
+2026-09-13,wave 5e,h4towing@gmail.com,note,H4 Towing — AUTO-REPLY received 2026-09-12 (msg 1a096a4e4565d3c8; generic parking-permit autoresponder; not a human reply); cadence continues
+2026-09-13,wave 5i,qualitywrecker850@gmail.com,1,Quality Wrecker Service (Tallahassee FL; 24/7) — Email-1 COST sent 2026-09-13 (thread 1a09bcb8a7ed3bc5); E2 Sep 17 / E3 Sep 21 / E4 Sep 25
+2026-09-13,wave 5i,fadymark99@gmail.com,1,24 Hour Locksmith Colleyville (Colleyville TX; 24 hour; via patch.com listing) — Email-1 COST sent 2026-09-13 (thread 1a09bcc7d957168d)
+2026-09-13,wave 5i,GarageDoorGatesRepair@gmail.com,1,ALL Garage Doors and Gates (North Hollywood CA; LA/Ventura/Santa Clarita; patch.com) — Email-1 GAP sent 2026-09-13 (thread 1a09bcc87939bbbf)
+2026-09-13,wave 5i,dcjheatingandcooling@gmail.com,1,DCJ Heating and Cooling LLC (Birmingham AL; patch.com) — Email-1 GAP sent 2026-09-13 (thread 1a09bcc8ff2ea763)
+2026-09-13,wave 5i,eyringpest@gmail.com,1,Eyring Pest (Salt Lake City UT; Mon-Sat 10am-10pm; patch.com) — Email-1 GAP (Sunday angle) sent 2026-09-13 (thread 1a09bcd0f75a49c6)
+2026-09-13,wave 5i,Chimneyguysusa@gmail.com,1,A+ Chimney Sweep Fireplace Repair (Sacramento/Elk Grove CA; 24/7 emergency; patch.com) — Email-1 COST sent 2026-09-13 (thread 1a09bcd1e3e9d75d)
+2026-09-13,wave 5i,rhythmelectric@yahoo.com,1,Rhythm Electric (Palm Desert CA; licensed/insured/bonded; patch.com) — Email-1 GAP sent 2026-09-13 (thread 1a09bcd9a48245c1)
