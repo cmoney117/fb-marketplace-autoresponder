@@ -229,3 +229,6 @@ In the logged-in Vercel account: Add New → Project → import the SAME GitHub 
 
 ## TASK-009 — MailerLite free account
 At https://www.mailerlite.com sign up free (shop Gmail), company "The Paycheck Budget". Just create the account and confirm the email; flows come later. Record login-works confirmation under DONE. (If this account was already created under the old Willow & Pine name, rename it in account settings instead.)
+
+## Mac mini local worker (2026-09-16)
+A second, local worker runs on the Mac mini. Its tasks live in `venture/07-automation/local-worker/TASKS.md` (research + record only; never sends, spends, or creates accounts). It feeds `venture/07-automation/tracker/prospect-queue.csv`, which the cloud agent consumes nightly.
