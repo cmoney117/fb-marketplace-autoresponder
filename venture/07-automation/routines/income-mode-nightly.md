@@ -34,3 +34,6 @@ Scope: online sales only — Paycheck Budget store + AnswerPine. Never touch or 
 ## Local worker (Mac mini, added 2026-09-16)
 - Before harvesting, read `venture/07-automation/tracker/prospect-queue.csv` (filled daily by the Mac mini local worker per `venture/07-automation/local-worker/TASKS.md`). Take rows with `status=new`, dedupe against outreach-log.csv, send openers personalized from the `detail` column (GAP if answers_24_7=no/unknown, COST if yes), then set that row to `status=sent` and fill `thread_id`. Only run WebSearch harvesting to top up when the queue has fewer than 10 usable rows.
 - Read `store-signals.csv` during revenue watch; a gumroad_sales value above 0 is income — report to Cody immediately.
+
+## Cadence schedule rule (added 2026-09-19)
+Never copy the previous night's NEXT line forward. Rebuild the schedule from `outreach-log.csv` every night: for every email whose highest logged touch is 1, 2 or 3 (and that is not BOUNCED, suppressed, or a "no thanks"), the next touch is due 4 days after the date of that touch. Anything overdue is sent the same night and annotated LATE in the log. Why: the Sep-8 cohort (wave 5e) missed Email-3 for 3 days because the Sep 13 NEXT line dropped it and each later night copied that line forward.
