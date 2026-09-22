@@ -492,3 +492,25 @@ date,company,email,touch,result
 2026-09-21,wave 5q,veterantreecare.la@gmail.com,1,Veteran Tree Care LA (Louisiana; veteran-owned; 24 hours emergency) — Email-1 COST sent 2026-09-21 (thread 1a0c50016651d0be)
 2026-09-21,wave 5b,SameDayGarages@gmail.com,4,Same Day Garage Door Repair — Email-4 sent 2026-09-21 (msg 1a0c5007e147d1bb); SEQUENCE COMPLETE 0 replies; thread pre-checked (E1+E2+E3 present)
 2026-09-21,wave 5b,info@obxlandscapeandtree.com,4,Rumaldo Landscape & Tree — Email-4 sent 2026-09-21 (msg 1a0c50086452612d); SEQUENCE COMPLETE
+2026-09-22,wave 5q,veterantreecare.la@gmail.com,BOUNCED,Veteran Tree Care LA — DSN failure 2026-09-21 (550 5.1.1 address not found; msg 1a0c5001d6a6f282); sequence stopped; SUPPRESS permanently
+2026-09-22,wave 5n,aaawellpump@gmail.com,2,AAA Well & Pump Service LLC — Email-2 sent 2026-09-22 (msg 1a0ca2314beb9563); thread pre-checked (E1 present; no E2)
+2026-09-22,wave 5n,24seventowingllc@gmail.com,2,24/7 Towing and Trucking LLC — Email-2 sent 2026-09-22 (msg 1a0ca231f0c350e6)
+2026-09-22,wave 5j,alpharoofingchris@gmail.com,3,Alpha Roofing / Chris — Email-3 sent 2026-09-22 (msg 1a0ca23a3bab182e); thread pre-checked (E1+E2 present; no E3)
+2026-09-22,wave 5j,brightsseptic@gmail.com,3,Brights Septic Service — Email-3 sent 2026-09-22 (msg 1a0ca23ab4ec96b0)
+2026-09-22,wave 5j,brooklynheatingplumbing@gmail.com,3,Brooklyn Plumbing & Heating — Email-3 sent 2026-09-22 (msg 1a0ca23b313a068e)
+2026-09-22,wave 5j,cityprotowing@gmail.com,3,City Pro Towing — Email-3 sent 2026-09-22 (msg 1a0ca23bac5ebc81)
+2026-09-22,wave 5j,honesthvacaz@gmail.com,3,Honest HVAC — Email-3 sent 2026-09-22 (msg 1a0ca23c23ed754a)
+2026-09-22,wave 5j,lascrucestowing@gmail.com,3,Las Cruces Towing — Email-3 sent 2026-09-22 (msg 1a0ca23c9b1416c7)
+2026-09-22,wave 5j,sunshinemobilelocksmith@gmail.com,3,Sunshine Mobile Locksmith — Email-3 sent 2026-09-22 (msg 1a0ca23d33651dc7)
+2026-09-22,wave 5j,thornplumbing@gmail.com,3,Thorn Plumbing — Email-3 sent 2026-09-22 (msg 1a0ca2406dc2d08c)
+2026-09-22,wave 5j,tookyplumbing@gmail.com,3,Tooky Plumbing — Email-3 sent 2026-09-22 (msg 1a0ca240c3d47a62)
+2026-09-22,wave 5r,arborscapetreecare1@gmail.com,1,Arborscape Tree Care (Marietta GA; hours unknown) — Email-1 GAP sent 2026-09-22 (thread 1a0ca24992939ef0); E2 Sep 26 / E3 Sep 30 / E4 Oct 4
+2026-09-22,wave 5r,realtreemanagement@gmail.com,1,Real Tree Management (Broward/Palm Beach FL; 24/7) — Email-1 COST sent 2026-09-22 (thread 1a0ca249e4a20ad3)
+2026-09-22,wave 5r,infoabc12tree@gmail.com,1,ABC 1-2-Tree (Florida; 24 hour emergency) — Email-1 COST sent 2026-09-22 (thread 1a0ca24a453fdccf)
+2026-09-22,wave 5r,fltreeservicellc@gmail.com,1,FL Tree Service LLC (Florida; 24/7) — Email-1 COST sent 2026-09-22 (thread 1a0ca24d6cea926b)
+2026-09-22,wave 5r,moorecutsflorida@gmail.com,1,Moore Cuts Florida (Tampa Bay FL; 24/7) — Email-1 COST sent 2026-09-22 (thread 1a0ca24daf3aff5c)
+2026-09-22,wave 5r,bigbranch09@gmail.com,1,Big Branch Tree Service (Jacksonville FL; 24-hour) — Email-1 COST sent 2026-09-22 (thread 1a0ca24e1cc8ef1b)
+2026-09-22,wave 5r,matt@northboundtreeservice.com,1,North Bound Tree Service / Matt (Iron Mountain MI; 24-hour) — Email-1 COST sent 2026-09-22 (thread 1a0ca252c41e59a7); greeted by first name
+2026-09-22,wave 5r,mmptreeservicellc@gmail.com,1,MMP Tree Service LLC (North Metro Atlanta GA; family-owned; ISA-certified; 24/7) — Email-1 COST sent 2026-09-22 (thread 1a0ca25d5f1cb8ad)
+2026-09-22,wave 5r,waldroptreeservice@gmail.com,1,John Waldrop & Son Tree Service (Commerce GA; 24/7; same-day on-site) — Email-1 COST sent 2026-09-22 (thread 1a0ca25da2474a1d)
+2026-09-22,wave 5r,greenrhinotreecare@gmail.com,1,Green Rhino Tree Care (Austin TX; 24/7; free estimates) — Email-1 COST sent 2026-09-22 (thread 1a0ca25e1434368f)
