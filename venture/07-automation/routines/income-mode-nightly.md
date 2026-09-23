@@ -45,3 +45,4 @@ Rebuild note (2026-09-21): when rebuilding the schedule from the log, an annotat
 
 Suppressed (added 2026-09-22): veterantreecare.la@gmail.com (hard bounce 550).
 Harvest update (2026-09-22): the state-specific variant `"@gmail.com" "tree service" "24/7" <State> emergency -yelp -facebook -manta -homeadvisor` is the best query now (Florida 5 finds; Georgia 2; Texas 1). Rotate states nightly; skip states already run (FL, GA, TX, OH, NC/SC, VA/MD, PA/NY/NJ, MI/WI/MN done Sep 22).
+States run with the state-specific tree query on Sep 23: CA, TN/KY, AL/MS/LA, IL/IN, AZ/CO/NV, MO/OK/AR, WA/OR, MA/CT/RI, IA/NE/KS, KY/WV, UT/ID/MT, SC/DE, WI/NM. Most US states are now covered once; next rotate the trade word instead (tree removal; tree care; arborist; stump grinding) with the same state list.
