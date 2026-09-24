@@ -550,3 +550,35 @@ date,company,email,touch,result
 2026-09-23,wave 5s,krohnkutz@gmail.com,1,Krohn Kutz Tree Service (MA/CT/RI; 24/7 incl. weekends and holidays) — Email-1 COST sent 2026-09-23 (thread 1a0cf4cb360cce0e)
 2026-09-23,wave 5s,Info4astreeserv@yahoo.com,1,4 As Tree Services LLC (Clark County WA / Portland OR; 24/7) — Email-1 COST sent 2026-09-23 (thread 1a0cf4d0a668e7a7)
 2026-09-23,wave 5s,john.chesler11@gmail.com,1,Professional Tree & Lot Services / John (Gaston SC; 24/7) — Email-1 COST sent 2026-09-23 (thread 1a0cf4d45f58c1a9); greeted by first name
+2026-09-24,wave 5p,brian@eugenetree.com,2,A-1 Rons Stump & Tree Removal — Email-2 sent 2026-09-24 (msg 1a0d4705d1b62f3e); thread pre-checked (E1 present; no E2)
+2026-09-24,wave 5p,busybadgertreecare@gmail.com,2,Busy Badger Tree Care — Email-2 sent 2026-09-24 (msg 1a0d47069e4a5306)
+2026-09-24,wave 5p,caribbeantreeservice@gmail.com,2,Caribbean Tree Service Inc — Email-2 sent 2026-09-24 (msg 1a0d47072577694f)
+2026-09-24,wave 5p,friendlytreeservice@gmail.com,2,Friendly Tree Service — Email-2 sent 2026-09-24 (msg 1a0d470d39aa4725)
+2026-09-24,wave 5p,golferdonald@gmail.com,2,Double Ds Stump Grinding & Removal — Email-2 sent 2026-09-24 (msg 1a0d47157d6c0c4d)
+2026-09-24,wave 5p,indianastrong16@gmail.com,2,Indiana Strong Tree Service — Email-2 sent 2026-09-24 (msg 1a0d471bf8bb3bcf)
+2026-09-24,wave 5p,treeserviceoh@gmail.com,2,Jaimes Tree Service Inc — Email-2 sent 2026-09-24 (msg 1a0d471cb4299e82)
+2026-09-24,wave 5p,ghtreeservice@gmail.com,HOLD,G & H Tree Service — Email-2 DENIED by the auto-mode classifier 2026-09-24 (Real-World Transactions; denial terms forbid retrying the flagged item); thread left at E1; SUPPRESS until Cody adds a permission rule or sends it by hand
+2026-09-24,wave 5l,alexmontywv@gmail.com,3,Panhandle Roofing Pros — Email-3 sent 2026-09-24 (msg 1a0d471d92603f2f); thread pre-checked (E1+E2 present; no E3)
+2026-09-24,wave 5l,rodneybrewster1@gmail.com,3,Brewsters Plumbing — Email-3 sent 2026-09-24 (msg 1a0d471e302096e8)
+2026-09-24,wave 5l,targetgaragedoor@gmail.com,3,Target Garage Door — Email-3 sent 2026-09-24 (msg 1a0d471efb5e4ed5)
+2026-09-24,wave 5h,ampmtreeservice@gmail.com,4,Am/Pm Tree Service — Email-4 sent 2026-09-24 (msg 1a0d471fb84218f2); SEQUENCE COMPLETE 0 replies; thread pre-checked (E1+E2+E3 present)
+2026-09-24,wave 5h,arborcuttree@gmail.com,4,Arbor Cut Tree Service — Email-4 sent 2026-09-24 (msg 1a0d4720ade65095); SEQUENCE COMPLETE
+2026-09-24,wave 5h,Customelectric1221@gmail.com,HOLD,Custom Electric / Jeff — Email-4 DENIED by the auto-mode classifier 2026-09-24 (Real-World Transactions; denial terms forbid retrying the flagged item); thread left at E3; SUPPRESS until Cody adds a permission rule or sends it by hand
+2026-09-24,wave 5h,evansheatcool@gmail.com,4,Evans Heating & Cooling — Email-4 sent 2026-09-24 (msg 1a0d47259cb5f52b); SEQUENCE COMPLETE
+2026-09-24,wave 5h,jeremy@tlsepticpumper.com,4,TL Septic Tank Service — Email-4 sent 2026-09-24 (msg 1a0d472d326c9c34); SEQUENCE COMPLETE
+2026-09-24,wave 5h,laketexomaair@outlook.com,4,Lake Texoma Air LLC — Email-4 sent 2026-09-24 (msg 1a0d472dc1998252); SEQUENCE COMPLETE
+2026-09-24,wave 5h,milnersepticservices@gmail.com,4,Milner Septic Services — Email-4 sent 2026-09-24 (msg 1a0d4733a705ae18); SEQUENCE COMPLETE
+2026-09-24,wave 5h,Repairplumbingnow@gmail.com,4,Repair Plumbing Now — Email-4 sent 2026-09-24 (msg 1a0d473446709e59); SEQUENCE COMPLETE
+2026-09-24,wave 5h,TexasPatriotTowing@gmail.com,4,Texas Patriot Towing — Email-4 sent 2026-09-24 (msg 1a0d473557c7e96c); SEQUENCE COMPLETE
+2026-09-24,wave 5t,evergreentreeexperts219@gmail.com,1,Evergreen Tree Specialists (Brooklyn NY; all five boroughs; 24/7) — Email-1 COST sent 2026-09-24 (thread 1a0d474a2ced8dce); E2 Sep 28 / E3 Oct 2 / E4 Oct 6
+2026-09-24,wave 5t,Jordantowingllc24@gmail.com,1,Jordan Towing LLC / Nick (Georgia; TRAG member directory) — Email-1 GAP sent 2026-09-24 (thread 1a0d475b4e467296); greeted by first name; E2 Sep 28 / E3 Oct 2 / E4 Oct 6
+2026-09-24,wave 5t,embreystowing@gmail.com,1,Embreys Towing / Trey (Georgia; TRAG member directory) — Email-1 GAP sent 2026-09-24 (thread 1a0d476b3e18e51a); greeted by first name
+2026-09-24,wave 5t,youngstowing@gmail.com,1,Youngs Towing (Missouri; MTTA member directory) — Email-1 GAP sent 2026-09-24 (thread 1a0d47724573c798)
+2026-09-24,wave 5t,jandktowingkc@gmail.com,1,J and K Towing (Kansas City MO; MTTA member directory) — Email-1 GAP sent 2026-09-24 (thread 1a0d477875817221)
+2026-09-24,wave 5t,1WolfPackTowing@gmail.com,1,Wolf Pack Towing and Recovery (AZ/NV; APTRA + NSTA directories) — Email-1 GAP sent 2026-09-24 (thread 1a0d478b1e85a9cb)
+2026-09-24,wave 5t,4seasonstowingnv@gmail.com,1,Four Seasons Towing LLC (Nevada; NSTA directory) — Email-1 GAP sent 2026-09-24 (thread 1a0d47919c18ed4a)
+2026-09-24,wave 5t,jaspertowingllc@gmail.com,HOLD,Jasper Towing LLC / Robert (Georgia; TRAG) — Email-1 DENIED by the auto-mode classifier 2026-09-24; never contacted; do not retry unless Cody adds a permission rule
+2026-09-24,wave 5t,acewreckerservicellc@gmail.com,HOLD,Ace Wrecker Service LLC / Laura (Georgia; TRAG) — Email-1 DENIED by the auto-mode classifier 2026-09-24; never contacted; do not retry unless Cody adds a permission rule
+2026-09-24,wave 5t,Lancewrecker2000@gmail.com,HOLD,Lance Wrecker Service / Michelle (Georgia; TRAG) — Email-1 DENIED by the auto-mode classifier 2026-09-24; never contacted; do not retry unless Cody adds a permission rule
+2026-09-24,wave 5t,lakesidetowingllclhc@gmail.com,HOLD,Lakeside Towing LLC (Lake Havasu City AZ; APTRA) — Email-1 DENIED by the auto-mode classifier 2026-09-24; never contacted; do not retry unless Cody adds a permission rule
+2026-09-24,wave 5t,duricktowing@gmail.com,HOLD,Durick Towing & Recovery (Nevada; NSTA) — Email-1 DENIED by the auto-mode classifier 2026-09-24; never contacted; do not retry unless Cody adds a permission rule
