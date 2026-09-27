@@ -647,3 +647,30 @@ date,company,email,touch,result
 2026-09-26,wave 5v,FirstClassTowingRecoveryInc@gmail.com,1,First Class Towing / Chris (Illinois; PTROI membership list) — Email-1 GAP sent 2026-09-26 (thread 1a0debfaca357bcf); greeted by first name
 2026-09-26,wave 5v,hublystow@gmail.com,1,Hublys Towing and Repair Service / J.R. (Illinois; PTROI membership list) — Email-1 GAP sent 2026-09-26 (thread 1a0debfae5871efe); greeted by first name
 2026-09-26,wave 5v,infoadamstow@gmail.com,1,Adams Towing (Arizona; APTRA member directory) — Email-1 GAP sent 2026-09-26 (thread 1a0debfb0266f58e)
+2026-09-27,wave 5v,ecketowing@gmail.com,BOUNCED,Eckes Towing Inc — DSN failure 2026-09-26 (550 5.1.1 address not found; msg 1a0debfa70c89a25); sequence stopped; SUPPRESS permanently
+2026-09-27,wave 5s,alabamatreeservice@gmail.com,2,Alabama Tree Service — Email-2 sent 2026-09-27 (msg 1a0e3e47be3ca0be); thread pre-checked (E1 present; no E2)
+2026-09-27,wave 5s,Info4astreeserv@yahoo.com,2,4 As Tree Services LLC — Email-2 sent 2026-09-27 (msg 1a0e3e47d8e36eb6)
+2026-09-27,wave 5s,john.chesler11@gmail.com,2,Professional Tree & Lot Services — Email-2 sent 2026-09-27 (msg 1a0e3e4819e16848)
+2026-09-27,wave 5s,karlragan1959@gmail.com,2,K & S Tree Service — Email-2 sent 2026-09-27 (msg 1a0e3e484cebf937)
+2026-09-27,wave 5s,krohnkutz@gmail.com,2,Krohn Kutz Tree Service — Email-2 sent 2026-09-27 (msg 1a0e3e489b04380a)
+2026-09-27,wave 5s,triplehtreeservice8@gmail.com,2,Triple H Tree Service — Email-2 sent 2026-09-27 (msg 1a0e3e48b51d71e4)
+2026-09-27,wave 5o,easleyhvac@gmail.com,3,Easley HVAC — Email-3 sent 2026-09-27 (msg 1a0e3e48e2a6c09e); thread pre-checked (E1+E2 present; no E3)
+2026-09-27,wave 5o,eazybreezycooling@gmail.com,3,Eazy Breezy Heating & Air Conditioning — Email-3 sent 2026-09-27 (msg 1a0e3e4904c1b830)
+2026-09-27,wave 5o,neptunetowing@gmail.com,3,Neptune Towing Service — Email-3 sent 2026-09-27 (msg 1a0e3e494ef2ef33)
+2026-09-27,wave 5k,alabamatowingandrecovery@gmail.com,4,Alabama Towing & Recovery — Email-4 sent 2026-09-27 (msg 1a0e3e49708f6eca); SEQUENCE COMPLETE 0 replies; thread pre-checked (E1+E2+E3 present)
+2026-09-27,wave 5k,CharleenGomes202@gmail.com,4,Equinox Air Conditioning — Email-4 sent 2026-09-27 (msg 1a0e3e499a97a1be); SEQUENCE COMPLETE
+2026-09-27,wave 5k,daytontowingcompanyinc@gmail.com,4,Dayton Towing Company — Email-4 sent 2026-09-27 (msg 1a0e3e49c54fca76); SEQUENCE COMPLETE
+2026-09-27,wave 5k,mishawakatreeservice@gmail.com,4,Mishawaka Tree Care — Email-4 sent 2026-09-27 (msg 1a0e3e49f8706871); SEQUENCE COMPLETE
+2026-09-27,wave 5k,mydenvertreeservice@gmail.com,4,My Denver Tree Service — Email-4 sent 2026-09-27 (msg 1a0e3e4a36d84112); SEQUENCE COMPLETE
+2026-09-27,wave 5k,plumbingprosdmv@gmail.com,4,Plumbing Pros DMV — Email-4 sent 2026-09-27 (msg 1a0e3e4a52e1a154); SEQUENCE COMPLETE
+2026-09-27,wave 5k,shacklefordenterprises@gmail.com,4,Shackleford Enterprises — Email-4 sent 2026-09-27 (msg 1a0e3e4b3f37a390); SEQUENCE COMPLETE
+2026-09-27,wave 5k,shambaughtowing@gmail.com,4,Shambaugh Towing LLC — Email-4 sent 2026-09-27 (msg 1a0e3e4b6becd580); SEQUENCE COMPLETE
+2026-09-27,wave 5k,teostowing@gmail.com,4,Teos Towing Services — Email-4 sent 2026-09-27 (msg 1a0e3e4b95fab518); SEQUENCE COMPLETE
+2026-09-27,wave 5k,usplumbingandremodel@gmail.com,4,US Plumbing & Remodel — Email-4 sent 2026-09-27 (msg 1a0e3e4bd3e9c97e); SEQUENCE COMPLETE
+2026-09-27,wave 5w,garystowing15@gmail.com,1,Garys Towing (Marietta OH; TRAO member directory; heavy duty + car carrier) — Email-1 GAP sent 2026-09-27 (thread 1a0e3e5609185bea); E2 Oct 1 / E3 Oct 5 / E4 Oct 9
+2026-09-27,wave 5w,kirbyautoparts@gmail.com,1,Kirby Auto Parts & Towing (Richwood OH; TRAO member directory; heavy duty + car carrier) — Email-1 GAP sent 2026-09-27 (thread 1a0e3e56235e93e6)
+2026-09-27,wave 5w,spowers2318@gmail.com,1,Millenium Towing and Recovery (Cincinnati OH; TRAO member directory) — Email-1 GAP sent 2026-09-27 (thread 1a0e3e602864f746)
+2026-09-27,wave 5w,kreffitt2476@gmail.com,1,Reffitts Garage & Towing Service (Hamilton OH; TRAO member directory) — Email-1 GAP sent 2026-09-27 (thread 1a0e3e6059169e9e)
+2026-09-27,wave 5w,jkinch22@gmail.com,1,Quality Towing (West Chester OH; TRAO member directory) — Email-1 GAP sent 2026-09-27 (thread 1a0e3e606bedbca9)
+2026-09-27,wave 5w,aatowing7786@gmail.com,1,A & A Towing (Pataskala OH; TRAO member directory) — Email-1 GAP sent 2026-09-27 (thread 1a0e3e6088f202d1)
+2026-09-27,wave 5w,bushnellsautobody@gmail.com,1,Bushnells Collision & Towing (Piqua OH; TRAO member directory) — Email-1 GAP sent 2026-09-27 (thread 1a0e3e60a2c67125)
