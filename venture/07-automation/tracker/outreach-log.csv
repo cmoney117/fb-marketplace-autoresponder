@@ -700,3 +700,40 @@ date,company,email,touch,result
 2026-09-28,wave 5x,carlsllc@gmail.com,1,Carls LLC (Columbia MO; MTTA member directory) — Email-1 GAP sent 2026-09-28 (thread 1a0e90cd4d0c0441)
 2026-09-28,wave 5x,elitetowmo@gmail.com,1,Elite Tow / Mike (Lees Summit MO; MTTA member directory) — Email-1 GAP sent 2026-09-28 (thread 1a0e90cd888a76eb); greeted by first name
 2026-09-28,wave 5x,Empiretowservice@gmail.com,HOLD,Empire Tow Service / Junior (Kansas City MO; MTTA) — Email-1 DENIED by the auto-mode classifier 2026-09-28; never contacted; do not retry unless Cody adds a permission rule
+2026-09-29,wave 5u,a2ztow.transport@gmail.com,2,A2Z Tow & Transport — Email-2 sent 2026-09-29 (msg 1a0ee32817c037a1); thread pre-checked (E1 present; no E2)
+2026-09-29,wave 5u,agtowinginc@gmail.com,2,A&G Towing — Email-2 sent 2026-09-29 (msg 1a0ee32832dfd271)
+2026-09-29,wave 5u,apachejunctiontowing@gmail.com,2,Apache Junction Towing — Email-2 sent 2026-09-29 (msg 1a0ee328793b6d60)
+2026-09-29,wave 5u,bdaztow@gmail.com,2,BDAZ Towing — Email-2 sent 2026-09-29 (msg 1a0ee328b2f9a838)
+2026-09-29,wave 5u,bigjohnsbc@gmail.com,2,Big Johns Towing — Email-2 sent 2026-09-29 (msg 1a0ee328c74c1b55)
+2026-09-29,wave 5u,condestowing@gmail.com,2,Condes Towing — Email-2 sent 2026-09-29 (msg 1a0ee3290d3c3636)
+2026-09-29,wave 5u,curtisjohnna@gmail.com,2,Parkers Towing & Recovery — Email-2 sent 2026-09-29 (msg 1a0ee3295ab8ad20)
+2026-09-29,wave 5u,jackieblacktenney@gmail.com,2,Mesaros Towing & Recovery LLC — Email-2 sent 2026-09-29 (msg 1a0ee32966209cdd)
+2026-09-29,wave 5u,jlcarrier79@gmail.com,2,Auto Works Towing Inc — Email-2 sent 2026-09-29 (msg 1a0ee329a4c73088)
+2026-09-29,wave 5u,lhouse91@gmail.com,2,Houses Towing — Email-2 sent 2026-09-29 (msg 1a0ee32a5aa332bc)
+2026-09-29,wave 5u,sstowreno@gmail.com,2,Silver State Towing — Email-2 sent 2026-09-29 (msg 1a0ee32a87e233c3)
+2026-09-29,wave 5q,Aplustreeservice.info@gmail.com,3,A+ Tree Service Inc — Email-3 sent 2026-09-29 (msg 1a0ee32aaa6c3322); thread pre-checked (E1+E2 present; no E3)
+2026-09-29,wave 5q,brandonstreeservicellc@gmail.com,3,Brandons Tree Service LLC — Email-3 sent 2026-09-29 (msg 1a0ee32af6e7b4d4)
+2026-09-29,wave 5q,incredibletreeservice@gmail.com,3,Incredible Tree Service — Email-3 sent 2026-09-29 (msg 1a0ee32b282da779)
+2026-09-29,wave 5q,metrotree3@gmail.com,3,Metro Tree & Crane — Email-3 sent 2026-09-29 (msg 1a0ee32b74939c87)
+2026-09-29,wave 5q,travistreeprofessionals@gmail.com,3,Travis Tree Professionals — Email-3 sent 2026-09-29 (msg 1a0ee32bb9c1c83d)
+2026-09-29,wave 5q,Veterantreecare207@gmail.com,3,Veteran Tree Care (Maine) — Email-3 sent 2026-09-29 (msg 1a0ee32bffa0e9eb)
+2026-09-29,wave 5q,Veterantreeservice.wa@gmail.com,3,Veteran Tree Service (WA) — Email-3 sent 2026-09-29 (msg 1a0ee32c0f0f5669)
+2026-09-29,wave 5q,veterantreesolutions@gmail.com,3,Veteran Tree Solutions — Email-3 sent 2026-09-29 (msg 1a0ee32c444b5638)
+2026-09-29,wave 5m,24hoursgaragedoors@gmail.com,4,24 Hours Garage Doors — Email-4 sent 2026-09-29 (msg 1a0ee32c6e772283); SEQUENCE COMPLETE 0 replies; thread pre-checked (E1+E2+E3 present)
+2026-09-29,wave 5m,24hr.towingrec@gmail.com,4,24 Hr Towing & Recovery Inc — Email-4 sent 2026-09-29 (msg 1a0ee32ca187f2f0); SEQUENCE COMPLETE
+2026-09-29,wave 5m,24hrtowingsd@gmail.com,4,24 Hr Towing San Diego — Email-4 sent 2026-09-29 (msg 1a0ee32ce6f122ef); SEQUENCE COMPLETE
+2026-09-29,wave 5m,ae247garage@gmail.com,4,A&E Emergency Garage Door Repair — Email-4 sent 2026-09-29 (msg 1a0ee32d180db422); SEQUENCE COMPLETE
+2026-09-29,wave 5m,misterspruce63@gmail.com,4,Mr. Spruce Tree Service LLC — Email-4 sent 2026-09-29 (msg 1a0ee32d475d52ef); SEQUENCE COMPLETE
+2026-09-29,wave 5m,mrtowit@yahoo.com,4,Mr Towits Wrecker Service — Email-4 sent 2026-09-29 (msg 1a0ee32d6ce2f2cd); SEQUENCE COMPLETE
+2026-09-29,wave 5m,Rushingnetwork@gmail.com,4,24 Hour Garage Door Service — Email-4 sent 2026-09-29 (msg 1a0ee32da96a6feb); SEQUENCE COMPLETE
+2026-09-29,wave 5y,harryvonderhuevel@gmail.com,1,H & N Towing & Recovery / Harry (Sidney OH; TRAO member directory) — Email-1 GAP sent 2026-09-29 (thread 1a0ee33a5895d395); greeted by first name; E2 Oct 3 / E3 Oct 7 / E4 Oct 11
+2026-09-29,wave 5y,andersondrilling@gmail.com,1,Anderson Drilling LLC / Gary (Washington; WSGWA contractor member list) — Email-1 GAP sent 2026-09-29 (thread 1a0ee347e516a90f); greeted by first name
+2026-09-29,wave 5y,highlanderpump@gmail.com,1,Highlander Pump & Well Service Inc / Phillip (Washington; WSGWA contractor member list) — Email-1 GAP sent 2026-09-29 (thread 1a0ee34811045070); greeted by first name
+2026-09-29,wave 5y,hatchwelldrillers@gmail.com,1,Hatch Well Drillers (Maine; Maine Groundwater Association listing) — Email-1 GAP sent 2026-09-29 (thread 1a0ee34821143ff9)
+2026-09-29,wave 5y,hegartypump@gmail.com,1,Hegarty Pump (Maine; Maine Groundwater Association listing) — Email-1 GAP sent 2026-09-29 (thread 1a0ee348425aeea5)
+2026-09-29,wave 5y,mdlockskeys@gmail.com,HOLD,M&D Locksmith and Security (Brooklyn NY; 24-hour mobile) — Email-1 DENIED by the auto-mode classifier 2026-09-29; never contacted; do not retry unless Cody adds a permission rule
+2026-09-29,wave 5y,mobilelocksmith24llc@gmail.com,1,Mobile Locksmith 24 (city unknown; 24-hour mobile) — Email-1 COST sent 2026-09-29 (thread 1a0ee3487fd1d0e6)
+2026-09-29,wave 5y,A1drillinganddigging@gmail.com,1,A-1 Drilling & Digging Inc / Dave (Washington; WSGWA contractor member list) — Email-1 GAP sent 2026-09-29 (thread 1a0ee3514ab6e272); greeted by first name
+2026-09-29,wave 5y,crabtreedrilling@gmail.com,1,Crabtree Drilling Company / Mike (Washington; WSGWA contractor member list) — Email-1 GAP sent 2026-09-29 (thread 1a0ee3517df7944f); greeted by first name
+2026-09-29,wave 5y,hoopesdrilling@gmail.com,1,Hoopes Well Drilling LLC / Forest (Washington; WSGWA contractor member list) — Email-1 GAP sent 2026-09-29 (thread 1a0ee3519a1bb0f4); greeted by first name
+2026-09-29,wave 5y,vermipump@gmail.com,HOLD,Vermillion Pump & Drilling / Jared (Washington; WSGWA) — Email-1 DENIED by the auto-mode classifier 2026-09-29; never contacted; do not retry unless Cody adds a permission rule
