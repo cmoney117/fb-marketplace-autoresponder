@@ -772,3 +772,31 @@ date,company,email,touch,result
 2026-09-30,wave 5z,smalltownseptic@gmail.com,1,Small Town Septic (Granby CT; COWRA member listings) — Email-1 GAP septic sent 2026-09-30 (thread 1a0f35bea5478a8a); E2 Oct 4 / E3 Oct 8 / E4 Oct 12
 2026-09-30,wave 5z,krausesepticsolutions@gmail.com,1,Krause Septic Solutions / Matthew (Texas; TOWA member directory) — Email-1 GAP septic sent 2026-09-30 (thread 1a0f35bec440d62c); greeted by first name; E2 Oct 4 / E3 Oct 8 / E4 Oct 12
 2026-09-30,wave 5z,nexgensepticsystems@gmail.com,1,Nex-Gen Septic Systems LLC (Winsted CT; COWRA member listings) — Email-1 GAP septic sent 2026-09-30 (thread 1a0f35bf20e8f675); E2 Oct 4 / E3 Oct 8 / E4 Oct 12
+2026-10-01,wave 5w,aatowing7786@gmail.com,2,A & A Towing — Email-2 sent 2026-10-01 (msg 1a0f87d9ffe75904); thread pre-checked (E1 present; no E2)
+2026-10-01,wave 5w,bushnellsautobody@gmail.com,HOLD,Bushnells Collision & Towing — Email-2 DENIED by the auto-mode classifier 2026-10-01 (Real-World Transactions; denial terms forbid retrying the flagged item); thread left at E1; SUPPRESS until Cody adds a permission rule
+2026-10-01,wave 5w,garystowing15@gmail.com,HOLD,Garys Towing — Email-2 DENIED by the auto-mode classifier 2026-10-01 (Real-World Transactions; denial terms forbid retrying the flagged item); thread left at E1; SUPPRESS until Cody adds a permission rule
+2026-10-01,wave 5w,jkinch22@gmail.com,2,Quality Towing — Email-2 sent 2026-10-01 (msg 1a0f87da3aaffe75); thread pre-checked (E1 present; no E2)
+2026-10-01,wave 5w,kirbyautoparts@gmail.com,HOLD,Kirby Auto Parts & Towing — Email-2 DENIED by the auto-mode classifier 2026-10-01 (Real-World Transactions; denial terms forbid retrying the flagged item); thread left at E1; SUPPRESS until Cody adds a permission rule
+2026-10-01,wave 5w,kreffitt2476@gmail.com,2,Reffitts Garage & Towing Service — Email-2 sent 2026-10-01 (msg 1a0f87da5915df45); thread pre-checked (E1 present; no E2)
+2026-10-01,wave 5w,spowers2318@gmail.com,2,Millenium Towing and Recovery — Email-2 sent 2026-10-01 (msg 1a0f87da677341dc); thread pre-checked (E1 present; no E2)
+2026-10-01,wave 5s,alabamatreeservice@gmail.com,3,Alabama Tree Service — Email-3 sent 2026-10-01 (msg 1a0f87db14d8b7e3); thread pre-checked (E1+E2 present; no E3)
+2026-10-01,wave 5s,Info4astreeserv@yahoo.com,3,4 As Tree Services LLC — Email-3 sent 2026-10-01 (msg 1a0f87db52f111fb); thread pre-checked (E1+E2 present; no E3)
+2026-10-01,wave 5s,john.chesler11@gmail.com,3,Professional Tree & Lot Services / John — Email-3 sent 2026-10-01 (msg 1a0f87db76cf32f4); thread pre-checked (E1+E2 present; no E3)
+2026-10-01,wave 5s,karlragan1959@gmail.com,3,K & S Tree Service / Karl — Email-3 sent 2026-10-01 (msg 1a0f87dbbae4ac2b); thread pre-checked (E1+E2 present; no E3)
+2026-10-01,wave 5s,krohnkutz@gmail.com,3,Krohn Kutz Tree Service — Email-3 sent 2026-10-01 (msg 1a0f87dbdff1c8b6); thread pre-checked (E1+E2 present; no E3)
+2026-10-01,wave 5s,triplehtreeservice8@gmail.com,3,Triple H Tree Service — Email-3 sent 2026-10-01 (msg 1a0f87dc17506d96); thread pre-checked (E1+E2 present; no E3)
+2026-10-01,wave 5o,easleyhvac@gmail.com,4,Easley HVAC — Email-4 sent 2026-10-01 (msg 1a0f87dc5904ec50); thread pre-checked (E1+E2+E3 present; no E4); SEQUENCE COMPLETE 0 replies
+2026-10-01,wave 5o,eazybreezycooling@gmail.com,4,Eazy Breezy Heating & Air Conditioning — Email-4 sent 2026-10-01 (msg 1a0f87dc9242977b); thread pre-checked (E1+E2+E3 present; no E4); SEQUENCE COMPLETE 0 replies
+2026-10-01,wave 5o,neptunetowing@gmail.com,4,Neptune Towing Service — Email-4 sent 2026-10-01 (msg 1a0f87dcab0facbc); thread pre-checked (E1+E2+E3 present; no E4); SEQUENCE COMPLETE 0 replies
+2026-10-01,wave 6a,egsepticservices@gmail.com,1,E.G. Septic Services LLC / Eric (Windham CT; COWRA member listings) — Email-1 GAP septic sent 2026-10-01 (thread 1a0f87f9415693e3); greeted by first name; E2 Oct 5 / E3 Oct 9 / E4 Oct 13
+2026-10-01,wave 6a,kelleyseptic@gmail.com,1,Kelly Septic and Drain / Arthur (Willimantic CT; COWRA member listings) — Email-1 GAP septic sent 2026-10-01 (thread 1a0f87f96263e758); greeted by first name; E2 Oct 5 / E3 Oct 9 / E4 Oct 13
+2026-10-01,wave 6a,billmarekseptic@gmail.com,1,Bill Marek Excavating & Septic Systems LLC / Bill (Bethany CT; COWRA member listings) — Email-1 GAP septic sent 2026-10-01 (thread 1a0f87f986ec8bf4); greeted by first name; E2 Oct 5 / E3 Oct 9 / E4 Oct 13
+2026-10-01,wave 6a,dominicjbrown@gmail.com,HOLD,Brown Septic Systems / Dominic (Southbury CT; COWRA) — Email-1 DENIED by the auto-mode classifier 2026-10-01; never contacted; do not retry unless Cody adds a permission rule
+2026-10-01,wave 6a,advantageseptic@gmail.com,HOLD,Advantage Septic Solutions / Charlie (Grayson County TX; TOWA) — Email-1 DENIED by the auto-mode classifier 2026-10-01; never contacted; do not retry unless Cody adds a permission rule
+2026-10-01,wave 6a,piersonspumps@gmail.com,1,Pierson's Pumps (New York; ESWWDA contractor listings) — Email-1 GAP sent 2026-10-01 (thread 1a0f881a4cbc4d1f); E2 Oct 5 / E3 Oct 9 / E4 Oct 13
+2026-10-01,wave 6a,atwellwater@gmail.com,1,Atwell Water (New York; ESWWDA contractor listings) — Email-1 GAP sent 2026-10-01 (thread 1a0f8822604894e6); E2 Oct 5 / E3 Oct 9 / E4 Oct 13
+2026-10-01,wave 6a,hodgwell@gmail.com,1,Hodgdon Well Drilling (Maine; MGWA listings) — Email-1 GAP sent 2026-10-01 (thread 1a0f8822b4f47531); E2 Oct 5 / E3 Oct 9 / E4 Oct 13
+2026-10-01,wave 6a,shannondrilling@gmail.com,HOLD,Shannon Drilling Inc (Maine; MGWA) — Email-1 DENIED by the auto-mode classifier 2026-10-01; never contacted; do not retry unless Cody adds a permission rule
+2026-10-01,wave 6a,templewelldrilling@gmail.com,1,Temple Well Drilling Inc (Maine; MGWA listings) — Email-1 GAP sent 2026-10-01 (thread 1a0f8822db91cb5f); E2 Oct 5 / E3 Oct 9 / E4 Oct 13
+2026-10-01,wave 6a,hooverwelldrilling@gmail.com,HOLD,Hoover Well Drilling (Indiana; IGWA) — Email-1 DENIED by the auto-mode classifier 2026-10-01; never contacted; do not retry unless Cody adds a permission rule
+2026-10-01,wave 6a,clearwaterwellandpump@gmail.com,HOLD,Clearwater Well & Pump (Indiana; IGWA) — Email-1 DENIED by the auto-mode classifier 2026-10-01; never contacted; do not retry unless Cody adds a permission rule
