@@ -1000,3 +1000,20 @@ date,company,email,touch,result
 2026-10-13,wave 6h,eddgonz72@gmail.com,1,5G Excavation & Septic LLC (Guadalupe County TX installer list) — Email-1 GAP septic sent 2026-10-13 (thread 1a1364c61126143f); E2 Oct 17 / E3 Oct 21 / E4 Oct 25
 2026-10-13,wave 6h,b2excavating.septic@gmail.com,1,B2 Excavating / Brandon (Alvarado TX; City of Burleson OSSF installer list) — Email-1 GAP septic sent 2026-10-13 (thread 1a1364d3ac13911e); greeted by first name; E2 Oct 17 / E3 Oct 21 / E4 Oct 25
 2026-10-13,wave 6h,bleekerwastwater@gmail.com,1,Bleeker Wastewater Services / James (Burleson TX; City of Burleson OSSF installer list; address spelled as listed) — Email-1 GAP septic sent 2026-10-13 (thread 1a1364d3c1113696); greeted by first name; E2 Oct 17 / E3 Oct 21 / E4 Oct 25
+2026-10-14,wave 6h,bleekerwastwater@gmail.com,BOUNCED,Bleeker Wastewater Services — DSN failure 2026-10-13 (550 5.1.1 address not found; msg 1a1364d4ba33e372; the Burleson table's spelling is probably a typo for bleekerwastewater); sequence stopped; SUPPRESS permanently
+2026-10-14,wave 5z,nexgensepticsystems@gmail.com,4,Nex-Gen Septic Systems LLC — Email-4 sent 2026-10-14 (msg 1a13b6f0d8e03003); thread pre-checked (E1-E3 present; no inbound); SEQUENCE COMPLETE 0 replies
+2026-10-14,wave 5z,primetimesepticpumping@gmail.com,4,Prime Time Septic Pumping Inc — Email-4 sent 2026-10-14 (msg 1a13b6f119026991); thread pre-checked (E1-E3 present; no inbound); SEQUENCE COMPLETE 0 replies
+2026-10-14,wave 5z,rootwaterwell@gmail.com,4,Root Water Well / Root Contracting — Email-4 sent 2026-10-14 (msg 1a13b6f142aebc46); thread pre-checked (E1-E3 present; no inbound); SEQUENCE COMPLETE 0 replies
+2026-10-14,wave 5z,smalltownseptic@gmail.com,4,Small Town Septic — Email-4 sent 2026-10-14 (msg 1a13b6f1878d46a6); thread pre-checked (E1-E3 present; no inbound); SEQUENCE COMPLETE 0 replies
+2026-10-14,wave 6a,atwellwater@gmail.com,4,Atwell Water — Email-4 sent 2026-10-14 (msg 1a13b6f1a5e5cfe7); thread pre-checked (E1-E3 present; no inbound); SEQUENCE COMPLETE 0 replies
+2026-10-14,wave 6a,billmarekseptic@gmail.com,4,Bill Marek Excavating & Septic Systems LLC / Bill — Email-4 sent 2026-10-14 (msg 1a13b6f1ec23793f); thread pre-checked (E1-E3 present; no inbound); SEQUENCE COMPLETE 0 replies
+2026-10-14,wave 6a,egsepticservices@gmail.com,4,E.G. Septic Services LLC / Eric — Email-4 sent 2026-10-14 (msg 1a13b6f239923994); thread pre-checked (E1-E3 present; no inbound); SEQUENCE COMPLETE 0 replies
+2026-10-14,wave 6a,kelleyseptic@gmail.com,4,Kelly Septic and Drain / Arthur — Email-4 sent 2026-10-14 (msg 1a13b6f2592db029); thread pre-checked (E1-E3 present; no inbound); SEQUENCE COMPLETE 0 replies
+2026-10-14,wave 6a,piersonspumps@gmail.com,4,Pierson's Pumps — Email-4 sent 2026-10-14 (msg 1a13b6fb5133913d); thread pre-checked (E1-E3 present; no inbound); SEQUENCE COMPLETE 0 replies
+2026-10-14,wave 6e,2ndtononeseptic@gmail.com,2,2nd to None Septic Solutions LLC / Adam — Email-2 sent 2026-10-14 (msg 1a13b6fb78833c96); thread pre-checked (E1 present; no E2)
+2026-10-14,wave 6e,advsepsol94@gmail.com,2,Advanced Septic Solutions / Ben — Email-2 sent 2026-10-14 (msg 1a13b6fbb62911e9); thread pre-checked (E1 present; no E2)
+2026-10-14,wave 6e,jamestettenhorst@gmail.com,2,Tettenhorst Plumbing and Septic / James — Email-2 sent 2026-10-14 (msg 1a13b6fc0bb2ae8c); thread pre-checked (E1 present; no E2)
+2026-10-14,wave 6b,crwellpump@gmail.com,3,C & R Well and Pump — Email-3 sent 2026-10-14 (msg 1a13b7017ba464b7); thread pre-checked (E1-E2 present; no inbound)
+2026-10-14,wave 6b,dadamsplumbing@gmail.com,3,Adams Plumbing & Heating Inc — Email-3 sent 2026-10-14 (msg 1a13b701819c71ab); thread pre-checked (E1-E2 present; no inbound)
+2026-10-14,wave 6b,keslingkurt@gmail.com,3,Kesling Well & Pump Solutions / Kurt — Email-3 sent 2026-10-14 (msg 1a13b701d2ffc94e); thread pre-checked (E1-E2 present; no inbound)
+2026-10-14,wave 6b,talaricoseptic@gmail.com,3,Frank Talarico & Son Inc — Email-3 sent 2026-10-14 (msg 1a13b70215db440d); thread pre-checked (E1-E2 present; no inbound)
