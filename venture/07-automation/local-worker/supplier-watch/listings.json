@@ -1,0 +1,11 @@
+{
+  "_comment": "Supplier pages the Mac mini fetches. id = lowercase-dashes slug used as the folder name. Use the clean product URL without tracking parameters.",
+  "listings": [
+    {
+      "id": "temu-eden-cloak",
+      "url": "https://www.temu.com/2026-unisex-punk-hooded-button-loose-cloak-fall-winter-g-607560786669025.html",
+      "enabled": true,
+      "note": "Owner-found supplier believed to match the Free the Sheep Eden Hoodie. Sample ordered for a quality check."
+    }
+  ]
+}

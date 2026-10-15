@@ -1,0 +1,17 @@
+{
+  "name": "supplier-watch",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Read-only supplier listing fetcher for the Mac mini (prices, sizes, size chart, photos).",
+  "type": "module",
+  "scripts": {
+    "fetch": "node fetch_listing.mjs",
+    "test": "node test/run_fixture_test.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.56.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

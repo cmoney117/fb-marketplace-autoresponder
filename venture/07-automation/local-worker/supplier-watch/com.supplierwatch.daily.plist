@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Daily supplier fetch on the Mac mini.
+  1. Replace REPO_PATH below with the full path to your clone (e.g. /Users/cody/fb-marketplace-autoresponder).
+  2. cp com.supplierwatch.daily.plist ~/Library/LaunchAgents/
+  3. launchctl load ~/Library/LaunchAgents/com.supplierwatch.daily.plist
+  Runs at 9:07 and 21:07 every day while you are logged in. Logs: /tmp/supplier-watch.out.log and /tmp/supplier-watch.err.log
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.supplierwatch.daily</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>REPO_PATH/venture/07-automation/local-worker/supplier-watch/run.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>9</integer><key>Minute</key><integer>7</integer></dict>
+    <dict><key>Hour</key><integer>21</integer><key>Minute</key><integer>7</integer></dict>
+  </array>
+  <key>StandardOutPath</key>
+  <string>/tmp/supplier-watch.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/supplier-watch.err.log</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+  </dict>
+</dict>
+</plist>
