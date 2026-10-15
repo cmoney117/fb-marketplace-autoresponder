@@ -1,0 +1,40 @@
+Build 2026-10-15 22:54 | mode: preview
+Claims shown: weighted=off, weight_lbs=off, faux_fur_lining=off, outer_fiber=off, fill=off, care=off, origin=off, ships_from_us=off, size_chart=off, buttons=off
+Delivery profile: china_direct -> Arrives 10-22 business days after you order (US, tracked).
+Colours: Charcoal, Oatmeal, Olive and Cocoa | Sizes (config.json): S, M, L, XL and 2XL
+Checkout: no payment_link, button shows 'Launching soon'
+Stripe Payment Link text to paste (rendered from product-page.md):
+  - Custom field, optional, text, only while `claims.sizes` is off: label "Your height (for sizing)", placeholder "e.g. 5 ft 9 in"
+  - Terms consent: Stripe's own checkbox, linking to the Terms section of `policies.md`.
+    (the statement-descriptor sentence is added once stripe.statement_descriptor is set)
+Customer-facing text chunks checked: index.html 155, policies.html 104, thank-you.html 28, 404.html 22
+note: Supplier data: none yet (listing.json not found). Using the sizes and colours in config.json.
+note: Images: 0 found (no hero photo: designed illustration is used)
+note: Values not set yet (their sentences are hidden): POLICY_DATE, SHIP_WINDOW, STATEMENT_DESCRIPTOR, SUPPORT_EMAIL
+WARN: delivery.profiles.china_direct has no ship or arrival window: delivery lines that need it are hidden.
+WARN: Delivery uses the China-direct windows: run no paid ads (economics.md section 7).
+Launch blockers (23), shown because launch_live is false:
+  [ ] sample_checked is false: finish the sample gate (claims-register.md section F).
+  [ ] claims.weighted is on but not verified by the sample.
+  [ ] claims.weight_lbs is unset (null): set it after the sample, or false to leave it off.
+  [ ] claims.faux_fur_lining is on but not verified by the sample.
+  [ ] claims.outer_fiber is unset (null): set it after the sample, or false to leave it off.
+  [ ] claims.fill is unset (null): set it after the sample, or false to leave it off.
+  [ ] claims.care is unset (null): set it after the sample, or false to leave it off.
+  [ ] claims.origin is on but not verified by the sample.
+  [ ] claims.ships_from_us is on but not verified by the sample.
+  [ ] claims.buttons is on but not verified by the sample.
+  [ ] claims.faux_fur_lining.fiber (the lining label text) is empty.
+  [ ] claims.outer_fiber must be on and verified: fiber content and origin are required on the page.
+  [ ] claims.origin must be on and verified: fiber content and origin are required on the page.
+  [ ] payment_link is empty (Stripe Payment Link).
+  [ ] support_email is empty (support email).
+  [ ] legal_business_name is empty (legal business name).
+  [ ] domain is empty (domain).
+  [ ] policy_date is empty (policy date).
+  [ ] stripe.statement_descriptor is empty: copy it from a real test charge.
+  [ ] No hero photo of our own sample (compliance blocker 2).
+  [ ] Colours not confirmed against listing.json: Charcoal, Oatmeal, Olive, Cocoa
+  [ ] Sizes come from config.json, not listing.json: check them against the supplier's adult sizes, then set sizes_confirmed true.
+  [ ] The delivery profile in use needs both ship_window and arrival_window (set from listing.json and the sample).
+0 error(s), 2 warning(s).

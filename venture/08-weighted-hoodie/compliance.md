@@ -98,7 +98,7 @@ Sources: [FTC business guide to the rule](https://ftc.gov/business-guidance/reso
 
 **For this product:**
 - The promise text comes from one config value, not hand-typed copy. The current candidate from `economics.md` §7 is "Ships in 1-4 business days. Arrives 5-11 business days after you order (US, tracked)." It is valid **only** if the listing ships from a US "Local" warehouse. If it ships from China, the honest promise is 10-22 business days, and no paid ads run on it.
-- **Fix to the house T2 email:** `customer-service-sop.md` T2 fires "past promised date". The rule needs the notice **before** the promised **ship** date passes. New trigger: if a supplier order has no tracking by the end of business day 3 after the customer's order, send the delay notice that day (the promise is "ships in 1-4 business days").
+- **Fix to the house T2 email (done 2026-10-15):** `customer-service-sop.md` T2 used to fire "past promised date". The rule needs the notice **before** the promised **ship** date passes. New trigger, now in T2: if a supplier order has no tracking by the end of business day 3 after the customer's order, send the delay notice that day (the promise is "ships in 1-4 business days").
 - If Temu cancels or stocks out, tell the customer the same day and either refund at once or offer a new definite date with the cancel option.
 
 **Delay-option notice for this product** (this replaces T2 for the cloak; the optional 10-15% credit from T2 can be added):
@@ -234,7 +234,7 @@ A **separate Stripe account for the brand** fixes all three. Cody creates it fro
 **Payment Link settings:**
 - Collect the shipping address (US only) and a phone number.
 - `consent_collection.terms_of_service = required` (needs a Terms URL in Stripe public details).
-- Submit-button custom text: "Ships in {ship_window}. Arrives {arrival_window} (US, tracked). Your card statement will show {descriptor}." Custom text may not conflict with Stripe's own checkout text. [Stripe: Checkout policies and custom text](https://edge-docs.stripe.com/payments/checkout/customization/policies).
+- Submit-button custom text: "Ships in {ship_window}. Arrives {arrival_window} after you order (US, tracked). Your card statement will show {descriptor}." Custom text may not conflict with Stripe's own checkout text. [Stripe: Checkout policies and custom text](https://edge-docs.stripe.com/payments/checkout/customization/policies).
 - Turn on Stripe's customer email receipts. Radar default rules on.
 
 **Order emails that keep disputes down** (MailerLite or manual; these are transactional, not marketing):
@@ -534,7 +534,9 @@ before/after
 | `claims.ships_from_us` | "ships from the US", arrival windows of 11 business days or less | Supplier origin is a US warehouse (`listing.json` + sample postage) |
 | `claims.sizes` | the size-by-height table | Built from the supplier size guide and checked against the sample. Adult sizes only |
 
-**Watch list.** These are not auto-blocked; a human reviews them. "introvert" (third person only), "overthinking", "overwhelmed", "calm your mind", "wellness", "self-care", "breathable", "nap", "bedtime", "hush".
+Also gated by the same mechanism (`copy/claims-register.md` note 1): `claims.fill` (what gives it its weight), `claims.origin` ("Imported" or the label's country) and `features.buttons` ("button", "buttons", "buttoned"). The flags live in `../../hoodie-store/config.json` (each claim's `copy_flag`).
+
+**Watch list.** These are not auto-blocked; a human reviews them. "introvert" (third person only), "social battery" (first person only; never "your social battery" or "Social battery empty?"), "overthinking", "overwhelmed", "calm your mind", "wellness", "self-care", "breathable", "nap", "bedtime", "hush".
 
 ## Allowed comfort phrases
 

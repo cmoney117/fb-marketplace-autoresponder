@@ -23,6 +23,6 @@ Paste-ready policies. They are deliberately customer-generous: generous policies
 ## Non-negotiables baked into all three
 
 1. Delivery windows shown are the supplier's real current windows **+2 days padding** — updated by the automation when supplier windows change.
-2. Delay past the promised date auto-triggers the T2 delay email (notify + cancel option) — FTC 30-Day Rule compliance.
+2. No tracking by end of business day 3 (before the ship-by date) auto-triggers the T2 delay-option email (definite new ship date + cancel option) — FTC Mail Order Rule compliance.
 3. Refunds ≤$50 are issued same-day without escalation.
 4. Policies appear on every listing, the checkout page, and the order confirmation email (chargeback evidence).

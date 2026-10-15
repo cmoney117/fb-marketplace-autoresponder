@@ -17,7 +17,7 @@ Written 2026-10-15 for Cody. Research was done this session; sources are listed 
 | Contribution before ads at $99 and $40 landed | **$43.59 per order (44.0%)** | This is after Stripe fees and allowances for refunds, replacements and chargebacks (section 3). |
 | **Breakeven CPA** | **$43.59** (ROAS 2.27) | At $35 landed it is $48.74 (ROAS 2.03). At $45 landed it is $38.44 (ROAS 2.58). |
 | **Target CPA** | **$33.53** (ROAS 2.95) | Breakeven divided by 1.3, the low end of the house target range. The point of the test is to validate, not to maximise profit. |
-| **Test budget** | **$840 of Meta spend over 14 days** (two phases of $420), with stop-losses | At the base-case CPA this buys about 18 orders, which is the owner's 10 to 20 order goal. The kill rules hold the realistic worst case to roughly a $300 loss (section 8). |
+| **Test budget** | **$840 of Meta spend over 14 days** (two phases of $420), with stop-losses | At the base-case CPA this buys about 18 orders, which is the owner's 10 to 20 order goal. The cumulative stop-loss holds the realistic worst case to about a $300 loss (section 8). |
 | **Customer delivery promise** | **"Ships in 1-4 business days. Arrives 5-11 business days after you order (US, tracked)."** | Valid **only if the Temu listing ships from a US "Local" warehouse.** If it ships from China, the honest promise is 10-22 business days, and we should not run ads on it (section 7). |
 | Honest expectation | At the base case (CPA $46.67), the $840 test gives about **18 orders and about a $55 loss** | Breaking even needs a funnel about 7% better than the base assumption. At $35 landed the same funnel makes about +$2 per order. The test is mostly buying data on which creative, angle and page converts. |
 
@@ -41,11 +41,11 @@ Written 2026-10-15 for Cody. Research was done this session; sources are listed 
 | Meta CPA, apparel and accessories | **$36.76**; platform median about $38 | Influee 2026 / Triple Whale | Benchmark CPA column in the grid |
 | Meta ROAS, apparel and accessories | about 2.18 | Influee 2026 | Compared with our breakeven ROAS |
 | Meta CTR / CPC, apparel (traffic campaigns) | 1.29% / $0.86 | LocaliQ 2025 | Sanity check on the CTR assumption |
-| Meta conversion rate / AOV (all accounts) | 1.60% / $71.69 | Triple Whale (about 35k accounts, 2025) | Our $99 is about 38% above the average AOV, so we assume a new-store CVR, not an above-average one |
+| Meta conversion rate / AOV (all accounts) | 1.60% / $71.69 | Triple Whale (about 35k accounts, 2025) | Our $99 is about 38% above the average AOV. The base case's 2.0% click-to-purchase rate is above this 1.60% average; section 5 also shows the case built from the cited averages |
 | Q4 cost pressure | Meta average price per ad +6% YoY in Q4 2025; CPMs +7% late Oct and +3% early Nov 2025; peak on Black Friday weekend | Darkroom (reading of Meta earnings), Geist Media, Lebesgue | Base CPM is $14, not $11. New tests stay off Black Friday week |
 | TikTok CPM / CPA (all industries) | $13.26 / $32.74 (2025) | Triple Whale TikTok benchmarks | Not used for the first test |
 | TikTok apparel | CPM about $4-9, ROAS about 2.49 | Benly / Topgrowth; Influee 2026 | Promising later |
-| TikTok minimum budget | $50/day per campaign, $20/day per ad group | Several 2026 guides | One campaign would use the whole test budget, so TikTok waits |
+| TikTok minimum budget | $50/day per campaign, $20/day per ad group | Several 2026 guides | One campaign would use most of the budget ($700 of $840 over 14 days), so TikTok waits |
 | Online return rate | 19.3% of online sales (all categories) | NRF 2025 Retail Returns Landscape | Upper reference |
 | Apparel online return rate | 24.4% (2023); range 20-40%; fit and sizing cause up to 70% of apparel returns | Coresight 2023; Richpanel 2026 | Our refund allowance logic (section 3) |
 | Dropship returns | 16-20% general; 30-40% for clothing (vendor claims, no methodology) | dodropshipping / EPROLO guides | Stress case of 20% |
@@ -53,17 +53,17 @@ Written 2026-10-15 for Cody. Research was done this session; sources are listed 
 | Temu US shipping origin | Since the US ended de minimis on 2 May 2025, Temu US sells through local sellers and warehouses, and China-shipped items show as out of stock | CNBC via NBC; CBS; Chain Store Age | Listing is likely "Local". **Confirm on listing.json / sample** |
 | Temu delivery, local warehouse | 1-3 business days in transit (third-party claim). Temu says it "may take 1-3 days to process". Temu's US page no longer shows a fixed range (Sept 2026 review) | dodropshipping; amzprep (Jun 2026); Parcelmonitor | Delivery promise (section 7) |
 | Temu delivery, China-direct | Standard 6-20 / 6-22 days; express 4-9 / 4-11 days. Sellers report real times running longer than estimates | Daily Dot; Global Sources; dodropshipping | Fallback promise |
-| Temu shipping cost | Standard is free on most orders. Express is about $12.90 under $129 (third-party guides; no current official page found). **No evidence of any extra fee for shipping to a different address** | dodropshipping; Temu guides | The $45 landed column roughly covers paying for express |
+| Temu shipping cost | Standard is free on most orders. Express is about $12.90 under $129 (third-party guides; no current official page found). **No evidence of any extra fee for shipping to a different address** | dodropshipping; Temu guides | Express adds about $12.90, which puts a $33 item at about $48 landed, above the grid; promise standard shipping only |
 | Temu late credit | $5 for late standard, $13 for late express (goes to our Temu account, not the customer) | ShipBob; Global Sources | Upside, not modelled |
 | AliExpress (backup) | Choice 7-12 days; standard 15-30 days; express 5-10 business days (2026 guides) | FindNiche; Parcelmonitor | Backup supplier |
 
-**How reliable these are:** the benchmark sources are vendor blogs and they disagree with each other. Only the Stripe refund rule comes from Stripe directly. The CPA benchmarks are for brands with reviews and repeat traffic. A new store with no reviews should expect worse numbers, which is why the base case below is more cautious than the medians.
+**How reliable these are:** the benchmark sources are vendor blogs and they disagree with each other. Only the Stripe refund rule comes from Stripe directly. The CPA benchmarks are for brands with reviews and repeat traffic. A new store with no reviews should expect worse numbers, which is why the base case below assumes a higher CPA than the medians ($46.67 against about $38). Its CTR and conversion inputs are still above the cited averages, so section 5 also shows the case built from those averages.
 
 ---
 
 ## 3. Per-order assumptions
 
-**Landed cost (L)** is everything paid to the supplier to get one unit to the customer: the item price for the chosen size and colour, plus shipping, plus **the sales tax Temu charges at checkout** (Temu collects tax for the ship-to state, roughly 6-10%), plus any import charge. Example: a $33.00 item with 7% tax and free standard shipping is $35.31 landed, so use the $35 column. The same item with $12.90 express shipping is about $48 landed, which is above the grid and means we should not use express.
+**Landed cost (L)** is everything paid to the supplier to get one unit to the customer: the item price for the chosen size and colour, plus shipping, plus **the sales tax Temu charges at checkout** (Temu collects tax for the ship-to state, roughly 6-10%), plus any import charge. Example: a $33.00 item with 7% tax and free standard shipping is $35.31 landed. Round up to the next column (the same conservative rule as section 9), so use the $40 column. Or compute it exactly with the formula below: B = $48.42, T = $37.25, kill spend $72.63, breakeven ROAS 2.04. The same item with $12.90 express shipping is about $48 landed, which is above the grid and means we should not use express.
 
 | Line | Rule | Why |
 |---|---|---|
@@ -73,7 +73,7 @@ Written 2026-10-15 for Cody. Research was done this session; sources are listed 
 | Replacement allowance | 3% of orders get a second unit at cost L (wrong height size, defect, lost parcel) | A size exchange means buying a new unit, because the first one cannot go back. Temu sometimes refunds us for a lost or defective item; that is not counted. |
 | Chargeback allowance | 1% of orders lost to a dispute: P + $15 fee | That is 2.5× our 0.4% red line, so the model holds even if we reach the point where ads must stop. One chargeback in a 20-order test is a 5% rate, so the tripwire in section 8 also applies. |
 | Apps and tools | $0 | Static site (existing Vercel), Stripe Payment Links (no fee beyond processing), MailerLite free tier, Meta pixel |
-| **Not modelled** | | Sales tax we collect (passed through to the customer; the Stripe fee on the tax adds about 3¢). Stripe Tax if enabled (about 0.5% of P, so −$0.50 at $99). International cards (+1.5%). Temu late credits and Temu return recoveries (both upside). Creative costs (Cody films the sample: $0; AI generation is unavailable). The sample (already paid). |
+| **Not modelled** | | Sales tax we collect (passed through to the customer; the 2.9% Stripe fee on the tax costs about $0.20-0.28 per taxed order, and only TN orders are taxed while TN is the only registration). Stripe Tax if enabled (about 0.5% of P, so −$0.50 at $99). International cards (+1.5%). Temu late credits and Temu return recoveries (both upside). Creative costs (Cody films the sample: $0; AI generation is unavailable). The sample (already paid). |
 
 **Formula. All numbers are computed unrounded and rounded to cents at the end.**
 
@@ -138,7 +138,7 @@ The recommended launch scenario is in **bold**. Every row is in `economics.csv` 
 | $109 | 1.74 | 1.90 | 2.09 | 2.32 |
 | $119 | 1.67 | 1.80 | 1.96 | 2.14 |
 
-The Meta apparel benchmark ROAS is about 2.18. Cells **above** 2.18 lose money at benchmark performance. At $40 landed, that is every price of $99 or lower.
+The Meta apparel benchmark ROAS is about 2.18, but it does not carry over to a $99 order. The ROAS and CPA benchmarks together imply an AOV of about $80 (36.76 × 2.18). At $99, ROAS 2.18 means a CPA of $45.41, which loses $1.82 per order at $40 landed. The CPA benchmark ($36.76) is ROAS 2.69 at $99 and makes +$6.83 per order (grid below). Compare a cell with the ROAS you actually get at that price, not with 2.18.
 
 **Contribution margin before ads (% of price)**
 
@@ -210,11 +210,12 @@ Every 1 point of refund rate costs $0.99 per order at $99. If real refunds hit 2
 
 | Case | CPM | Link CTR | Click → purchase | Purchases per 1,000 impressions | **CPA** | vs $99/$40 breakeven ($43.59) |
 |---|---:|---:|---:|---:|---:|---|
-| Pessimistic (weak creative, Q4 CPM) | $18 | 1.0% | 1.0% | 0.10 | **$180.00** | Kill rules stop this within about $65 per ad set |
+| Pessimistic (weak creative, Q4 CPM) | $18 | 1.0% | 1.0% | 0.10 | **$180.00** | Kill rules stop this within $65.38 per ad set with 0 sales, or $130.77 with 1-2 sales |
+| Benchmark components (the cited averages multiplied) | $14 | 1.29% | 1.60% | 0.21 | **$67.83** | −$24.24 per order. Fails the Phase 1 gate, so Phase 2 would not run (on the full $840 it would be about 12.4 orders and −$300.19) |
 | **Base (new store, no reviews)** | $14 | 1.5% | 2.0% | 0.30 | **$46.67** | −$3.08 per order |
 | Optimistic (strong demo video, gift season) | $11 | 2.0% | 3.0% | 0.60 | **$18.33** | +$25.26 per order |
 
-Why the base case is 0.30 purchases per 1,000 impressions: Triple Whale's medians (CPM about $13.48, CPA about $38) work out to about 0.35 for established accounts. A store with no reviews, selling a $99 item to cold traffic, should assume a bit less. The base case is a planning number, not a forecast. The test exists to replace it with real data.
+Why the base case is 0.30 purchases per 1,000 impressions: Triple Whale's medians (CPM about $13.48, CPA about $38) work out to about 0.35 for established accounts. A store with no reviews, selling a $99 item to cold traffic, should assume a bit less. Its inputs are not cautious ones, though: the 1.5% CTR and the 2.0% click-to-purchase rate are each above the cited averages (1.29% apparel CTR, 1.60% all-account conversion rate). Multiplied together, those averages give 0.21 purchases per 1,000 impressions and a $67.83 CPA (the "benchmark components" row). The 0.30 rests only on the Triple Whale CPM/CPA ratio. The base case is a planning number, not a forecast. The test exists to replace it with real data.
 
 **How much better than base the funnel has to be to break even** (at a $14 CPM):
 
@@ -240,7 +241,7 @@ Why the base case is 0.30 purchases per 1,000 impressions: Triple Whale's median
 | Unweighted sherpa blanket hoodie | $49.99 retail (Bedsure); $19-43 AliExpress | A different product; no weight |
 
 **Why not $79 or $89 (undercutting):**
-- At $40 landed, $89 leaves a $34.98 breakeven CPA, which is below the Meta apparel median CPA ($36.76). Average performance would lose about $1.78 per order. Base-case performance would lose about $11.69 per order. To match $99's breakeven, the $10 cut would have to raise conversion by about 33% at $40 landed (16% at $35), which a 10% price cut rarely does for an impulse comfort buy. $79 needs +48% to +77%.
+- At $40 landed, $89 leaves a $34.98 breakeven CPA, which is below the Meta apparel median CPA ($36.76). Average performance would lose about $1.78 per order. Base-case performance would lose about $11.69 per order. To break even at the base funnel, $89 needs conversion about 33% better than base at $40 landed (16% at $35), and $79 needs +48% to +77% (section 5). Just to stay level with $99's position, the $10 cut would have to raise conversion by about 24.6% at $40 landed (21.5% at $35), and $79 by 54.6-65.3%. A 10% price cut rarely does that for an impulse comfort buy.
 - Undercutting the leader by $10 does not close the gap that matters, which is trust: about 800 reviews against none. Money spent on a discount is better spent on proof (real video of the sample, a strong guarantee) and on creative.
 
 **Why not $109 or $119 yet:** they are the most profitable cells, and $109 is profitable even at the base case. But until we have our own reviews, a no-name brand priced above the leader's sale price will lose comparison shoppers. Test $109 later (see below).
@@ -277,7 +278,7 @@ Why the base case is 0.30 purchases per 1,000 impressions: Triple Whale's median
 - **Cost:** no evidence of any extra fee for using a different address. Standard shipping is free on most orders. Express is about $12.90 under $129, per third-party guides (check at checkout, because there is no current official page). Express would push landed cost to about $45-48, so promise standard only.
 - **Rules:** Temu's terms limit use to "your own use, not on behalf of ... any third party" (UK §3.1 seen; check the US terms). Third-party guides say Temu watches for one account ordering to many addresses. Keep the test small (20 orders or fewer), do not reuse a business-critical Temu account, and keep a backup supplier ready.
 - **Packaging:** Temu parcels may carry Temu branding or a packing slip with the price. If the sample does, customers will see it. That is a refund and chargeback risk already priced into the 10% allowance. If the slip shows a price, it is a reason to switch supplier.
-- **Delays:** if an order will miss the promised date, the T2 delay email goes out (notify, give a new date, offer a refund). This is the FTC 30-Day Rule, per `compliance-and-risk.md` §1.
+- **Delays:** if an order will miss its ship-by date (no tracking by end of business day 3), the delay-option notice (`copy/emails.md` 3a-3d) goes out before that date: a definite revised ship date and a free cancel option. This is the FTC Mail Order Rule, per `compliance.md` §2 and `compliance-and-risk.md` §1.
 
 **Record from the sample order** (it is the only real data point): order date and time, ship date, delivery date, carrier, origin (Local or China), packaging photos, any price slip, the weight on a kitchen scale, and the lining material.
 
@@ -295,7 +296,7 @@ Why the base case is 0.30 purchases per 1,000 impressions: Triple Whale's median
 5. Stripe Payment Link at $99, statement descriptor set, Radar on. Meta pixel firing Purchase on the thank-you page. UTMs per `tracking-and-utm-conventions.md`.
 6. Cody approves the $840 cap in writing and decides on the 25-organic-orders rule and the Stripe account question (section 1).
 
-**Structure:** one Meta Sales campaign, ABO, optimising for Purchase, US only, ages **18+** (never under 18), broad targeting, Advantage+ placements. No edits for 72 hours after launch except the kill rules. TikTok waits: its $50/day campaign minimum would use most of the budget.
+**Structure:** one Meta Sales campaign, ABO, optimising for Purchase, US only, ages **18+** (never under 18), broad targeting, Advantage+ placements. No edits for 72 hours after launch except the kill rules. TikTok waits: its $50/day campaign minimum would use most of the budget ($700 of $840 over 14 days).
 
 | Ad set (one angle each, 2-3 creatives) | Daily | Example hook (comfort language only) |
 |---|---:|---|
@@ -305,7 +306,7 @@ Why the base case is 0.30 purchases per 1,000 impressions: Triple Whale's median
 
 | Phase | Days | Spend cap | Goal | Gate to continue |
 |---|---|---:|---|---|
-| 1: Angle test | 1-7 | $420 (3 × $20 × 7) | Find which angles get purchases | Blended CPA ≤ 1.5 × breakeven ($65.38), so at least 7 purchases on $420, **and** at least one ad set at or below breakeven |
+| 1: Angle test | 1-7 | $420 (3 × $20 × 7) | Find which angles get purchases | Blended CPA on actual spend ≤ 1.5 × breakeven ($65.38; on the full $420 that is at least 7 purchases, or 6 at $30-35 landed and 8 at $45), **and** at least one ad set at or below breakeven |
 | 2: Confirm | 8-14 | $420 (about $60/day on the surviving ad sets, plus fresh creatives built from the winning hook) | Reach 10-20 total orders and a stable CPA | See "after day 14" |
 | **Total** | 14 | **$840** | | |
 
@@ -317,33 +318,41 @@ Why the base case is 0.30 purchases per 1,000 impressions: Triple Whale's median
 | Ad (creative) | Spend ≥ 1.0 × B with 0 add-to-carts → off | $43.59 |
 | **Ad set** | **Spend ≥ 1.5 × B with 0 purchases → off** | **$65.38** |
 | Ad set | Spend ≥ 3 × B with fewer than 3 purchases (CPA above breakeven) → off | $130.77 |
+| Ad set | 7-day CPA ≥ 2 × T → off (house rule in `ads-system.md`: ≤ 50% of target ROAS for 7 days → kill). This is the rule that still applies once an ad set has 3 or more purchases | $67.06 |
 | Ad set | CPA between T and B → leave alone (no edits; judge weekly, not daily) | $33.53-$43.59 |
-| **Scale** | At least 3 purchases and CPA ≤ T over the last 3+ days → budget +20%, no more than once every 48-72 hours (house rule: never more than +20%/day) | ≤ $33.53 |
+| **Scale** | At least 3 purchases and CPA ≤ T over the last 7 days → budget +20%, no more than once every 48-72 hours (house rules: 7-day window, never more than +20%/day) | ≤ $33.53 |
 | Page diagnosis | 300 or more link clicks, CTR at least 1.2%, but click-to-purchase below 1% → **pause and fix the page**, not the ads (price display, delivery promise, photos, guarantee) | |
 | Checkout diagnosis | Add-to-cart rate at least 8% but fewer than 30% of carts reach payment → fix checkout friction (surprise shipping or tax, the Stripe link handoff) | |
-| **Campaign stop-loss** | Total spend reaches $300 with 2 or fewer purchases → **all ads off**. Rebuild the offer or creative. Any re-test is limited to $150 and comes out of Phase 2's $420, never on top of it | $300 |
+| **Campaign stop-loss** | Total spend reaches $300 with 2 or fewer purchases → **all ads off**. Rebuild the offer or creative. Any re-test runs in a new campaign with a $150 campaign spending limit and comes out of Phase 2's $420, never on top of it (the account limit stays $840) | $300 |
+| **Cumulative stop-loss** | At any time, including Phase 2 and any re-test: spend − (orders × B) ≥ $300 → **all ads off**. It is checked daily, so it can overshoot by up to one day's spend | $300 net loss |
 | Hard cap | Total spend never goes above $840 without a new written approval | $840 |
 
 **Ops tripwires (stop ads at once, regardless of CPA):** any chargeback; 2 or more orders delivered after the promised date; refunds above 20% of delivered orders; any warning or flag from Temu on the account; the sample or the first orders show weight or material that differs from the page (pull the claims through the central config first). After 20 orders there is a mandatory review of delivery times, refunds and reviews before any scaling.
 
 **After day 14:**
-- Total CPA ≤ B (19 or more orders on $840): profitable. Scale per the house rules (ROAS ≥ breakeven × 1.3 over 7 days → +20%), add the 2-pack, and start ordering some inventory for faster shipping.
+- Total CPA ≤ B (20 or more orders on $840): profitable. In practice that means reaching 20 orders, the supplier-account cap, on $840 or less (20 × B = $871.78 is above the cap). Fewer than 20 orders on the full $840 is a loss at $40 landed: breakeven is 19.3 orders, and 19 orders is a CPA of $44.21. After the mandatory 20-order review, scale per the house rules (ROAS ≥ breakeven × 1.3 over 7 days → +20%), add the 2-pack, and start ordering some inventory for faster shipping.
 - CPA between B and 1.5 × B: close. Hold budget flat at no more than $40/day, ship new creatives built from the best hook, test the 2-pack, and push for a lower landed cost.
 - CPA above 1.5 × B: stop paid ads on this product. The data (CTR, add-to-cart rate, checkout rate) shows which step failed.
 
 **What $840 buys at different CPAs ($99 at $40 landed, CM $43.59)**
 
-| Realised CPA | Orders on $420 | Net on $420 | Orders on $840 | Net on $840 |
-|---:|---:|---:|---:|---:|
-| $18.33 (optimistic) | 22.9 | +$578.79 | 45.8 | +$1,157.58 |
-| $24.44 | 17.2 | +$329.09 | 34.4 | +$658.18 |
-| $36.76 (Meta apparel median) | 11.4 | +$78.04 | 22.9 | +$156.07 |
-| $43.59 (breakeven) | 9.6 | $0.00 | 19.3 | $0.00 |
-| $46.67 (base case) | 9.0 | −$27.72 | 18.0 | −$55.44 |
-| $60.00 | 7.0 | −$114.87 | 14.0 | −$229.74 (Phase 2 would not unlock: 7 < gate) |
-| $80.00 | 5.2 | −$191.15 | n/a (stopped at the Phase 1 gate) | n/a |
+Ads stop at 20 supplier orders (the Temu test cap and the mandatory review in the ops tripwires), so any CPA below $42.00 (840 ÷ 20) reaches 20 orders before the $840 is spent. Those rows are capped.
 
-Net = orders × $43.59 − spend. The worst realistic loss with the rules followed: about $196 if all three ad sets are killed at $65.38 with no sales, up to about $300 at the campaign stop-loss. Passing the Phase 1 gate and then ending Phase 2 at 1.5 × B loses about $280.
+| Realised CPA | Orders on $420 | Net on $420 | Orders on $840 | Net on $840 | Note |
+|---:|---:|---:|---:|---:|---|
+| $18.33 (optimistic) | 20 | +$505.11 | 20 | +$505.11 | Cap reached at $366.67 of spend, inside Phase 1 (uncapped: 45.8 orders, +$1,157.17) |
+| $24.44 | 17.2 | +$328.94 | 20 | +$382.89 | Cap reached at $488.89 (uncapped: 34.4 orders, +$657.88) |
+| $36.76 (Meta apparel median) | 11.4 | +$78.02 | 20 | +$136.58 | Cap reached at $735.20 (uncapped: 22.9 orders, +$156.05) |
+| $43.59 (breakeven) | 9.6 | $0.00 | 19.3 | $0.00 | |
+| $46.67 (base case) | 9.0 | −$27.70 | 18.0 | −$55.40 | |
+| $60.00 | 7.0 | −$114.88 | 14.0 | −$229.75 | Meets the blended gate (7 purchases, CPA $60 ≤ $65.38); Phase 2 unlocks only if one ad set is at or below $43.59 |
+| $67.83 (cited CTR × CVR) | 6.2 | −$150.10 | n/a | n/a | Stopped at the Phase 1 gate |
+| $80.00 | 5.25 | −$191.16 | n/a | n/a | Stopped at the Phase 1 gate |
+
+Net = orders × $43.589 − spend, computed unrounded ($18.33 is exactly $11 ÷ 0.60 per 1,000 = 18.333; the base case is $14 ÷ 0.30 = 46.667). Worst realistic losses with every rule followed:
+- Phase 1 alone is at most **$261.53**: one purchase in each ad set, each killed at 3 × B ($130.77). With no sales at all, the three ad-set kills at $65.38 stop it at $196.15. The $300 spend stop-loss can only fire with exactly 2 purchases in two different ad sets (a $212.82 loss), because with 0 or 1 purchases the ad-set kills cap spend first.
+- Without a cumulative rule, Phase 2 has no stop: an ad set with 3 or more purchases trips none of the Phase 1 rules, and the $300 spend stop-loss can only fire before $420 is spent. Passing the gate with exactly 7 purchases and then getting nothing in Phase 2 would lose $534.88. The cumulative stop-loss and the 2 × T rule above cap the whole test at **about $300**, plus up to one day's spend between daily checks.
+- Passing the Phase 1 gate and then ending Phase 2 at 1.5 × B loses about $280.
 
 **Cash needed:** about $840 for ads, plus a COGS float (Cody pays Temu when each order is placed; Stripe pays out on a rolling 2-business-day schedule on an established account, so about 3 days of orders, roughly $300-400). Plan on **about $1,300 available**. The sample is already paid.
 
@@ -358,11 +367,20 @@ Net = orders × $43.59 − spend. The worst realistic loss with the rules follow
 
 1. Open `supplier/temu-eden-cloak/latest/listing.json`. For each size and colour you will sell, take `skus[].priceUsd`. Use the **highest** price among the sizes you will offer, because sizes often cost different amounts. Check `shipping` for "Local warehouse" or "free shipping".
 2. Landed = that price + shipping (if any) + sales tax at about 7-10% (use the actual tax line from the sample receipt) + any import charge. Then pick the column, rounding up.
-3. Read the row for $99 from `economics.csv` (and $109 for comparison). The kill and scale dollar figures in section 8 come from `breakeven_cpa`, `target_cpa` and `kill_spend_zero_sales` in that row.
+3. Read the row for $99 from `economics.csv` (and $109 for comparison). B, T and the kill spend come from `breakeven_cpa`, `target_cpa` and `kill_spend_zero_sales` in that row. Every figure below changes with the column. Update all of them in section 8 here **and** in `ads/launch-plan.md` (the table at the top, §5, §7, §10 and the §13 experiments rows):
+
+   | Landed column | B (1 × B) | 1.5 × B | 3 × B | T | 2 × T | Phase 1 gate: purchases on the full $420 | Breakeven orders on $840 |
+   |---|---:|---:|---:|---:|---:|---:|---|
+   | $30 | $53.89 | $80.83 | $161.67 | $41.45 | $82.91 | 6 | 16 |
+   | $35 | $48.74 | $73.11 | $146.22 | $37.49 | $74.98 | 6 | 18 |
+   | **$40** | **$43.59** | **$65.38** | **$130.77** | **$33.53** | **$67.06** | **7** | **20** |
+   | $45 | $38.44 | $57.66 | $115.32 | $29.57 | $59.14 | 8 | 22, above the 20-order cap: profitable only if 20 orders come in under $768.78 |
+
+   The gate itself is "blended CPA on actual spend ≤ 1.5 × B". The purchase count assumes the full $420 was spent: if one ad set is killed early at 1.5 × B, fewer purchases can pass (for example 6 purchases on $345.38 at $40 landed).
 4. Decision rules by landed cost:
    - **$35 or less:** keep $99. Breakeven CPA $48.74 or more, and the base case is profitable. Do not cut the price; spend the margin on creative and the guarantee.
    - **$35-40:** keep $99 and use the $40 column (this document's default).
-   - **$40-45:** $99 needs ROAS 2.58 at $45. Lead with the 2-pack ($179) to raise profit per conversion, or launch at $109 if the sample clearly beats the leader on materials or weight.
+   - **$40-45:** $99 needs ROAS 2.58 at $45. Lead with the 2-pack ($179) to raise profit per conversion, or launch at $109 if the sample clearly beats the leader on materials or weight. At $45 landed the 2-pack has CM $60.97 and breakeven ROAS 2.94 (worse than the single unit's 2.58), and earns $22.53 more per conversion than a single unit. It earns more in total only if it converts at least 63% as often as the single unit (38.44 ÷ 60.97); at $40 the threshold is 61% (43.59 ÷ 71.27).
    - **Above $45:** the item does not work at $99 with paid ads (breakeven CPA below $38.44). Find a cheaper supplier, hold inventory (bulk freight is cheaper per unit), or sell only organically.
 5. Off-grid scenarios can be recomputed with the formula `CM = 0.861P − 1.03L − 0.45`. For example, P = $99 and L = $37.50 gives 85.239 − 38.625 − 0.45 = **$46.16 breakeven CPA**, ROAS 2.14. If the refund assumption changes to rate R, the 0.861 becomes (0.961 − R).
 

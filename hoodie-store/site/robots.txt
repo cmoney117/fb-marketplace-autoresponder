@@ -1,0 +1,3 @@
+# Not launched yet (config.launch_live is false): keep every page out of search.
+User-agent: *
+Disallow: /

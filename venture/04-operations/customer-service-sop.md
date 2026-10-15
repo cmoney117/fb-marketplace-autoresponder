@@ -25,10 +25,11 @@ Use these as bases; personalize name/order details; keep the warm-but-brief tone
 ### T1 — Order status (in window)
 > Hi {name}! Your order is in production/transit and on track — the current estimate is delivery by {date}. Tracking: {link}. Anything else you need, just reply here.
 
-### T2 — Order delayed (past promised date) — FTC-compliant delay notice
-> Hi {name}, I'm sorry — your order is running behind our promised date. New estimated delivery: {new_date}. Two options, your choice: (1) we add a {10–15%} refund for the wait and it stays on the way, or (2) full refund right now, no questions. Just reply 1 or 2. Either way, sorry for the delay.
+### T2 — Order will miss its ship-by date (send BEFORE the ship-by date passes) — FTC Mail Order Rule
+**Trigger:** no supplier tracking by the end of business day 3 on a "ships in 1-4 business days" promise, or any earlier moment we learn it will miss. (Other ship windows: at the latest, the business day before the ship-by date.) For the hooded cloak, use `../08-weighted-hoodie/copy/emails.md` 3a/3b/3c/3d instead of the text below.
+> Hi {name}, I'm sorry — your order won't ship by {original_ship_by_date}. Our fulfillment partner now expects to ship it by {revised_ship_date}. Two options, your choice: (1) keep it — we add a {10–15%} refund for the wait and it stays on the way. If we don't hear from you before {revised_ship_date}, we'll take that as OK to wait. Or (2) full refund right now, no questions. Just reply 1 or 2. Either way, sorry for the delay.
 
-*(This is the "delays become discounts/refunds" validation strategy done legally: notify + option to cancel.)*
+*(Use the "If we don't hear from you" sentence only when {revised_ship_date} is 30 days or less after {original_ship_by_date}. If the delay is more than 30 days, the date is unknown, or this is a second delay, follow `../08-weighted-hoodie/copy/emails.md` 3b/3c: only an express "yes" keeps the order; otherwise cancel and refund (legal limit 7 working days for cards; house target 1 business day). This is the "delays become discounts/refunds" validation strategy done legally: notify before the ship-by date, with a definite new date and the option to cancel.)*
 
 ### T3 — Damaged / wrong / poor-quality item (POD & dropship)
 > Hi {name}, that's not okay and it's on us. Reply with a quick photo of what arrived and I'll have a free replacement in production the same day — no need to ship anything back. If you'd rather have a full refund instead, say the word.

@@ -1,0 +1,188 @@
+{
+  "_readme": "Single source for the brand site, the copy docs and the ad kit (key maps: copy/claims-register.md section E and ads/README.md). Edit values here, then run: python3 build.py. The brand name is written ONLY in brand_name. Customer copy comes from the copy docs (paths.copy_dir); the short UI strings at the bottom (ui) are customer-facing too and go through the same banned-phrase check. See README.md.",
+
+  "brand_name": "Hunkerhood",
+  "product_noun": "Cloak",
+  "domain": "",
+  "legal_business_name": "",
+  "support_email": "",
+  "policy_date": "",
+  "handle": "",
+  "hashtag": "",
+  "_handle_note": "Ad kit only ({{HANDLE}}, {{BRAND_TAG}}). Leave empty until the social handle is claimed; then '@' and '#' plus the brand slug, so a rename still needs only brand_name plus these two.",
+  "refund_summary": "30 days from delivery to return it. You pay the return postage on a change of mind; if it comes damaged or wrong, a photo is enough. One free size swap per order.",
+  "_refund_summary_note": "Ad kit {{REFUND_LINE}}. Must say exactly what the live Returns and refunds policy (copy/policies.md) says. ads/check_copy.py runs the banned list over it.",
+
+  "price": 99,
+  "compare_at": null,
+  "currency": "USD",
+  "returns_window_days": 30,
+  "price_log": [
+    {"date": "2026-10-15", "price": 99, "note": "Launch price decided in economics.md section 1. Flat, no compare-at."}
+  ],
+
+  "colors": [
+    {"name": "Charcoal", "hex": "#3b3936", "supplier_name": null, "confirmed": false},
+    {"name": "Oatmeal", "hex": "#d6c8b0", "supplier_name": null, "confirmed": false},
+    {"name": "Olive", "hex": "#5e6249", "supplier_name": null, "confirmed": false},
+    {"name": "Cocoa", "hex": "#6a4b3c", "supplier_name": null, "confirmed": false}
+  ],
+  "_colors_note": "Placeholder colours until listing.json arrives. To sell a colour, set supplier_name to the colour name exactly as listing.json spells it (the build then keeps it only while that colour is in stock), or set confirmed true after checking it by hand. Name colours in our own plain words.",
+
+  "sizes": ["S", "M", "L", "XL", "2XL"],
+  "sizes_source": "auto",
+  "sizes_confirmed": false,
+  "size_names": {"XXL": "2XL", "XXXL": "3XL", "XXXXL": "4XL"},
+  "_sizes_note": "sizes_source 'auto' = use the in-stock adult sizes from listing.json when it exists, otherwise the list above. 'config' = always use the list above (set sizes_confirmed true once you have checked that list against the supplier). size_names renames supplier sizes. Sizes that look like children's sizes are always dropped.",
+
+  "payment_link": "",
+  "meta_pixel_id": "",
+  "ga4_id": "",
+  "launch_live": false,
+  "preview_unverified_claims": false,
+  "_preview_note": "Keep false for site/. To review the page with the owner-stated claims, build elsewhere: python3 build.py --out <scratch dir> --set preview_unverified_claims=true. That build carries a visible 'Preview only' banner; never commit or deploy it.",
+  "sample_checked": false,
+  "photos_all_own": false,
+  "headline_option": 1,
+
+  "claims": {
+    "_rules": "value = what the page would say. verified = the sample, its labels or its delivery record confirmed it. A live build (launch_live true) shows a claim only when verified is true, and refuses to build while any claim is still null or is on but unverified. A preview build also shows unverified claims whose show_in_preview is true, so the page can be reviewed before the sample arrives. Set a value to false to switch a claim off everywhere at once.",
+    "weighted": {
+      "value": true, "verified": false, "show_in_preview": true, "copy_flag": "claims.weighted",
+      "note": "Owner-stated. Confirm: on a kitchen scale the sample is clearly heavier than an ordinary lined hoodie (weigh both, keep the photo)."
+    },
+    "weight_lbs": {
+      "value": null, "size_weighed": "", "verified": false, "show_in_preview": false, "copy_flag": "claims.weight_lb",
+      "note": "null until the sample is weighed. Enter the sample's kitchen-scale weight (the build rounds DOWN to the nearest 0.5 lb), fill size_weighed, then set verified true. Never type an expected figure or another brand's figure here. The build refuses verified true while value is null."
+    },
+    "faux_fur_lining": {
+      "value": true, "fiber": "", "verified": false, "show_in_preview": true, "copy_flag": "claims.lining",
+      "note": "Owner-stated. fiber = the lining fiber exactly as the sewn-in label says (for example 100% polyester)."
+    },
+    "outer_fiber": {
+      "value": null, "verified": false, "show_in_preview": false, "copy_flag": "claims.outer_fiber",
+      "note": "null until the label is read (expected, unconfirmed: 100% cotton). Enter the sewn-in fiber label text exactly, whatever it says. Required on the live page (Textile Act)."
+    },
+    "fill": {
+      "value": null, "verified": false, "show_in_preview": false, "copy_flag": "claims.fill",
+      "note": "What gives it its weight, in plain words from the label and from handling the sample. Set false if you can't tell."
+    },
+    "care": {
+      "value": null, "verified": false, "show_in_preview": false, "copy_flag": "claims.care",
+      "note": "The care label in plain English. Never write machine washable unless the label says so."
+    },
+    "origin": {
+      "value": "Imported", "verified": false, "show_in_preview": false, "copy_flag": "claims.origin",
+      "note": "Country of origin as the label gives it, or Imported. Required on the live page."
+    },
+    "ships_from_us": {
+      "value": true, "verified": false, "show_in_preview": true, "copy_flag": "claims.ships_from_us",
+      "note": "True only if listing.json shows a US Local warehouse AND the sample arrived with US postage. Picks the us_local delivery windows; false picks china_direct (and then no paid ads)."
+    },
+    "size_chart": {
+      "value": false, "table": [], "verified": false, "show_in_preview": false, "copy_flag": "claims.sizes",
+      "note": "Turn on only when the maker's chart has been checked against the sample with a tape measure. table rows: {\"size\": \"M\", \"height\": \"5 ft 6 in to 5 ft 10 in\", \"length\": \"\"}. Adult sizes only."
+    },
+    "buttons": {
+      "value": true, "verified": false, "show_in_preview": true, "copy_flag": "features.buttons",
+      "note": "From the listing title. Confirm the buttons run down the front and close it."
+    }
+  },
+
+  "delivery": {
+    "profiles": {
+      "us_local": {"ship_window": "1-4 business days", "arrival_window": "5-11 business days"},
+      "china_direct": {"ship_window": "", "arrival_window": "10-22 business days"}
+    },
+    "promise_template": "Ships in {{SHIP_WINDOW}}. Arrives {{ARRIVAL_WINDOW}} after you order (US, tracked).",
+    "_profile_rule": "us_local is used while claims.ships_from_us is shown; otherwise china_direct. Windows already include the +2 business days of padding. Never type a window anywhere else.",
+    "holiday": {"active": true, "order_by": "2026-12-04", "arrive_by": "2026-12-23"},
+    "ship_restrictions": "For now that means the contiguous US: we can't ship to Alaska, Hawaii, PO boxes or APO/FPO addresses.",
+    "_ship_restrictions_note": "The delivery windows have no basis outside the contiguous US yet. Widen this only for what the supplier confirms in writing. Stripe can only limit the country, so contact and refund any order to an excluded address the same day.",
+    "import_charges_prepaid": false
+  },
+
+  "stripe": {
+    "statement_descriptor": "",
+    "tax_enabled": false,
+    "height_field": true,
+    "_note": "statement_descriptor: fill in only after a real test charge shows it (HUNKERHOOD.COM on a separate account). height_field: true while the checkout has the optional 'Your height (for sizing)' field."
+  },
+
+  "email_provider": "MailerLite",
+
+  "reviews": [],
+  "_reviews_note": "Real reviews of this shop only, each {\"text\": \"...\", \"name\": \"first name or initials\", \"date\": \"2026-11-20\"}. The Reviews block appears on the page only when this list is not empty. Post every genuine review, good or bad; friends and family say so in the text.",
+
+  "images": {
+    "dir": "assets/product",
+    "hero": "hero",
+    "detail_prefix": "detail-",
+    "lifestyle_prefix": "lifestyle-",
+    "size_chart": "size-chart",
+    "source_log": "assets/product/image-sources.csv",
+    "alt": {},
+    "supplier_cleared": [],
+    "_note": "Drop photos in assets/product as hero.jpg, detail-*.jpg, lifestyle-*.jpg, size-chart.png (jpg, jpeg, png or webp). Log every file in image-sources.csv. alt maps a file name to its alt text (pattern: '<product name> in <color>, <what is visible>'). supplier_cleared lists supplier photos that passed all three checks in compliance.md section 7: {\"file\": \"images/abc.jpg\", \"reverse_search\": \"date + result\", \"written_permission\": \"where it is kept\", \"model_release\": \"no model / release on file\", \"alt\": \"...\"}. Supplier photos are never used otherwise."
+  },
+
+  "paths": {
+    "copy_dir": "../venture/08-weighted-hoodie/copy",
+    "compliance": "../venture/08-weighted-hoodie/compliance.md",
+    "supplier_listing_dir": "../venture/08-weighted-hoodie/supplier/temu-eden-cloak"
+  },
+
+  "privacy_extra": {
+    "ga4": "**Google** receives basic visit information through Google Analytics, which uses cookies, so we can see how people use this site."
+  },
+
+  "ui": {
+    "nav": [["#details", "Details"], ["#sizing", "Sizing"], ["#faq", "Questions"]],
+    "headings": {
+      "benefits": "Made for staying in",
+      "what_it_is": "What it is",
+      "materials": "Materials and care",
+      "sizing": "Sizing",
+      "faq": "Questions",
+      "reviews": "Reviews",
+      "policies_title": "Shipping, returns and the small print",
+      "policies_intro": "Everything about delivery, returns, refunds, privacy and our terms, in plain words."
+    },
+    "color_label": "Color",
+    "size_help": "How sizing works",
+    "height_note": "{{#if config.height_field}}Not sure? Type your height at checkout. We check it against the maker's chart before we place your order.{{/if}}",
+    "choose_size": "Choose a size",
+    "size_first": "Choose your size first.",
+    "qty": "Qty 1",
+    "buy_disabled": "Launching soon",
+    "buy_disabled_note": "Checkout opens shortly.",
+    "art_chip": "Illustration",
+    "noscript": "Checkout needs JavaScript switched on.",
+    "footer_adult": "Adult garment, for adults 18+ only.",
+    "preview_banner": "Preview only: {{UNVERIFIED}} on this page are not yet confirmed on our sample.",
+    "art_label": "Illustration of a hooded cloak hanging on a wall peg",
+    "tile_fabric_label": "Illustration of the cloak's fabric up close",
+    "tile_hood_label": "Illustration of the cloak's hood",
+    "moments": ["On the couch", "At your desk", "In your reading nook", "On the porch with a coffee"],
+    "cta_button": "Choose your color and size",
+    "back_to_shop": "Back to the {{PRODUCT_NAME}}",
+    "thank_you": {
+      "title": "Thank you. Your order is in.",
+      "lede": "Your order confirmation email is on its way. It gives your ship-by date and your arrival dates as calendar dates.",
+      "next_heading": "What happens next",
+      "steps": [
+        "{{#if config.height_field}}If you typed your height at checkout, we check it against the maker's chart before we place your order. If a different size looks like a better fit, we email you, and you decide.{{/if}}",
+        "{{DELIVERY_PROMISE}}",
+        "We email your tracking link as soon as it ships. It comes from our fulfillment partner, so it may arrive in their packaging rather than a {{BRAND_NAME}} box.",
+        "If it's going to be late, we'll email you before your ship-by date with a new date and the option to cancel for a full refund."
+      ],
+      "statement": "The charge on your card statement will show as **{{STATEMENT_DESCRIPTOR}}**.",
+      "help": "If anything about your order looks wrong, email {{SUPPORT_EMAIL}} before you contact your bank. We reply within 1 business day.",
+      "policies_link": "Shipping, returns and refunds"
+    },
+    "not_found": {
+      "title": "We can't find that page.",
+      "lede": "It may have moved, or the link may be mistyped."
+    }
+  }
+}
