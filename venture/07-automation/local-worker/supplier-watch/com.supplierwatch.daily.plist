@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
-  Daily supplier fetch on the Mac mini.
-  1. Replace REPO_PATH below with the full path to your clone (e.g. /Users/cody/fb-marketplace-autoresponder).
-  2. cp com.supplierwatch.daily.plist ~/Library/LaunchAgents/
-  3. launchctl load ~/Library/LaunchAgents/com.supplierwatch.daily.plist
-  Runs at 9:07 and 21:07 every day while you are logged in. Logs: /tmp/supplier-watch.out.log and /tmp/supplier-watch.err.log
+  Scheduled supplier fetch on the Mac mini. Install with the commands in README.md
+  (they fill in REPO_PATH for you). Runs at about 9:07 and 21:07 (plus up to 30 minutes of
+  random delay) and once at login, while you are logged in and the Mac is awake.
+  caffeinate keeps the Mac awake for the length of each run.
+  Run log: ~/Library/Logs/supplier-watch.log
 -->
 <plist version="1.0">
 <dict>
@@ -13,6 +13,9 @@
   <string>com.supplierwatch.daily</string>
   <key>ProgramArguments</key>
   <array>
+    <string>/usr/bin/caffeinate</string>
+    <string>-i</string>
+    <string>-s</string>
     <string>/bin/bash</string>
     <string>REPO_PATH/venture/07-automation/local-worker/supplier-watch/run.sh</string>
   </array>
@@ -21,14 +24,18 @@
     <dict><key>Hour</key><integer>9</integer><key>Minute</key><integer>7</integer></dict>
     <dict><key>Hour</key><integer>21</integer><key>Minute</key><integer>7</integer></dict>
   </array>
-  <key>StandardOutPath</key>
-  <string>/tmp/supplier-watch.out.log</string>
-  <key>StandardErrorPath</key>
-  <string>/tmp/supplier-watch.err.log</string>
+  <key>RunAtLoad</key>
+  <true/>
   <key>EnvironmentVariables</key>
   <dict>
     <key>PATH</key>
-    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>SUPPLIER_WATCH_UNATTENDED</key>
+    <string>1</string>
   </dict>
+  <key>StandardOutPath</key>
+  <string>/tmp/supplier-watch.launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/supplier-watch.launchd.log</string>
 </dict>
 </plist>

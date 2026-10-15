@@ -1,0 +1,9 @@
+# This repo is public. Raw page dumps and full screenshots stay on the Mac mini
+# (~/.supplier-watch-cache). These rules are a backstop in case a file lands here.
+**/page.html
+**/page.txt
+**/raw.json
+**/api/
+**/*.png
+!**/images/*.png
+**/screenshot-full.*

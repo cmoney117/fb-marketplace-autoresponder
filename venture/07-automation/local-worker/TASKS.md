@@ -71,9 +71,9 @@ In `prospect-queue.csv`, any row with `status=new` whose `date_found` is more th
 
 ## LOCAL-004 — Supplier watch (twice daily, runs on its own)
 
-`supplier-watch/run.sh` runs at 9:07 and 21:07 from launchd (setup: `supplier-watch/README.md`). It opens each page in `supplier-watch/listings.json` in Chrome, saves prices, sizes, size chart and photos to `venture/08-weighted-hoodie/supplier/`, and pushes. Your part:
-- After each run, read `venture/08-weighted-hoodie/supplier/<id>/latest/status.json` for every listing.
-- If `status` is `BLOCKED` or `ERROR` two runs in a row, write one line under Problems naming the listing and the message. Do not try to solve a bot check yourself and do not change the script.
+`supplier-watch/run.sh` runs at about 9:07 and 21:07 (plus up to 30 minutes of random delay) and at login, from launchd (setup: `supplier-watch/README.md`). It opens each page in `supplier-watch/listings.json` in Chrome, saves prices, sizes, size chart and photos to `venture/08-weighted-hoodie/supplier/`, and pushes. Your part:
+- After each run, read `venture/08-weighted-hoodie/supplier/<id>/latest/status.json` for every listing and `venture/08-weighted-hoodie/supplier/_runner/last-run.json`.
+- If `status` is `BLOCKED`, `LOGIN_REQUIRED`, `OFF_PRODUCT`, `WRONG_REGION` or `ERROR` two runs in a row, write one line under Problems naming the listing and the message. Do not try to solve a bot check yourself and do not change the script.
 - Never edit `listings.json`; the cloud agent and Cody own it.
 
 ---
