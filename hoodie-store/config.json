@@ -46,6 +46,7 @@
   "headline_option": 1,
 
   "claims": {
+    "_estimates": "2026-10-20: the owner asked for estimates until the sample arrives. Every claim with \"estimate\": true holds a GUESS (lining fiber, outer fiber, care, origin, size chart by height). verified stays false, so a preview build (--set preview_unverified_claims=true, with its 'Preview only' banner) shows them and a live build refuses to run. Replace each from the sample's labels and a tape measure, set verified true and delete estimate. Weight is not estimated on purpose: the page says it was weighed on our own sample.",
     "_rules": "value = what the page would say. verified = the sample, its labels or its delivery record confirmed it. A live build (launch_live true) shows a claim only when verified is true, and refuses to build while any claim is still null or is on but unverified. A preview build also shows unverified claims whose show_in_preview is true, so the page can be reviewed before the sample arrives. Set a value to false to switch a claim off everywhere at once.",
     "weighted": {
       "value": true, "verified": false, "show_in_preview": true, "copy_flag": "claims.weighted",
@@ -56,11 +57,11 @@
       "note": "null until the sample is weighed. Enter the sample's kitchen-scale weight (the build rounds DOWN to the nearest 0.5 lb), fill size_weighed, then set verified true. Never type an expected figure or another brand's figure here. The build refuses verified true while value is null."
     },
     "faux_fur_lining": {
-      "value": true, "fiber": "", "verified": false, "show_in_preview": true, "copy_flag": "claims.lining",
+      "value": true, "fiber": "100% polyester", "estimate": true, "verified": false, "show_in_preview": true, "copy_flag": "claims.lining",
       "note": "Owner-stated. fiber = the lining fiber exactly as the sewn-in label says (for example 100% polyester)."
     },
     "outer_fiber": {
-      "value": null, "verified": false, "show_in_preview": false, "copy_flag": "claims.outer_fiber",
+      "value": "Cotton blend", "estimate": true, "verified": false, "show_in_preview": true, "copy_flag": "claims.outer_fiber",
       "note": "null until the label is read (expected, unconfirmed: 100% cotton). Enter the sewn-in fiber label text exactly, whatever it says. Required on the live page (Textile Act)."
     },
     "fill": {
@@ -68,11 +69,11 @@
       "note": "What gives it its weight, in plain words from the label and from handling the sample. Set false if you can't tell."
     },
     "care": {
-      "value": null, "verified": false, "show_in_preview": false, "copy_flag": "claims.care",
+      "value": "Hand wash cold, or machine wash cold on a gentle cycle inside a laundry bag. Do not bleach or tumble dry; hang or lay flat to dry.", "estimate": true, "verified": false, "show_in_preview": true, "copy_flag": "claims.care",
       "note": "The care label in plain English. Never write machine washable unless the label says so."
     },
     "origin": {
-      "value": "Imported", "verified": false, "show_in_preview": false, "copy_flag": "claims.origin",
+      "value": "Imported", "estimate": true, "verified": false, "show_in_preview": true, "copy_flag": "claims.origin",
       "note": "Country of origin as the label gives it, or Imported. Required on the live page."
     },
     "ships_from_us": {
@@ -80,7 +81,14 @@
       "note": "True only if listing.json shows a US Local warehouse AND the sample arrived with US postage. Picks the us_local delivery windows; false picks china_direct (and then no paid ads)."
     },
     "size_chart": {
-      "value": false, "table": [], "verified": false, "show_in_preview": false, "copy_flag": "claims.sizes",
+      "value": true, "estimate": true, "verified": false, "show_in_preview": true, "copy_flag": "claims.sizes",
+      "table": [
+        {"size": "S", "height": "4 ft 11 in to 5 ft 3 in", "length": ""},
+        {"size": "M", "height": "5 ft 3 in to 5 ft 7 in", "length": ""},
+        {"size": "L", "height": "5 ft 7 in to 5 ft 11 in", "length": ""},
+        {"size": "XL", "height": "5 ft 11 in to 6 ft 2 in", "length": ""},
+        {"size": "2XL", "height": "6 ft 2 in and up", "length": ""}
+      ],
       "note": "Turn on only when the maker's chart has been checked against the sample with a tape measure. table rows: {\"size\": \"M\", \"height\": \"5 ft 6 in to 5 ft 10 in\", \"length\": \"\"}. Adult sizes only."
     },
     "buttons": {

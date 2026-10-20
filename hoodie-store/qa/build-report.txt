@@ -1,4 +1,4 @@
-Build 2026-10-15 22:54 | mode: preview
+Build 2026-10-20 17:47 | mode: preview
 Claims shown: weighted=off, weight_lbs=off, faux_fur_lining=off, outer_fiber=off, fill=off, care=off, origin=off, ships_from_us=off, size_chart=off, buttons=off
 Delivery profile: china_direct -> Arrives 10-22 business days after you order (US, tracked).
 Colours: Charcoal, Oatmeal, Olive and Cocoa | Sizes (config.json): S, M, L, XL and 2XL
@@ -18,13 +18,13 @@ Launch blockers (23), shown because launch_live is false:
   [ ] claims.weighted is on but not verified by the sample.
   [ ] claims.weight_lbs is unset (null): set it after the sample, or false to leave it off.
   [ ] claims.faux_fur_lining is on but not verified by the sample.
-  [ ] claims.outer_fiber is unset (null): set it after the sample, or false to leave it off.
+  [ ] claims.outer_fiber is on but not verified by the sample.
   [ ] claims.fill is unset (null): set it after the sample, or false to leave it off.
-  [ ] claims.care is unset (null): set it after the sample, or false to leave it off.
+  [ ] claims.care is on but not verified by the sample.
   [ ] claims.origin is on but not verified by the sample.
   [ ] claims.ships_from_us is on but not verified by the sample.
+  [ ] claims.size_chart is on but not verified by the sample.
   [ ] claims.buttons is on but not verified by the sample.
-  [ ] claims.faux_fur_lining.fiber (the lining label text) is empty.
   [ ] claims.outer_fiber must be on and verified: fiber content and origin are required on the page.
   [ ] claims.origin must be on and verified: fiber content and origin are required on the page.
   [ ] payment_link is empty (Stripe Payment Link).
