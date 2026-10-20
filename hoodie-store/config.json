@@ -36,6 +36,8 @@
   "_sizes_note": "sizes_source 'auto' = use the in-stock adult sizes from listing.json when it exists, otherwise the list above. 'config' = always use the list above (set sizes_confirmed true once you have checked that list against the supplier). size_names renames supplier sizes. Sizes that look like children's sizes are always dropped.",
 
   "payment_link": "",
+  "waitlist_url": "https://form.jotform.com/262925084645060",
+  "_waitlist_note": "Pre-launch only. While payment_link is empty, the buy buttons link here (Jotform 'Hunkerhood: get an email when it launches', created 2026-10-20) and the privacy policy names Jotform. Once payment_link is set, checkout takes over and this is ignored; email the list once at launch, then stop.",
   "meta_pixel_id": "",
   "ga4_id": "",
   "launch_live": false,
@@ -141,7 +143,8 @@
   },
 
   "privacy_extra": {
-    "ga4": "**Google** receives basic visit information through Google Analytics, which uses cookies, so we can see how people use this site."
+    "ga4": "**Google** receives basic visit information through Google Analytics, which uses cookies, so we can see how people use this site.",
+    "waitlist": "**Jotform** stores what you type into our launch waitlist form (your email, and your name, color, size and height if you give them), so we can email you once when {{BRAND_NAME}} is ready to order."
   },
 
   "ui": {
@@ -164,6 +167,8 @@
     "qty": "Qty 1",
     "buy_disabled": "Launching soon",
     "buy_disabled_note": "Checkout opens shortly.",
+    "waitlist_button": "Get an email at launch",
+    "waitlist_note": "Not on sale yet. No payment now: leave your email and we'll send you one email when you can order.",
     "art_chip": "Illustration",
     "noscript": "Checkout needs JavaScript switched on.",
     "footer_adult": "Adult garment, for adults 18+ only.",

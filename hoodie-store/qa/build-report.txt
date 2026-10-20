@@ -1,13 +1,13 @@
-Build 2026-10-20 17:47 | mode: preview
+Build 2026-10-20 18:02 | mode: preview
 Claims shown: weighted=off, weight_lbs=off, faux_fur_lining=off, outer_fiber=off, fill=off, care=off, origin=off, ships_from_us=off, size_chart=off, buttons=off
 Delivery profile: china_direct -> Arrives 10-22 business days after you order (US, tracked).
 Colours: Charcoal, Oatmeal, Olive and Cocoa | Sizes (config.json): S, M, L, XL and 2XL
-Checkout: no payment_link, button shows 'Launching soon'
+Checkout: no payment_link, button links to the launch waitlist
 Stripe Payment Link text to paste (rendered from product-page.md):
   - Custom field, optional, text, only while `claims.sizes` is off: label "Your height (for sizing)", placeholder "e.g. 5 ft 9 in"
   - Terms consent: Stripe's own checkbox, linking to the Terms section of `policies.md`.
     (the statement-descriptor sentence is added once stripe.statement_descriptor is set)
-Customer-facing text chunks checked: index.html 155, policies.html 104, thank-you.html 28, 404.html 22
+Customer-facing text chunks checked: index.html 155, policies.html 105, thank-you.html 28, 404.html 22
 note: Supplier data: none yet (listing.json not found). Using the sizes and colours in config.json.
 note: Images: 0 found (no hero photo: designed illustration is used)
 note: Values not set yet (their sentences are hidden): POLICY_DATE, SHIP_WINDOW, STATEMENT_DESCRIPTOR, SUPPORT_EMAIL

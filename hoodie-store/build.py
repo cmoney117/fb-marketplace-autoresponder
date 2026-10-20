@@ -1134,15 +1134,19 @@ def parse_policies(S, md, rep):
         if legal == S["brand"]:
             text = text.replace(f'{legal} ("{legal}", "we")', f'{legal} ("we")')
         blocks = md_blocks(text)
-        if pid == "privacy" and (S["cfg"].get("ga4_id") or "").strip():
-            extra = drop_missing(render_text(S["cfg"]["privacy_extra"]["ga4"], ctx, "privacy_extra.ga4"))
+        cfg = S["cfg"]
+        extras = [k for k, on in (("ga4", (cfg.get("ga4_id") or "").strip()),
+                                  ("waitlist", (cfg.get("waitlist_url") or "").strip() and not (cfg.get("payment_link") or "").strip()))
+                  if on]
+        if pid == "privacy" and extras:
             for b in blocks:
                 if b[0] == "ul" and any("Vercel" in x for x in b[1]):
                     idx = next(i for i, x in enumerate(b[1]) if "Vercel" in x)
-                    b[1].insert(idx + 1, extra)
+                    for n, k in enumerate(extras, 1):
+                        b[1].insert(idx + n, drop_missing(render_text(cfg["privacy_extra"][k], ctx, f"privacy_extra.{k}")))
                     break
             else:
-                rep.err("GA4 is on but the Privacy section has no sharing list to add Google Analytics to.")
+                rep.err(f"{' and '.join(extras)} is on but the Privacy section has no sharing list to add it to.")
         out.append({"id": pid, "title": title, "html": blocks_html(blocks, S["hol_attr"])})
     if len(out) < 5:
         rep.err("policies.md: expected Shipping, Returns and refunds, Contact, Privacy and Terms of sale sections")
@@ -1251,6 +1255,13 @@ def index_html(S, P, app_js):
                     f'<noscript><p class="note">{ui(S, U["noscript"], "ui.noscript")}</p></noscript>')
         btn_bar = f'<a class="btn" href="#size-group" data-buy>{buy_label}</a>'
         note = ""
+    elif (cfg.get("waitlist_url") or "").strip():
+        # No checkout yet: send people to the launch waitlist form instead of a dead button.
+        wl = e(cfg["waitlist_url"].strip())
+        lab = ui(S, U["waitlist_button"], "ui.waitlist_button")
+        btn_main = f'<a class="btn" id="buy-main" href="{wl}" target="_blank" rel="noopener">{lab}</a>'
+        btn_bar = f'<a class="btn" href="{wl}" target="_blank" rel="noopener">{lab}</a>'
+        note = f'<p class="note">{ui(S, U["waitlist_note"], "ui")}</p>'
     else:
         dis = ui(S, U["buy_disabled"], "ui.buy_disabled")
         btn_main = f'<button class="btn" id="buy-main" type="button" disabled>{dis}</button>'
@@ -1678,6 +1689,9 @@ def validate_config(cfg, rep):
         rep.err("payment_link must be an https:// Stripe Payment Link.")
     elif pay and not pay.startswith("https://buy.stripe.com/"):
         rep.warn("payment_link is not a buy.stripe.com link; check it is the Stripe Payment Link.")
+    wl = (cfg.get("waitlist_url") or "").strip()
+    if wl and not wl.startswith("https://"):
+        rep.err("waitlist_url must be an https:// link (the Jotform launch waitlist).")
     pid = (cfg.get("meta_pixel_id") or "").strip()
     if pid and not re.fullmatch(r"\d{8,20}", pid):
         rep.err("meta_pixel_id must be the numeric Pixel ID.")
@@ -1782,7 +1796,9 @@ def main(argv=None):
         lines.append("Claims shown: " + ", ".join(f"{k}={'on' if v else 'off'}" for k, v in S["shown"].items()))
         lines.append(f"Delivery profile: {S['profile']} -> {S['tokens']['DELIVERY_PROMISE']}")
         lines.append(f"Colours: {S['tokens']['COLOR_OPTIONS']} | Sizes ({S['size_from']}): {S['tokens']['SIZE_OPTIONS']}")
-        lines.append("Checkout: " + ("Payment Link set" if cfg.get("payment_link") else "no payment_link, button shows 'Launching soon'"))
+        lines.append("Checkout: " + ("Payment Link set" if cfg.get("payment_link") else
+                                     "no payment_link, button links to the launch waitlist" if (cfg.get("waitlist_url") or "").strip() else
+                                     "no payment_link, button shows 'Launching soon'"))
         ck = P["checkout"] if P else {}
         if ck:
             lines.append("Stripe Payment Link text to paste (rendered from product-page.md):")

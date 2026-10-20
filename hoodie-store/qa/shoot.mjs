@@ -109,7 +109,9 @@ for (const [name, viewport] of [['desktop', { width: 1366, height: 900 }], ['tab
   await page.evaluate(() => document.fonts.ready);
   await layoutChecks(page, name);
   ok(errors.length === 0, `${name}: no console errors ${errors.join(' | ')}`);
-  ok(await page.locator('#buy-main').isDisabled(), `${name}: Buy is disabled while payment_link is empty`);
+  const buyHref = await page.locator('#buy-main').getAttribute('href');
+  ok(buyHref ? /^https:\/\/form\.jotform\.com\//.test(buyHref) : await page.locator('#buy-main').isDisabled(),
+     `${name}: with no payment_link, Buy is disabled or links to the launch waitlist`);
   await page.screenshot({ path: path.join(here, `${name}.png`), fullPage: true });
   if (name === 'mobile') {
     const top = await newCtx({ viewport, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
