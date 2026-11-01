@@ -1,4 +1,4 @@
-Build 2026-11-01 22:45 | mode: preview
+Build 2026-11-01 23:46 | mode: preview
 Claims shown: weighted=off, weight_lbs=off, faux_fur_lining=off, outer_fiber=off, fill=off, care=off, origin=off, ships_from_us=off, size_chart=off, buttons=off
 Delivery profile: china_direct -> Arrives 10-22 business days after you order (US, tracked).
 Colours: Charcoal, Oatmeal, Olive and Cocoa | Sizes (config.json): S, M, L, XL and 2XL
