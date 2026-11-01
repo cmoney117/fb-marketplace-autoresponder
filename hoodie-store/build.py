@@ -1259,8 +1259,8 @@ def index_html(S, P, app_js):
         # No checkout yet: send people to the launch waitlist form instead of a dead button.
         wl = e(cfg["waitlist_url"].strip())
         lab = ui(S, U["waitlist_button"], "ui.waitlist_button")
-        btn_main = f'<a class="btn" id="buy-main" href="{wl}" target="_blank" rel="noopener">{lab}</a>'
-        btn_bar = f'<a class="btn" href="{wl}" target="_blank" rel="noopener">{lab}</a>'
+        btn_main = f'<a class="btn" id="buy-main" href="{wl}" target="_blank" rel="noopener" data-waitlist>{lab}</a>'
+        btn_bar = f'<a class="btn" href="{wl}" target="_blank" rel="noopener" data-waitlist>{lab}</a>'
         note = f'<p class="note">{ui(S, U["waitlist_note"], "ui")}</p>'
     else:
         dis = ui(S, U["buy_disabled"], "ui.buy_disabled")

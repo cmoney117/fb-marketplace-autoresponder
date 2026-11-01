@@ -100,6 +100,20 @@
   });
   $$('[data-buy]').forEach(function (b) { b.addEventListener('click', buy); });
 
+  // Launch waitlist: carry the visitor's tracking tags into the form so sign-ups show their channel.
+  try {
+    var wq = new URLSearchParams(window.location.search), wtags = [];
+    ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
+      var v = wq.get(k);
+      if (v) wtags.push(k + '=' + encodeURIComponent(v.slice(0, 60)));
+    });
+    if (wtags.length) {
+      $$('[data-waitlist]').forEach(function (a) {
+        a.href += (a.href.indexOf('?') < 0 ? '?' : '&') + wtags.join('&');
+      });
+    }
+  } catch (e) { /* old browser: plain waitlist link */ }
+
   // Photo gallery (only when real photos exist).
   var stageImg = $('#stage-img');
   $$('[data-thumb]').forEach(function (t) {
