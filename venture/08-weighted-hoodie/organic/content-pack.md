@@ -1,6 +1,6 @@
 # Hunkerhood: 14-day organic content pack ($0)
 
-Written 2026-11-01 for Cody. This is a copy-paste kit for the organic proof of concept: no ads, no tools to buy, no money spent. Day 1 is whatever day you say go. Every post is in a grey box: copy the whole box, paste it, attach the file named in the table, post. The agent can't post for you, so everything here is written to take as few of your minutes as possible.
+Written 2026-11-01 for Cody. This is a copy-paste kit for the organic proof of concept: no ads, no tools to buy, no money spent. Day 1 is whatever day you say go. Every post is in a grey box: copy the whole box, paste it, attach the file named in the table, post. The cloud agent can't post for you. Claude in Chrome on your own computer can, using `chrome-posting-brief.md` in this folder (also on the phone page). Either way, everything here is written to take as few of your minutes as possible.
 
 **Requires:** none (no gated claim appears anywhere in this pack: no weight, fabric, lining, fill, care, buttons, sizing by height, origin, or arrival dates)
 
@@ -10,7 +10,7 @@ You don't need to read any other file: everything you post is in this pack. Resu
 
 ## 0. Before you start: the three cards you'll use every day
 
-**Get the files on your phone (once, about 3 minutes):** open the phone-friendly page (or shared folder) the agent sends you with this pack, and save its 10 images to your camera roll. If you don't have that link, ask the agent for it before Day 1.
+**Get the files on your phone (once, about 3 minutes):** open the phone page (https://claude.ai/artifact/ATxoYphy4czdEUfcArGoEL, private to your claude.ai account) and save its 10 images to your camera roll.
 
 ### Your tracking links (use exactly these, one per channel)
 
