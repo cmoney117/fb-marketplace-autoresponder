@@ -44,7 +44,8 @@ function serve(dir) {
 
 // The browser talks to the local server directly. Google Fonts are fetched by Node instead
 // (run with NODE_USE_ENV_PROXY=1 behind a proxy); if that fails the page uses fallback fonts.
-const browser = await chromium.launch();
+// CHROMIUM_PATH: use an already-installed Chromium when Playwright's own build is missing.
+const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const fontCache = new Map();
 async function newCtx(opts) {
   const ctx = await browser.newContext(opts);
