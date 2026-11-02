@@ -49,7 +49,8 @@ def table(rows):
     cells = [[c.strip() for c in r.strip().strip("|").split("|")] for r in rows]
     head, body = cells[0], [r for r in cells[2:]]
     h = "".join(f"<th>{inline(c)}</th>" for c in head)
-    b = "".join("<tr>" + "".join(f"<td>{inline(c)}</td>" for c in r) + "</tr>" for r in body)
+    labels = [esc(re.sub(r"[`*]", "", c)) for c in head]
+    b = "".join("<tr>" + "".join(f'<td data-label="{labels[k] if k < len(labels) else ""}"><span class="v">{inline(c)}</span></td>' for k, c in enumerate(r)) + "</tr>" for r in body)
     return f'<div class="tw"><table><thead><tr>{h}</tr></thead><tbody>{b}</tbody></table></div>'
 
 def render(md, skip_after=None):
@@ -142,7 +143,8 @@ for b in blocks:
             if in_section:
                 body.append("</section>")
             sid = "s-" + slug(txt)
-            short = re.sub(r"^\d+\.\s*", "", txt).split(":")[0]
+            num = re.match(r"^(\d+)\.\s*", txt)
+            short = (f"§{num.group(1)} " if num else "") + re.sub(r"^\d+\.\s*", "", txt).split(":")[0].split(" (")[0]
             nav.append((sid, short))
             body.append(f'<section class="sec" id="{sid}"><h2>{inline(txt)}</h2>')
             in_section = True
@@ -200,7 +202,7 @@ page = f"""<title>Hunkerhood Launch Kit</title>
   --bg:#24201d; --paper:#2f2a26; --sand:#3a332e; --line:#4a423b;
   --ink:#efe7dc; --ink-2:#c3b7a8; --clay:#d9a27f; --olive:#b5c08f; --code:#3a332e; color-scheme:dark }}
 * {{ box-sizing:border-box }}
-body {{ background:var(--bg); color:var(--ink); font:16px/1.55 var(--sans); }}
+body {{ margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 var(--sans); }}
 body::before {{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--paper) }}
 .wrap {{ max-width:760px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px)); padding-block:0 64px }}
 header.top {{ position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--paper); border-bottom:1px solid var(--line) }}
@@ -210,7 +212,7 @@ header.top .in {{ max-width:760px; margin:0 auto; padding-left:max(16px, env(saf
 .strip a {{ flex:0 0 auto; text-decoration:none; color:var(--ink-2); font-size:13px; font-weight:500; padding:5px 10px; border-radius:999px; border:1px solid var(--line); white-space:nowrap }}
 .strip a.dchip {{ min-width:32px; text-align:center; padding:5px 0 }}
 .strip a.today {{ background:var(--clay); border-color:var(--clay); color:var(--paper) }}
-.strip a.isdone {{ text-decoration:line-through; opacity:.6 }}
+.strip a.isdone {{ text-decoration:line-through; text-decoration-thickness:2px; border-style:dashed }}
 .strip + .strip {{ margin-top:6px }}
 .hero {{ padding-block:28px 8px }}
 .eyebrow {{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--olive); font-weight:600 }}
@@ -223,7 +225,7 @@ h2 {{ font-family:var(--serif); font-weight:600; font-size:26px; line-height:1.2
 h3 {{ font-family:var(--serif); font-weight:600; font-size:20px; margin:28px 0 8px; scroll-margin-top:110px }}
 h4 {{ font-size:16px; margin:20px 0 6px }}
 .sec {{ scroll-margin-top:110px }}
-p, li {{ max-width:68ch }}
+p, li {{ max-width:68ch; overflow-wrap:break-word }}
 a {{ color:var(--clay) }}
 code {{ font-family:var(--mono); font-size:.86em; background:var(--code); padding:1px 5px; border-radius:5px; overflow-wrap:anywhere }}
 .tw {{ overflow-x:auto; margin:12px 0; border:1px solid var(--line); border-radius:12px; background:var(--paper) }}
@@ -252,12 +254,13 @@ details.day[open] > summary {{ border-bottom:1px solid var(--line) }}
 .dn {{ font-family:var(--serif); font-weight:600; font-size:20px }}
 .dd {{ font-size:13px; color:var(--olive); font-weight:600 }}
 .dx {{ font-size:13px; color:var(--ink-2); min-width:0 }}
-.done {{ font-size:13px; color:var(--ink-2); display:flex; gap:6px; align-items:center; justify-self:end }}
+.done {{ font-size:13px; color:var(--ink-2); display:flex; gap:6px; align-items:center; justify-self:end; padding:10px; margin:-10px -10px -10px 0 }}
+.done input {{ width:20px; height:20px; margin:0; accent-color:var(--clay) }}
 details.day.isdone .dn {{ text-decoration:line-through; opacity:.6 }}
 details.day.today {{ border-color:var(--clay); box-shadow:0 0 0 1px var(--clay) }}
 .dbody {{ padding:4px 14px 14px; min-width:0 }}
 .dbody > .tw:first-child {{ margin-top:12px }}
-@media (max-width:480px) {{ details.day > summary {{ grid-template-columns:auto 1fr auto }} .dx {{ grid-column:1 / -1 }} }}
+@media (max-width:480px) {{ details.day > summary {{ grid-template-columns:auto 1fr auto }} .dx {{ grid-column:1 / -1 }} details.day > summary .done {{ grid-column:3; grid-row:1 }} .tw table {{ min-width:0 }} .tw thead {{ display:none }} .tw tr {{ display:block; padding:6px 0; border-bottom:1px solid var(--line) }} .tw tr:last-child {{ border-bottom:0 }} .tw td {{ display:grid; grid-template-columns:6.5em minmax(0,1fr); gap:8px; border:0; padding:4px 12px }} .tw td::before {{ content:attr(data-label); font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); font-weight:600 }} }}
 @media (prefers-reduced-motion: no-preference) {{ html {{ scroll-behavior:smooth }} }}
 </style>
 
@@ -272,7 +275,7 @@ details.day.today {{ border-color:var(--clay); box-shadow:0 0 0 1px var(--clay) 
     <h1>Hunkerhood launch kit</h1>
     <p class="lede">Every post for the next two weeks, ready to copy. About 20 minutes a day. Dates assume Day 1 is Mon 2 Nov; if you start later, just follow the day numbers.</p>
     <ol class="steps">
-      <li><span><strong>Once:</strong> save the 10 images below to your phone (tap one, then press and hold to save). On a computer, save them into a <code>hunkerhood</code> folder in Downloads for Claude in Chrome.</span></li>
+      <li><span><strong>Once:</strong> save the 10 images below to your phone (tap one, then press and hold to save). On a computer, save them into a <code>hunkerhood</code> folder in Downloads; each day, drag that day&#x27;s images into the Claude in Chrome message with the brief.</span></li>
       <li><span><strong>Each day:</strong> tap the day number at the top, copy each box, paste it, attach the image the table names, post. Tick Done.</span></li>
       <li><span><strong>Want Claude to post for you?</strong> Copy the Claude in Chrome brief below into Claude in Chrome on your computer, with the day number filled in.</span></li>
     </ol>
@@ -286,7 +289,7 @@ details.day.today {{ border-color:var(--clay); box-shadow:0 0 0 1px var(--clay) 
 
   <section class="sec" id="chrome">
     <h2>Claude in Chrome brief</h2>
-    <p class="note">Open Claude in Chrome on the computer where you're signed in to your social accounts. Copy this, change <code>[N]</code> to today's day number (both places), and send. It posts only what's in this kit, stops before anything that costs money or needs a password, and asks you before any sign-up.</p>
+    <p class="note">Open Claude in Chrome on the computer where you're signed in to your social accounts. Copy this, change <code>[N]</code> on the first line to today's day number, attach that day's images, and send. It posts only what's in this kit, stops before anything that costs money or needs a password, and asks you before any sign-up.</p>
     <div class="box"><pre>{esc(brief_txt)}</pre><button type="button" class="cp" data-copy="{esc(brief_txt)}">Copy</button></div>
   </section>
 
@@ -299,19 +302,20 @@ details.day.today {{ border-color:var(--clay); box-shadow:0 0 0 1px var(--clay) 
   function copy(btn) {{
     var t = btn.getAttribute('data-copy');
     var done = function () {{
-      btn.classList.add('ok');
       var lab = btn.classList.contains('cp') ? btn : btn.querySelector('.lk');
-      var old = lab.textContent; lab.textContent = 'Copied';
-      setTimeout(function () {{ btn.classList.remove('ok'); lab.textContent = old; }}, 1600);
+      clearTimeout(btn._t); btn.classList.add('ok'); lab.textContent = 'Copied';
+      btn._t = setTimeout(function () {{ btn.classList.remove('ok'); lab.textContent = 'Copy'; }}, 1600);
     }};
     var fallback = function () {{
       var pre = btn.parentNode.querySelector('pre') || btn.querySelector('code');
       if (!pre) return;
       var r = document.createRange(); r.selectNodeContents(pre);
       var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      var ok = false; try {{ ok = document.execCommand('copy'); }} catch (e) {{ ok = false; }}
+      if (ok) {{ s.removeAllRanges(); done(); return; }}
       var lab = btn.classList.contains('cp') ? btn : btn.querySelector('.lk');
       lab.textContent = 'Selected: press Copy';
-      setTimeout(function () {{ lab.textContent = 'Copy'; }}, 2400);
+      clearTimeout(btn._t); btn._t = setTimeout(function () {{ lab.textContent = 'Copy'; }}, 2400);
     }};
     try {{
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done, fallback);
@@ -350,7 +354,7 @@ details.day.today {{ border-color:var(--clay); box-shadow:0 0 0 1px var(--clay) 
   if (today) {{
     today.open = true; today.classList.add('today');
     var chip = document.querySelector('.dchip[href="#' + today.id + '"]');
-    if (chip) chip.classList.add('today');
+    if (chip) {{ chip.classList.add('today'); var st = chip.parentNode; st.scrollLeft = chip.offsetLeft - st.offsetLeft - (st.clientWidth - chip.offsetWidth) / 2; }}
   }} else {{
     var first = document.getElementById('day-1'); if (first) first.open = true;
   }}

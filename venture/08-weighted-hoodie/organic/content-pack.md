@@ -1,6 +1,6 @@
 # Hunkerhood: 14-day organic content pack ($0)
 
-Written 2026-11-01 for Cody. This is a copy-paste kit for the organic proof of concept: no ads, no tools to buy, no money spent. Day 1 is whatever day you say go. Every post is in a grey box: copy the whole box, paste it, attach the file named in the table, post. The cloud agent can't post for you. Claude in Chrome on your own computer can, using `chrome-posting-brief.md` in this folder (also on the phone page). Either way, everything here is written to take as few of your minutes as possible.
+Written 2026-11-01 for Cody. This is a copy-paste kit for the organic proof of concept: no ads, no tools to buy, no money spent. Day 1 is whatever day you say go. Every post is in its own box (on the phone page, tap its Copy button): copy the whole box, paste it, attach the file named in the table, post. The cloud agent can't post for you. Claude in Chrome on your own computer can, using `chrome-posting-brief.md` in this folder (also on the phone page). Either way, everything here is written to take as few of your minutes as possible.
 
 **Requires:** none (no gated claim appears anywhere in this pack: no weight, fabric, lining, fill, care, buttons, sizing by height, origin, or arrival dates)
 
@@ -39,7 +39,7 @@ Never shorten a link (Pinterest blocks shorteners) and never swap one channel's 
 | $99, one price, no sales or codes | Fabric, lining, fill, or anything about texture beyond what a real video shows |
 | Free shipping to the contiguous US (not Alaska, Hawaii, PO boxes or APO/FPO) | Care or washing instructions |
 | Delivery takes 10-22 business days after you order, with tracking | Measurements, length, or fit by height |
-| 30 days from delivery to return it; on a change of mind you pay return postage; if it comes damaged or wrong, a photo is enough | Buttons or other closures |
+| 30 days from delivery to return it; on a change of mind it goes back unworn and unwashed and you pay return postage; if it comes damaged or wrong, a photo is enough | Buttons or other closures |
 | Unisex, adult sizes only, adults 18+ | Country of origin |
 | Throw it on over anything; made for staying in | That the colors are final |
 | A small online shop based in Nashville, TN. A manufacturing partner makes it and a fulfillment partner ships it | Any arrive-by date for the holidays |
@@ -52,7 +52,7 @@ Before Day 1, send the agent a written OK (an email is fine) on the shop's retur
 ### The never list (each one can get an account restricted or break the law)
 
 - Never show the illustration without the word "Illustration" on it (all the graphics in `graphics/` already carry it where the drawing appears), and never call it a photo.
-- No DMs or comments to strangers, no comments under other brands' posts, no copy-paste comments anywhere.
+- No DMs or comments to strangers, no comments under other brands' posts, and no copy-paste comments anywhere except the pinned comment on your own TikTok posts and the §7 replies on your own posts, to people who wrote to you first.
 - No identical post in two groups or communities. Every group post in this pack has its own first line.
 - Never ask friends to comment or review as if they were customers. Friends who share say it's a friend's business.
 - No children, teens, school or dorm themes, ever. Adults only, in every frame.
@@ -84,7 +84,7 @@ Post at roughly the same time each evening. Skip a day if you need to: a missed 
 
 ## 2. Profile setup per channel
 
-Handles: claim **@hunkerhood** everywhere it's free. Fallbacks in this order: **@hunkerhoodco**, then **@wearhunkerhood** (from `../brand-screen.md`). Use the same handle on every platform if you can. Profile picture everywhere: save https://paycheck-budget-usa1.vercel.app/hunkerhood/apple-touch-icon.png to your phone (or ask the agent for a 1000×1000 version).
+Handles: claim **@hunkerhood** everywhere it's free. Fallbacks in this order: **@hunkerhoodco**, then **@wearhunkerhood** (from `../brand-screen.md`). Use the same handle on every platform if you can. Profile picture everywhere: save [the shop icon](https://paycheck-budget-usa1.vercel.app/hunkerhood/apple-touch-icon.png) to your phone: open it, then press and hold the image to save (or ask the agent for a 1000×1000 version).
 
 ### TikTok (Day 1, 15 min)
 
@@ -109,7 +109,7 @@ $99, free US shipping, 30 days to decide. Have a look: link in bio.
 
 1. Sign up with @hunkerhood, then switch to a **professional account** (Creator or Business, both free); category "Clothing (Brand)". Then Settings → For professionals (or Business tools and controls) → **Minimum age: 18**, if offered.
 2. Name field (it's searchable): `Hunkerhood · hooded cloak`
-3. Bio:
+3. Bio (write "Tennessee" instead of "Nashville, TN" unless you live in or near Nashville; Threads copies this bio):
 
 ```text
 Hooded cloaks for staying in.
@@ -150,7 +150,7 @@ Hunkerhood, 159 4th Ave N, Ste 100 #2179, Nashville, TN 37219
 ### Pinterest (Day 6, 15 min)
 
 1. Create a free **business** account (accepting the Business Terms). Name `Hunkerhood`, username hunkerhood.
-2. About:
+2. About (write "Tennessee" instead of "Nashville, TN" unless you live in or near Nashville):
 
 ```text
 Hooded cloaks for staying in. A small online shop based in Nashville, TN. Drawings are labelled as illustrations until our real photos are in.
@@ -310,7 +310,7 @@ Set up the Facebook Page first (§2, 10 min).
 | D5-1 | Facebook Page | Link post (1 of your 2 this month) | `carousel-2.png` | none | facebook |
 | D5-2 | Threads | Text post with image | `carousel-2.png` | topic: Small Business | threads |
 
-**D5-1 Facebook Page post**
+**D5-1 Facebook Page post** (write "Tennessee" instead of "Nashville" unless you live in or near Nashville)
 
 ```text
 Hello from Hunkerhood: a small online shop based in Nashville with one product, a roomy hooded cloak for staying in.
@@ -641,16 +641,28 @@ Have a look: link in bio.
 first frost this morning. the hood is still in the mail. real video soon. link in bio #cozyseason #wearableblanket #hoodedcloak #homebody
 ```
 
-**S-2 Thanksgiving eve** (on the Facebook Page, no link; on Threads, add the Threads link)
+**S-2 Thanksgiving eve, Facebook Page** (no link)
 
 ```text
 Thanksgiving plan: eat, couch, hood up.
 ```
 
-**S-3 Black Friday** (Facebook Page: no link, end with "Link on our Page."; Instagram: end with "Link in bio.")
+**S-2 Thanksgiving eve, Threads**
 
 ```text
-No Black Friday sale here. Same $99 every day, free US shipping, 30 days to decide.
+Thanksgiving plan: eat, couch, hood up. https://paycheck-budget-usa1.vercel.app/hunkerhood/?utm_medium=organic&utm_campaign=poc1&utm_source=threads
+```
+
+**S-3 Black Friday, Facebook Page** (no link)
+
+```text
+No Black Friday sale here. Same $99 every day, free US shipping, 30 days to decide. Link on our Page.
+```
+
+**S-3 Black Friday, Instagram**
+
+```text
+No Black Friday sale here. Same $99 every day, free US shipping, 30 days to decide. Link in bio.
 ```
 
 **S-4 Small Business Saturday** (Instagram with `carousel-4.png`; Facebook Page without a link)
@@ -787,10 +799,22 @@ Hooded cloak: real footage of my first sample (from the shop) #shorts
 A roomy hooded cloak for staying in. $99, free US shipping, 30 days to decide. Link on the channel page.
 ```
 
-**Facebook Page Reel, Threads, and your Facebook profile** (profile: add the friends link; Threads: add the Threads link; Page: no link)
+**Facebook Page Reel** (no link)
 
 ```text
 My first sample showed up, so here's the real thing. No filters.
+```
+
+**Threads**
+
+```text
+My first sample showed up, so here's the real thing. No filters. https://paycheck-budget-usa1.vercel.app/hunkerhood/?utm_medium=organic&utm_campaign=poc1&utm_source=threads
+```
+
+**Your Facebook profile**
+
+```text
+My first sample showed up, so here's the real thing. No filters. https://paycheck-budget-usa1.vercel.app/hunkerhood/?utm_medium=organic&utm_campaign=poc1&utm_source=friends
 ```
 
 ### B2 · Blanket. Hoodie. Both. · 12 s (adapted from V1, no weight claim)
@@ -1144,7 +1168,7 @@ If the sample arrives before orders open, use the B1 line from §4 with the frie
 
 ## 7. Reply templates (your own posts and DMs only)
 
-Reply only to people who comment on your posts or message you first. Never cold-message anyone. Where a reply says "link in bio", on Facebook or Threads say "the link is in the post" instead. Never delete or hide honest criticism; hide only spam, scams, hate, or someone's personal details. Anything about a specific order moves to email.
+Reply only to people who comment on your posts or message you first. Never cold-message anyone. On Facebook and Threads, change "in bio" or "in our bio" in a reply to "in the post" (so "Leave your email at the link in the post", "Tap the link in the post"). On a Facebook Page post that has no link (D10-2, the Page versions of S-2, S-3 and S-4, and Page Reels), and in Facebook Page messages, change it to "on our Page" instead. Never delete or hide honest criticism; hide only spam, scams, hate, or someone's personal details. Anything about a specific order moves to email.
 
 **How much is it?**
 
@@ -1168,6 +1192,18 @@ Delivery takes 10-22 business days after you order, with tracking, and shipping 
 
 ```text
 A fulfillment partner ships it, and we'd rather give you the real window than a hopeful one. Every order is tracked, and if one is going to be late we email you before the ship-by date with the choice to cancel for a full refund.
+```
+
+**Will it come in time for the holidays?** (waitlist)
+
+```text
+It isn't on sale yet. After you order, delivery takes 10-22 business days with tracking, so we can't promise a holiday date.
+```
+
+**Will it come in time for the holidays?** (orders open)
+
+```text
+Delivery takes 10-22 business days after you order, with tracking, so we can't promise a holiday date.
 ```
 
 **What sizes? / Will it fit me?**
@@ -1235,7 +1271,7 @@ Right now we ship to the contiguous US only: not Alaska, Hawaii, PO boxes or APO
 **Can I return it?**
 
 ```text
-Yes: you have 30 days from delivery to send it back. On a change of mind you pay the return postage; if it comes damaged or wrong, a photo is enough.
+Yes: you have 30 days from delivery to send it back. On a change of mind, send it back unworn and unwashed (trying it on at home is fine) and you pay the return postage; if it comes damaged or wrong, a photo is enough.
 ```
 
 **Is this legit?**
@@ -1281,7 +1317,13 @@ It's made and sized for adults (18+) only.
 Adult garment. Not for children.
 ```
 
-**Can I pay you directly / Venmo / order by DM?**
+**Can I pay you directly / Venmo / order by DM?** (waitlist)
+
+```text
+It isn't on sale yet, and when it is, it's only through the site, so you get a receipt, tracking and the return policy. Leave your email at the link in bio and you'll hear the day it is.
+```
+
+**Can I pay you directly / Venmo / order by DM?** (orders open)
 
 ```text
 Please order through the site so you get a receipt, tracking and the return policy. Link in bio.
